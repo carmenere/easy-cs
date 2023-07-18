@@ -12,8 +12,8 @@ Flynn defined 4 architectures:
 <br>
 
 ## SISD
-In **SISD** architecture a **single** CPU executes a **single instruction** over **one item** of data at every moment of time, i.e., the machine with **one** CPU and with **one** core.<br>
-SISD machines can run only **concurrency apps**, **not** **parallel apps**.
+In **SISD** architecture a **single** CPU executes a **single instruction** over some data at every moment of time, i.e., the machine with **one** CPU and with **one** core.<br>
+**SISD** machines can run only *concurrent* apps, **not** *parallel* apps.
 
 <br>
 
@@ -31,8 +31,7 @@ This type of architecture is **not** commonly used in practice.
 
 ## MIMD
 In a **MIMD** architecture, **multiple** CPUs execute **different instructions** on **different data**.<br>
-Examples: **multicore**, **multiprocessors**, **multi computers**.<br>
-**MIMD** machines can run **concurrency apps** and/or **parallel apps**.
+**MIMD** machines can run *concurrent* apps and/or *parallel* apps.
 
 <br>
 

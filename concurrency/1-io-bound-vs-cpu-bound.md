@@ -1,13 +1,13 @@
 # I/O bound vs. CPU-bound
 There are 2 types of tasks: **I/O bound** and **CPU-bound**.<br>
-- **CPU-bound** means the rate at which task progresses is principally limited by the speed of the CPU.
-- **I/O bound** means the rate at which task progresses is principally limited by the time spent waiting for **input**/**output** operations to be completed, in other words, more time is spent requesting data than processing it.
+- **CPU-bound** means the progresses of task is principally limited by the speed of the CPU.
+- **I/O bound** means the progresses of task is principally limited by the time spent waiting for **input**/**output** operations to be completed, in other words, more time is spent requesting data than processing it.
 
 <br>
 
 > **Notes**: <br>
-> Increasing performance of CPU causes to **faster** execution **CPU-bound** tasks.<br>
-> Increasing performance of CPU **doesn't** result in faster **I/O bound** tasks.
+> Increasing performance of CPU speeds up **CPU-bound** tasks.<br>
+> Increasing performance of CPU **doesn't** speed up **I/O bound** tasks.
 
 <br>
 

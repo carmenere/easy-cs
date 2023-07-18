@@ -5,14 +5,14 @@ In general **shared resources** are
 
 <br>
 
-**Concurrent access** to **shared resources** can arise in several situations (problems):
+**Concurrent access** to **shared resources** can arise in several problems:
 - deadlock;
 - race condition;
 - resource starvation.
 
 <br>
 
-**Deadlock** is any situation in which each thread make no progress because it waits for another member to release a lock.<br>
+**Deadlock** is any situation in which each thread make no progress because it waits for another thread to release a lock.<br>
 **Race condition** is any situation in which threads/processes simultaneously changes some data and the final result is depend on the sequence of operations.<br>
 
 <br>
@@ -22,8 +22,8 @@ The main difficulty in designing concurrency applications is **coordinating** th
 <br>
 
 # Сoncurrency control
-The alghorithm or application is **not thread-safe** if it allows at least one problem of concurrent access to shared resources.<br>
-**Concurrency control** is used to prevent any problems of concurrent access to shared resources.<br>
+The alghorithm or application is **not thread-safe** if it allows deadlock and/or race condition and/or resource starvation.<br>
+**Concurrency control** *prevents* any problems of concurrent access to shared resources.<br>
 
 There are 2 main types of **concurrency control** to achive **thread-safety**:
 - **shared memory** communication;

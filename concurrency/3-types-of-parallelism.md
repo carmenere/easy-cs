@@ -1,12 +1,12 @@
 # Types of parallelism
 ## Bit level parallelism
 **Bit-level parallelism** is a form of parallel computing based on **increasing** processor **word size**.<br>
-However, the practical use of bit-level parallelism has already been exhausted at **64 bits**, further increase in the machine word is practically meaningless.
+However, the practical use of **bit-level parallelism** has already been exhausted at **64 bits**, further increase in the machine word is practically meaningless.
 
 <br>
 
 ## Instruction level parallelism
-**Instruction-level parallelism** (*ILP*) is technique of execution more than one instruction per CPU clock cycle.<br>
+**Instruction-level parallelism** (*ILP*) is technique of execution more than one CPU's instruction per CPU clock cycle.<br>
 
 Consider following sequence of operations:
 ```
@@ -29,14 +29,14 @@ There are two approaches to achieve instruction-level parallelism:
 <br>
 
 ### Superscalar techniques
-- **instruction pipelining** is a technique for implementing ILP in which every instruction is executed in stages, e.g. basic five-stage pipeline - instruction fetch, decode, execute, memory access, register write back;
+- **instruction pipelining** is a technique for implementing ILP in which every instruction is executed in stages, e.g. instruction **fetch**, **decode**, **execute**, **memory access**, **register write**;
 - **out of order execution** is a technique for implementing ILP in which instructions are executed in **any order** that **doesn't** violate data dependencies;
 - **speculative execution**: is a technique for implementing ILP in which instructions are executed before their results are actually needed.
 
 <br>
 
 ## Data level parallelism
-**Data Level Parallelism** corresponds **SIMD**, i.e., **SIMD CPU instrustions** implement **data level parallelism**.
+**Data Level Parallelism** corresponds **SIMD**, i.e., **SIMD instrustions** of CPU implement **data level parallelism**.
 
 <br>
 

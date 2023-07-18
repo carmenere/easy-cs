@@ -56,12 +56,12 @@ It has **context switch** overhead.
 <br>
 
 ## Cooperative scheduling
-**Cooperative scheduling** is a style of computer multitasking in which the OS never initiates a context switch, instead, processes or threads voluntarily **yield control** back to **scheduler**.
+**Cooperative scheduling** is a multitasking in which the OS never initiates a context switch, instead, processes or threads voluntarily **yield control** back to **scheduler**.
 
 <br>
 
 ### Advantages
-Scheduling is **lightweight** because it doesn't require to switch context of process/thread, it just switches coroutines.
+Scheduling is **lightweight** because it doesn't require *context switching* of process/thread, it just **switches coroutines**.
 
 <br>
 
