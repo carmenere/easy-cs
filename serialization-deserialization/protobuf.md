@@ -4,4 +4,4 @@
 
 Steps:
 1. Define a **message** using the `.proto` file.
-2. This file is then compiled using Google’s **protoc compiler**, which **generates source files** that contain the **зrotocol иuffer implementation** for the **defined message**.
+2. This file is then compiled using Google’s **protoc compiler**, which **generates source files** that contain the **protocol buffer implementation** for the **defined message**.
