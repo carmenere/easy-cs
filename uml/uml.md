@@ -134,8 +134,9 @@ Here `1..*` at the opposite side of **Department** means that instance of **Comp
 - one class is a **whole class** (**container class**) and another is a **part class** (**nested class**);
 - **part class** is a *part of* **whole class**;
 - **instance of part class** can exist in **multiple instances of whole classes**;
-- lifecycle of a **part class** is independent from the **whole class's** lifecycle;
-- **instance of part class** and **instances of whole class** have **separate lifetimes**, i.e., **instance of part class** can *continue to exist* (outlives its *whole class's* instance) after the **instances of whole class** is *deleted* or **instance of part class** can be *created* before the **instances of whole class** is *created*;
+- **instance of part class** and **instances of whole class** have **separate lifetimes**:
+  - **instance of part class** can *continue to exist* (outlives its *whole class's* instance) after the **instances of whole class** is *deleted*;
+  - **instance of part class** can be *created* before the **instances of whole class** is *created*;
 
 <br>
 
@@ -159,7 +160,9 @@ The lifecycle of the instance of **Wheel** is independent from the instance of *
 - one class is a **whole class** (**container class**) and another is a **part class** (**nested class**);
 - **part class** is a *part of* **whole class**;
 - **instance of part class** can **only** be **related** to **one whole class**;
-- lifecycle of a **part class** is dependent on the **whole class's** lifecycle, i.e., **instance of part class** is deleted if the **instances of whole class** is *deleted* or **instance of part class** **can't** be *created* before the **instances of whole class** is *created*;
+- lifecycle of a **part class** is dependent on the **whole class's** lifecycle:
+  - **instance of part class** is deleted if the **instances of whole class** is *deleted*;
+  - **instance of part class** **can't** be *created* before the **instances of whole class** is *created*;
 
 <br>
 
