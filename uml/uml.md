@@ -175,7 +175,7 @@ The **composition** is displayed by **solid line** from the **whole class** to t
 
 <br>
 
-The **Company** is a **whole entity** and company's **Department** is a **part of** the overall **Company**.<br>
+The **Company** is a **whole class** and company's **Department** is a **part of** the overall **Company**.<br>
 The **Department** **cannot** exist before a **Company** exists.<br>
 When the **Company** instance is destroyed, the **Department** instance is **automatically destroyed** as well.<br>
 
@@ -214,4 +214,4 @@ When class implemets some interface there is realization relations betwee class 
 
 <br>
 
-The **dependency** is displayed by a **dashed line with a hollow arrowhead*** that points *from* the **class** *to* the **interface**.
+The **dependency** is displayed by a **dashed line with a hollow arrowhead** that points *from* the **class** *to* the **interface**.
