@@ -1,5 +1,5 @@
-# UML**
-The **Unified Modeling Language** (**UML**) is a general-purpose visual modeling language** that is intended to provide a **standard way to visualize the design of a system**.<br>
+# UML
+The **Unified Modeling Language** (**UML**) is a general-purpose **visual modeling language** that is intended to provide a **standard way to visualize the design of a system**.<br>
 
 **UML provides a standard notation** for many types of diagrams which are divided into **2 main groups**:
 - **structure diagrams** (represent the **static** aspect of the system):
