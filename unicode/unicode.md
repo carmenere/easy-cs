@@ -14,8 +14,12 @@ The first **128** code points of **Unicode** mirror the **ASCII** standard.<br>
 <br>
 
 # Unicode encodings
-The **Unicode Standard** defines **3 Unicode character encoding schemes**: **UTF-8**, **UTF-16** (aka **UCS-2**) and **UTF-32** (aka **UCS-4**).<br>
 **Unicode character encoding scheme** answers on question `How to convert code point of some character to its binary value?`.<br>
+
+The **Unicode Standard** defines **3 Unicode character encoding schemes**:
+- **UTF-8**;
+- **UTF-16** (aka **UCS-2**);
+- **UTF-32** (aka **UCS-4**);
 
 **UTF** is an abbrevation for Unicode Transformation Format.<br>
 **UCS** is an abbrevation for Universal Character Set.<br>
