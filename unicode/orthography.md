@@ -34,7 +34,7 @@ A **grapheme** is **abstract**, for example **the idea of an** `a`, while a **gl
 
 <br>
 
-# Graphemes and Glyphs
+## Graphemes and Glyphs
 In some writing systems **one grapheme** may correspond to **several glyphs**.<br>
 In general **grapheme** consists of **one** or **more glyphs**.<br>
 

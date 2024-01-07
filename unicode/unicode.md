@@ -1,8 +1,13 @@
 # Unicode
-The **Unicode Consortium** is a non-profit corporation devoted to developing, maintaining, and promoting software internationalization standards and data, particularly the **Unicode Standard**, which is a universal standard that enables consistent encoding of multilingual text.<br>
+The **Unicode Consortium** is a non-profit corporation devoted to **developing**, **maintaining**, and promoting software **internationalization standards**.<br>
+The **Unicode Standard** is a universal standard that enables consistent encoding of multilingual text.<br>
+
+<br>
 
 The **Unicode Standard** specifies a **code points** and **names** for **each character** and defines **3 Unicode character encoding schemes**.
 But **Unicode Standard** **does not** specify which font to use.<br>
+
+<br>
 
 The first **128** code points of **Unicode** mirror the **ASCII** standard.<br>
 
