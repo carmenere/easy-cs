@@ -50,7 +50,7 @@ The **1 byte code** is identical to an **ASCII** code, in other words **UTF-8** 
 
 ## UTF-16
 **UTF-16** uses **variable length encoding** and it can use `2` or `4` bytes for codes.<br>
-UTF-16 is **incompatible with ASCII** files and thus requires Unicode-aware programs.
+**UTF-16** is **incompatible with ASCII** files and thus requires Unicode-aware programs.
 
 <br>
 
