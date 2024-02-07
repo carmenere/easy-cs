@@ -28,22 +28,22 @@ A **homogeneous relation** over a set `X` is a *binary relation* over `X` and it
 <br>
 
 ## Properties of homogeneous relations
-1. **Reflexivity**: for all `x ∈ X` => `xRx`.
+1. **Reflexivity**: for all `x ∈ X`: `xRx` returns `true`, i.e. every element is related to itself.
    - For example, `≥` is a **reflexive** relation but `>` is **not**.
-2. **Irreflexivity** (aka **Anti-reflexivity**): for all `x ∈ X` => **not** `xRx`.
+2. **Irreflexivity** (aka **Anti-reflexivity**): for all `x ∈ X`: `xRx` returns `false`,  i.e. no element is related to itself .
    - For example, `>` is an **irreflexive** relation, but `≥` is **not**.
-3. **Symmetry**: for all `a,b ∈ X` => if `aRb` then `bRa`.
+3. **Symmetry**: for all `a,b ∈ X`: if `aRb` then `bRa`.
    - For example, **blood relation** is a **symmetric** relation.
-4. **Antisymmetry**: for all `a,b ∈ X` => if `aRb` and `bRa` then `a=b`.
-   - For example, `≥` is an **antisymmetric** relation.
-5. **Asymmetry**: for all `a,b ∈ X` => if `aRb` then **not** `bRa`.
-   - A relation is **asymmetric** if and only if it is both **antisymmetric** and **irreflexive**.
-     - For example, `>` is an **asymmetric** relation, but `≥` is **not**.
-6. **Transitivity**: for all `a,b ∈ X` => if `aRb` and `bRc` then `aRc`.
-    - A **transitive** relation is **irreflexive** if and only if it is **asymmetric**.
-      - For example, **is ancestor of** is a **transitive** relation, while **is parent of** is **not**.
-7. **Connectivity** (aka **Totality**): for all `a,b ∈ X` => if `a≠b` then `aRb` or `bRa`.
-8. **Strong connectivity**: for all `a,b ∈ X` => `aRb` or `bRa`.
+4. **Antisymmetry**: for all `a,b ∈ X`: 
+   1. if `aRb` and `bRa` then `a=b` 
+   2. if `aRb` and `a≠b` then `bRa` returns `false`
+   3. In other words, no two distinct elements precede each other.
+   4. Example, `≥` is an **antisymmetric** relation.
+5. **Asymmetry**: it is **antisymmetry** + **irreflexivity**, for all `a,b ∈ X`: if `aRb` then `bRa` returns `false`, i.e. if `a` is related to `b` then `b` is **not** related to `a`.
+   - For example, `>` is an **asymmetric** relation, but `≥` is **not**.
+6. **Transitivity**: for all `a,b ∈ X`: if `aRb` and `bRc` then `aRc`.
+7. **Connectivity** (aka **Totality**): for all `a,b ∈ X`: if `a≠b` then `aRb` or `bRa`.
+8. **Strong connectivity**: for all `a,b ∈ X`: `aRb` or `bRa`.
 
 <br>
 
