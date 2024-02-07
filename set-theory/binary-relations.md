@@ -10,7 +10,7 @@ A **binary relation** `R` over sets `X` and `Y` is a subset of **cartesian produ
 
 <br>
 
-In a binary relation, the **order of the elements** is **important**: if `x≠y` then `yRx` can be `true` or `false` **independently** of `xRy`.<br>
+In a binary relation, the **order of the elements** is **important**: IF `x≠y` then `yRx` can be `true` or `false` **independently** of `xRy`.<br>
 For example, `3 divides 9` => `true`, but `9 divides 3` => `false`.<br>
 
 <br>
@@ -28,30 +28,32 @@ A **homogeneous relation** over a set `X` is a *binary relation* over `X` and it
 <br>
 
 ## Properties of homogeneous relations
-1. **Reflexivity**: for all `x ∈ X` => `xRx`.
+1. **Reflexivity**: for all `x ∈ X`: `xRx` returns `true`, i.e. every element is related to itself.
    - For example, `≥` is a **reflexive** relation but `>` is **not**.
-2. **Irreflexivity** (aka **Anti-reflexivity**): for all `x ∈ X` => **not** `xRx`.
+2. **Irreflexivity** (aka **Anti-reflexivity**): for all `x ∈ X`: `xRx` returns `false`,  i.e. no element is related to itself .
    - For example, `>` is an **irreflexive** relation, but `≥` is **not**.
-3. **Symmetry**: for all `a,b ∈ X` => if `aRb` then `bRa`.
+3. **Symmetry**: for all `a,b ∈ X`: IF `aRb` THEN `bRa`.
    - For example, **blood relation** is a **symmetric** relation.
-4. **Antisymmetry**: for all `a,b ∈ X` => if `aRb` and `bRa` then `a=b`.
-   - For example, `≥` is an **antisymmetric** relation.
-5. **Asymmetry**: for all `a,b ∈ X` => if `aRb` then **not** `bRa`.
-   - A relation is **asymmetric** if and only if it is both **antisymmetric** and **irreflexive**.
-     - For example, `>` is an **asymmetric** relation, but `≥` is **not**.
-6. **Transitivity**: for all `a,b ∈ X` => if `aRb` and `bRc` then `aRc`.
-    - A **transitive** relation is **irreflexive** if and only if it is **asymmetric**.
-      - For example, **is ancestor of** is a **transitive** relation, while **is parent of** is **not**.
-7. **Connectivity** (aka **Totality**): for all `a,b ∈ X` => if `a≠b` then `aRb` or `bRa`.
-8. **Strong connectivity**: for all `a,b ∈ X` => `aRb` or `bRa`.
+4. **Antisymmetry**: 
+   1. For all `a,b ∈ X`: IF `aRb` AND `bRa` THEN `a=b`.
+   2. Alternative definition, for all `a,b ∈ X`: IF `aRb` AND `a≠b` THEN `bRa` returns `false`.
+   3. In other words, no two distinct elements precede each other.
+   4. Example, `≥` is an **antisymmetric** relation.
+5. **Asymmetry**: it is **antisymmetry** + **irreflexivity**:
+   1. For all `a,b ∈ X`: IF `aRb` THEN `bRa` returns `false`.
+   2. In other words, IF `a` is related to `b` THEN `b` is **not** related to `a`.
+   3. For example, `>` is an **asymmetric** relation, but `≥` is **not**.
+6. **Transitivity**: for all `a,b ∈ X`: IF `aRb` AND `bRc` THEN `aRc`.
+7. **Weak connectivity** (aka **Weak totality**): for all `a,b ∈ X`: IF `a≠b` THEN `aRb` or `bRa`.
+8. **Strong connectivity** (aka **Strong totality**): for all `a,b ∈ X`: `aRb` or `bRa`.
 
 <br>
 
 # Equivalence relations
 ## Partial equivalence relation
 **Partial equivalence relation** (**PER**) is a binary relation that satisfies the following properties:
-1. **Symmetry**: if `a=b` then `b=a`.
-2. **Transitivity**: if `a=b` and `b=c`, then `a=c`.
+1. **Symmetry**: IF `a=b` THEN `b=a`.
+2. **Transitivity**: IF `a=b` AND `b=c`, THEN `a=c`.
 
 > **Note**:<br>
 > **Partial equivalence relation**  is **not reflexive**, i.e., `a != a`.<br>
@@ -61,8 +63,8 @@ A **homogeneous relation** over a set `X` is a *binary relation* over `X` and it
 ## Equivalence relation
 **Equivalence relation** is a binary relation that satisfies the following properties:
 1. **Reflexivity**: Any number a is equal to itself.
-2. **Symmetry**: If `a=b` then `b=a`.
-3. **Transitivity**: If `a=b` and `b=c`, then `a=c`.
+2. **Symmetry**: IF `a=b` THEN `b=a`.
+3. **Transitivity**: IF `a=b` AND `b=c`, THEN `a=c`.
 
 <br>
 
@@ -73,8 +75,8 @@ There are 2 type of order:
 
 <br>
 
-## Weak partial order (≤)
-**Weak partial order** (aka **non-strict partial order**) is a binary relation that satisfies the following properties:
+## Weak partial order or just Partial order (≤)
+**Partial order** (aka **non-strict/weak partial order**) is a binary relation that satisfies the following properties:
 1. **Antisymmetry**.
 2. **Reflexivity**.
 3. **Transitivity**.
@@ -89,16 +91,18 @@ There are 2 type of order:
 
 <br>
 
-## Weak total order (≤)
-**Weak total order** (aka **non-strict total order**) is a binary relation that satisfies the following properties:
-1. **Totality**.
-2. **Reflexivity**
+## Weak total order or just Total order (≤)
+**Total order** (aka **non-strict/weak total order**) is the **weak partial order** with the added property of **strong connectivity**:
+1. **Antisymmetry**.
+2. **Reflexivity**.
 3. **Transitivity**.
+4. **Strong connectivity**.
 
 <br>
 
 ## Strict total order (<)
-**Strict total order** is a binary relation that satisfies the following properties:
-1. **Totality**.
+**Strict total order** is the **strict partial order** with the added property of **weak connectivity**:
+1. **Asymmetry**.
 2. **Irreflexivity**.
 3. **Transitivity**.
+4. **Weak connectivity**.
