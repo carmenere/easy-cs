@@ -73,8 +73,8 @@ There are 2 type of order:
 
 <br>
 
-## Weak partial order (≤)
-**Weak partial order** (aka **non-strict partial order**) is a binary relation that satisfies the following properties:
+## Weak partial order or just Partial order (≤)
+**Partial order** (aka **non-strict partial order**) is a binary relation that satisfies the following properties:
 1. **Antisymmetry**.
 2. **Reflexivity**.
 3. **Transitivity**.
@@ -89,16 +89,18 @@ There are 2 type of order:
 
 <br>
 
-## Weak total order (≤)
-**Weak total order** (aka **non-strict total order**) is a binary relation that satisfies the following properties:
-1. **Totality**.
-2. **Reflexivity**
+## Weak total order or just Total order (≤)
+**Total order** (aka **non-strict total order**) is the **weak partial order** with the added property of **totality**:
+1. **Antisymmetry**.
+2. **Reflexivity**.
 3. **Transitivity**.
+4. **Totality**.
 
 <br>
 
 ## Strict total order (<)
-**Strict total order** is a binary relation that satisfies the following properties:
-1. **Totality**.
+**Strict total order** is the **strict partial order** with the added property of **totality**:
+1. **Asymmetry**.
 2. **Irreflexivity**.
 3. **Transitivity**.
+4. **Totality**.
