@@ -19,6 +19,9 @@
   - [Dominating set](#dominating-set)
   - [Maximal independent set](#maximal-independent-set)
   - [Examples](#examples)
+    - [Example 1](#example-1)
+    - [Example 2](#example-2)
+    - [Example 3](#example-3)
 - [Weighted graph](#weighted-graph)
 
 <br>
@@ -47,6 +50,7 @@ The **degree** /dɪ'griː/ (aka **valency**) of a vertex, denoted `𝛿(v)` is t
 
 For graphs with loops, the **loop increases the degree of the vertex** by `2`.
 
+<br>
 
 ## Incidence
 The **edge** `e = {x,y}` is **incident** to **its vertices** `x` and `y`.<br>
@@ -66,17 +70,13 @@ Two edges are **adjacent** if they **share a common vertex**, e.g. if they are *
 **Loop** is an edge that **connects** a **vertex to itself**.<br>
 **Multiple edges** (aka **parallel** edges) are edges **connecting** the **same two vertices**.<br>
 
-Types of graphs:
-- **Simple graph** is an **unweighted**, **undirected graph** containing **no** *loops* and **no** *multiple* edges.
-- **Multigraph** is a graph which is permitted to have **multiple edges**.
-- **Pseudograph** is a *multigraph* that is permitted to have **loops**.
+**Simple graph** is an **unweighted**, **undirected graph** containing **no** *loops* and **no** *multiple* edges.<br>
+**Multigraph** is a graph which is permitted to have **multiple edges**.<br>
+**Pseudograph** is a *multigraph* that is permitted to have **loops**.<br>
 
-
-A **finite graph** is a graph in which the vertex set and the edge set are finite sets.
-A **regular graph** is a graph in which every vertex has the same degree. A regular graph with vertices of degree k is called a k‑regular graph or regular graph of degree k.
-A **complete graph** is a graph in which each pair of vertices is joined by an edge. A complete graph contains all possible edges.
-
-The complete graph on `n` vertices is denoted by **K<sub>n</sub>**.
+A **finite graph** is a graph in which the vertex set and the edge set are **finite** sets.<br>
+A **regular graph** is a graph in which **every** vertex has **the same degree**. A **regular graph** with vertices of **degree** `k` is called a **k‑regular graph** or **regular graph of degree** `k`.<br>
+A **complete graph** is a graph in which **each pair** of vertices is joined by an edge. A complete graph contains **all possible edges**. The **complete graph** on `n` vertices is denoted by **K<sub>n</sub>**.
 
 <br>
 
@@ -86,10 +86,8 @@ Properties of **K<sub>n</sub>**:
 
 A **bipartite graph** /baɪˈpɑːtaɪt/ is a **simple graph** in which the vertex set can be partitioned into two sets, `V1` and `V2`, so that **every** edge **join** vertices from **different** sets.
 
-**Complete bipartite graph** is a **bipartite graph** in which **every** vertex of the first set `V1` is connected to **every** vertex of the second set `V2`.
-
-A complete bipartite graph with partitions of size `|V1| = m` and `|V2| = n`, is denoted **K<sub>m,n</sub>**.
-
+A **complete bipartite graph** is a **bipartite graph** in which **every** vertex of the first set `V1` is connected to **every** vertex of the second set `V2`.<br>
+A **complete bipartite graph** with partitions of size `|V1| = m` and `|V2| = n`, is denoted **K<sub>m,n</sub>**.<br>
 
 A **planar graph** is a graph whose vertices and edges can be drawn in a plane such that no two of the edges intersect.<br>
 
@@ -115,24 +113,30 @@ So, an **induced subgraph** can be constructed by **deleting vertices with its i
 Consider graph `G`:
 ![graph](/img/graph.png)
 
+<br>
+
 To construct **induced subgraph** `G’` from `G` with `S = {D, E, G, J, K}` **delete vertices** `B`, `A`, `C`, `F`, `I`, `L`, `H` and **its incident edges**.
 
 **Induced subgraph** `G’` from `G` with `S = {D, E, G, J, K}`:
 ![induced-subgraph](/img/induced-subgraph.png)
 
+<br>
+
 Consider following **subgraphs** of graph `G` with `V’ = {D, E, G, J, K}`:
 ![graph](/img/subgraphs.png)
+
+<br>
 
 They are **all not induced subgraphs**, they are **all ordinary subgraphs**.
 
 <br>
 
 ## Walk, trail, path
-A **walk** is a **sequence of adjacent edges**.
-A **trail** is a **walk** in which all **edges** are **distinct**.
-A **path** (aka **simple trail**) is a **trail** in which all **vertices** are **distinct**.
+A **walk** is a **sequence of adjacent edges**.<br>
+A **trail** is a **walk** in which all **edges** are **distinct**.<br>
+A **path** (aka **simple trail**) is a **trail** in which all **vertices** are **distinct**.<br>
 
-**Length** of *walk*/*trail*/*path* is a **number of edges** in it.
+**Length** of *walk*/*trail*/*path* is a **number of edges** in it.<br>
 
 <br>
 
@@ -145,18 +149,16 @@ A **cycle** (aka **simple circuit**) is a **path** in which the **first** and **
 
 ## Distance, diameter
 The **distance** between **two vertices** in a graph is the **length of a shortest path between them**.<br>
-The **diameter** of a connected graph is the **largest distance in this graph**.<br>
+The **diameter** of a **connected graph** is the **largest distance in this graph**.<br>
 
 
 **Eulerian trail** is a **trail** that visits **every** graph’s **edge**.<br>
 **Eulerian circuit** is a **closed Eulerian trail**.<br>
 
-**Euler's Theorem:**
-    A connected graph has an Eulerian circuit iif **every vertex** has **even degree**.<br>
+**Euler's Theorem:** a **connected graph** has an Eulerian circuit iif **every vertex** has **even degree**.<br>
 
 **Hamiltonian path** is a **path** that visits **every** graph’s vertex.<br>
 **Hamiltonian cycle** is a **closed Hamiltonian path**.<br>
-
 
 **Eulerian graph** is a graph that contains a **Eulerian circuit**.<br>
 **Hamiltonian graph** is a graph that contains a **Hamiltonian cycle**.<br>
@@ -254,28 +256,35 @@ There can be **more than one** MIS for a given graph.<br>
 Every maximum independent set is MIS but the converse /kənˈvɜːrs/ is not always true.<br>
 
 The given graph has **6 different MIS** shown as the red vertices, **2** of them are **maximum**:
-![max-independant-set-1](/img/max-independant-set-1)
+![max-independant-set-1](/img/max-independant-set-1.png)
 
 Any MIS is also a **dominating set** in the graph, and every dominating set that is independent must be maximal, so MISs are also called independent dominating sets.
 
 <br>
 
 ## Examples
-![max-independant-set-2](/img/max-independant-set-2)
-
-Consider graph:
-![graph-1](/img/graph-1)
-
-All the possible **independent sets** for the given graph: `{ }; { 1 }; { 1 2 }; { 1 2 3 }; { 1 3 }; { 2 }; { 2 3 }; { 3 }`.
-All the possible **maximum independent sets** for the given graph: `{ 1 2 3 }`.
+### Example 1
+![max-independant-set-2](/img/max-independant-set-2.png)
 
 <br>
 
-Consider graph:
-![graph-2](/img/graph-2)
+### Example 2
+![graph-1](/img/graph-1.png)
 
-All the possible **independent sets** for the given graph: `{ }; { 1 }; { 1 3 }; { 2 }; { 2 4 }; { 3 }; { 4 }`.
-All the possible **maximum independent sets** for the given graph: `{ 1 3 }; { 2 4 }`.
+<br>
+
+All the possible **independent sets** for the given graph: `{ }; { 1 }; { 1 2 }; { 1 2 3 }; { 1 3 }; { 2 }; { 2 3 }; { 3 }`.<br>
+All the possible **maximum independent sets** for the given graph: `{ 1 2 3 }`.<br>
+
+<br>
+
+### Example 3
+![graph-2](/img/graph-2.png)
+
+<br>
+
+All the possible **independent sets** for the given graph: `{ }; { 1 }; { 1 3 }; { 2 }; { 2 4 }; { 3 }; { 4 }`.<br>
+All the possible **maximum independent sets** for the given graph: `{ 1 3 }; { 2 4 }`.<br>
 
 <br>
 
