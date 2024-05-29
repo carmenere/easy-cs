@@ -110,20 +110,20 @@ An **induced subgraph** `G’` of a graph `G = (V, E)` is a graph `G’ = (S, E�
 
 So, an **induced subgraph** can be constructed by **deleting vertices with its incident edges**, but **no more edges**.<br>
 
-Consider graph `G`:
+Consider graph `G`:<br>
 ![graph](/img/graph.png)
 
 <br>
 
 To construct **induced subgraph** `G’` from `G` with `S = {D, E, G, J, K}` **delete vertices** `B`, `A`, `C`, `F`, `I`, `L`, `H` and **its incident edges**.
 
-**Induced subgraph** `G’` from `G` with `S = {D, E, G, J, K}`:
-![induced-subgraph](/img/induced-subgraph.png)
+**Induced subgraph** `G’` from `G` with `S = {D, E, G, J, K}`:<br>
+![induced-subgraph](/img/induced-subgraph.jpeg)
 
 <br>
 
-Consider following **subgraphs** of graph `G` with `V’ = {D, E, G, J, K}`:
-![graph](/img/subgraphs.png)
+Consider following **subgraphs** of graph `G` with `V’ = {D, E, G, J, K}`:<br>
+![graph](/img/subgraphs.jpeg)
 
 <br>
 
