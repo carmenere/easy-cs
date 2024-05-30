@@ -1,18 +1,20 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
-- [Undirected graph](#undirected-graph)
-  - [Degree](#degree)
+- [Undirected graphs](#undirected-graphs)
+  - [Undirected graph](#undirected-graph)
   - [Incidence](#incidence)
   - [Adjacency](#adjacency)
+  - [Degree](#degree)
   - [Types of graphs](#types-of-graphs)
   - [Subgraph](#subgraph)
   - [Walk, trail, path](#walk-trail-path)
   - [Circuit and cycle](#circuit-and-cycle)
   - [Distance, diameter](#distance-diameter)
 - [Trees](#trees)
-- [Directed graph](#directed-graph)
+- [Directed graphs](#directed-graphs)
+  - [Directed graph](#directed-graph)
 - [Connected graph](#connected-graph)
-- [Connected component](#connected-component)
+  - [Connected component](#connected-component)
 - [Independent sets](#independent-sets)
   - [Independent set](#independent-set)
   - [Maximum independent set](#maximum-independent-set)
@@ -21,15 +23,15 @@
   - [Examples](#examples)
     - [Example 1](#example-1)
     - [Example 2](#example-2)
-    - [Example 3](#example-3)
-- [Weighted graph](#weighted-graph)
+- [Weighted graphs](#weighted-graphs)
 
 <br>
 
-# Undirected graph 
+# Undirected graphs
+## Undirected graph
 **Undirected graph** is an ordered pair `G = (V, E)`, where `V` is the **vertex set** (or the **set of vertices**), and `E` is the **edge set**.<br>
 
-**Vertex** /ˈvɜːtɛks/ (plural vertices /ˈvɜːtɪˌsiːz/) (aka **node**) is the fundamental unit of which graphs are formed.<br>
+**Vertex** (aka **node**) is the fundamental unit of which graphs are formed.<br>
 
 **Edge** (aka **link**) is an **unordered pair of vertices**; more formal: `E ⊂ {{x,y}: x,y ∈ V}`.
 The edge **joins** `x` and `y`.<br>
@@ -42,19 +44,9 @@ An **empty graph** is a graph that has an **empty set of vertices** and thus an 
 
 <br>
 
-## Degree
-The **degree** /dɪ'griː/ (aka **valency**) of a vertex, denoted `𝛿(v)` is the *number of edges* **incident** to it. 
-
-- an **isolated vertex** is a vertex with `𝛿(v) = 0`;
-- a **leaf vertex** (aka **pendant vertex** /'pendənt/) is a vertex with `𝛿(v) = 1`;
-
-For graphs with loops, the **loop increases the degree of the vertex** by `2`.
-
-<br>
-
 ## Incidence
 The **edge** `e = {x,y}` is **incident** to **its vertices** `x` and `y`.<br>
-Edge (`x → y`) in **directed** graph is **incident** **on** the vertex `y` **from** the vertex `x`.<br>
+The **edge** (`x → y`) in **directed** graph is **incident** **on** the vertex `y` **from** the vertex `x`.<br>
 
 A vertex is **incident** with an edge if the vertex is one of the **endpoints** of that edge.<br>
 
@@ -63,6 +55,16 @@ A vertex is **incident** with an edge if the vertex is one of the **endpoints** 
 ## Adjacency
 Two vertices `x` and `y` are **adjacent** if they belong to the **same edge**.<br>
 Two edges are **adjacent** if they **share a common vertex**, e.g. if they are **incident** with the **same vertex**.
+
+<br>
+
+## Degree
+The **degree** (aka **valency**) of a vertex, denoted `𝛿(v)` is the *number of edges* **incident** to it. 
+
+- an **isolated vertex** is a vertex with `𝛿(v) = 0`;
+- a **leaf vertex** (aka **pendant vertex**) is a vertex with `𝛿(v) = 1`;
+
+For graphs with loops, the **loop increases the degree of the vertex** by `2`.
 
 <br>
 
@@ -81,10 +83,10 @@ A **complete graph** is a graph in which **each pair** of vertices is joined by 
 <br>
 
 Properties of **K<sub>n</sub>**:
-- **K<sub>n</sub>** has `n(n − 1)/2` edges (a triangular /traɪ'æŋgjələ/ number). 
+- **K<sub>n</sub>** has `n(n − 1)/2` edges. 
 - **K<sub>n</sub>** is a **regular graph** of **degree** `n − 1`.
 
-A **bipartite graph** /baɪˈpɑːtaɪt/ is a **simple graph** in which the vertex set can be partitioned into two sets, `V1` and `V2`, so that **every** edge **join** vertices from **different** sets.
+A **bipartite graph** is a **simple graph** in which the vertex set can be partitioned into two sets, `V1` and `V2`, so that **every** edge **join** vertices from **different** sets.
 
 A **complete bipartite graph** is a **bipartite graph** in which **every** vertex of the first set `V1` is connected to **every** vertex of the second set `V2`.<br>
 A **complete bipartite graph** with partitions of size `|V1| = m` and `|V2| = n`, is denoted **K<sub>m,n</sub>**.<br>
@@ -110,24 +112,29 @@ An **induced subgraph** `G’` of a graph `G = (V, E)` is a graph `G’ = (S, E�
 
 So, an **induced subgraph** can be constructed by **deleting vertices with its incident edges**, but **no more edges**.<br>
 
-Consider graph `G`:<br>
+Consider graph `G`:
+
+<br>
+
 ![graph](/img/graph.png)
 
 <br>
 
 To construct **induced subgraph** `G’` from `G` with `S = {D, E, G, J, K}` **delete vertices** `B`, `A`, `C`, `F`, `I`, `L`, `H` and **its incident edges**.
 
-**Induced subgraph** `G’` from `G` with `S = {D, E, G, J, K}`:<br>
+**Induced subgraph** `G’` from `G` with `S = {D, E, G, J, K}`:
+
+<br>
+
 ![induced-subgraph](/img/induced-subgraph.jpeg)
 
 <br>
 
-Consider following **subgraphs** of graph `G` with `V’ = {D, E, G, J, K}`:<br>
-![graph](/img/subgraphs.jpeg)
+Consider following **subgraphs** of graph `G` with `V’ = {D, E, G, J, K}` (they are *all* **not** *induced subgraphs*, they are **all ordinary subgraphs**.):
 
 <br>
 
-They are **all not induced subgraphs**, they are **all ordinary subgraphs**.
+![graph](/img/subgraphs.jpeg)
 
 <br>
 
@@ -141,9 +148,10 @@ A **path** (aka **simple trail**) is a **trail** in which all **vertices** are *
 <br>
 
 ## Circuit and cycle
-A **closed walk** is a **walk** in which the **first** and **last** vertices are **equal** (`v0=vn`).<br>
-A **circuit** is a **trail** in which the **first** and **last** vertices are **equal**, i.e. **circuit** is **closed trail**.<br>
-A **cycle** (aka **simple circuit**) is a **path** in which the **first** and **last** vertices are **equal**, i.e. **cycle** is **closed path**.<br>
+A **closed** *walk*/*trail*/*path* is a *walk*/*trail*/*path* in which the **first** and **last** vertices are **equal** (**v<sub>0</sub> = v<sub>n</sub>**).<br>
+A **closed walk** is a **closed walk**.<br>
+A **circuit** is a **closed trail**.<br>
+A **cycle** is a **closed path**.<br>
 
 <br>
 
@@ -151,13 +159,12 @@ A **cycle** (aka **simple circuit**) is a **path** in which the **first** and **
 The **distance** between **two vertices** in a graph is the **length of a shortest path between them**.<br>
 The **diameter** of a **connected graph** is the **largest distance in this graph**.<br>
 
-
 **Eulerian trail** is a **trail** that visits **every** graph’s **edge**.<br>
 **Eulerian circuit** is a **closed Eulerian trail**.<br>
 
-**Euler's Theorem:** a **connected graph** has an Eulerian circuit iif **every vertex** has **even degree**.<br>
+**Euler's Theorem:** a **connected** graph has an **Eulerian circuit** iif **every vertex** has **even degree**.<br>
 
-**Hamiltonian path** is a **path** that visits **every** graph’s vertex.<br>
+**Hamiltonian path** is a **path** that visits **every** graph’s **vertex**.<br>
 **Hamiltonian cycle** is a **closed Hamiltonian path**.<br>
 
 **Eulerian graph** is a graph that contains a **Eulerian circuit**.<br>
@@ -166,7 +173,7 @@ The **diameter** of a **connected graph** is the **largest distance in this grap
 <br>
 
 # Trees
-A **tree** (дерево) is **connected acyclic undirected graph**.<br>
+A **tree** is **connected acyclic undirected graph**.<br>
 There is **exactly one path between any two vertices in tree**.<br>
 
 **Spanning tree** of an **undirected graph** `G` is a **subgraph** that is a **tree** which **includes all** of the **vertices** of `G`.<br>
@@ -175,7 +182,8 @@ There is **exactly one path between any two vertices in tree**.<br>
 
 <br>
 
-# Directed graph
+# Directed graphs
+## Directed graph
 A **directed graph** (**digraph**) is a graph in which edges have **orientations** and called **directed edges** (aka **arrows**).<br>
 
 **Directed edge** is an **ordered pair** of **vertices**; more formal: `E ⊂ {(x,y): x,y ∈ V}`.<br>
@@ -183,8 +191,8 @@ A **directed graph** (**digraph**) is a graph in which edges have **orientations
 The **outdegree** of vertex is the number of **outgoing** edges, denoted `𝛿 +(v)`.<br>
 The **indegree** of vertex is the number of **incoming** edges, denoted `𝛿 -(v)`.<br>
 
-The **sink** vertex is a vertex with `𝛿 +(v) = 0`.<br>
-The **source** vertex is a vertex with `𝛿 -(v) = 0`.<br>
+The **sink vertex** is a vertex with `𝛿 +(v) = 0`.<br>
+The **source vertex** is a vertex with `𝛿 -(v) = 0`.<br>
 
 Vertices `u` and `v` are called **connected**, if graph **contains** a **path** from `u` to `v`.<br>
 Vertices `u` and `v` are called **disconnected**, if graph **doesn’t contains** a **path** from `u` to `v`.<br>
@@ -199,35 +207,35 @@ A **disconnected** graph is graph in which **at least one pair** of **disconnect
 
 In digraphs:
 - a **directed graph** is **weakly connected** if replacing all of its directed edges with undirected edges produces a **connected undirected graph**. 
-- a **directed graph** is **semi-connected** if it contains a **directed path** from `u` to `v` OR a **directed path** from `v` to `u` for every pair of vertices `u, v ∈ V`.
-- a **directed graph** is **strongly connected**, if it contains a **directed path** from `u` to `v` AND a **directed path** from `v` to `u` for every pair of vertices `u, v ∈ V`. In other words, **directed graph** is **strongly connected** if **every vertex is reachable from every other vertex**.
+- a **directed graph** is **semi-connected** if it contains a **directed path** from `u` to `v` **OR** a **directed path** from `v` to `u` **for every pair** of vertices `u, v ∈ V`.
+- a **directed graph** is **strongly connected**, if it contains a **directed path** from `u` to `v` **AND** a **directed path** from `v` to `u` **for every pair** of vertices `u, v ∈ V`. In other words, **directed graph** is **strongly connected** if **every vertex is reachable from every other vertex**.
 
 <br>
 
-**Consequences** / 'kɔn(t)sɪkwən(t)siz/:
+**Consequences**:
 - a **graph with just one vertex** is **connected**.
 - an **edgeless** graph with two or more vertices is **disconnected**.
 
 <br>
 
-# Connected component
+## Connected component
 **Connected component** (or just **component**) of an **undirected graph** `G` is a **maximal** (by **inclusion**) **connected subgraph** of graph `G`.
 A **connected graph** has exactly **1 connected component**, consisting of the **whole graph**.<br>
 
 <br>
 
 In digraphs:
-- **strong component** of a **directed** graph `G` is a **directed subgraph** that is **strongly connected** and is **maximal**: **no** additional edges or vertices from `G` can be included in the subgraph without breaking its property of being **strongly connected**;
-- **weak component** of a **directed** graph `G` is a un**directed subgraph** that is **strongly connected** and is **maximal**: **no** additional edges or vertices from `G` can be included in the subgraph without breaking its property of being **strongly connected**;
+- **strong component** of a **directed** graph `G` is a **directed subgraph** that is **strongly connected** and **maximal**: **no** additional edges or vertices from `G` can be included in the subgraph without breaking its property of being **strongly connected**;
+- **weak component** of a **directed** graph `G` is a un**directed subgraph** that is **strongly connected** and **maximal**: **no** additional edges or vertices from `G` can be included in the subgraph without breaking its property of being **strongly connected**;
 
-**Bridge** (aka **cut-edge**) is an edge of a graph whose deletion **increases** the graph's number of connected components.<br>
+**Bridge** (aka **cut-edge**) is an edge of a graph whose deletion **increases** the graph's **number** of connected components.<br>
 
 <br>
 
 # Independent sets
 ## Independent set
-**Independent set** is a set of vertices `V` such that **any two vertices** in `V` are **not adjacent**. In other words, the induced subgraph by `V` consists of isolated vertices.<br>
-There can be **more than one** independent sets for a given graph.<br>
+**Independent set** is a **set of vertices** `V` such that **any two vertices** in `V` are **not adjacent**. In other words, the **induced subgraph** by `V` an **edgeless** graph, i.e. it consists of **isolated** vertices.<br>
+There can be **more than one** *independent sets* for a given graph.<br>
 
 <br>
 
@@ -242,21 +250,26 @@ The **independence number** of graph `G` is denoted by `α(G)`.<br>
 ## Dominating set
 **Dominating set** for a graph `G = (V, E)` is a **subset** `D` of `V` such that every vertex **not** in `D` is adjacent to **at least one** member of `D`.<br>
 
-There can be **more than one** dominating sets for a given graph.
+There can be **more than one** dominating sets for a given graph.<br>
 
-The **domination number** of graph `G` is the **number of vertices** in its **smallest dominating set**.
+The **domination number** of graph `G` is the **number of vertices** in its **smallest dominating set**.<br>
 The **domination number** of graph `G` is denoted by `γ(G)`.
 
+<br>
 
 ## Maximal independent set
 **Maximal independent set** (**MIS**) is an **independent set** that is **not** a subset of any other independent set.<br>
 
 There can be **more than one** MIS for a given graph.<br>
 
-Every maximum independent set is MIS but the converse /kənˈvɜːrs/ is not always true.<br>
+**Every maximum independent set is MIS** but the converse is **not** always true.<br>
 
 The given graph has **6 different MIS** shown as the red vertices, **2** of them are **maximum**:
+<br>
+
 ![max-independant-set-1](/img/max-independant-set-1.png)
+
+<br>
 
 Any MIS is also a **dominating set** in the graph, and every dominating set that is independent must be maximal, so MISs are also called independent dominating sets.
 
@@ -269,16 +282,6 @@ Any MIS is also a **dominating set** in the graph, and every dominating set that
 <br>
 
 ### Example 2
-![graph-1](/img/graph-1.png)
-
-<br>
-
-All the possible **independent sets** for the given graph: `{ }; { 1 }; { 1 2 }; { 1 2 3 }; { 1 3 }; { 2 }; { 2 3 }; { 3 }`.<br>
-All the possible **maximum independent sets** for the given graph: `{ 1 2 3 }`.<br>
-
-<br>
-
-### Example 3
 ![graph-2](/img/graph-2.png)
 
 <br>
@@ -288,9 +291,9 @@ All the possible **maximum independent sets** for the given graph: `{ 1 3 }; { 2
 
 <br>
 
-# Weighted graph 
+# Weighted graphs
 A **weighted graph** is a **graph** or **digraph** in which the **number** (aka **weight**) is assigned to **each edge**.<br>
-Such weights might represent different properties of real world: *distance*, *weight*, *flow* etc.<br>
+Such **weights** might **represent different properties** of real world: *distance*, *weight*, *flow* etc.<br>
 
 **Graph labelling** is the assignment of **labels**, traditionally represented by integers, to **edges** and/or **vertices** of a graph.<br>
 
