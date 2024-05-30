@@ -10,6 +10,12 @@
     - [Breadth First Search (BSF)](#breadth-first-search-bsf)
   - [Binary tree](#binary-tree)
   - [Binary search tree](#binary-search-tree)
+  - [Operations](#operations)
+    - [Search](#search)
+    - [Min and Max](#min-and-max)
+    - [Insertion](#insertion)
+    - [Successor](#successor)
+    - [Deletion](#deletion)
 - [Self-balancing BST](#self-balancing-bst)
   - [AVL vs. RB](#avl-vs-rb)
 - [Trie](#trie)
@@ -55,6 +61,7 @@ A **rooted tree** is a tree in which a special (labeled) node is singled out. Th
 |**Root**|Node that has **no** parent.|
 |**Siblings**|All nodes that have the **same parent**.|
 |**Subtree**|Node and all its descendants.|
+|**Successor**|The **successor** of a node `x` is the node with the **smallest** key **greater** than `x.key`. In other words, the **successor** of a node is the **next node** visited in an **inorder** tree walk.|
 |**Unordered tree**|Tree in which order of children doesn’t matter.|
 
 <br>
@@ -121,7 +128,8 @@ Node visiting order:
 <br>
 
 ### Breadth First Search (BSF)
-**BFS** algorithm visits all the nodes **level by level** from root to bottom **from left to right** at each level.
+**BFS** algorithm visits all the nodes **level by level** from root to bottom **from left to right** at each level.<br>
+**BFS** can use **queue**.<br>
 
 <br>
 
@@ -151,9 +159,160 @@ The **binary search tree property**:
 
 <br>
 
+## Operations
+### Search
+The `search(x, key)` procedure returns a **pointer to a node with key** or  **NIL** if such node **doesn't** exist.<br>
+
+To **search** for a node with a given key `key` in the entire **BST**, call the `search(T.root, key)` procedure, where `T.root` is a **pointer** to the **root of a subtree**.<br>
+
+**Recursive** variant:
+```rust
+search(x, k)
+  if x == NIL or k == x.key
+    return x
+  if k < x.key
+    return search(x.left, k)
+  else
+    return search(x.right, k)
+```
+
+<br>
+
+**Iterative** variant:
+```rust
+search(x, k)
+  while x != NIL and k != x.key
+    if k < x.key
+      x = x.left
+    else
+      x = x.right
+  return x
+```
+
+<br>
+
+### Min and Max
+The `min(x)` procedure returns a **pointer to the node** containing **minimum** key in the **subtree** with root at `x`.
+The `max(x)` procedure returns a **pointer to the node** containing **maximum** key in the **subtree** with root at `x`.
+
+<br>
+
+```rust
+min(x)
+  while x.left != NIL
+    x = x.left
+  retrun x
+```
+
+<br>
+
+```rust
+max(x)
+  while x.right != NIL
+    x = x.right
+  retrun x
+```
+
+<br>
+
+### Insertion
+The `insert(T, z)` procedure inserts a **new** node into a BST.<br>
+
+<br>
+
+```rust
+z.left = NIL
+z.right = NIL
+z.p = NIL
+
+insert(T, z)
+  x = T.root      // node being compared with z
+  y = NIL         // y will be parent of z
+  while x != NIL  // descend until reaching a leaf
+    y = x
+    if z.key < x.key
+      x = x.left
+    else
+      x = x.right
+  z.p = y         // assign parent to z
+  if y == NIL
+    T.root = z    // tree T was empty
+  else if z.key < y.key
+    y.left = z
+  else
+    y.right = z
+```
+
+<br>
+
+### Successor
+The `successor(x)` procedure returns the **successor** of a node `x` in a BST if it exists, or `NIL` if `x` is the **last node** that would be visited during **inorder** walk.<br>
+
+If the **right** subtree of node `x` is **nonempty**, then the **successor** of `x` is just the `min` value in `x`’s **right** subtree.<br>
+
+If the **right** subtree of node is **empty** and `x` has a **successor** `s`, then `s` is the **lowest ancestor** of `x` whose **left child** is also an **ancestor** of `x`.
+
+<br>
+
+```rust
+successor(x)
+  if x.right != NIL
+    return min(x.right)
+  else
+    s = x.p
+    while s != NIL and x == s.right
+      x = s
+      s = s.p
+    return s
+```
+
+<br>
+
+### Deletion
+As part of the process of deleting a node, subtrees need to move around within the BST.<br>
+The subroutine `transplant(T, u, v)` replaces the subtree rooted at node `u` with the subtree rooted at node `v`.
+
+
+```rust
+transplant(T, u, v)
+  if u.p == NIL  // case when u is root of BST
+    T.root = v
+  else if u == u.p.left
+    u.p.left = v
+  else
+    u.p.right = v
+  if v != NIL  // because v may be NIL update v.p only if v is non-NIL
+    v.p = u.p
+```
+
+<br>
+
+```rust
+delete(T, z)
+  if z.left == NIL              // handle the case in which z has only one right children
+    transplant(T, z, z.right)   // replace z by its right child
+  else if z.right == NIL        // handle the case in which z has only one left children
+    transplant(T, z, z.left)    // replace z by its left child
+  else// deal with the remaining two cases, in which z has two children
+    y = min(z.right)            // y is z’s successor
+    if y != z.right
+      transplant(T, y, y.right) // replace y by its right child
+      y.right = z.right         // z's right child becomes y's right child
+      y.right.p = y
+    transplant(T, z, y)         // replace z by its successor y
+    y.left = z.left             // and give z’s left child to y
+    y.left.p = y
+```
+
+
+<br>
+
 # Self-balancing BST
 **Self-balancing BST** is any BST that **automatically keeps** its **height** (maximal number of levels below the root) equal to **log<sub>2</sub>N**, where `N` is number of **all nodes in tree**.<br>
 
+**Balanced tree** guarantees that basic operations (`insertion`, `delete`, `search`, `successor`, `min`, `max`) all have `O(h)` time on a tree of **height** `h`.<br>
+
+<br>
 
 Examples of **self-balancing BST**:
 - **AVL** tree;
