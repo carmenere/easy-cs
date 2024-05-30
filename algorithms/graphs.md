@@ -286,8 +286,34 @@ Any MIS is also a **dominating set** in the graph, and every dominating set that
 
 <br>
 
-All the possible **independent sets** for the given graph: `{ }; { 1 }; { 1 3 }; { 2 }; { 2 4 }; { 3 }; { 4 }`.<br>
-All the possible **maximum independent sets** for the given graph: `{ 1 3 }; { 2 4 }`.<br>
+All the possible **independent sets** for the given graph:
+- `{}`;
+- `{1}`;
+- `{2}`;
+- `{3}`;
+- `{4}`;
+- `{5}`;
+- `{1, 4}`;
+- `{1, 5}`;
+- `{2, 3}`;
+- `{2, 5}`;
+- `{3, 5}`;
+- `{2, 3, 5}`;
+
+<br>
+
+All the possible **maximum independent sets** for the given graph:
+- `{2, 3, 5}`;
+
+<br>
+
+All the possible **maximal independent sets** for the given graph:
+- `{1, 4}`;
+- `{1, 5}`;
+
+<br>
+
+**But** `{2, 3}`, `{2, 5}` and `{3, 5}` are all **subsets** of another independant set `{2, 3, 5}` and thus they are **not maximal** by defenition.<br>
 
 <br>
 
