@@ -11,6 +11,7 @@
   - [Binary tree](#binary-tree)
   - [Binary search tree](#binary-search-tree)
   - [Operations](#operations)
+    - [Inorder tree walk](#inorder-tree-walk)
     - [Search](#search)
     - [Min and Max](#min-and-max)
     - [Insertion](#insertion)
@@ -106,23 +107,23 @@ There are 4 kinds of **tree traversal**:
 ### Preorder
 Node visiting order:
 1. Node.
-2. Node’s **left** child.
-3. Node’s **right** child.
+2. Nodes from **left** subtree.
+3. Nodes from **right** subtree.
 
 <br>
 
 ### Inorder
 Node visiting order:
-1. Node’s **left** child.
+1. Nodes from **left** subtree.
 2. Node.
-3. Node’s **right** child.
+3. Nodes from **right** subtree.
 
 <br>
 
 ### Postorder
 Node visiting order:
-1. Node’s **left** child.
-2. Node’s **right** child.
+1. Nodes from **left** subtree.
+2. Nodes from **right** subtree.
 3. Node.
 
 <br>
@@ -160,8 +161,19 @@ The **binary search tree property**:
 <br>
 
 ## Operations
+### Inorder tree walk
+```rust
+inorder(x)
+  if x != NIL
+    inorder(x.left)
+    print x.key
+    inorder(x.right)
+```
+
+<br>
+
 ### Search
-The `search(x, key)` procedure returns a **pointer to a node with key** or  **NIL** if such node **doesn't** exist.<br>
+The `search(x, k)` procedure returns a **pointer to a node** or  **NIL** if such node **doesn't** exist.<br>
 
 To **search** for a node with a given key `key` in the entire **BST**, call the `search(T.root, key)` procedure, where `T.root` is a **pointer** to the **root of a subtree**.<br>
 
@@ -201,7 +213,7 @@ The `max(x)` procedure returns a **pointer to the node** containing **maximum** 
 min(x)
   while x.left != NIL
     x = x.left
-  retrun x
+  return x
 ```
 
 <br>
@@ -210,7 +222,7 @@ min(x)
 max(x)
   while x.right != NIL
     x = x.right
-  retrun x
+  return x
 ```
 
 <br>
@@ -293,7 +305,7 @@ delete(T, z)
     transplant(T, z, z.right)   // replace z by its right child
   else if z.right == NIL        // handle the case in which z has only one left children
     transplant(T, z, z.left)    // replace z by its left child
-  else// deal with the remaining two cases, in which z has two children
+  else // deal with the remaining two cases, in which z has two children
     y = min(z.right)            // y is z’s successor
     if y != z.right
       transplant(T, y, y.right) // replace y by its right child
