@@ -15,7 +15,7 @@
     - [Search](#search)
     - [Min and Max](#min-and-max)
     - [Insertion](#insertion)
-    - [Successor](#successor)
+    - [Inorder successor](#inorder-successor)
     - [Deletion](#deletion)
 - [Self-balancing BST](#self-balancing-bst)
   - [AVL vs. RB](#avl-vs-rb)
@@ -59,10 +59,11 @@ A **rooted tree** is a tree in which a special (labeled) node is singled out. Th
 |**Node**|Element of tree that holds some data.|
 |**Ordered tree**|Tree in which order of children is important.|
 |**Parent**|Node that is connected to another bottom node, called its child.|
+|**Predecessor**|The **predecessor** of a node `x` is the **previous** node in **tree traversal**. So there **3 types** of predecessor: **preorder predecessor**, **inorder predecessor** and **postorder predecessor**.|
 |**Root**|Node that has **no** parent.|
 |**Siblings**|All nodes that have the **same parent**.|
 |**Subtree**|Node and all its descendants.|
-|**Successor**|The **successor** of a node `x` is the node with the **smallest** key **greater** than `x.key`. In other words, the **successor** of a node is the **next node** visited in an **inorder** tree walk.|
+|**Successor**|The **successor** of a node `x` is the **next** node in **tree traversal**. So there **3 types** of successor: **preorder successor**, **inorder successor** and **postorder successor**.|
 |**Unordered tree**|Tree in which order of children doesn’t matter.|
 
 <br>
@@ -257,17 +258,16 @@ insert(T, z)
 
 <br>
 
-### Successor
-The `successor(x)` procedure returns the **successor** of a node `x` in a BST if it exists, or `NIL` if `x` is the **last node** that would be visited during **inorder** walk.<br>
+### Inorder successor
+The `inorder_successor(x)` procedure returns the **inorder successor** of a node `x` in a BST if it exists, or `NIL` if `x` is the **last node** that would be visited during **inorder walk**.<br>
 
-If the **right** subtree of node `x` is **nonempty**, then the **successor** of `x` is just the `min` value in `x`’s **right** subtree.<br>
-
-If the **right** subtree of node is **empty** and `x` has a **successor** `s`, then `s` is the **lowest ancestor** of `x` whose **left child** is also an **ancestor** of `x`.
+If the **right** subtree of node `x` is **nonempty**, then the **inorder successor** of `x` is just the `min` value in `x`’s **right** subtree.<br>
+If the **right** subtree of node is **empty** and `x` has a **inorder successor** `s`, then `s` is the **lowest ancestor** of `x` whose **left child** is also an **ancestor** of `x`.<br>
 
 <br>
 
 ```rust
-successor(x)
+inorder_successor(x)
   if x.right != NIL
     return min(x.right)
   else
@@ -281,9 +281,10 @@ successor(x)
 <br>
 
 ### Deletion
-As part of the process of deleting a node, subtrees need to move around within the BST.<br>
-The subroutine `transplant(T, u, v)` replaces the subtree rooted at node `u` with the subtree rooted at node `v`.
+During deleting a node the subtrees need to move around within the BST.<br>
+The subroutine `transplant(T, u, v)` replaces the subtree rooted at node `u` with the subtree rooted at node `v`.<br>
 
+<br>
 
 ```rust
 transplant(T, u, v)
@@ -306,12 +307,12 @@ delete(T, z)
   else if z.right == NIL        // handle the case in which z has only one left children
     transplant(T, z, z.left)    // replace z by its left child
   else // deal with the remaining two cases, in which z has two children
-    y = min(z.right)            // y is z’s successor
+    y = min(z.right)            // y is z’s inorder successor
     if y != z.right
       transplant(T, y, y.right) // replace y by its right child
       y.right = z.right         // z's right child becomes y's right child
       y.right.p = y
-    transplant(T, z, y)         // replace z by its successor y
+    transplant(T, z, y)         // replace z by its inorder successor y
     y.left = z.left             // and give z’s left child to y
     y.left.p = y
 ```
@@ -322,7 +323,7 @@ delete(T, z)
 # Self-balancing BST
 **Self-balancing BST** is any BST that **automatically keeps** its **height** (maximal number of levels below the root) equal to **log<sub>2</sub>N**, where `N` is number of **all nodes in tree**.<br>
 
-**Balanced tree** guarantees that basic operations (`insertion`, `delete`, `search`, `successor`, `min`, `max`) all have `O(h)` time on a tree of **height** `h`.<br>
+**Balanced tree** guarantees that basic operations (`insertion`, `delete`, `search`, `inorder_successor`, `min`, `max`) all have `O(h)` time on a tree of **height** `h`.<br>
 
 <br>
 
