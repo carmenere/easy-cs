@@ -58,7 +58,42 @@ Optimized variants of the **bubble sort**:
 <br>
 
 # Insertion sort
+- In each iteration:
+  - the algorithm sorts the imput **in place**;
+  - the algorithm take **next** element called **key** from *right*, **unsorted part** of array (`[j..n-1]`);
+  - **check** wheter key is in **right place** or **wrong**;
+  - if **key** in **right** place the algorithm goes to next iteration;
+    - if **key** in **wrong** place the algorithm finds **proper position** for **key** in *left*, **sorted part** of array (`[0, j-1]`):
+      - it moves `A[j-1]`, `A[j-2]` and so on by **one position to the right** until it finds **proper position** for **key** (`A[j]`);
+  - 
 
+<br>
+
+```rust
+insertion_sort(A)
+   for j = 1 to A.length-1
+      key = A[j]
+      i = j - 1
+      while i > 0 and A[i] > key
+         A[i+1] = A[i]
+         i = i -1
+      A[i+1] = key
+```
+
+<br>
+
+Visualition of an algorithm:
+
+<br>
+
+![insertion-sort](/img/insertion-sort-1.png)
+
+<br>
+
+In **each** iteration:
+- the **blue rectangle** holds the **key** taken from `A[i]`, which is compared with the values in **tan rectangles** to its **left**;
+- **orange arrows** show array values **moved one position to the right**;
+- **blue arrows** indicate **new position** of **key**;
 
 <br>
 

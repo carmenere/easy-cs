@@ -70,8 +70,12 @@ Both **time complexity** and **space complexity** are generally expressed as **f
 
 There are 3 type of complexity:
 - **average-case**;
-- **worst-case** (the **maximum** of some computational resource used by the algorithm over any input);
-- **best-case** (the **minimum** of some computational resource used by the algorithm over any input);
+- **worst-case** (the **longest** running time or the **maximum** of RAM for **any** input of size `n`);
+- **best-case** (the **shortest** running time or the **minimum** of RAM for **any** input of size `n`);
+
+<br>
+
+Knowing **worst-case** provides a **guarantee** that the algorithm will never take any longer.<br>
 
 <br>
 
@@ -80,6 +84,10 @@ There are 3 type of complexity:
 So, **asymptotic notations** allows **compare** the **asymptotic efficiency** of algorithms.<br>
 
 **Asymptotic notations** of the **complexity** of an algorithm is also called **rate of growth** or **order of growth**.<br>
+
+In **asymptotic notations** all **constants** and **lower-order terms** are ignored since they are **less significant** than the rate of growth of **leading term** of function for large values of `n`.<br>
+
+But, an algorithm whose running time has a **higher** *order of growth* might take **less time** for **small inputs** than an algorithm whose running time has a **lower** *order of growth*. **But** on **large enough inputs** an algorithm witha **higher** *order of growth* **will lose**.<br>
 
 <br>
 
@@ -123,7 +131,7 @@ There are **5 asymptotic notations**:
 - The main difference between **little ω** and **omega** is that in **omega** the bound inequality holds for **some** constant `c>0`, but in **little ω** the bound inequality holds for **all** constants `c>0`.
 - The **big O** shows that some function `f(n)` **doesn't** grow **faster** than another function `g(n)`.
 - The **little O** shows that some function `f(n)` grows **slower** than another function `g(n)`.
-- If **two functions** grow at the **same rate**, **big O** **can** be used, but **little o** **cannot**.
+- If **two functions** grow at the **same rate**, **big O can** be used, but **little o cannot**.
 - If `f(n) = o(g(n))` we say that `f(n)` is **asymptotically smaller** than `g(n)`.
 - If `f(n) = ω(g(n))` we say that `f(n)` is **asymptotically larger** than `g(n)`.
 
@@ -136,7 +144,7 @@ So, if someone estimates that upper bound of **running time** of an algorithm is
 
 Because asymptotic notation denotes **set of functions** , we, for example, could write `f(n) ∈ O(g(n))` to indicate that `f(n)` is a member of `O(g(n))`. **Instead** we usually write `f(n) = O(g(n))`.<br>
 
-The **asymptotic upper bound** provided by **big O** **may** or **may not** be **asymptotically tight**. The bound `2n² = O(n²)` is *asymptotically tight*, but the bound `2n = O(n²)` is **not**. We use **little o** to denote an **upper bound** that is **not** *asymptotically tight*
+The **asymptotic upper bound** provided by **big O may** or **may not** be **asymptotically tight**. The bound `2n² = O(n²)` is *asymptotically tight*, but the bound `2n = O(n²)` is **not**. We use **little o** to denote an **upper bound** that is **not** *asymptotically tight*.<br>
 
 <br>
 
