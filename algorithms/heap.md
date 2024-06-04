@@ -92,6 +92,21 @@ Operations for **max heaps**:
 <br>
 
 ### Parent, left, right
+Consider heap that has `k` levels, then every level adds **2<sup>k</sup>** nodes:
+|Level|Number of elements in level|Starting index of level|
+|:----|:--------------------------|:----------------------|
+|**0**|**2<sup>0</sup>** = **1**|`0`|
+|**1**|**2<sup>1</sup>** = **2**|**2<sup>0</sup>** = `1`|
+|**2**|**2<sup>2</sup>** = **4**|**2<sup>0</sup>** + **2<sup>1</sup>** = `3`|
+|**3**|**2<sup>3</sup>** = **8**|**2<sup>0</sup>** + **2<sup>1</sup>** + **2<sup>2</sup>** = `7`|
+|...|...|...|
+|**k**|**2<sup>k</sup>**|**2<sup>0</sup>** + **2<sup>1</sup>** + ... + **2<sup>k-1</sup>**|
+
+<br>
+
+Thus, **disatance** between **current node** and **its childs** is **grown up** and depends on how many elements before current node, thus it is depend on index of current node, because **every previous node** in **current** level **derives new 2 children** in **next** below level.<br>
+For example, node at the beginig of level `k` has index equal to **2<sup>0</sup>** + **2<sup>1</sup>** + ... + **2<sup>k-1</sup>**, all nodes in previous level derive new childs in current level between curent node and its childs.
+
 ```rust
 parent(i)
   return ⌊(i-1)/2⌋
@@ -206,14 +221,7 @@ The **binary heap** (and **every complete binary tree**) has **⌈n/2⌉ leaves*
 
 
 
-Lets say we have n nodes so
 
-|Level|Number of elements in level|Starting index of level|
-|:----|:-----------------||
-|**0**|**2<sup>0</sup>** = **1**|**2<sup>0</sup> - 1** = **0**|
-|**1**|**2<sup>1</sup>** = **2**|**2<sup>1</sup> - 1** = **1**|
-|...|...|...|
-|**k**|**2<sup>k</sup>**|**2<sup>k</sup> - 1**|
 
 <br>
 
