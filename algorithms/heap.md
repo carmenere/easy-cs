@@ -1,3 +1,17 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Heap](#heap)
+- [Insertion](#insertion)
+- [Deletion](#deletion)
+  - [Operations](#operations)
+    - [Parent, left, right](#parent-left-right)
+    - [Max heapify](#max-heapify)
+    - [Build max heap](#build-max-heap)
+      - [Example](#example)
+    - [Number of leaves in binary heap is ⌈n/2⌉](#number-of-leaves-in-binary-heap-is-n2)
+
+<br>
+
 # Heap
 The **binary heap** or just **heap** is a **complete binary tree** in which all **nodes** must **satisfy** a **heap property**.<br>
 
@@ -189,3 +203,50 @@ The **binary heap** (and **every complete binary tree**) has **⌈n/2⌉ leaves*
    - **⌈(n−2<sup>k</sup>+1)/2⌉** of them are **parents**;
    - the rest **2<sup>k-1</sup>−⌈(n−2<sup>k</sup>+1)/2⌉** are **leaves**;
 6. The **total amount of leaves** is **n−2<sup>k</sup>+1** + **2<sup>k-1</sup>−⌈(n−2<sup>k</sup>+1)/2⌉**;
+
+
+
+Lets say we have n nodes so
+
+|Level|Number of elements in level|Starting index of level|
+|:----|:-----------------||
+|**0**|**2<sup>0</sup>** = **1**|**2<sup>0</sup> - 1** = **0**|
+|**1**|**2<sup>1</sup>** = **2**|**2<sup>1</sup> - 1** = **1**|
+|...|...|...|
+|**k**|**2<sup>k</sup>**|**2<sup>k</sup> - 1**|
+
+<br>
+
+**Leaf nodes** can come only from **last two levels**. Given heap that has `k+1` levels, then `k` is **penultimate level** /pəˈnʌl.tɪ.mət/, and `k+1` is the **last level**:
+- the **penultimate level** `k` contains **2<sup>k</sup>** nodes and **but** number of leaves at this level **depends** on how many nodes at below level `k+1`;
+- the **last level** `k+1` contains **x** nodes and they are **all leaves**;
+
+Node at **penultimate level** can have 0, 1 or 2 children. If last level conatins `x` node, there are 2 cases:
+- `x` is **even**, then every parent at `k` level has **2** children, so, `p` parents on the level `k` derive `2p` children on the level `k+1`:
+  - `2p = x`, so, **number of parents** `p`: `p = x/2`;
+- `x` is **odd**, there is **exactly one** parent at `k` level that has **1** children and all others have **2** children:
+  - `2·(p-1) + 1 = 2p - 2 + 1 = 2p - 1 = x`, so, **number of parents** `p`: `p = (x + 1)/2 = x/2 + 1/2`;
+
+<br>
+
+More general `p = ⌈x/2⌉`:
+- when `x` is **even**, then `⌈x/2⌉` = `x/2` and `x/2` is integer;
+- when `x` is **odd**, then `⌈x/2⌉` equal to `⌊x/2⌋ + 1`;
+
+Let denote **total leaves** in whole heap as `L`, then **L = x + (2<sup>k</sup> - ⌈x/2⌉)**.<br>
+Let denote **total nodes** in whole heap as `n`, then **n = x + (2<sup>k+1</sup> - 1)**:
+  - here **2<sup>k+1</sup> - 1** is the number of nodes in nested tree from `0` level until level `k`;
+  - **x** is the number of nodes at the **last level** `k+1`;
+
+<br>
+
+Thus:
+1. **n = x + (2<sup>k+1</sup> - 1)** => **2·2<sup>k</sup> = n - x + 1** => **2<sup>k</sup> = (n - x + 1)/2**<br>
+2. **L = x + 2<sup>k</sup> - ⌈x/2⌉** => **x + (n - x + 1)/2 - ⌈x/2⌉** => **x + n/2 - x/2 + 1/2 - ⌈x/2⌉** => **x/2 + n/2 + 1/2 - ⌈x/2⌉**
+3. **L = x/2 + n/2 + 1/2 - ⌈x/2⌉** => **n/2 + x/2 + 1/2 - (x/2 + 1/2)** => **L = n/2**<br>
+
+<br>
+
+There are possible **2 cases**:
+1. `n` is **even** and `x` is **odd** => `n/2` is **integer**.
+2. `n` is **odd** and `x` is **even** => `n/2` is **not integer** and we must take upper bound `⌈n/2⌉` as a result.

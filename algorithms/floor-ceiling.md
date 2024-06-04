@@ -1,3 +1,18 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Absolute value](#absolute-value)
+- [Sign function](#sign-function)
+- [Integer part](#integer-part)
+      - [Examples](#examples)
+- [Floor and ceiling functions](#floor-and-ceiling-functions)
+      - [Examples](#examples-1)
+      - [Examples](#examples-2)
+  - [Equations](#equations)
+- [Fractional part](#fractional-part)
+      - [Examples](#examples-3)
+
+<br>
+
 # Absolute value
 The **absolute value** or **modulus** (denoted `|x|` or `abs(x)`) is the **non-negative** value of `x` without regard to its sign:
 - `|x| = x` if `x > 0`;
@@ -47,6 +62,26 @@ The **ceiling function** (denoted `⌈x⌉` or `ceil(x)`) takes as *input* a *re
 #### Examples
 - `⌈2.4⌉` = `3`;
 - `⌈−2.4⌉` = `−2`;
+
+<br>
+
+## Equations
+Let `x` and `y` are **real numbers**.<br>
+Let `m` and `n` are **integer numbers**.<br>
+
+Then:
+- `⌊x⌋` ≤ `x` ≤ `⌈x⌉`;
+- `x - 1` < `⌊x⌋` ≤ `x`;
+- `x` ≤ `⌈x⌉` < `x + 1`;
+- `⌊x + n⌋` = `⌊x⌋ + n`;
+- `⌈x + n⌉` = `⌈x⌉ + n`;
+- `⌊x⌋ + ⌊y⌋` ≤ `⌊x + y⌋` ≤ `⌊x⌋ + ⌊y⌋ + 1`;
+- `⌈x⌉ + ⌈y⌉ - 1` ≤ `⌈x + y⌉` ≤ `⌈x⌉ + ⌈y⌉`;
+
+<br>
+
+If `n` is a **positive integer**:
+- `n` = `⌈n/2⌉ + ⌊n/2⌋`
 
 <br>
 
