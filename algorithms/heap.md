@@ -278,7 +278,7 @@ There are possible **2 cases**:
    - = **x/2 + n/2 + 1/2 - (x+1)/2**
    - = **x/2 + n/2 + 1/2 - (x/2 + 1/2)**
    - = **x/2 + n/2 + 1/2 - x/2 - 1/2**
-   - = **n/2**, **n/2** is **integer**, because `n` is **even**
+   - = **n/2**, here **n/2** is **integer**, because `n` is **even**
    - = **⌈n/2⌉**;
    - so, **l** = **⌈n/2⌉**;
 
