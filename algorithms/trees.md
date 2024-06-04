@@ -2,13 +2,16 @@
 - [Table of contents](#table-of-contents)
 - [Trees](#trees)
   - [Tree terminology](#tree-terminology)
-  - [Perfect tree](#perfect-tree)
   - [Tree traversal](#tree-traversal)
     - [Preorder](#preorder)
     - [Inorder](#inorder)
     - [Postorder](#postorder)
     - [Breadth First Search (BSF)](#breadth-first-search-bsf)
   - [Binary tree](#binary-tree)
+    - [Types of binary trees](#types-of-binary-trees)
+    - [Full binary tree](#full-binary-tree)
+    - [Complete binary tree](#complete-binary-tree)
+    - [Perfect binary tree](#perfect-binary-tree)
   - [Binary search tree](#binary-search-tree)
   - [Operations](#operations)
     - [Inorder tree walk](#inorder-tree-walk)
@@ -47,15 +50,15 @@ A **rooted tree** is a tree in which a special (labeled) node is singled out. Th
 |**Child**|Node that is connected to another upper node, called its parent.|
 |**Degree of node**|The number of children the node has.|
 |**Degree of tree**|The **maximum degree** of any of tree’s node.|
-|**Depth**|== Level|
+|**Depth** (aka **Level**) of **node**|The *number of edges* **from** the *node* **to** the *root*. A *root* node will have a **depth** of `0`.|
 |**Descendants** /dɪsendənts/|Node’s children, node’s children’s children and so on down to the leaves.|
+|**Diameter** of tree|The **number of nodes** on the **longest path** *between* **any two leaves**.|
 |**External node**|== Leaf|
 |**First common ancestor**|First common ancestor of any two nodes is the closest ancestor of both nodes.|
-|**Height** (for **node**)|Length of the longest path from the node downward through the tree to a leaf node.|
-|**Height** (for **tree**)|The same as the **root**’s height.|
-|**Internal node**|Node that has at least one child.|
+|**Height** of **node**|The *number of edges* on the **longest path from** the *node* **to** a *leaf*. A *leaf* will have a **height** of `0`.|
+|**Height** of **tree**|It is the **height** of **root** or equivalently, it is the **depth** of its **deepest node**.|
+|**Internal node**|Node that has **at least** one child.|
 |**Leaf**|Node with **no** children.|
-|**Level**|It is **distance** between **node** and the **root**.|
 |**Node**|Element of tree that holds some data.|
 |**Ordered tree**|Tree in which order of children is important.|
 |**Parent**|Node that is connected to another bottom node, called its child.|
@@ -68,19 +71,9 @@ A **rooted tree** is a tree in which a special (labeled) node is singled out. Th
 
 <br>
 
-## Perfect tree
-**Full tree** is a tree in which every node has either zero children or as many children as the tree’s degree.
-**Complete tree** is a tree in which **every level is completely full**, except possibly the bottom level.
-**Perfect tree** is a **full tree** in which **all leaves are at the same level**.
+![trees](/img/trees-1.png)
 
-<br>
-
-**Properties** of **perfect binary trees**:
-- The **total number** of nodes (**N**) in a **perfect binary tree** of *height* **H** is **N = 2<sup>H+1</sup>  – 1**;
-- If a **perfect binary tree** contains **N nodes**, it has a *height* **H = log2(N + 1) – 1**;
-- The number of leaf nodes (**L**) in a **perfect binary tree** of *height* **H** is **L = 2<sup>H</sup>**;
-- The number of internal nodes (**I**) is **I = N – L**;
-- There are **half** of the nodes are **leaves** and **half** of the nodes are **internal nodes** in a **perfect binary tree**;
+Path from `A` to `B` is a **longest**, so, it is a **diameter** and its **length** is of **6 nodes**.<br>
 
 <br>
 
@@ -144,17 +137,64 @@ Each **node** `n` of a **binary tree** `T` contains **at least** 4 attributes:
 - `right` stores pointer to **right child**;
 - `key` stores some value;
 
+<br>
 
-There are 2 kinds of binary tree:
-- **binary search tree**;
-- **binary heap** (**heap**);
+### Types of binary trees
+- **Full binary tree**: **every** node has either **0** or **2** **children**, i.e., *left and right* **or** *no children*;
+- **Complete binary tree**: all **levels** (**depths**), except possibly the last, are **filled**, and all nodes are **as left as possible**;
+- **Perfect binary tree**: **all nodes have exactly two children**, and **all leaves are at the same level**;
+- **Balanced binary tree**: the heights of any node’s left and right subtrees differ by **at most one**;
+- **Binary Search Tree (BST)**: the **left** child node is **smaller**, and the **right** child node is **greater** than the **parent** node;
+- **Heap**: a **complete binary tree** that satisfies the **heap property**;
+
+<br>
+
+**Properties** of a binary tree:
+- The **maximum number** of nodes at **level** (**depth**) **k** of a **binary tree** is **2<sup>k</sup>**, but the actual number can be less, depending on the structure of the tree.
+
+<br>
+
+### Full binary tree
+![full-tree](/img/full-tree.png)
+
+<br>
+
+<br>
+
+### Complete binary tree
+![complete-tree](/img/complete-tree.png)
+
+<br>
+
+**Properties**:
+- The **number of nodes** at a **level** (**depth**) **k** is **2<sup>k</sup>**;
+- The **height** of a complete binary tree with **n** nodes is **H = log<sub>2</sub>(n+1)**;
+- **All leaves** in a complete binary tree are present in the **last** level or the **penultimate** level;
+
+
+<br>
+
+### Perfect binary tree
+![perfect-tree](/img/perfect-tree.png)
+
+<br>
+
+**Properties**:
+- All the **internal** nodes have a degree of `2`.
+- All the **leaves** have a degree of `0`.
+- The **total number** of nodes (**N**) in a **perfect binary tree** of *height* **H** is **N = 2<sup>H+1</sup>  – 1**;
+- If a **perfect binary tree** contains **N nodes**, it has a *height* **H = log<sub>2</sub>(N + 1) – 1**;
+- The number of leaves (**L**) in a **perfect binary tree** of *height* **H** is **L = 2<sup>H</sup>**;
+- The number of internal nodes (**I**) is **I = N – L**;
+- There are **half** of the nodes are **leaves** and **half** of the nodes are **internal nodes** in a **perfect binary tree**;
+- Perfect binary trees are always **symmetrical** and **balanced**;
 
 <br>
 
 ## Binary search tree
 **Binary search tree** (**BST**) is a **rooted binary tree** that **satisfies** following **binary search tree property**.<br>
 
-The **binary search tree property**:
+**Properties**:
 - let `x` is a **node** in a **binary search tree** `T`, then:
   - **all nodes** in **left subtree** must have `key` that **less than or equal to** `x.key`, i.e. if `y` is a node in the **left subtree** of `x`, then `y.key ≤ x.key`;
   - **all nodes** in **right subtree** must have `key` that **greater than or equal to** `x.key`, i.e. if `y` is a node in the **right subtree** of `x`, then `y.key ≥ x.key`;
