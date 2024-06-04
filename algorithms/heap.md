@@ -269,17 +269,18 @@ Also we know that:
 There are possible **2 cases**:
 1. if `x` is **even**, then `n` is **odd**:
    - **l** = **x/2 + n/2 + 1/2 - ⌈x/2⌉**
-   - = **x/2 + n/2 + 1/2 - x/2**
+   - = **x/2 + n/2 + 1/2 - x/2** (because `⌈y/2⌉ = y/2` **if** `y` is **even** integer and `x` is **even** here)
    - = **n/2 + 1/2**
-   - = **⌈n/2⌉**;
+   - = **(n+1)/2**
+   - = **⌈n/2⌉** (because `⌈y/2⌉` = `(y+1)/2` **if** `y` is **odd** integer and `n` is **odd** here);
    - so, **l** = **⌈n/2⌉**;
 2. if `x` is **odd**, then `n` is **even**:
    - **l** = **x/2 + n/2 + 1/2 - ⌈x/2⌉**
-   - = **x/2 + n/2 + 1/2 - (x+1)/2**
+   - = **x/2 + n/2 + 1/2 - (x+1)/2** (because `⌈y/2⌉` = `(y+1)/2` **if** `y` is **odd** integer and `x` is **odd** here)
    - = **x/2 + n/2 + 1/2 - (x/2 + 1/2)**
    - = **x/2 + n/2 + 1/2 - x/2 - 1/2**
-   - = **n/2**, here **n/2** is **integer**, because `n` is **even**
-   - = **⌈n/2⌉**;
+   - = **n/2**
+   - = **⌈n/2⌉** (because `⌈y/2⌉ = y/2` **if** `y` is **even** integer and `n` is **even** here);
    - so, **l** = **⌈n/2⌉**;
 
 <br>
