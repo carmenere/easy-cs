@@ -120,6 +120,7 @@ There are **5 asymptotic notations**:
 <br>
 
 **Notes**:
+- asymptotic notation denotes **set of functions** and `f(n) ∈ O(g(n))` means that `f(n)` is a member of `O(g(n))`. **Instead** we usually write `f(n) = O(g(n))`;
 - `Θ(g(n)) = O(g(n)) ∩ Ω(g(n))` (`Θ` is an **intersection** of `O` and `Ω`);
 - `o(g(n)) ⊊ O(g(n))` (`o` is a **proper subset** of `O`);
 - `ω(g(n)) ⊊ Ω(g(n))` (`ω` is a **proper subset** of `Ω`);
@@ -141,8 +142,6 @@ Let some algorith has **running time** that grows as `n²`, then both `n² = O(n
 So, if someone estimates that upper bound of **running time** of an algorithm is `O(n⁴)` there is **no guarantee** that `n⁴` is the *best approximation* of **running time**.<br>
 
 <br>
-
-Because asymptotic notation denotes **set of functions** , we, for example, could write `f(n) ∈ O(g(n))` to indicate that `f(n)` is a member of `O(g(n))`. **Instead** we usually write `f(n) = O(g(n))`.<br>
 
 The **asymptotic upper bound** provided by **big O may** or **may not** be **asymptotically tight**. The bound `2n² = O(n²)` is *asymptotically tight*, but the bound `2n = O(n²)` is **not**. We use **little o** to denote an **upper bound** that is **not** *asymptotically tight*.<br>
 
