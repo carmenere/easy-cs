@@ -4,6 +4,11 @@
 - [Selection sort](#selection-sort)
 - [Insertion sort](#insertion-sort)
 - [Merge sort](#merge-sort)
+  - [Merging sorted lists](#merging-sorted-lists)
+    - [Trivial case](#trivial-case)
+    - [More general case](#more-general-case)
+  - [Complexity](#complexity)
+    - [Time complexity](#time-complexity)
 - [Quicksort](#quicksort)
 - [Heapsort](#heapsort)
 - [Bubble sort](#bubble-sort)
@@ -98,7 +103,49 @@ In **each** iteration:
 <br>
 
 # Merge sort
+**Merge sort** is a sorting algorithm that follows a **divide-and-conquer** (/dɪˈvaɪd/, /ˈkɒŋ.kər/) approach and works like this:
+- **recursively splits** (**divides**) the **input array** in **2 halfs** until **input array** can be divided:
+  - `q` is a **midpoint** of **input** array `A` and `q=⌊(p+r)/2⌋`;
+  - then **left** subarray `L = A[p, q]` and **right** subaray `R = A[q+1, r]`;
+- **sorts** each subarray starting from the **bottom level of recursion**, the recursion is **cotinuous** until `p<r`, when `p=r` the recursion **stops**, because **subarray** contains excatly **one** element;
+- **merges** the sorted subarrays back together;
 
+<br>
+
+Here is how the entire merge sort algorithm unfolds:
+![merge-sort-overall](/img/merge-sort-overall.png)
+
+<br>
+
+## Merging sorted lists
+The **key operation** of the merge sort algorithm is the **merging two sorted subarrays** in the *combine* stage.<br>
+
+<br>
+
+### Trivial case
+There are a number of **1-item arrays** at the **bottom level** of recursion. Every array that consist of **one element** is **trivial** and considered **sorted**.<br>
+So, **merging** two **1-item arrays** is easy — the smaller item goes first and the larger item goes second in resulting **2-items array**:
+
+![merge-two-sorted-lists-1](/img/merge-two-sorted-lists-1.svg)
+
+<br>
+
+### More general case
+The algorithm chooses the **smallest** element of **two subarrays**, then copy it to **resulting array**, then somehow **mark** it in subarray to **skip** it in futher iterations:<br>
+![merge-two-sorted-lists-2](/img/merge-two-sorted-lists-2.png)
+![merge-two-sorted-lists-3](/img/merge-two-sorted-lists-3.png)
+
+<br>
+
+Once one of subarrays is **empty**, they **remaining items** from the other one can be **appended** to the end of the **resulting array**:
+![merge-two-sorted-lists-4](/img/merge-two-sorted-lists-4.png)
+
+<br>
+
+## Complexity
+### Time complexity
+On each recursion level merge sort algorithm takes **O(n)** time.<br>
+The number of all recursion levels is **O(log<sub>2</sub>N)**, where **N** is a size of whole **original array**.<br>
 
 <br>
 
@@ -108,7 +155,7 @@ In **each** iteration:
 <br>
 
 # Heapsort
-
+Heapsort is similar to selection sort - we're repeatedly choosing the largest item and moving it to the end of our array. But we use a heap to get the largest item more quickly.
 
 <br>
 

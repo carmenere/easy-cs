@@ -108,10 +108,6 @@ Operations for **max heaps**:
 |`max-heapify`|**O(log<sub>2</sub>N)**|**maintains** the **heap property**|
 |`build-max-heap`|**O(n)**|**builds** a **heap** from an **unordered** array|
 |`heapsort`|**O(n·log<sub>2</sub>N)**|**sorts** an array in place|
-|`max-heap-insert`|**O(log<sub>2</sub>N)**||
-|`heap-get-max`|**O(log<sub>2</sub>N)**||
-|`heap-extract-max`|**O(log<sub>2</sub>N)**||
-|`heap-increase-key`|**O(log<sub>2</sub>N)**||
 
 <br>
 
