@@ -215,7 +215,9 @@ Teh `merge_sort` function:
 merge_sort(A,p,r)      // A is pointer to original aray
   if not(p < r)        // If p = r, then A[p] and A[r] is the same element, so array A[p..r] consists of one element
     return
+  
   q = ⌊(p+r)/2⌋        // Finds midpoint of array A[p..r] which splits it on 2 halfs left A[p..q] and right A[q+1..r]
+  
   merge_sort(A,p,q)    // Recursively calls merge_sort and pass it left half A[p..q]
   merge_sort(A,q+1,r)  // Recursively calls merge_sort and pass it right half A[q+1..r]
   merge(A,p,q,r)       // Merge two sorted halfs A[p..q] and A[q+1..r]
@@ -276,6 +278,7 @@ quicksort(A,p,r)
     return
   
   q = partition(A,p,r)
+
   quicksort(A,p,q-1)
   quicksort(A,q+1,r)
 ```
