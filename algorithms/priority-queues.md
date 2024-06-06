@@ -24,3 +24,7 @@ A **min priority queue** supports the following operations:
 <br>
 
 The max priority queues can be used to **schedule** jobs. The max priority queue keeps track of the jobs to be performed and their relative priorities. When a job is finished or interrupted, the **scheduler** selects the **highest-priority job** by calling `extract-max`. The **scheduler** can **add** a **new job** to the queue at any time by calling `insert`.<br>
+
+<br>
+
+In summary, a **heap** can support **any** priority queue operation on a set of size `n` in **O(log<sub>2</sub>N)** time.
