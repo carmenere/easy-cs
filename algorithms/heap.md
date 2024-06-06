@@ -18,9 +18,9 @@ The **binary heap** or just **heap** is a **complete binary tree** in which all 
 There are **two kinds** of heaps: **max-heaps** and **min-heaps**.<br>
 
 A **heap property** depends on the **kind of heap**:
-- in a **max-heap**, the **heap property** is that **every node** `i` is **less than or equal to** its **parent**: `H[i] ≤ H[parent(i)]` and **greater than or equal to** its **descendants**;
+- in a **max-heap**, the **heap property** is that **every node** `i` is **less than or equal to** its **parent**: `A[i] ≤ A[parent(i)]` and **greater than or equal to** its **descendants**;
   - so, in the **max-heap** the **root** is a **largest** element in the heap;
-- in a **min-heap**, the **heap property** is that **every node** `i` is **greater than or equal to** its **parent**: `H[i] ≥ H[parent(i)]` and **less than or equal to** its **descendants**;
+- in a **min-heap**, the **heap property** is that **every node** `i` is **greater than or equal to** its **parent**: `A[i] ≥ A[parent(i)]` and **less than or equal to** its **descendants**;
   - in the **min-heap** the **root** is a **smallest** element in the heap;
 
 <br>
@@ -31,24 +31,24 @@ A **heap property** depends on the **kind of heap**:
 
 <br>
 
-**Heap** `H` **can be viewed** as a **array**:
+**Heap** `A` **can be viewed** as a **array**:
 - **root** at index `1`:
-  - the **root** of the **tree** is `H[1]`;
-  - the **parent** of `H[i]` is `⌊i/2⌋`;
-  - the **left child** of `H[i]` is `2i`;
-  - the **right child** of `H[i]` is `2i + 1`;
+  - the **root** of the **tree** is `A[1]`;
+  - the **parent** of `A[i]` is `⌊i/2⌋`;
+  - the **left child** of `A[i]` is `2i`;
+  - the **right child** of `A[i]` is `2i + 1`;
 - **root** at index `0`:
-  - the **root** of the **tree** is `H[0]`;
-  - the **parent** of `H[i]` is `⌊(i-1)/2⌋`;
-  - the **left child** of `H[i]` is `2i + 1`;
-  - the **right child** of `H[i]` is `2i + 2`;
+  - the **root** of the **tree** is `A[0]`;
+  - the **parent** of `A[i]` is `⌊(i-1)/2⌋`;
+  - the **left child** of `A[i]` is `2i + 1`;
+  - the **right child** of `A[i]` is `2i + 2`;
 
 <br>
 
 **Special atrbiutes**:
-  - `length` represent the **max** size of **array**;
-  - `heap_size` represent the **actual** size of **heap**:
-    - **only** elements in `H[0..(heap_size-1)]`, where `0` ≤ `heap_size` ≤ `length`, are **valid** elements of the heap;
+  - `A.length` represent the **max** size of **array**;
+  - `A.heap_size` represent the **actual** size of **heap**:
+    - **only** elements in `A[0..(heap_size-1)]`, where `0` ≤ `heap_size` ≤ `length`, are **valid** elements of the heap;
 
 <br>
 
@@ -99,7 +99,7 @@ For example,
 ## Operations
 **Operations** for heap are depends on kind of heap.<br>
 
-Operations for **max heaps**:
+Operations for **heaps**:
 |Operation|Complexity|Description|
 |:--------|:---------|:----------|
 |`parent`|**O(1)**|returns **index of parent** for node with index `i`|
@@ -107,11 +107,8 @@ Operations for **max heaps**:
 |`right`|**O(1)**|returns **index of right child** for node with index `i`|
 |`max-heapify`|**O(log<sub>2</sub>N)**|**maintains** the **heap property**|
 |`build-max-heap`|**O(n)**|**builds** a **heap** from an **unordered** array|
-|`heapsort`|**O(n·log<sub>2</sub>N)**|**sorts** an array in place|
-|`max-heap-insert`|**O(log<sub>2</sub>N)**||
-|`heap-get-max`|**O(log<sub>2</sub>N)**||
-|`heap-extract-max`|**O(log<sub>2</sub>N)**||
-|`heap-increase-key`|**O(log<sub>2</sub>N)**||
+|`min-heapify`|**O(log<sub>2</sub>N)**|**maintains** the **heap property**|
+|`build-min-heap`|**O(n)**|**builds** a **heap** from an **unordered** array|
 
 <br>
 
@@ -139,50 +136,52 @@ right(i)
 
 ### Max heapify
 ```rust
-swap(H,i,largest)
-  tmp = H[i]
-  H[i] = H[largest]
-  H[largest] = H[i]
+swap(A,i,largest)
+  tmp = A[i]
+  A[i] = A[largest]
+  A[largest] = A[i]
 
 max_heapify(A,i)
   l = left(i)
   r = right(i)
-  if l ≤ heap_size AND H[l] > H[i]
+  
+  if l ≤ A.heap_size-1 AND A[l] > A[i]
     largest = l
   else
     largest = i
-  if r ≤ heap_size AND H[r] > H[largest]
+  if r ≤ A.heap_size-1 AND A[r] > A[largest]
     largest = r
+  
   if largest != i
-    swap(H,i,largest)
+    swap(A,i,largest)
     max_heapify(A,largest)
 ```
 
 **Notes**:
-- At each step, the **largest** of the elements `H[i]`, `H[left(i)]` and `H[right(i)]` is determined and **its index** is stored in `largest`:
-  - If `H[i]` is **largest**, then the subtree rooted at node `i` is **already** max-heap and procedure **terminates**.
-  - Otherwise, one of two children of the node `i` has the **largest** element and `H[i]` is swapped with `H[largest]`, then the node `H[i]` and its children **satisfy** the **max-heap property**. The node `H[largest]`, however, has the **original** value of `H[i]`, and thus the subtree rooted at `largest` might **violate** the **max-heap property**. Consequently, we call `max_heapify` **recursively** on taht subtree.
+- The `max_heapify` assumes that the binary trees rooted at `left(i)` and `right(i)` are max-heaps (max or min), but A[i] might be **smaller** than its children, thus **violating** the **max-heap property**.
+- At each step, `max_heapify` **find out** the **largest** of the elements `A[i]`, `A[left(i)]` and `A[right(i)]` and stores its index in `largest`;
+- Finally:
+  - If `A[i]` is **largest**, then the subtree rooted at node `i` is **already max-heap** and procedure **terminates**.
+  - Otherwise, one of two children of the node `i` has the **largest** element and `A[i]` is swapped with `A[largest]`, then the node `A[i]` and its children **satisfy** the **max-heap property**. The node `A[largest]`, however, has the **original** value of `A[i]`, and thus the subtree rooted at `largest` might **violate** the **max-heap property**. Consequently, we call `max_heapify` **recursively** on that subtree.
 
 <br>
 
 ### Build max heap
-If we consider **0** as **starting index of heap**, then **all leaves** are between `⌊n/2⌋` and `n-1`.
-
-<br>
+If we consider **0** as **starting index of heap**, the index of **first leaf** in a heap is `⌊n/2⌋` and **all leaves** are inside `[⌊n/2⌋, n-1]`.<br>
 
 ```rust
-heap_size = len(H)
+A.heap_size = len(A)
 
-build_max_heap(H,i)
-  for i = ⌊heap_size⌋-1 downto 0
-    max_heapify(H,i)
+build_max_heap(A,i)
+  for i in [⌊A.heap_size/2⌋, 0]
+    max_heapify(A,i)
 ```
 
 **Notes**:
 - Index **⌊n/2⌋** devides array on **2 halfs**:
   - the elements in the **right half** of array with indexes `[⌊n/2⌋, n-1]` are **all leaves** and every of them satisfy heap property;
   - the elements in the **left half** of array with indexes `[0, ⌊n/2⌋-1]` are **all non-leaves**;
-- We call `max_heapify` on **each** node in the **left half** of array moving from **bottom** to **up** layers to convert an array `H` into **max heap**;
+- We call `max_heapify` on **each** node in the **left half** of array moving from **bottom** to **up** layers to convert an array `A` into **max heap**;
 - **Each** call of `max_heapify` costs **O(log<sub>2</sub>N)** time and `build_max_heap` makes **O(n)** such calls. Thus the running time is **O(n·log<sub>2</sub>N)**;
 - **O(n·log<sub>2</sub>N)** is **upper bound**, but it is **not tight bound**;
 - It can be proved that **tight bound** in **linear time**. So, we can **build heap** from an **arbitrary array** in **linear time**;
