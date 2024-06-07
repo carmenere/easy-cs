@@ -1,3 +1,19 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Greedy algorithms](#greedy-algorithms)
+- [Dynamic programming](#dynamic-programming)
+- [Flow network](#flow-network)
+- [Greedy algorithms](#greedy-algorithms-1)
+  - [Prim's algorithm](#prims-algorithm)
+  - [Kruskal's algorithm](#kruskals-algorithm)
+  - [Dijkstra's algorithm](#dijkstras-algorithm)
+  - [The Ford–Fulkerson algorithm](#the-fordfulkerson-algorithm)
+- [Dynamic algorithms](#dynamic-algorithms)
+  - [Bellman–Ford algorithm](#bellmanford-algorithm)
+  - [Floyd–Warshall algorithm](#floydwarshall-algorithm)
+
+<br>
+
 # Greedy algorithms
 A **greedy algorithm** is any algorithm that makes the **locally optimal decisions at each stage** optimistically assuming that the **final solution** will also be **optimal**.<br>
 
@@ -34,13 +50,13 @@ A flow must satisfy the restriction that the *amount of flow* **into** a node **
 
 <br>
 
-# Algorithms
+# Greedy algorithms
 ## Prim's algorithm
 The **Prim's algorithm** is a **greedy algorithm** that finds a **minimum spanning tree** for a **edge-weighted** graph.
 
 <br>
 
-# Kruskal's algorithm
+## Kruskal's algorithm
 **Kruskal's algorithm** is a **greedy algorithm** that finds a **minimum spanning forest** of an undirected **edge-weighted** graph. If the graph is **connected**, it finds a **minimum spanning tree**.
 Worst-case performance **O(|E|log|V|)**.
 
@@ -59,24 +75,25 @@ For example, if the nodes of the graph represent **cities**, and the costs of ed
 
 <br>
 
+## The Ford–Fulkerson algorithm
+The **Ford–Fulkerson algorithm** is a **greedy algorithm** that computes the maximum flow in a flow network.<br>
+
+<br>
+
+# Dynamic algorithms
 ## Bellman–Ford algorithm
 The **Bellman–Ford algorithm** finds the **shortest path** from a given **source** vertex to **all** other vertices in a **edge-weighted** *digraph*.<br>
 **Worst-case performance O(|V||E|)**.<br>
+
 It is **slower** than *Dijkstra's algorithm*, but it can handle graphs in which some of the edge **weights** are **negative** numbers.<br>
+
 The *Bellman-Ford algorithm* is **dynamic** because it uses a **dynamic programming approach** to compute the shortest paths by **solving subproblems** and iteratively updating the distances.<br>
 
 <br>
 
 ## Floyd–Warshall algorithm
 The **Floyd–Warshall algorithm** (aka the WFI algorithm) finds **shortest paths** between **all** pairs of vertices in a **edge-weighted** *digraph* with **positive** or **negative** edge weights (but with **no negative cycles**).<br>
-The *Floyd–Warshall algorithm* is an example of **dynamic programming**.<br>
-
 **Worst-case** and **best-case performance**: **O(|V|<sup>3</sup>)**.<br>
 **Worst-case space** complexity: **O(|V|<sup>2</sup>)**.<br>
 
-<br>
-
-## The Ford–Fulkerson algorithm
-The **Ford–Fulkerson algorithm** is a **greedy algorithm** that computes the maximum flow in a flow network.<br>
-
-<br>
+The *Floyd–Warshall algorithm* is an example of **dynamic programming**.<br>
