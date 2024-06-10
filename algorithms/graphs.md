@@ -25,6 +25,7 @@
     - [Kruskal's algorithm](#kruskals-algorithm)
   - [Shortest paths](#shortest-paths)
     - [Dijkstra's algorithm](#dijkstras-algorithm)
+      - [Algorithm](#algorithm)
     - [Bellman–Ford algorithm](#bellmanford-algorithm)
     - [Floyd–Warshall algorithm](#floydwarshall-algorithm)
   - [Flows](#flows)
@@ -295,11 +296,21 @@ Worst-case performance **O(|E|log|V|)**.
 It can also be used to find the shortest path to a specific destination node, by terminating the algorithm once the shortest path to the destination node is know.<br>
 With using a **Fibonacci heap priority queue** the **worst-case performance**: **O(|E| + |V|log|V|)**.<br>
 
-*Dijkstra's algorithm* is a **BSF** that uses a **priority queue** instead regular **queue** to **greedily** select the **closest vertex** that has **not** yet been processed. So, Dijkstra's algorithm is a **greedy algorithm** because at each step, it selects the vertex with the smallest distance from the source vertex and adds it to the set of vertices that have been visited. This choice is made without considering the overall path or the global optimal solution.
+*Dijkstra's algorithm* is just **BSF** that uses a **priority queue** instead **regular queue**. It **greedily** selects the **nearest vertex** that has **not** visited yet. So, Dijkstra's algorithm is a **greedy algorithm** because at each step, it selects the vertex with the smallest distance from the source vertex and adds it to the set of vertices that have been visited. This choice is made without considering the overall path or the global optimal solution.
 
 The *Dijkstra's algorithm* is **greedy** because it makes **locally optimal choices at each step**.<br>
 
 For example, if the nodes of the graph represent **cities**, and the costs of edges represent the average **distances** between pairs of cities connected by a direct road, then *Dijkstra's algorithm* can be used to find the **shortest route** between one city and all other cities.<br>
+
+<br>
+
+#### Algorithm
+1. Mark **all** nodes as **unvisited**.
+2. Assign to **every** node an **initial distance**: **zero** for the **starting node** and $+\infty$ for **all other nodes**.
+3. Add **all** nodes to **priority queue**.
+4. Remove from the **queue** next **unvisited** with the **smallest distance** node. It is **current node**.
+5. Calculate `new_distance` for **every** child node of current node: `new_distance` = `min(distance_of_current_node + weight_of_edge_to_child, distance_of_child_node)` and assign it to child.
+6. **Repeat** steps `4` and `5` while queue is **not** empty.
 
 <br>
 
