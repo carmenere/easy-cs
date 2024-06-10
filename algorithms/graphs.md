@@ -10,6 +10,8 @@
   - [Walk, trail, path](#walk-trail-path)
   - [Circuit and cycle](#circuit-and-cycle)
   - [Distance, diameter](#distance-diameter)
+  - [Eulerian graph](#eulerian-graph)
+  - [Hamiltonian graph](#hamiltonian-graph)
 - [Trees](#trees)
 - [Directed graphs](#directed-graphs)
   - [Directed graph](#directed-graph)
@@ -162,15 +164,21 @@ A **cycle** is a **closed path**.<br>
 The **distance** between **two vertices** in a graph is the **length of a shortest path between them**.<br>
 The **diameter** of a **connected graph** is the **largest distance in this graph**.<br>
 
+<br>
+
+## Eulerian graph
 **Eulerian trail** is a **trail** that visits **every** graph’s **edge**.<br>
 **Eulerian circuit** is a **closed Eulerian trail**.<br>
 
 **Euler's Theorem:** a **connected** graph has an **Eulerian circuit** iif **every vertex** has **even degree**.<br>
 
+**Eulerian graph** is a graph that contains a **Eulerian circuit**.<br>
+
+<br>
+
+## Hamiltonian graph
 **Hamiltonian path** is a **path** that visits **every** graph’s **vertex**.<br>
 **Hamiltonian cycle** is a **closed Hamiltonian path**.<br>
-
-**Eulerian graph** is a graph that contains a **Eulerian circuit**.<br>
 **Hamiltonian graph** is a graph that contains a **Hamiltonian cycle**.<br>
 
 <br>
