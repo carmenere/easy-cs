@@ -15,15 +15,18 @@
   - [Directed graph](#directed-graph)
 - [Connected graph](#connected-graph)
   - [Connected component](#connected-component)
-- [Independent sets](#independent-sets)
-  - [Independent set](#independent-set)
-  - [Maximum independent set](#maximum-independent-set)
-  - [Dominating set](#dominating-set)
-  - [Maximal independent set](#maximal-independent-set)
-  - [Examples](#examples)
-    - [Example 1](#example-1)
-    - [Example 2](#example-2)
-- [Weighted graphs](#weighted-graphs)
+- [Graph labeling](#graph-labeling)
+- [Flow network](#flow-network)
+- [Algorithms](#algorithms)
+  - [Spanning trees](#spanning-trees)
+    - [Prim's algorithm](#prims-algorithm)
+    - [Kruskal's algorithm](#kruskals-algorithm)
+  - [Shortest paths](#shortest-paths)
+    - [Dijkstra's algorithm](#dijkstras-algorithm)
+    - [Bellman–Ford algorithm](#bellmanford-algorithm)
+    - [Floyd–Warshall algorithm](#floydwarshall-algorithm)
+  - [Flows](#flows)
+    - [Ford–Fulkerson algorithm](#fordfulkerson-algorithm)
 
 <br>
 
@@ -232,107 +235,159 @@ In digraphs:
 
 <br>
 
-# Independent sets
-## Independent set
-**Independent set** is a **set of vertices** `V` such that **any two vertices** in `V` are **not adjacent**. In other words, the **induced subgraph** by `V` an **edgeless** graph, i.e. it consists of **isolated** vertices.<br>
-There can be **more than one** *independent sets* for a given graph.<br>
+# Graph labeling
+**Graph labelling** is the assignment of **labels**, traditionally represented by integers, to **edges** **and**/**or** **vertices** of a graph. The *edges* or *vertices* are given **labels** that are **meaningful** in the **associated domain**.<br>
 
 <br>
 
-## Maximum independent set
-**Maximum independent set** is an **independent set** of **largest cardinality**.<br>
-
-The **independence number** of graph `G` is the **cardinality** of its **maximum independent set**.<br>
-The **independence number** of graph `G` is denoted by `α(G)`.<br>
-
-<br>
-
-## Dominating set
-**Dominating set** for a graph `G = (V, E)` is a **subset** `D` of `V` such that every vertex **not** in `D` is adjacent to **at least one** member of `D`.<br>
-
-There can be **more than one** dominating sets for a given graph.<br>
-
-The **domination number** of graph `G` is the **number of vertices** in its **smallest dominating set**.<br>
-The **domination number** of graph `G` is denoted by `γ(G)`.
-
-<br>
-
-## Maximal independent set
-**Maximal independent set** (**MIS**) is an **independent set** that is **not** a subset of any other independent set.<br>
-
-There can be **more than one** MIS for a given graph.<br>
-
-**Every maximum independent set is MIS** but the converse is **not** always true.<br>
-
-The given graph has **6 different MIS** shown as the red vertices, **2** of them are **maximum**:
-<br>
-
-![max-independant-set-1](/img/max-independant-set-1.png)
-
-<br>
-
-Any MIS is also a **dominating set** in the graph, and every dominating set that is independent must be maximal, so MISs are also called independent dominating sets.
-
-<br>
-
-## Examples
-### Example 1
-![max-independant-set-2](/img/max-independant-set-2.png)
-
-<br>
-
-### Example 2
-![graph-2](/img/graph-2.png)
-
-<br>
-
-All the possible **independent sets** for the given graph:
-- `{}`;
-- `{1}`;
-- `{2}`;
-- `{3}`;
-- `{4}`;
-- `{5}`;
-- `{1, 4}`;
-- `{1, 5}`;
-- `{2, 3}`;
-- `{2, 5}`;
-- `{3, 5}`;
-- `{2, 3, 5}`;
-
-<br>
-
-All the possible **maximum independent sets** for the given graph:
-- `{2, 3, 5}`;
-
-<br>
-
-All the possible **maximal independent sets** for the given graph:
-- `{1, 4}`;
-- `{1, 5}`;
-
-<br>
-
-**But** `{2, 3}`, `{2, 5}` and `{3, 5}` are all **subsets** of another independant set `{2, 3, 5}` and thus they are **not maximal** by defenition.<br>
-
-<br>
-
-# Weighted graphs
-A **weighted graph** is a **graph** or **digraph** in which the **number** (aka **weight**) is assigned to **each edge**.<br>
-Such **weights** might **represent different properties** of real world: *distance*, *weight*, *flow* etc.<br>
-
-**Graph labelling** is the assignment of **labels**, traditionally represented by integers, to **edges** and/or **vertices** of a graph.<br>
-
-Kinds of labeled graphs: 
+Kinds of **labeled graphs**: 
 - **vertex-labeled** graph;
 - **edge-labeled** graph;
 - **edge-labeled** and **vertex-labeled** graph;
 
 <br>
 
-**Graph coloring** is a **special case of graph labeling**; it is an assignment of labels traditionally called **colors** to elements of a graph subject to certain **constraints**.<br>
+When used **without** qualification, the term **labeled graph** generally refers to a **vertex-labeled graph** with all labels **distinct**.<br>
 
-**Examples** of graph coloring:
-- **vertex coloring** is a way of coloring the vertices of a graph such that no two adjacent vertices are of the same color; 
-- **edge coloring** assigns a color to each edge so that no two adjacent edges are of the same color;
-- **face coloring** of a planar graph assigns a color to each face or region so that no two faces that share a boundary have the same color.
+A **weighted graph** is a **graph** or **digraph** in which the **number** (aka **weight**) is assigned to **each edge**. Such **weights** might **represent different properties** of real world: *distance*, *weight*, *flow* etc.<br>
+
+<br>
+
+**Graph coloring** is a **special case of graph labeling**, i.e. it is an assignment of **labels** (aka **colors**) to elements of a graph in such a way as to **satisfy** the **constraints** (**restrictions**).<br>
+
+Kinds of **graph coloring**:
+- **vertex coloring** is a way of coloring the vertices of a graph such that **no** two **adjacent vertices** are of the **same** color; 
+- **edge coloring** is a way of coloring the vertices of a graph such that **no** two **adjacent edges** are of the **same** color;
+
+<br>
+
+# Flow network
+In graph theory, a **flow network** (also known as a **transportation network**) is a **directed graph** where each edge has a **capacity** and each edge receives a **flow**. The **amount of flow** on an edge **cannot** exceed the **capacity** of the edge.<br>
+Often in operations research, a *directed graph* is called a **network**, the *vertices* are called **nodes** and the *edges* are called **arcs**.<br>
+A flow must satisfy the restriction that the *amount of flow* **into** a node **equals** the *amount of flow* **out** of it, unless it is a source, which has only outgoing flow, or sink, which has only incoming flow.<br>
+
+<br>
+
+# Algorithms
+## Spanning trees
+### Prim's algorithm
+The **Prim's algorithm** is a **greedy algorithm** that finds a **minimum spanning tree** for a **edge-weighted** graph.
+
+<br>
+
+### Kruskal's algorithm
+**Kruskal's algorithm** is a **greedy algorithm** that finds a **minimum spanning forest** of an undirected **edge-weighted** graph. If the graph is **connected**, it finds a **minimum spanning tree**.
+Worst-case performance **O(|E|log|V|)**.
+
+<br>
+
+## Shortest paths
+### Dijkstra's algorithm
+**Dijkstra's algorithm** (/ˈdaɪkstrəz/) finds the **shortest path** from a given **source node** to **every other node** in a **edge-weighted** *graph*.<br>
+It can also be used to find the shortest path to a specific destination node, by terminating the algorithm once the shortest path to the destination node is know.<br>
+With using a **Fibonacci heap priority queue** the **worst-case performance**: **O(|E| + |V|log|V|)**.<br>
+
+*Dijkstra's algorithm* is a **BSF** that uses a **priority queue** instead regular **queue** to **greedily** select the **closest vertex** that has **not** yet been processed. So, Dijkstra's algorithm is a **greedy algorithm** because at each step, it selects the vertex with the smallest distance from the source vertex and adds it to the set of vertices that have been visited. This choice is made without considering the overall path or the global optimal solution.
+
+The *Dijkstra's algorithm* is **greedy** because it makes **locally optimal choices at each step**.<br>
+
+For example, if the nodes of the graph represent **cities**, and the costs of edges represent the average **distances** between pairs of cities connected by a direct road, then *Dijkstra's algorithm* can be used to find the **shortest route** between one city and all other cities.<br>
+
+<br>
+
+### Bellman–Ford algorithm
+The **Bellman–Ford algorithm** finds the **shortest path** from a given **source** vertex to **all** other vertices in a **edge-weighted** *digraph*.<br>
+**Worst-case performance O(|V||E|)**.<br>
+
+It is **slower** than *Dijkstra's algorithm*, but it can handle graphs in which some of the edge **weights** are **negative** numbers.<br>
+
+The *Bellman-Ford algorithm* is **dynamic** because it uses a **dynamic programming approach** to compute the shortest paths by **solving subproblems** and iteratively updating the distances.<br>
+
+<br>
+
+### Floyd–Warshall algorithm
+The **Floyd–Warshall algorithm** (aka the **WFI algorithm**) finds **shortest paths** between **all** *pairs of vertices* in a **edge-weighted** *digraph* with **positive** or **negative** edge weights (but with **no negative cycles**).<br>
+**Worst-case** and **best-case performance**: **O(|V|<sup>3</sup>)**.<br>
+**Worst-case space** complexity: **O(|V|<sup>2</sup>)**.<br>
+
+The *Floyd–Warshall algorithm* is an example of **dynamic programming**.<br>
+
+Consider a **weighted graph** ${\displaystyle G=\{V, E\}}$ with vertices ${\displaystyle V}$ numbered ${\displaystyle 1}$ through through ${\displaystyle n}$.<br>
+
+Let $\omega_{\upsilon\nu}$ denote **weight** of **edge** ${\varepsilon_{\upsilon\nu}=\upsilon\nu}$, then:
+$$\boldsymbol{\omega_{\upsilon\nu}}=
+\begin
+{cases}
+\varepsilon_{\upsilon\nu}, & \text{if} & \varepsilon_{\upsilon\nu}∈E \\
++\infty, & \text{if} & \varepsilon_{\upsilon\nu}∉E
+\end
+{cases}
+$$
+
+In other words ${\omega_{\upsilon\nu}=+\infty}$ **if** $\nu_{i}$ and $\nu_{j}$ are **not adjacent** (or **not directly connected**).
+
+<br>
+
+Let $\boldsymbol{d^{(k)}_{ij}}$ denotes the **shortest path** from $\nu_{i}$ to $\nu_{j}$ that can contain **intermediate** vertices **only** from the set ${\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}$.<br>
+
+Then:
+- $\boldsymbol{d^{(0)}_{ij}}$ is just a **weight** ($\omega_{ij}$) of **edge** ($\varepsilon_{ij}$) - the **base case**;
+- $\boldsymbol{d^{(1)}_{ij}}$ is a **shortests distance** of **path** that pass through **vertex** $\nu_{1}$;
+- $\boldsymbol{d^{(2)}_{ij}}$ is a **shortests distance** of **path** that pass through **vertices** ${\{\nu_{1},\nu_{2}\}}$;
+- ...
+- $\boldsymbol{d^{(k-1)}_{ij}}$ is a **shortests distance** of **path** that pass through **vertices** ${\{\nu_{1},\nu_{2}, ..., \nu_{k-1}\}}$;
+- $\boldsymbol{d^{(k)}_{ij}}$ is a **shortests distance** of **path** that pass through **vertices** ${\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}$;
+
+<br>
+
+So, the goal is to find the **length** of the **shortest path** from **each** $\nu_{i}$ to **each** $\nu_{j}$ using **any** vertex in set ${\{1,2,…,n\}}$.<br>
+
+<br>
+
+Let $p_{1k}=(\nu_{1}, ...,  \nu_{k})$ is a path from $\nu_{1}$ to $\nu_{k}$.<br>
+Let $p_{ij}=(\nu_{i}, ...,  \nu_{j})$ is a **part** of $p_{1k}$ and $1 ≤ i ≤ j ≤ k$.<br>
+
+**Theorem**. If $p_{1k}$ is the **shortest path** from $\nu_{1}$ to $\nu_{k}$ then $p_{ij}$ is the **shortest path** from $\nu_{i}$ to $\nu_{j}$ too.<br>
+**Proof**. If there is path that is shorter than $p_{ij}$ it means we can also reduce length of $p_{1k}$, but it leads to a **contradiction** with the statement that $p_{1k}$ is the **shortest path**.<br>
+
+
+
+Consider shortest path $d^{(k)}_{ij}$. Add a vertex $\nu_{k}$ to the set of allowed intermediate vertices then resulting set is ${\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}$.<br>
+
+There are **2 cases**:
+- $case_1$: Vertex $\nu_{k}$ **doesn't** change **shortest path** $d^{(k)}_{ij}$ and it **doesn't** belong to $d^{(k)}_{ij}$, so $d^{(k)}_{ij} = d^{(k-1)}_{ij}$;
+- $case_2$: Vertex $\nu_{k}$ **changes shortest path** $d^{(k)}_{ij}$ and $d^{(k)}_{ij}$ includes $\nu_{k}$. what is new distance of new shortest path? $\nu_{k}$ splits new path into 2 subpaths: $d_{ik}$ and $d_{kj}$, and they are both **shortest paths**, so $d^{(k)}_{ij} = d^{(k)}_{ik} + d^{(k)}_{kj}$ and both $d_{ik}$ and $d_{kj}$ contain $k$ as **intermediate** vertex. It means, we can exclude $k$ from the **set of intemediate verteces** and then $d^{(k)}_{ij} = d^{(k-1)}_{ik} + d^{(k-1)}_{kj}$;
+
+
+So, **shortest path** $d^{(k)}_{ij}$ must be **less than or equal to** $d^{(k-1)}_{ij}$.<br>
+
+**Finally**: $d^{(k)}_{ij} = min(case_1, case_2) = min(d^{(k-1)}_{ij}, d^{(k-1)}_{ik} + d^{(k-1)}_{kj})$.<br>
+
+<br>
+
+The algorithm works by first computing $d^{(k)}_{ij}$ for all $(i,j)$ pairs for $k=0$, then $k=1$, then $k=2$ and so on up to $k=n$.<br>
+
+<br>
+
+Pseudocode:
+```rust
+let dist be a |V| × |V| array of minimum distances initialized to ∞ (infinity)
+for each edge (u, v) do
+    dist[u][v] ← w(u, v)  // The weight of the edge (u, v)
+for each vertex v do
+    dist[v][v] ← 0
+for k from 1 to |V|
+    for i from 1 to |V|
+        for j from 1 to |V|
+            if dist[i][j] > dist[i][k] + dist[k][j] 
+                dist[i][j] ← dist[i][k] + dist[k][j]
+            end if
+```
+
+<br>
+
+## Flows
+### Ford–Fulkerson algorithm
+The **Ford–Fulkerson algorithm** is a **greedy algorithm** that computes the maximum flow in a flow network.<br>
+
+<br>

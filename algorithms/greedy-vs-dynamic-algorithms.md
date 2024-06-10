@@ -2,15 +2,9 @@
 - [Table of contents](#table-of-contents)
 - [Greedy algorithms](#greedy-algorithms)
 - [Dynamic programming](#dynamic-programming)
-- [Flow network](#flow-network)
-- [Greedy algorithms](#greedy-algorithms-1)
-  - [Prim's algorithm](#prims-algorithm)
-  - [Kruskal's algorithm](#kruskals-algorithm)
-  - [Dijkstra's algorithm](#dijkstras-algorithm)
-  - [The Ford–Fulkerson algorithm](#the-fordfulkerson-algorithm)
-- [Dynamic algorithms](#dynamic-algorithms)
-  - [Bellman–Ford algorithm](#bellmanford-algorithm)
-  - [Floyd–Warshall algorithm](#floydwarshall-algorithm)
+- [Examples](#examples)
+  - [Greedy algorithms](#greedy-algorithms-1)
+  - [Dynamic algorithms](#dynamic-algorithms)
 
 <br>
 
@@ -43,57 +37,21 @@ follows: using **dynamic programming** we can **cash intermediate results** (aka
 
 <br>
 
-# Flow network
-In graph theory, a **flow network** (also known as a **transportation network**) is a **directed graph** where each edge has a **capacity** and each edge receives a **flow**. The **amount of flow** on an edge **cannot** exceed the **capacity** of the edge.<br>
-Often in operations research, a *directed graph* is called a **network**, the *vertices* are called **nodes** and the *edges* are called **arcs**.<br>
-A flow must satisfy the restriction that the *amount of flow* **into** a node **equals** the *amount of flow* **out** of it, unless it is a source, which has only outgoing flow, or sink, which has only incoming flow.<br>
+
 
 <br>
 
-# Greedy algorithms
-## Prim's algorithm
-The **Prim's algorithm** is a **greedy algorithm** that finds a **minimum spanning tree** for a **edge-weighted** graph.
+# Examples
+## Greedy algorithms
+- Prim's algorithm;
+- Kruskal's algorithm;
+- Dijkstra's algorithm;
+- Ford–Fulkerson algorithm;
 
 <br>
 
-## Kruskal's algorithm
-**Kruskal's algorithm** is a **greedy algorithm** that finds a **minimum spanning forest** of an undirected **edge-weighted** graph. If the graph is **connected**, it finds a **minimum spanning tree**.
-Worst-case performance **O(|E|log|V|)**.
+## Dynamic algorithms
+- Bellman–Ford algorithm;
+- Floyd–Warshall algorithm;
 
 <br>
-
-## Dijkstra's algorithm
-**Dijkstra's algorithm** (/ˈdaɪkstrəz/ DYKE-strəz) finds the **shortest path** from a given **source** node to **every other node** in a **edge-weighted** *graph*.<br>
-It can also be used to find the shortest path to a specific destination node, by terminating the algorithm once the shortest path to the destination node is know.<br>
-With using a **Fibonacci heap priority queue** the **worst-case performance**: **O(|E| + |V|log|V|)**.<br>
-
-*Dijkstra's algorithm* uses a **priority queue** to **greedily** select the **closest vertex** that has **not** yet been processed. So, Dijkstra's algorithm is a **greedy algorithm** because at each step, it selects the vertex with the smallest distance from the source vertex and adds it to the set of vertices that have been visited. This choice is made without considering the overall path or the global optimal solution.
-
-The *Dijkstra's algorithm* is **greedy** because it makes **locally optimal choices at each step**.<br>
-
-For example, if the nodes of the graph represent **cities**, and the costs of edges represent the average **distances** between pairs of cities connected by a direct road, then *Dijkstra's algorithm* can be used to find the **shortest route** between one city and all other cities.<br>
-
-<br>
-
-## The Ford–Fulkerson algorithm
-The **Ford–Fulkerson algorithm** is a **greedy algorithm** that computes the maximum flow in a flow network.<br>
-
-<br>
-
-# Dynamic algorithms
-## Bellman–Ford algorithm
-The **Bellman–Ford algorithm** finds the **shortest path** from a given **source** vertex to **all** other vertices in a **edge-weighted** *digraph*.<br>
-**Worst-case performance O(|V||E|)**.<br>
-
-It is **slower** than *Dijkstra's algorithm*, but it can handle graphs in which some of the edge **weights** are **negative** numbers.<br>
-
-The *Bellman-Ford algorithm* is **dynamic** because it uses a **dynamic programming approach** to compute the shortest paths by **solving subproblems** and iteratively updating the distances.<br>
-
-<br>
-
-## Floyd–Warshall algorithm
-The **Floyd–Warshall algorithm** (aka the WFI algorithm) finds **shortest paths** between **all** pairs of vertices in a **edge-weighted** *digraph* with **positive** or **negative** edge weights (but with **no negative cycles**).<br>
-**Worst-case** and **best-case performance**: **O(|V|<sup>3</sup>)**.<br>
-**Worst-case space** complexity: **O(|V|<sup>2</sup>)**.<br>
-
-The *Floyd–Warshall algorithm* is an example of **dynamic programming**.<br>
