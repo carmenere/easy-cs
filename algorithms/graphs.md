@@ -325,7 +325,7 @@ So, elements of the **adjacency matrix** indicate whether pairs of vertices are 
 1. The **diagonal elements** of the *adjacency matrix* are **all zero**.
 2. The *adjacency matrix* of a **undirected graph** is **symmetric**.
 3. The *adjacency matrix* of a **directed graph can** be **asymmetric**.
-4. The **total number** of values **greater than** 0 in **row** $`i`$ (or **column** $`i$) represents the **degree** of vertex $`\nu_i`$.
+4. The **total number** of values **greater than** 0 in **row** $`i`$ (or **column** $`i`$) represents the **degree** of vertex $`\nu_i`$.
 
 <br>
 
@@ -439,7 +439,7 @@ In other words $`{\omega_{\upsilon\nu}=+\infty}`$ **if** $`\nu_{i}`$ and $`\nu_{
 Let $`d^{(k)}_{ij}`$ denotes the **shortest path** from $`\nu_{i}`$ to $`\nu_{j}`$ that can contain **intermediate** vertices **only** from the set $`{\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}`$.<br>
 
 Then:
-- $`{d^{(0)}_{ij}}`$ is just a **weight** ($\omega_{ij}$) of **edge** ($\varepsilon_{ij}$) - the **base case**;
+- $`{d^{(0)}_{ij}}`$ is just a **weight** ($\omega_{ij}`$) of **edge** ($\varepsilon_{ij}`$) - the **base case**;
 - $`{d^{(1)}_{ij}}`$ is a **shortests distance** of **path** that pass through **vertex** $`\nu_{1}`$;
 - $`{d^{(2)}_{ij}}`$ is a **shortests distance** of **path** that pass through **vertices** $`{\{\nu_{1},\nu_{2}\}}`$;
 - ...
