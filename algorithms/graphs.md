@@ -435,15 +435,15 @@ In other words ${\omega_{\upsilon\nu}=+\infty}$ **if** $\nu_{i}$ and $\nu_{j}$ a
 
 <br>
 
-Let $\boldsymbol{d^{(k)}_{ij}}$ denotes the **shortest path** from $\nu_{i}$ to $\nu_{j}$ that can contain **intermediate** vertices **only** from the set ${\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}$.<br>
+Let ${d^{(k)}_{ij}}$ denotes the **shortest path** from $\nu_{i}$ to $\nu_{j}$ that can contain **intermediate** vertices **only** from the set ${\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}$.<br>
 
 Then:
-- $\boldsymbol{d^{(0)}_{ij}}$ is just a **weight** ($\omega_{ij}$) of **edge** ($\varepsilon_{ij}$) - the **base case**;
-- $\boldsymbol{d^{(1)}_{ij}}$ is a **shortests distance** of **path** that pass through **vertex** $\nu_{1}$;
-- $\boldsymbol{d^{(2)}_{ij}}$ is a **shortests distance** of **path** that pass through **vertices** ${\{\nu_{1},\nu_{2}\}}$;
+- ${d^{(0)}_{ij}}$ is just a **weight** ($\omega_{ij}$) of **edge** ($\varepsilon_{ij}$) - the **base case**;
+- ${d^{(1)}_{ij}}$ is a **shortests distance** of **path** that pass through **vertex** $\nu_{1}$;
+- ${d^{(2)}_{ij}}$ is a **shortests distance** of **path** that pass through **vertices** ${\{\nu_{1},\nu_{2}\}}$;
 - ...
-- $\boldsymbol{d^{(k-1)}_{ij}}$ is a **shortests distance** of **path** that pass through **vertices** ${\{\nu_{1},\nu_{2}, ..., \nu_{k-1}\}}$;
-- $\boldsymbol{d^{(k)}_{ij}}$ is a **shortests distance** of **path** that pass through **vertices** ${\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}$;
+- ${d^{(k-1)}_{ij}}$ is a **shortests distance** of **path** that pass through **vertices** ${\{\nu_{1},\nu_{2}, ..., \nu_{k-1}\}}$;
+- ${d^{(k)}_{ij}}$ is a **shortests distance** of **path** that pass through **vertices** ${\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}$;
 
 <br>
 
