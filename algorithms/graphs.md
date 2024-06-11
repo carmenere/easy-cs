@@ -303,9 +303,9 @@ And *corresponding* **adjacency list**:<br>
 <br>
 
 ## Adjacency matrix
-The **adjacency matrix** of a finite graph is a **square** $n×n$ matrix $A$, where both **columns** and **rows** correspond to **vertices**, such that:
+The **adjacency matrix** of a finite graph is a **square** $`n×n`$ matrix $`A`$, where both **columns** and **rows** correspond to **vertices**, such that:
 
-$$
+$$`
 A_{ij}=
 \begin
 {cases}
@@ -313,7 +313,7 @@ A_{ij}=
 0&{\text{otherwise}}
 \end
 {cases}
-$$
+`$$
 
 <br>
 
@@ -325,12 +325,12 @@ So, elements of the **adjacency matrix** indicate whether pairs of vertices are 
 1. The **diagonal elements** of the *adjacency matrix* are **all zero**.
 2. The *adjacency matrix* of a **undirected graph** is **symmetric**.
 3. The *adjacency matrix* of a **directed graph can** be **asymmetric**.
-4. The **total number** of values **greater than** 0 in **row** $i$ (or **column** $i$) represents the **degree** of vertex $\nu_i$.
+4. The **total number** of values **greater than** 0 in **row** $`i`$ (or **column** $`i$) represents the **degree** of vertex $`\nu_i`$.
 
 <br>
 
 ## Incidence matrix
-The **incidence matrix** of a finite **undirected** graph is a $n×m$ matrix $A$, where **columns** correspond to **edeges** and **rows** correspond to **vertices**, such that:
+The **incidence matrix** of a finite **undirected** graph is a $`n×m`$ matrix $`A`$, where **columns** correspond to **edeges** and **rows** correspond to **vertices**, such that:
 
 $$
 A_{ij}=
@@ -348,7 +348,7 @@ The **sum** of **each column** in the *incidence matrix* is equal to **2**.<br>
 
 <br>
 
-The **incidence matrix** of a finite **directed** graph is a $n×m$ matrix $A$, where **columns** correspond to **edeges** and **rows** correspond to **vertices**, such that:
+The **incidence matrix** of a finite **directed** graph is a $`n×m`$ matrix $`A`$, where **columns** correspond to **edeges** and **rows** correspond to **vertices**, such that:
 
 $$
 A_{ij}=
@@ -394,7 +394,7 @@ For example, if the nodes of the graph represent **cities**, and the costs of ed
 
 #### Algorithm
 1. Mark **all** nodes as **unvisited**.
-2. Assign to **every** node an **initial distance**: **zero** for the **starting node** and $+\infty$ for **all other nodes**.
+2. Assign to **every** node an **initial distance**: **zero** for the **starting node** and $`+\infty`$ for **all other nodes**.
 3. Add **all** nodes to **priority queue**.
 4. Remove from the **queue** next **unvisited** with the **smallest distance** node. It is **current node**.
 5. Calculate `new_distance` for **every** child node of current node: `new_distance` = `min(distance_of_current_node + weight_of_edge_to_child, distance_of_child_node)` and assign it to child.
@@ -419,9 +419,9 @@ The **Floyd–Warshall algorithm** (aka the **WFI algorithm**) finds **shortest 
 
 The *Floyd–Warshall algorithm* is an example of **dynamic programming**.<br>
 
-Consider a **weighted graph** ${\displaystyle G=\{V, E\}}$ with vertices ${\displaystyle V}$ numbered ${\displaystyle 1}$ through through ${\displaystyle n}$.<br>
+Consider a **weighted graph** $`{\displaystyle G=\{V, E\}}`$ with vertices $`{\displaystyle V}`$ numbered $`{\displaystyle 1}`$ through through $`{\displaystyle n}`$.<br>
 
-Let $\omega_{\upsilon\nu}$ denote **weight** of **edge** ${\varepsilon_{\upsilon\nu}=\upsilon\nu}$, then:
+Let $`\omega_{\upsilon\nu}`$ denote **weight** of **edge** $`{\varepsilon_{\upsilon\nu}=\upsilon\nu}`$, then:
 ```math
 \boldsymbol{\omega_{\upsilon\nu}}=
 \begin
@@ -432,11 +432,11 @@ Let $\omega_{\upsilon\nu}$ denote **weight** of **edge** ${\varepsilon_{\upsilon
 {cases}
 ```
 
-In other words ${\omega_{\upsilon\nu}=+\infty}$ **if** $\nu_{i}$ and $\nu_{j}$ are **not adjacent** (or **not directly connected**).
+In other words $`{\omega_{\upsilon\nu}=+\infty}`$ **if** $`\nu_{i}`$ and $`\nu_{j}`$ are **not adjacent** (or **not directly connected**).
 
 <br>
 
-Let $`d^{(k)}_{ij}`$ denotes the **shortest path** from $\nu_{i}$ to $\nu_{j}$ that can contain **intermediate** vertices **only** from the set $`{\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}`$.<br>
+Let $`d^{(k)}_{ij}`$ denotes the **shortest path** from $`\nu_{i}`$ to $`\nu_{j}`$ that can contain **intermediate** vertices **only** from the set $`{\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}`$.<br>
 
 Then:
 - $`{d^{(0)}_{ij}}`$ is just a **weight** ($\omega_{ij}$) of **edge** ($\varepsilon_{ij}$) - the **base case**;
@@ -448,28 +448,28 @@ Then:
 
 <br>
 
-So, the goal is to find the **length** of the **shortest path** from **each** $\nu_{i}$ to **each** $\nu_{j}$ using **any** vertex in set $`\{\{1,2,…,n\}\}`$.<br>
+So, the goal is to find the **length** of the **shortest path** from **each** $`\nu_{i}`$ to **each** $`\nu_{j}`$ using **any** vertex in set $`\{1,2,…,n\}`$.<br>
 
-Let $p_{1k}=(\nu_{1}, ...,  \nu_{k})$ is a path from $\nu_{1}$ to $\nu_{k}$.<br>
-Let $p_{ij}=(\nu_{i}, ...,  \nu_{j})$ is a **part** of $p_{1k}$ and $1 ≤ i ≤ j ≤ k$.<br>
+Let $`p_{1k}=(\nu_{1}, ...,  \nu_{k})`$ is a path from $`\nu_{1}`$ to $`\nu_{k}`$.<br>
+Let $`p_{ij}=(\nu_{i}, ...,  \nu_{j})`$ is a **part** of $`p_{1k}`$ and $`1 ≤ i ≤ j ≤ k`$.<br>
 
-**Theorem**. If $p_{1k}$ is the **shortest path** from $\nu_{1}$ to $\nu_{k}$ then $p_{ij}$ is the **shortest path** from $\nu_{i}$ to $\nu_{j}$ too.<br>
-**Proof**. If there is path that is shorter than $p_{ij}$ it means we can also reduce length of $p_{1k}$, but it leads to a **contradiction** with the statement that $p_{1k}$ is the **shortest path**.<br>
+**Theorem**. If $`p_{1k}`$ is the **shortest path** from $`\nu_{1}`$ to $`\nu_{k}`$ then $`p_{ij}`$ is the **shortest path** from $`\nu_{i}`$ to $`\nu_{j}`$ too.<br>
+**Proof**. If there is path that is shorter than $`p_{ij}`$ it means we can also reduce length of $`p_{1k}`$, but it leads to a **contradiction** with the statement that $`p_{1k}`$ is the **shortest path**.<br>
 
-**Consider** *shortest path* $d^{(k)}_{ij}$. Add a vertex $\nu_{k}$ to the set of allowed intermediate vertices then resulting set is ${\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}$.<br>
+**Consider** *shortest path* $`d^{(k)}_{ij}`$. Add a vertex $`\nu_{k}`$ to the set of allowed intermediate vertices then resulting set is $`{\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}`$.<br>
 
 There are **2 cases**:
-- $case_1$: Vertex $\nu_{k}$ **doesn't** change **shortest path** $d^{(k)}_{ij}$ and it **doesn't** belong to $d^{(k)}_{ij}$, so $d^{(k)}_{ij} = d^{(k-1)}_{ij}$;
-- $case_2$: Vertex $\nu_{k}$ **changes shortest path** $d^{(k)}_{ij}$ and $d^{(k)}_{ij}$ includes $\nu_{k}$. what is new distance of new shortest path? $\nu_{k}$ splits new path into 2 subpaths: $d_{ik}$ and $d_{kj}$, and they are both **shortest paths**, so $d^{(k)}_{ij} = d^{(k)}_{ik} + d^{(k)}_{kj}$ and both $d_{ik}$ and $d_{kj}$ contain $k$ as **intermediate** vertex. It means, we can exclude $k$ from the **set of intemediate verteces** and then $d^{(k)}_{ij} = d^{(k-1)}_{ik} + d^{(k-1)}_{kj}$;
+- $`case_1$: Vertex $`\nu_{k}`$ **doesn't** change **shortest path** $`d^{(k)}_{ij}`$ and it **doesn't** belong to $`d^{(k)}_{ij}`$, so $`d^{(k)}_{ij} = d^{(k-1)}_{ij}`$;
+- $`case_2$: Vertex $`\nu_{k}`$ **changes shortest path** $`d^{(k)}_{ij}`$ and $`d^{(k)}_{ij}`$ includes $`\nu_{k}`$. what is new distance of new shortest path? $`\nu_{k}`$ splits new path into 2 subpaths: $`d_{ik}`$ and $`d_{kj}`$, and they are both **shortest paths**, so $`d^{(k)}_{ij} = d^{(k)}_{ik} + d^{(k)}_{kj}`$ and both $`d_{ik}`$ and $`d_{kj}`$ contain $`k`$ as **intermediate** vertex. It means, we can exclude $`k`$ from the **set of intemediate verteces** and then $`d^{(k)}_{ij} = d^{(k-1)}_{ik} + d^{(k-1)}_{kj}`$;
 
 
-So, **shortest path** $d^{(k)}_{ij}$ must be **less than or equal to** $d^{(k-1)}_{ij}$.<br>
+So, **shortest path** $`d^{(k)}_{ij}`$ must be **less than or equal to** $`d^{(k-1)}_{ij}`$.<br>
 
-**Finally**: $d^{(k)}_{ij} = min(case_1, case_2) = min(d^{(k-1)}_{ij}, d^{(k-1)}_{ik} + d^{(k-1)}_{kj})$.<br>
+**Finally**: $`d^{(k)}_{ij} = min(case_1, case_2) = min(d^{(k-1)}_{ij}, d^{(k-1)}_{ik} + d^{(k-1)}_{kj})`$.<br>
 
 <br>
 
-The algorithm works by first computing $d^{(k)}_{ij}$ for all $(i,j)$ pairs for $k=0$, then $k=1$, then $k=2$ and so on up to $k=n$.<br>
+The algorithm works by first computing $`d^{(k)}_{ij}`$ for all $`(i,j)`$ pairs for $`k=0`$, then $`k=1`$, then $`k=2`$ and so on up to $`k=n`$.<br>
 
 <br>
 
