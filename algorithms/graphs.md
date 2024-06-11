@@ -32,6 +32,7 @@
       - [Algorithm](#algorithm)
     - [Bellman–Ford algorithm](#bellmanford-algorithm)
     - [Floyd–Warshall algorithm](#floydwarshall-algorithm)
+      - [Algorithm](#algorithm-1)
       - [Pseudocode](#pseudocode)
   - [Flows](#flows)
     - [Ford–Fulkerson algorithm](#fordfulkerson-algorithm)
@@ -448,8 +449,6 @@ Then:
 
 <br>
 
-So, the goal is to find the **length** of the **shortest path** from **each** $`\nu_{i}`$ to **each** $`\nu_{j}`$ using **any** vertex in set $`\{1,2,…,n\}`$.<br>
-
 Let $`p_{1k}=(\nu_{1}, ...,  \nu_{k})`$ is a path from $`\nu_{1}`$ to $`\nu_{k}`$.<br>
 Let $`p_{ij}=(\nu_{i}, ...,  \nu_{j})`$ is a **part** of $`p_{1k}`$ and $`1 ≤ i ≤ j ≤ k`$.<br>
 
@@ -469,7 +468,28 @@ So, **shortest path** $`d^{(k)}_{ij}`$ must be **less than or equal to** $`d^{(k
 
 <br>
 
+#### Algorithm
 The algorithm works by first computing $`d^{(k)}_{ij}`$ for all $`(i,j)`$ pairs for $`k=0`$, then $`k=1`$, then $`k=2`$ and so on up to $`k=n`$.<br>
+
+If there is **no** path from $`\nu_{i}`$ to $`\nu_{j}`$ for some $k$ then $`{d^{(k)}_{ij}}=+\infty`$.<br>
+
+Consider graph:<br>
+![floyd-warshall](/img/floyd-warshall.png)
+
+**Steps**:
+- $k=0$:
+  - $`{d^{(0)}_{AC}}=1`$
+  - $`{d^{(0)}_{BC}}=2`$
+  - ...
+  - $`{d^{(0)}_{AB}}=+\infty`$
+  - $`{d^{(0)}_{AD}}=+\infty`$
+- $k=1$:
+  - $`{d^{(1)}_{AC}}=1`$
+  - $`{d^{(1)}_{BC}}=2`$
+  - ...
+  - $`{d^{(1)}_{AB}}={d^{(0)}_{AC}} + {d^{(0)}_{BC}}=1+2=3`$
+  - $`{d^{(1)}_{AD}}={d^{(0)}_{AC}} + {d^{(0)}_{DC}}=1+3=4`$
+- ...
 
 <br>
 
