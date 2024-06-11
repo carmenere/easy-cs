@@ -448,7 +448,7 @@ Then:
 
 <br>
 
-So, the goal is to find the **length** of the **shortest path** from **each** $\nu_{i}$ to **each** $\nu_{j}$ using **any** vertex in set ${\{1,2,…,n\}}$.<br>
+So, the goal is to find the **length** of the **shortest path** from **each** $\nu_{i}$ to **each** $\nu_{j}$ using **any** vertex in set $\{\{1,2,…,n\}\}$.<br>
 
 Let $p_{1k}=(\nu_{1}, ...,  \nu_{k})$ is a path from $\nu_{1}$ to $\nu_{k}$.<br>
 Let $p_{ij}=(\nu_{i}, ...,  \nu_{j})$ is a **part** of $p_{1k}$ and $1 ≤ i ≤ j ≤ k$.<br>
