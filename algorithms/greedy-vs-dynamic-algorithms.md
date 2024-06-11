@@ -30,12 +30,13 @@ Consider 2 examples:
 <br>
 
 Problems for which *greedy algorithms* **don't** find an optimal solution:
-- travelling salesman problem;
-- clique problem;
-
-<br>
-
-For example, a greedy strategy for the **travelling salesman problem** (which is **transcomputational problem**) is the following heuristic /hjʊəˈrɪs.tɪk/: "At each step of the journey, visit the nearest unvisited city". This heuristic **doesn't** find the **best** solution, but it **terminates** in a **reasonable** number of steps.<br>
+- **travelling salesman problem** (which is **transcomputational problem**):
+  - given a list of cities and the distances between each pair of cities, find the **shortest route** that visits **each** city exactly **once** and **returns** to the **origin** city, in other words, find the **shortest hamiltonian cycle** in *given graph*;
+    - a greedy algorithm for the **travelling salesman problem** is the following heuristic /hjʊəˈrɪs.tɪk/: "At each step of the journey, visit the nearest unvisited city". This heuristic **doesn't** find the **best** solution, but it **terminates** in a **reasonable** number of steps.
+- **clique problem**:
+  - find **clique** in *given graph*, clique is **complete subgraph**, i.e. **subset of vertices**, **all adjacent to each other**;
+- **knapsack problem**:
+  - given a set of items, each with a **weight** and a **value**, determine which items to pack so that the **total weight** is **less than or equal to** a **given limit** and the **total value** is as **large as possible**.
 
 <br>
 
