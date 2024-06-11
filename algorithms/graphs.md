@@ -422,7 +422,7 @@ The *Floyd–Warshall algorithm* is an example of **dynamic programming**.<br>
 Consider a **weighted graph** ${\displaystyle G=\{V, E\}}$ with vertices ${\displaystyle V}$ numbered ${\displaystyle 1}$ through through ${\displaystyle n}$.<br>
 
 Let $\omega_{\upsilon\nu}$ denote **weight** of **edge** ${\varepsilon_{\upsilon\nu}=\upsilon\nu}$, then:
-$$
+```math
 \boldsymbol{\omega_{\upsilon\nu}}=
 \begin
 {cases}
@@ -430,7 +430,7 @@ $$
 +\infty, & \text{if} & \varepsilon_{\upsilon\nu}∉E
 \end
 {cases}
-$$
+```
 
 In other words ${\omega_{\upsilon\nu}=+\infty}$ **if** $\nu_{i}$ and $\nu_{j}$ are **not adjacent** (or **not directly connected**).
 
