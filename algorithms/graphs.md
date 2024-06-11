@@ -436,7 +436,7 @@ In other words ${\omega_{\upsilon\nu}=+\infty}$ **if** $\nu_{i}$ and $\nu_{j}$ a
 
 <br>
 
-Let $`d^{(k)}_{ij}`$ denotes the **shortest path** from $\nu_{i}$ to $\nu_{j}$ that can contain **intermediate** vertices **only** from the set ${\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}$.<br>
+Let $`d^{(k)}_{ij}`$ denotes the **shortest path** from $\nu_{i}$ to $\nu_{j}$ that can contain **intermediate** vertices **only** from the set $`{\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}`$.<br>
 
 Then:
 - $`{d^{(0)}_{ij}}`$ is just a **weight** ($\omega_{ij}$) of **edge** ($\varepsilon_{ij}$) - the **base case**;
@@ -448,7 +448,7 @@ Then:
 
 <br>
 
-So, the goal is to find the **length** of the **shortest path** from **each** $\nu_{i}$ to **each** $\nu_{j}$ using **any** vertex in set $\{\{1,2,…,n\}\}$.<br>
+So, the goal is to find the **length** of the **shortest path** from **each** $\nu_{i}$ to **each** $\nu_{j}$ using **any** vertex in set $`\{\{1,2,…,n\}\}`$.<br>
 
 Let $p_{1k}=(\nu_{1}, ...,  \nu_{k})$ is a path from $\nu_{1}$ to $\nu_{k}$.<br>
 Let $p_{ij}=(\nu_{i}, ...,  \nu_{j})$ is a **part** of $p_{1k}$ and $1 ≤ i ≤ j ≤ k$.<br>
