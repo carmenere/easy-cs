@@ -305,7 +305,7 @@ And *corresponding* **adjacency list**:<br>
 ## Adjacency matrix
 The **adjacency matrix** of a finite graph is a **square** $`n×n`$ matrix $`A`$, where both **columns** and **rows** correspond to **vertices**, such that:
 
-$$`
+$$
 A_{ij}=
 \begin
 {cases}
@@ -313,7 +313,7 @@ A_{ij}=
 0&{\text{otherwise}}
 \end
 {cases}
-`$$
+$$
 
 <br>
 
@@ -439,7 +439,7 @@ In other words $`{\omega_{\upsilon\nu}=+\infty}`$ **if** $`\nu_{i}`$ and $`\nu_{
 Let $`d^{(k)}_{ij}`$ denotes the **shortest path** from $`\nu_{i}`$ to $`\nu_{j}`$ that can contain **intermediate** vertices **only** from the set $`{\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}`$.<br>
 
 Then:
-- $`{d^{(0)}_{ij}}`$ is just a **weight** ($\omega_{ij}`$) of **edge** ($\varepsilon_{ij}`$) - the **base case**;
+- $`{d^{(0)}_{ij}}`$ is just a **weight** ($`\omega_{ij}`$) of **edge** ($`\varepsilon_{ij}`$) - the **base case**;
 - $`{d^{(1)}_{ij}}`$ is a **shortests distance** of **path** that pass through **vertex** $`\nu_{1}`$;
 - $`{d^{(2)}_{ij}}`$ is a **shortests distance** of **path** that pass through **vertices** $`{\{\nu_{1},\nu_{2}\}}`$;
 - ...
