@@ -436,7 +436,7 @@ In other words ${\omega_{\upsilon\nu}=+\infty}$ **if** $\nu_{i}$ and $\nu_{j}$ a
 
 <br>
 
-Let ${d^{(k)}_{ij}}$ denotes the **shortest path** from $\nu_{i}$ to $\nu_{j}$ that can contain **intermediate** vertices **only** from the set ${\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}$.<br>
+Let $d^{(k)}_{ij}$ denotes the **shortest path** from $\nu_{i}$ to $\nu_{j}$ that can contain **intermediate** vertices **only** from the set ${\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}$.<br>
 
 Then:
 - ${d^{(0)}_{ij}}$ is just a **weight** ($\omega_{ij}$) of **edge** ($\varepsilon_{ij}$) - the **base case**;
