@@ -459,8 +459,8 @@ Let $`p_{ij}=(\nu_{i}, ...,  \nu_{j})`$ is a **part** of $`p_{1k}`$ and $`1 ≤ 
 **Consider** *shortest path* $`d^{(k)}_{ij}`$. Add a vertex $`\nu_{k}`$ to the set of allowed intermediate vertices then resulting set is $`{\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}`$.<br>
 
 There are **2 cases**:
-- $`case_1$: Vertex $`\nu_{k}`$ **doesn't** change **shortest path** $`d^{(k)}_{ij}`$ and it **doesn't** belong to $`d^{(k)}_{ij}`$, so $`d^{(k)}_{ij} = d^{(k-1)}_{ij}`$;
-- $`case_2$: Vertex $`\nu_{k}`$ **changes shortest path** $`d^{(k)}_{ij}`$ and $`d^{(k)}_{ij}`$ includes $`\nu_{k}`$. what is new distance of new shortest path? $`\nu_{k}`$ splits new path into 2 subpaths: $`d_{ik}`$ and $`d_{kj}`$, and they are both **shortest paths**, so $`d^{(k)}_{ij} = d^{(k)}_{ik} + d^{(k)}_{kj}`$ and both $`d_{ik}`$ and $`d_{kj}`$ contain $`k`$ as **intermediate** vertex. It means, we can exclude $`k`$ from the **set of intemediate verteces** and then $`d^{(k)}_{ij} = d^{(k-1)}_{ik} + d^{(k-1)}_{kj}`$;
+- $`case_1`$: Vertex $`\nu_{k}`$ **doesn't** change **shortest path** $`d^{(k)}_{ij}`$ and it **doesn't** belong to $`d^{(k)}_{ij}`$, so $`d^{(k)}_{ij} = d^{(k-1)}_{ij}`$;
+- $`case_2`$: Vertex $`\nu_{k}`$ **changes shortest path** $`d^{(k)}_{ij}`$ and $`d^{(k)}_{ij}`$ includes $`\nu_{k}`$. what is new distance of new shortest path? $`\nu_{k}`$ splits new path into 2 subpaths: $`d_{ik}`$ and $`d_{kj}`$, and they are both **shortest paths**, so $`d^{(k)}_{ij} = d^{(k)}_{ik} + d^{(k)}_{kj}`$ and both $`d_{ik}`$ and $`d_{kj}`$ contain $`k`$ as **intermediate** vertex. It means, we can exclude $`k`$ from the **set of intemediate verteces** and then $`d^{(k)}_{ij} = d^{(k-1)}_{ik} + d^{(k-1)}_{kj}`$;
 
 
 So, **shortest path** $`d^{(k)}_{ij}`$ must be **less than or equal to** $`d^{(k-1)}_{ij}`$.<br>
