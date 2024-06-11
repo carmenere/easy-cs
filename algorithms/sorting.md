@@ -2,7 +2,9 @@
 - [Table of contents](#table-of-contents)
 - [Sorting algorithms](#sorting-algorithms)
 - [Selection sort](#selection-sort)
+  - [Pseudocode](#pseudocode)
 - [Insertion sort](#insertion-sort)
+  - [Pseudocode](#pseudocode-1)
 - [Merge sort](#merge-sort)
   - [Merging sorted lists](#merging-sorted-lists)
     - [Trivial case](#trivial-case)
@@ -10,20 +12,22 @@
   - [Complexity](#complexity)
     - [Time complexity](#time-complexity)
     - [In-place merging](#in-place-merging)
-  - [Code](#code)
+  - [Pseudocode](#pseudocode-2)
 - [Quicksort](#quicksort)
   - [Partition](#partition)
-  - [Code](#code-1)
+  - [Pseudocode](#pseudocode-3)
     - [Quicksort](#quicksort-1)
     - [Lomuto’s partition](#lomutos-partition)
     - [Hoare partition](#hoare-partition)
     - [Optimal pivot](#optimal-pivot)
 - [Heapsort](#heapsort)
+  - [Pseudocode](#pseudocode-4)
 - [Bubble sort](#bubble-sort)
+  - [Pseudocode](#pseudocode-5)
 - [Counting sort](#counting-sort)
+  - [Pseudocode](#pseudocode-6)
 - [Radix sort](#radix-sort)
-  - [Code](#code-2)
-    - [Radix sort that uses counting sort](#radix-sort-that-uses-counting-sort)
+  - [Pseudocode](#pseudocode-7)
 
 <br>
 
@@ -74,32 +78,42 @@ An **internal sort** is any data sorting process that takes place entirely withi
 <br>
 
 # Selection sort
+**Selection sort** is a sorting algorithm that in each iteration:
+- finds the **smallest** (or **largest**) element in the **unsorted** part (`[i+1, n-1]`) of array and moves it to **sorted** part (`[0, i-1]`);
 
+<br>
+
+Visualition of an algorithm:
+
+<br>
+
+![selection-sort-1](/img/selection-sort-1.png)
+
+<br>
+
+## Pseudocode
+```rust
+selection_sort(A)
+  n = len(A)
+  for i in [0, n-1]:
+      m = i                  // m holds an index of minimum
+      for j in [i+1, n-1]:
+          if A[j] < A[m]:
+              m = j
+      if A[i] != A[m]:       // found new minimum A[m], move it to index i, then A[i] move to index m
+        swap(A[i], A[m])
+```
 
 <br>
 
 # Insertion sort
-- In each iteration:
-  - the algorithm sorts the imput **in place**;
-  - the algorithm take **next** element called **key** from *right*, **unsorted part** of array (`[j..n-1]`);
+**Merge sort** is a sorting algorithm that in each iteration:
+  - sorts the input **in place**;
+  - takes **next** element called **key** from *right*, **unsorted part** of array (`[j..n-1]`);
   - **check** wheter key is in **right place** or **wrong**;
-  - if **key** in **right** place the algorithm goes to next iteration;
-    - if **key** in **wrong** place the algorithm finds **proper position** for **key** in *left*, **sorted part** of array (`[0, j-1]`):
+    - if **key** in **right** place - the algorithm goes to next iteration;
+    - if **key** in **wrong** place - the algorithm finds **proper position** for **key** in *left*, **sorted part** of array (`[0, j-1]`):
       - it moves `A[j-1]`, `A[j-2]` and so on by **one position to the right** until it finds **proper position** for **key** (`A[j]`);
-  - 
-
-<br>
-
-```rust
-insertion_sort(A)
-   for j = 1 to A.length-1
-      key = A[j]
-      i = j - 1
-      while i > 0 and A[i] > key
-         A[i+1] = A[i]
-         i = i -1
-      A[i+1] = key
-```
 
 <br>
 
@@ -115,6 +129,20 @@ In **each** iteration:
 - the **blue rectangle** holds the **key** taken from `A[i]`, which is compared with the values in **tan rectangles** to its **left**;
 - **orange arrows** show array values **moved one position to the right**;
 - **blue arrows** indicate **new position** of **key**;
+
+<br>
+
+## Pseudocode
+```rust
+insertion_sort(A)
+   for j = 0 to A.length-1
+      key = A[j]
+      i = j - 1
+      while i > 0 and A[i] > key
+         A[i+1] = A[i]
+         i = i -1
+      A[i+1] = key
+```
 
 <br>
 
@@ -172,8 +200,8 @@ So, **in-place merge requires extra movements** inside original array and **lead
 
 <br>
 
-## Code
-Teh `merge` function:
+## Pseudocode
+The `merge` function:
 ```rust
 merge(A,p,q,r)
   l = q - p                // index of last element in L, so len(L) = l +1
@@ -269,7 +297,7 @@ Notes:<br>
 
 <br>
 
-## Code
+## Pseudocode
 ### Quicksort
 Teh `quicksort` function:
 ```rust
@@ -353,6 +381,7 @@ hpartition(A,p,r)
 ### Optimal pivot
 **Quicksort** **degrades** to **O(n<sup>2</sup>)** for **already sorted input**, if the **pivot** was chosen as the **first** or the **last** element.<br>
 **Median-of-three** approach for **Lomuto partition**:<br>
+
 ```rust
 mid := ⌊(lo + hi) / 2⌋
 if A[mid] < A[lo]
@@ -369,7 +398,7 @@ It puts a **median** into `A[hi]` first, then that **new value** of `A[hi]` is u
 <br>
 
 # Heapsort
-Heapsort is similar to selection sort - we're repeatedly choosing the largest item and moving it to the end of our array. But we use a heap to get the largest item more quickly.<br>
+**Heapsort** is similar to *selection sort* - it repeatedly chooses the **largest** item and moving it to the **end** of our array. But we use a heap to get the largest item more quickly.<br>
 
 Notes about algorithm:
 - The **heapsort algorithm** starts by calling the `build_max_heap` procedure to build a **max-heap** on the input array `A[0..n-1]`.
@@ -379,6 +408,7 @@ Notes about algorithm:
 
 <br>
 
+## Pseudocode
 ```rust
 heapsort(A)
   build_max_heap(A,A.length-1)
@@ -391,7 +421,9 @@ heapsort(A)
 <br>
 
 # Bubble sort
-traverse from left and compare adjacent elements and the higher one is placed at right side. 
+Traverse from left and compare adjacent elements and the higher one is placed at right side.<br>
+
+## Pseudocode
 ```rust
 bubble_sort(A)
   for i in [0, n-2]
@@ -419,6 +451,7 @@ It then uses this information to place element `x` **directly** into its index i
 
 <br>
 
+## Pseudocode
 ```rust
 counting_sort(A,B,k)
   new array B[0..n-1]
@@ -451,13 +484,13 @@ counting_sort(A,B,k)
 <br>
 
 # Radix sort
-**Radix sort** is **digital sort**, it sorts values by digits:<br>
+**Radix sort** is **digital sort**, it **sorts** values **by digits**:<br>
 ![radix-sort-1](/img/radix-sort-1.png)
 
 <br>
 
-## Code
-### Radix sort that uses counting sort
+## Pseudocode
+**Radix sort** that uses **counting sort**:
 ```rust
 radix_sort(A,d)
   for i in [0,d-1]                // i is an index of digit

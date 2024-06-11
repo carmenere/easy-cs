@@ -19,6 +19,10 @@
   - [Connected component](#connected-component)
 - [Graph labeling](#graph-labeling)
 - [Flow network](#flow-network)
+- [Representations of graphs](#representations-of-graphs)
+  - [Adjacency list](#adjacency-list)
+  - [Adjacency matrix](#adjacency-matrix)
+  - [Incidence matrix](#incidence-matrix)
 - [Algorithms](#algorithms)
   - [Spanning trees](#spanning-trees)
     - [Prim's algorithm](#prims-algorithm)
@@ -28,6 +32,7 @@
       - [Algorithm](#algorithm)
     - [Bellman–Ford algorithm](#bellmanford-algorithm)
     - [Floyd–Warshall algorithm](#floydwarshall-algorithm)
+      - [Pseudocode](#pseudocode)
   - [Flows](#flows)
     - [Ford–Fulkerson algorithm](#fordfulkerson-algorithm)
 
@@ -52,7 +57,7 @@ An **empty graph** is a graph that has an **empty set of vertices** and thus an 
 
 ## Incidence
 The **edge** `e = {x,y}` is **incident** to **its vertices** `x` and `y`.<br>
-The **edge** (`x → y`) in **directed** graph is **incident** **on** the vertex `y` **from** the vertex `x`.<br>
+The **edge** (`x → y`) in **directed** graph is **incident on** the vertex `y` **from** the vertex `x`.<br>
 
 A vertex is **incident** with an edge if the vertex is one of the **endpoints** of that edge.<br>
 
@@ -245,7 +250,7 @@ In digraphs:
 <br>
 
 # Graph labeling
-**Graph labelling** is the assignment of **labels**, traditionally represented by integers, to **edges** **and**/**or** **vertices** of a graph. The *edges* or *vertices* are given **labels** that are **meaningful** in the **associated domain**.<br>
+**Graph labelling** is the assignment of **labels**, traditionally represented by integers, to **edges and**/**or vertices** of a graph. The *edges* or *vertices* are given **labels** that are **meaningful** in the **associated domain**.<br>
 
 <br>
 
@@ -274,6 +279,89 @@ Kinds of **graph coloring**:
 In graph theory, a **flow network** (also known as a **transportation network**) is a **directed graph** where each edge has a **capacity** and each edge receives a **flow**. The **amount of flow** on an edge **cannot** exceed the **capacity** of the edge.<br>
 Often in operations research, a *directed graph* is called a **network**, the *vertices* are called **nodes** and the *edges* are called **arcs**.<br>
 A flow must satisfy the restriction that the *amount of flow* **into** a node **equals** the *amount of flow* **out** of it, unless it is a source, which has only outgoing flow, or sink, which has only incoming flow.<br>
+
+<br>
+
+# Representations of graphs
+**Three ways** to represent a **finite graph**:
+- **adjacency list**;
+- **adjacency matrix;**
+- **incidence matrix**;
+
+<br>
+
+## Adjacency list
+An **adjacency list** is a **collection** of **unordered lists** used to represent a finite graph.<br>
+**Each** *unordered list* describes the **set of neighbors** of a particular **vertex** in the graph.<br>
+
+Example of **graph**:<br>
+![graph-example-1](/img/graph-example-1.png)
+
+And *corresponding* **adjacency list**:<br>
+![adjacency-list-1](/img/adjacency-list-1.png)
+
+<br>
+
+## Adjacency matrix
+The **adjacency matrix** of a finite graph is a **square** $n×n$ matrix $A$, where both **columns** and **rows** correspond to **vertices**, such that:
+
+$$
+A_{ij}=
+\begin
+{cases}
+1&{\text{if vertex }}\nu_{i}{\text{ is \textbf{incident} with vertex }}\nu_{j}, \\
+0&{\text{otherwise}}
+\end
+{cases}
+$$
+
+<br>
+
+So, elements of the **adjacency matrix** indicate whether pairs of vertices are **adjacent** or **not**. For **weighted graphs** elements of the **adjacency matrix** store **weight** instead **1**.
+
+<br>
+
+**Properties**:
+1. The **diagonal elements** of the *adjacency matrix* are **all zero**.
+2. The *adjacency matrix* of a **undirected graph** is **symmetric**.
+3. The *adjacency matrix* of a **directed graph can** be **asymmetric**.
+4. The **total number** of values **greater than** 0 in **row** $i$ (or **column** $i$) represents the **degree** of vertex $\nu_i$.
+
+<br>
+
+## Incidence matrix
+The **incidence matrix** of a finite **undirected** graph is a $n×m$ matrix $A$, where **columns** correspond to **edeges** and **rows** correspond to **vertices**, such that:
+
+$$
+A_{ij}=
+\begin
+{cases}
+1&{\text{if vertex }}\nu_{i}{\text{ is \textbf{incident} with edge }}e_{j}, \\
+0&{\text{otherwise.}}
+\end
+{cases}
+$$
+
+<br>
+
+The **sum** of **each column** in the *incidence matrix* is equal to **2**.<br>
+
+<br>
+
+The **incidence matrix** of a finite **directed** graph is a $n×m$ matrix $A$, where **columns** correspond to **edeges** and **rows** correspond to **vertices**, such that:
+
+$$
+A_{ij}=
+\begin
+{cases}
+1&{\text{if edge }} e_{j} {\text{ is \textbf{enters} vertex }} \nu_{i}, \\
+-1&{\text{if edge }} e_{j} {\text{ is \textbf{leaves} vertex }} \nu_{i}, \\
+0&{\text{otherwise.}}
+\end
+{cases}
+$$
+
+<br>
 
 <br>
 
@@ -369,9 +457,7 @@ Let $p_{ij}=(\nu_{i}, ...,  \nu_{j})$ is a **part** of $p_{1k}$ and $1 ≤ i ≤
 **Theorem**. If $p_{1k}$ is the **shortest path** from $\nu_{1}$ to $\nu_{k}$ then $p_{ij}$ is the **shortest path** from $\nu_{i}$ to $\nu_{j}$ too.<br>
 **Proof**. If there is path that is shorter than $p_{ij}$ it means we can also reduce length of $p_{1k}$, but it leads to a **contradiction** with the statement that $p_{1k}$ is the **shortest path**.<br>
 
-
-
-Consider shortest path $d^{(k)}_{ij}$. Add a vertex $\nu_{k}$ to the set of allowed intermediate vertices then resulting set is ${\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}$.<br>
+**Consider** *shortest path* $d^{(k)}_{ij}$. Add a vertex $\nu_{k}$ to the set of allowed intermediate vertices then resulting set is ${\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}$.<br>
 
 There are **2 cases**:
 - $case_1$: Vertex $\nu_{k}$ **doesn't** change **shortest path** $d^{(k)}_{ij}$ and it **doesn't** belong to $d^{(k)}_{ij}$, so $d^{(k)}_{ij} = d^{(k-1)}_{ij}$;
@@ -388,7 +474,7 @@ The algorithm works by first computing $d^{(k)}_{ij}$ for all $(i,j)$ pairs for 
 
 <br>
 
-Pseudocode:
+#### Pseudocode
 ```rust
 let dist be a |V| × |V| array of minimum distances initialized to ∞ (infinity)
 for each edge (u, v) do
@@ -408,5 +494,3 @@ for k from 1 to |V|
 ## Flows
 ### Ford–Fulkerson algorithm
 The **Ford–Fulkerson algorithm** is a **greedy algorithm** that computes the maximum flow in a flow network.<br>
-
-<br>
