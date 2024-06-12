@@ -251,7 +251,11 @@ A **connected graph** has exactly **1 connected component**, consisting of the *
 ### Directed graphs
 **Strongly connected component** (aka **SCC**) of a **directed** graph `G` is a **directed subgraph** `D*` that is **strongly connected** and **maximal**: **no** additional edges or vertices from `G` can be included in the subgraph `D*` without breaking its property of being **strongly connecte**d.<br>
 
-In other words **SCC** is a **cycle** in graph:
+> **Note**: In other words, **SCC** is a **cycle** in digraph.<br>
+
+<br>
+
+**Example**:<br>
 ![strong-components](/img/strong-components.png)
 
 <br>
