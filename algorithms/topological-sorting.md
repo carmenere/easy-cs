@@ -98,7 +98,7 @@ tsort_bsf(G)
 # DFS based
 ## DFS based: color nodes
 The `dfs_tsort` procedure calls the `dfs(G)` which for every vertex $v$ computes **sequence number** $v.f$ that represents time when vertex was **finished**.<br>
-The `dfs(G)` is **modified** version of [**original dfs**](https://github.com/carmenere/easy-cs/blob/main/algorithms/dsf-bsf.md#notes-about-dfs) that **fails** if it visit **gray** vertex **twice**, because it means **cycle** exists in digraph.<br>
+The `dfs(G)` is **modified** version of [**original dfs**](https://github.com/carmenere/easy-cs/blob/main/algorithms/dsf-bsf.md#pseudocode-1) that **fails** if it visit **gray** vertex **twice**, because it means **cycle** exists in digraph.<br>
 Then it `dfs_tsort` **sorts** verteces in **reverse order** by their $v.f$ values and the **result** is the **topologically sorted vertices**.<br>
 
 <br>
