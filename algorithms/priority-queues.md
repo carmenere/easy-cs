@@ -1,3 +1,13 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Priority queuee](#priority-queuee)
+  - [Maximum](#maximum)
+  - [Extract-max](#extract-max)
+  - [Increase-key](#increase-key)
+  - [Insert](#insert)
+
+<br>
+
 # Priority queuee
 One of the most popular applications of a *heap*: as an efficient **priority queue**.<br>
 As with heaps, priority queues come in two forms: **max priority queues** and **min priority queues**.<br>

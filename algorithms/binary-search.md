@@ -1,3 +1,11 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Binary search](#binary-search)
+  - [Code](#code)
+    - [Example on python3](#example-on-python3)
+
+<br>
+
 # Binary search
 The `binary_search` procedure returns **index** of element if it **was** *found* or **-1** if it **wasn't** *found*.<br>
 
