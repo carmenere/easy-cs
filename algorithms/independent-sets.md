@@ -1,3 +1,16 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Independent sets](#independent-sets)
+  - [Independent set](#independent-set)
+  - [Maximum independent set](#maximum-independent-set)
+  - [Dominating set](#dominating-set)
+  - [Maximal independent set](#maximal-independent-set)
+  - [Examples](#examples)
+    - [Example 1](#example-1)
+    - [Example 2](#example-2)
+
+<br>
+
 # Independent sets
 ## Independent set
 **Independent set** is a **set of vertices** `V` such that **any two vertices** in `V` are **not adjacent**. In other words, the **induced subgraph** by `V` an **edgeless** graph, i.e. it consists of **isolated** vertices.<br>

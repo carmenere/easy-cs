@@ -15,8 +15,12 @@
 - [Trees](#trees)
 - [Directed graphs](#directed-graphs)
   - [Directed graph](#directed-graph)
-- [Connected graph](#connected-graph)
-  - [Connected component](#connected-component)
+- [Connected graphs](#connected-graphs)
+    - [Undirected graphs](#undirected-graphs-1)
+    - [Directed graphs](#directed-graphs-1)
+- [Connected components](#connected-components)
+    - [Undirected graphs](#undirected-graphs-2)
+    - [Directed graphs](#directed-graphs-2)
 - [Graph labeling](#graph-labeling)
 - [Flow network](#flow-network)
 - [Representations of graphs](#representations-of-graphs)
@@ -217,16 +221,17 @@ Vertices `u` and `v` are called **disconnected**, if graph **doesn’t contains*
 
 <br>
 
-# Connected graph
+# Connected graphs
+### Undirected graphs
 A **connected graph** is graph in which **every pair** of vertices is **connected**. This means that there is a **path between every pair of vertices**.<br>
 A **disconnected** graph is graph in which **at least one pair** of **disconnected** vertices.<br>
 
 <br>
 
-In digraphs:
-- a **directed graph** is **weakly connected** if replacing all of its directed edges with undirected edges produces a **connected undirected graph**. 
-- a **directed graph** is **semi-connected** if it contains a **directed path** from `u` to `v` **OR** a **directed path** from `v` to `u` **for every pair** of vertices `u, v ∈ V`.
-- a **directed graph** is **strongly connected**, if it contains a **directed path** from `u` to `v` **AND** a **directed path** from `v` to `u` **for every pair** of vertices `u, v ∈ V`. In other words, **directed graph** is **strongly connected** if **every vertex is reachable from every other vertex**.
+### Directed graphs
+A **directed graph** is **weakly connected** if **replacing** all of its **directed edges** with **undirected edges** produces a **connected undirected graph**.<br>
+A **directed graph** is **semi-connected** if it contains a **directed path** from `u` to `v` **OR** a **directed path** from `v` to `u` **for every pair** of vertices `u, v ∈ V`.<br>
+A **directed graph** is **strongly connected** if there is a **path** in **each direction** between **each pair** of vertices of the graph. In other words, **directed graph** is **strongly connected** if **every vertex is reachable from every other vertex**.<br>
 
 <br>
 
@@ -236,17 +241,29 @@ In digraphs:
 
 <br>
 
-## Connected component
+# Connected components
+### Undirected graphs
 **Connected component** (or just **component**) of an **undirected graph** `G` is a **maximal** (by **inclusion**) **connected subgraph** of graph `G`.
 A **connected graph** has exactly **1 connected component**, consisting of the **whole graph**.<br>
 
 <br>
 
-In digraphs:
-- **strong component** of a **directed** graph `G` is a **directed subgraph** that is **strongly connected** and **maximal**: **no** additional edges or vertices from `G` can be included in the subgraph without breaking its property of being **strongly connected**;
-- **weak component** of a **directed** graph `G` is a un**directed subgraph** that is **strongly connected** and **maximal**: **no** additional edges or vertices from `G` can be included in the subgraph without breaking its property of being **strongly connected**;
+### Directed graphs
+**Strongly connected component** (aka **SCC**) of a **directed** graph `G` is a **directed subgraph** `D*` that is **strongly connected** and **maximal**: **no** additional edges or vertices from `G` can be included in the subgraph `D*` without breaking its property of being **strongly connecte**d.<br>
 
-**Bridge** (aka **cut-edge**) is an edge of a graph whose deletion **increases** the graph's **number** of connected components.<br>
+In other words **SCC** is a **cycle** in graph:
+![strong-components](/img/strong-components.png)
+
+<br>
+
+**Weakly connected component** (aka **WCC**) of a **directed** graph `G` is a **undirected subgraph** `U*` that is **connected** and **maximal**: **no** additional edges or vertices from `G` can be included in the subgraph `U*` without breaking its property of being **connected**.<br>
+
+**Example**:
+![weak-components](/img/weak-components.png)
+
+<br>
+
+**Bridge** (aka **cut-edge**) is an **edge** of a graph whose deletion **increases** the graph's **number** of **connected components**.<br>
 
 <br>
 
