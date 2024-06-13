@@ -1,7 +1,6 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
 - [Undirected graphs](#undirected-graphs)
-  - [Undirected graph](#undirected-graph)
   - [Incidence](#incidence)
   - [Adjacency](#adjacency)
   - [Degree](#degree)
@@ -14,10 +13,11 @@
   - [Hamiltonian graph](#hamiltonian-graph)
 - [Trees](#trees)
 - [Directed graphs](#directed-graphs)
-  - [Directed graph](#directed-graph)
-- [Connected graphs](#connected-graphs)
-    - [Undirected graphs](#undirected-graphs-1)
-    - [Directed graphs](#directed-graphs-1)
+  - [Incidence](#incidence-1)
+  - [Adjacency](#adjacency-1)
+- [Connectivity](#connectivity)
+  - [Undirected graphs](#undirected-graphs-1)
+  - [Directed graphs](#directed-graphs-1)
 - [Connected components](#connected-components)
     - [Undirected graphs](#undirected-graphs-2)
     - [Directed graphs](#directed-graphs-2)
@@ -44,7 +44,6 @@
 <br>
 
 # Undirected graphs
-## Undirected graph
 **Undirected graph** is an ordered pair `G = (V, E)`, where `V` is the **vertex set** (or the **set of vertices**), and `E` is the **edge set**.<br>
 
 **Vertex** (aka **node**) is the fundamental unit of which graphs are formed.<br>
@@ -62,9 +61,8 @@ An **empty graph** is a graph that has an **empty set of vertices** and thus an 
 
 ## Incidence
 The **edge** `e = {x,y}` is **incident** to **its vertices** `x` and `y`.<br>
-The **edge** (`x → y`) in **directed** graph is **incident on** the vertex `y` **from** the vertex `x`.<br>
-
-A vertex is **incident** with an edge if the vertex is one of the **endpoints** of that edge.<br>
+A **vertex** is **incident** with an **edge** if the **vertex** is one of the **endpoints** of that **edge**.<br>
+**Two edges** are **incident** if they **share** a **common vertex**.<br>
 
 <br>
 
@@ -205,32 +203,50 @@ There is **exactly one path between any two vertices in tree**.<br>
 <br>
 
 # Directed graphs
-## Directed graph
-A **directed graph** (**digraph**) is a graph in which edges have **orientations** and called **directed edges** (aka **arrows**).<br>
+A **directed graph** (**digraph**) is a graph `G = (V, E)` in which *edges* have **orientations** and called **directed edges** (aka **arrows**).<br>
 
-**Directed edge** is an **ordered pair** of **vertices**; more formal: `E ⊂ {(x,y): x,y ∈ V}`.<br>
+**Directed edge** is an **ordered pair** `(v,u)` of **vertices** in `V`: `E ⊂ {(v,u): v,u ∈ V}`.<br>
 
-The **outdegree** of vertex is the number of **outgoing** edges, denoted `𝛿 +(v)`.<br>
-The **indegree** of vertex is the number of **incoming** edges, denoted `𝛿 -(v)`.<br>
+The **outdegree of vertex** is the **number** of **outgoing edges**, denoted `𝛿 +(v)`.<br>
+The **indegree of vertex** is the **number** of **incoming edges**, denoted `𝛿 -(v)`.<br>
 
 The **sink vertex** is a vertex with `𝛿 +(v) = 0`.<br>
 The **source vertex** is a vertex with `𝛿 -(v) = 0`.<br>
 
-Vertices `u` and `v` are called **connected**, if graph **contains** a **path** from `u` to `v`.<br>
-Vertices `u` and `v` are called **disconnected**, if graph **doesn’t contains** a **path** from `u` to `v`.<br>
+<br>
+
+## Incidence 
+The *edge* `e = (v,u)` in *digraph* is **incident on** the *vertex* `u` **from** the *vertex* `v`. The *edge* `e = (u,v)` in *digraph* is **incident on** the *vertex* `v` **from** the *vertex* `u`.<br>
+
+Two *edges* `e1 = (v,u1)` and `e2 = (v,u2)` in *digraph* are **incident** as they **share** the **common vertex** `v`.<br>
+
+The *vertex* `v` in *digraph* is **incident** on the *edge* `(v,u)`. The *vertex* `u` in *digraph* is **incident** on the *edge* `(v,u)`.<br>
 
 <br>
 
-# Connected graphs
-### Undirected graphs
+## Adjacency
+The *vertex* `v` in *digraph* is **adjacent** to `u`, if there is an **edge** `(v,u)`, i.e edge **leaving** `v` and **coming** to `u`.<br>
+The *vertex* `u` in *digraph* is **adjacent** to `v`, if there is an **edge** `(u,v)`, i.e. edge **leaving** `u` and **coming** to `v`.<br>
+
+<br>
+
+# Connectivity
+*Vertices* `u` and `v` are called **connected**, if graph **contains** a **path** from `u` to `v`.<br>
+*Vertices* `u` and `v` are called **disconnected**, if graph **doesn’t contains** a **path** from `u` to `v`.<br>
+
+<br>
+
+## Undirected graphs
 A **connected graph** is graph in which **every pair** of vertices is **connected**. This means that there is a **path between every pair of vertices**.<br>
 A **disconnected** graph is graph in which **at least one pair** of **disconnected** vertices.<br>
 
 <br>
 
-### Directed graphs
+## Directed graphs
 A **directed graph** is **weakly connected** if **replacing** all of its **directed edges** with **undirected edges** produces a **connected undirected graph**.<br>
+
 A **directed graph** is **semi-connected** if it contains a **directed path** from `u` to `v` **OR** a **directed path** from `v` to `u` **for every pair** of vertices `u, v ∈ V`.<br>
+
 A **directed graph** is **strongly connected** if there is a **path** in **each direction** between **each pair** of vertices of the graph. In other words, **directed graph** is **strongly connected** if **every vertex is reachable from every other vertex**.<br>
 
 <br>
@@ -243,7 +259,8 @@ A **directed graph** is **strongly connected** if there is a **path** in **each 
 
 # Connected components
 ### Undirected graphs
-**Connected component** (or just **component**) of an **undirected graph** `G` is a **maximal** (by **inclusion**) **connected subgraph** of graph `G`.
+**Connected component** (or just **component**) of an **undirected graph** `G` is a **maximal** (by **inclusion**) **connected subgraph** of graph `G`.<br>
+
 A **connected graph** has exactly **1 connected component**, consisting of the **whole graph**.<br>
 
 <br>
@@ -251,7 +268,9 @@ A **connected graph** has exactly **1 connected component**, consisting of the *
 ### Directed graphs
 **Strongly connected component** (aka **SCC**) of a **directed** graph `G` is a **directed subgraph** `D*` that is **strongly connected** and **maximal**: **no** additional edges or vertices from `G` can be included in the subgraph `D*` without breaking its property of being **strongly connecte**d.<br>
 
-> **Note**: In other words, **SCC** is a **cycle** in digraph.<br>
+<br>
+
+> **Note**: In other words, **SCC** is a **cycle** in **digraph**.<br>
 
 <br>
 
