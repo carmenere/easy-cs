@@ -69,26 +69,29 @@ The `tsort_bsf` procedure returns **queue** $R$ that contains the **topologicall
 
 ```rust
 tsort_bsf(G)
-    R = empty queue of topologically sorted vertices
+    R = empty list of topologically sorted vertices
     Q = empty queue
-    for each vertex u in G.V\{s} // exclude vertex s from G.V
+
+    // Loop below inits a queue Q with all vertices of in-degree 0
+    for each vertex u in G.V
         u.indegree = 0
         for each vertex v in G.Adj[u]     // G.Adj[i] contains adjacency list for vertex i
             u.indegree = u.indegree + 1   // Count indegree for every node.
         if u.indegree == 0
             enqueue(Q, u)                 // Put to Q nodes with indegree equal to 0 (nodes with no incoming edge)
+    
     while Q is not empty
         u = dequeue(Q)
 
-        enqueue(R, u)                     // Put to result queue
+        add u to the end of R
 
         for each vertex v in G.Adj[u]     // G.Adj[i] contains adjacency list for vertex i
             v.indegree = v.indegree - 1
             if v.indegree == 0
                 enqueue(Q, u)             // Put to Q nodes with indegree equal to 0 (nodes with no incoming edge)
         
-        if len(R) != len(G.V) and len(Q) == 0
-            Error("Digraph contains cycle: not all verteces are processed and we cannot take next vertex with indegree equal to 0.")
+    if len(R) != len(G.V)
+        Error("Digraph contains cycle: not all verteces are processed and we cannot take next vertex with indegree equal to 0.")
     
     return R
 ```
@@ -97,17 +100,17 @@ tsort_bsf(G)
 
 # DFS based
 ## DFS based: color nodes
-The `dfs_tsort` procedure calls the `dfs(G)` which for every vertex $v$ computes **sequence number** $v.f$ that represents time when vertex was **finished**.<br>
+The `dfs_tsort` procedure calls the `dfs(G)` which for **every** vertex $v$ computes **time** $v.f$ when the vertex was **finished**.<br>
 The `dfs(G)` is **modified** version of [**original dfs**](https://github.com/carmenere/easy-cs/blob/main/algorithms/dsf-bsf.md#pseudocode-1) that **fails** if it visit **gray** vertex **twice**, because it means **cycle** exists in digraph.<br>
-Then it `dfs_tsort` **sorts** verteces in **reverse order** by their $v.f$ values and the **result** is the **topologically sorted vertices**.<br>
+Then it `dfs_tsort` **sorts** verteces in **reverse order** by their $v.f$ values and the **result** contains the **topologically sorted vertices**.<br>
 
 <br>
 
 ### Pseudocode
 ```rust
 dfs_tsort(G)
-    dfs(G)                    // For every vertex v the dfs(G) computes sequence number v.f when vertex was colored to black
-    reverse_sort(G, key=v.f)  // Sort verteces in reverse order of their v.f and the rusul will be the topologically sorted vertices
+    dfs(G)
+    reverse_sort(G, key=v.f)  // Sort verteces in reverse order of their v.f and the result contains the topologically sorted vertices
 ```
 
 <br>
