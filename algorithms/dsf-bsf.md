@@ -1,10 +1,10 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
 - [Edge types in graph traversal](#edge-types-in-graph-traversal)
-- [BFS vs. DFS](#bfs-vs-dfs)
-- [BFS](#bfs)
+- [BFS traversal vs. DFS traversal](#bfs-traversal-vs-dfs-traversal)
+- [BFS traversal](#bfs-traversal)
   - [Pseudocode](#pseudocode)
-- [DFS](#dfs)
+- [DFS traversal](#dfs-traversal)
   - [Pseudocode](#pseudocode-1)
 
 <br>
@@ -51,7 +51,7 @@ The **DFS-forest** of the graph consists of two trees:
 
 <br>
 
-# BFS vs. DFS
+# BFS traversal vs. DFS traversal
 |  |DFS|BFS|
 |:-|:--|:--|
 |**Data structure**|**Stack**|**Queue**|
@@ -61,7 +61,7 @@ The **DFS-forest** of the graph consists of two trees:
 
 <br>
 
-# BFS
+# BFS traversal
 **Best-case and worst-case time complexity** is $O(|V|)$, where $|V|$ is the number of nodes. You need to traverse all nodes.<br>
 **Worst-case space complexity** is $O(|V|)$ since at **worst** case you need to hold all vertices in the **queue**.<br>
 
@@ -95,7 +95,7 @@ bsf(G, s)
 
 <br>
 
-# DFS
+# DFS traversal
 **Best-case and worst-case time complexity** is $O(|V|)$, where $|V|$ is the number of nodes. You need to traverse all nodes.<br>
 
 **Space complexity** - depends on the implementation:
@@ -108,16 +108,21 @@ But **graph can have cycles** and to traverse them we need **mark** (or **color*
 <br>
 
 ## Pseudocode
-The `DFS` **colors** vertices during the search to indicate their state. **Each vertex** is initially **white**, is **gray** when it is **discovered**, and is **black** when it is **finished**. Node is **finished** means that its adjacency list has been **examined completely**.<br>
+The `DFS` **colors** vertices during the search to indicate their state:
+- **each** *vertex* is **initially** colored to **white**;
+- *vertex* is **recolored** to **gray** when it is **discovered** during *DFS*;
+- *vertex* is **recolored** to **black** when it is **finished**;
 
-The `DFS` also assign **sequence number** to **each vertex**. Each vertex has **two** *sequence numbers*:
-- the **first** sequence number $v.d$ is assigned to vertex when it is colored to **gray**;
-- the **second** sequence number $v.f$ is assigned to vertex when it is colored to **black**;
+Node is **finished** means that its **adjacency** list has been **processed completely**.<br>
+
+The `DFS` also assign **sequence number** to **each vertex**. The **sequence number** represents the **timestamp** when vertex was **discovered** and **finished**.<br>
+So, **each** vertex is assigned **two** t*imestamps* during *DFS*:
+- the **first** *timestamps* $v.d$ is assigned to vertex when it is recolored to **gray**;
+- the **second** *timestamps* $v.f$ is assigned to vertex when it is recolored to **black**;
 
 <br>
 
-These *sequence numbers* provide important information about the **structure** of the graph and can be used for **topological sorting**.<br>
-But **instead** *sequence numbers* we can use **stack** to store **visited** nodes.<br>
+These *timestamps* provide important information about the **structure** of the graph and can be used for **topological sorting**. But **instead** *timestamps* we can use **stack** to store **visited** nodes.<br>
 
 <br>
 
@@ -125,7 +130,9 @@ But **instead** *sequence numbers* we can use **stack** to store **visited** nod
 dfs(G)
     for each vertex u in G.V
         u.color = white
-    seq_number = 0
+    
+    time = 0
+
     for each vertex u in G.V
         if u.color == white
             visit(G, u)

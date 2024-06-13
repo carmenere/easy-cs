@@ -21,6 +21,8 @@
 - [Connected components](#connected-components)
     - [Undirected graphs](#undirected-graphs-2)
     - [Directed graphs](#directed-graphs-2)
+- [Transpose graph](#transpose-graph)
+- [Condensation graph](#condensation-graph)
 - [Graph labeling](#graph-labeling)
 - [Flow network](#flow-network)
 - [Representations of graphs](#representations-of-graphs)
@@ -287,6 +289,38 @@ A **connected graph** has exactly **1 connected component**, consisting of the *
 <br>
 
 **Bridge** (aka **cut-edge**) is an **edge** of a graph whose deletion **increases** the graph's **number** of **connected components**.<br>
+
+<br>
+
+# Transpose graph
+The **transpose** of a *directed graph* $G = (V, E)$ (aka **the converse**, **the reverse**) is another *directed graph* $`G^T`$ on the same set of vertices $V$ with all of the edges **reversed** compared to the orientation of the **corresponding edges** in $G$. If $G$ *contains* an **edge** $(u, v)$ then the **transpose** of $G$ *contains* an **edge** $(v, u)$ and **vice versa**.<br>
+
+The **adjacency matrix** of the **transpose** is the **transpose** of the **adjacency matrix** of the **original** *directed graph*.<br>
+
+Example:<br>
+
+![transponse](/img/transponse.png)
+
+<br>
+
+# Condensation graph
+The **strongly connected components** of *directed graph* **don't** *intersect* each other.<br>
+Given directed graph $G = (V, E)$, 
+The **condensation graph** of a given *directed graph* $G = (V, E)$ is a graph $CG$ containing **every strongly connected component** of graph $G$ as **one vertex**.<br>
+In other words, **each vertex** of the **condensation graph** $CG$ corresponds to the **strongly connected component** of **original** graph $G$.<br>
+
+Let $G$ contain two **strongly connected components**: SCC1 and SCC2. If $G$ contains edge $(v, u)$, such that $v \in SCC1$ and $u \in SCC2$, then $CG$ contains edge $(SCC1, SCC2)$.<br>
+
+The **most important property** of the *condensation graph* is that it is **DAG**.<br>
+
+Given graph:<br>
+![condensation-1](/img/condensation-1.png)
+
+It has **4 SCCs**:
+![condensation-2](/img/condensation-2.png)
+
+Its **condensation**:
+![condensation-3](/img/condensation-3.png)
 
 <br>
 
