@@ -1,111 +1,140 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
-- [Undirected graphs](#undirected-graphs)
-  - [Incidence](#incidence)
-  - [Adjacency](#adjacency)
-  - [Degree](#degree)
+- [Graphs](#graphs)
+  - [Definitions](#definitions)
+    - [Definitions for undirected graphs](#definitions-for-undirected-graphs)
+    - [Definitions for directed graphs](#definitions-for-directed-graphs)
   - [Types of graphs](#types-of-graphs)
-  - [Subgraph](#subgraph)
   - [Walk, trail, path](#walk-trail-path)
   - [Circuit and cycle](#circuit-and-cycle)
-  - [Distance, diameter](#distance-diameter)
   - [Eulerian graph](#eulerian-graph)
   - [Hamiltonian graph](#hamiltonian-graph)
+  - [Distance, diameter](#distance-diameter)
+- [Subgraphs](#subgraphs)
 - [Trees](#trees)
-- [Directed graphs](#directed-graphs)
-  - [Incidence](#incidence-1)
-  - [Adjacency](#adjacency-1)
 - [Connectivity](#connectivity)
-  - [Undirected graphs](#undirected-graphs-1)
-  - [Directed graphs](#directed-graphs-1)
+  - [Undirected graphs](#undirected-graphs)
+  - [Directed graphs](#directed-graphs)
 - [Connected components](#connected-components)
-    - [Undirected graphs](#undirected-graphs-2)
-    - [Directed graphs](#directed-graphs-2)
+    - [Undirected graphs](#undirected-graphs-1)
+    - [Directed graphs](#directed-graphs-1)
 - [Transpose graph](#transpose-graph)
 - [Condensation graph](#condensation-graph)
 - [Graph labeling](#graph-labeling)
+  - [Graph coloring](#graph-coloring)
 - [Flow network](#flow-network)
 - [Representations of graphs](#representations-of-graphs)
   - [Adjacency list](#adjacency-list)
   - [Adjacency matrix](#adjacency-matrix)
   - [Incidence matrix](#incidence-matrix)
-- [Algorithms](#algorithms)
-  - [Spanning trees](#spanning-trees)
-    - [Prim's algorithm](#prims-algorithm)
-    - [Kruskal's algorithm](#kruskals-algorithm)
-  - [Shortest paths](#shortest-paths)
-    - [Dijkstra's algorithm](#dijkstras-algorithm)
-      - [Algorithm](#algorithm)
-    - [Bellman–Ford algorithm](#bellmanford-algorithm)
-    - [Floyd–Warshall algorithm](#floydwarshall-algorithm)
-      - [Algorithm](#algorithm-1)
-      - [Pseudocode](#pseudocode)
-  - [Flows](#flows)
-    - [Ford–Fulkerson algorithm](#fordfulkerson-algorithm)
 
 <br>
 
-# Undirected graphs
-**Undirected graph** is an ordered pair `G = (V, E)`, where `V` is the **vertex set** (or the **set of vertices**), and `E` is the **edge set**.<br>
+# Graphs
+An **graph** $G$ is an **ordered pair** $(V, E)$, where $V$ is the **set of vertices** and $E$ is the **set of edges**.<br>
 
-**Vertex** (aka **node**) is the fundamental unit of which graphs are formed.<br>
-
-**Edge** (aka **link**) is an **unordered pair of vertices**; more formal: `E ⊂ {{x,y}: x,y ∈ V}`.
-The edge **joins** `x` and `y`.<br>
-The **vertices** `x` and `y` of an *edge* `{x,y}` are called the **endpoints** of the edge.<br>
-
-The **order of a graph** is its **number of vertices**: `|V|`.<br>
-The **size of a graph** is its **number of edges**: `|E|`.<br>
-
-An **empty graph** is a graph that has an **empty set of vertices** and thus an **empty set of edges**.<br>
+A **vertex** is an **element** of $V$. A **vertex** (aka **node**) is the **fundamental unit** of which graphs are formed.<br>
+An **edge** is an **element** of $E$. An **edge** (aka **link**) is a **pair of vertices**.<br>
 
 <br>
 
-## Incidence
-The **edge** `e = {x,y}` is **incident** to **its vertices** `x` and `y`.<br>
-A **vertex** is **incident** with an **edge** if the **vertex** is one of the **endpoints** of that **edge**.<br>
-**Two edges** are **incident** if they **share** a **common vertex**.<br>
+## Definitions
+An *edge* **joins** *vertices*. The *vertices* of an *edge* are called the **endpoints** of the *edge*.<br>
+
+A **loop** is an *edge* that *connects* a **vertex to itself**.<br>
+The **multiple edges** (aka **parallel edges**) are *edges* *connecting* the **same two vertices**.<br>
+
+The **order of a graph** is its **number of vertices**: $|V|$.<br>
+The **size of a graph** is its **number of edges**: $|E|$.<br>
 
 <br>
 
-## Adjacency
-Two vertices `x` and `y` are **adjacent** if they belong to the **same edge**.<br>
-Two edges are **adjacent** if they **share a common vertex**, e.g. if they are **incident** with the **same vertex**.
+A *pair of vertices* can be **ordered** or **unordered**:
+- **unordered** *pair of vertices*, denoted as $\{u,v\}$, is a **2-element subset** of $V$;
+- **ordered** *pair of vertices*, denoted as $(u,v)$, is a **ordered pair** on $V$, i.e. $E \subseteq V \times V$;
 
 <br>
 
-## Degree
-The **degree** (aka **valency**) of a vertex, denoted `𝛿(v)` is the *number of edges* **incident** to it. 
+Edges may **have orientation** (aka **direction**) or **not**:
+- **unordered** *pairs of vertices* $\{u,v\}$ represent *edges* **without orientation**;
+- **ordered** *pairs of vertices* $(u,v)$ represent *edges* **with orientation** (aka **directed edges**, **arrows**);
 
-- an **isolated vertex** is a vertex with `𝛿(v) = 0`;
-- a **leaf vertex** (aka **pendant vertex**) is a vertex with `𝛿(v) = 1`;
+<br>
 
-For graphs with loops, the **loop increases the degree of the vertex** by `2`.
+So,
+- an **undirected graph** is a *graph* $G$ in which *edges* **have not** *orientation*.<br>
+- a **directed graph** (aka **digraph**) is a *graph* $G$ in which *edges* **have** *orientation*.<br>
+
+<br>
+
+### Definitions for undirected graphs
+The *edge* $e = \{v,u\}$ is **between** $v$ and $u$.<br>
+The *edge* $e = \{v,u\}$ means $e$ is **incident on** $v$ and $u$.<br>
+
+A *vertex* is **incident on** *edge* if the *vertex* is one of the **endpoints** of that *edge*.<br>
+*Two edges* are **incident** if they **share** a **common vertex**.<br>
+
+<br>
+
+The **number of edges** *incident* **to** $v$ is the **degree** (aka **valency**) of $v$, denoted $𝛿(v)$. In other words, the **degree of vertex** is the **number of edges** **incident** on it.<br>
+
+An **isolated vertex** is a vertex with $𝛿(v) = 0$.<br>
+A **leaf vertex** (aka **pendant vertex**) is a vertex with $𝛿(v) = 1$.<br>
+
+For graphs with loops, the **loop increases the degree of the vertex** by $2$.<br>
+
+<br>
+
+*Two vertices* $v$ and $v$ are **adjacent** if they belong to the **same edge**. $v$ and $v$ are **neighbors**.<br>
+*Two edges* are **adjacent** if they **share a common vertex**, e.g. if they are **incident** with the **same vertex**.<br>
+
+<br>
+
+### Definitions for directed graphs
+The *edge* $e = (v,u)$ is **from** $v$ **to** $u$.<br>
+The *edge* $e = (v,u)$ means $e$ is
+- **incident from** $v$;
+- **incident to** $u$;
+- **incident on** $v$ and $u$;
+
+Two *vertices* $v$ and $u$ are **incident on** the *edge* $(v,u)$.<br>
+Two *edges* $e1 = (v,u1)$ and $e2 = (v,u2)$ are **incident** as they **share** the **common vertex** $v$.<br>
+
+<br>
+
+The **number of edges** *incident* **to** $v$ is the **in-degree** of $v$, denoted $𝛿 -(v)$. In other words, the **in-degree of vertex** is the **number of edges** of **incoming** to it.<br>
+The **number of edges** *incident* **from** $v$ is the **out-degree** of $v$, denoted $𝛿 +(v)$. In other words, the **out-degree of vertex** is the **number of edges** of **outgoing** from it.<br>
+
+The **sink vertex** is a *vertex* with $𝛿 +(v) = 0$.<br>
+The **source vertex** is a *vertex* with $𝛿 -(v) = 0$.<br>
+
+<br>
+
+The *vertex* $v$ is **adjacent** to $u$, if there is an **edge** $(v,u)$, i.e edge **leaving** $v$ and **coming** to $u$.<br>
+The *vertex* $u$ is **adjacent** to $v$, if there is an **edge** $(u,v)$, i.e. edge **leaving** $u$ and **coming** to $v$.<br>
 
 <br>
 
 ## Types of graphs
-**Loop** is an edge that **connects** a **vertex to itself**.<br>
-**Multiple edges** (aka **parallel** edges) are edges **connecting** the **same two vertices**.<br>
-
-**Simple graph** is an **unweighted**, **undirected graph** containing **no** *loops* and **no** *multiple* edges.<br>
-**Multigraph** is a graph which is permitted to have **multiple edges**.<br>
-**Pseudograph** is a *multigraph* that is permitted to have **loops**.<br>
+An **empty graph** is a graph that has an **empty set of vertices** and thus an **empty set of edges**.<br>
+A **simple graph** is *graph* containing **no** *loops* and **no** *multiple* edges.<br>
+A **multigraph** is a *graph* which is **permitted** to have **multiple edges**. In **multigraph** $E$ is a **multiset**.<br>
+A **pseudograph** is a **multigraph** that is **permitted** to have **loops**.<br>
 
 A **finite graph** is a graph in which the vertex set and the edge set are **finite** sets.<br>
-A **regular graph** is a graph in which **every** vertex has **the same degree**. A **regular graph** with vertices of **degree** `k` is called a **k‑regular graph** or **regular graph of degree** `k`.<br>
-A **complete graph** is a graph in which **each pair** of vertices is joined by an edge. A complete graph contains **all possible edges**. The **complete graph** on `n` vertices is denoted by **K<sub>n</sub>**.
+A **regular graph** is a graph in which **every** vertex has **the same degree**. A **regular graph** with vertices of **degree** $k$ is called a **k‑regular graph** or **regular graph of degree** $k$.<br>
+A **complete graph** is a graph in which **each pair** of vertices is joined by an edge. A complete graph contains **all possible edges**. The **complete graph** on $n$ vertices is denoted by $`K_n`$.
 
 <br>
 
-Properties of **K<sub>n</sub>**:
-- **K<sub>n</sub>** has `n(n − 1)/2` edges. 
-- **K<sub>n</sub>** is a **regular graph** of **degree** `n − 1`.
+Properties of $`K_n`$:
+- $`K_n`$ has $n(n − 1)/2$ edges. 
+- $`K_n`$ is a **regular graph** of **degree** $n − 1$.
 
-A **bipartite graph** is a **simple graph** in which the vertex set can be partitioned into two sets, `V1` and `V2`, so that **every** edge **join** vertices from **different** sets.
+A **bipartite graph** is a **simple graph** in which the vertex set can be partitioned into two sets, $V1$ and $V2$, so that **every** edge **join** vertices from **different** sets.
 
-A **complete bipartite graph** is a **bipartite graph** in which **every** vertex of the first set `V1` is connected to **every** vertex of the second set `V2`.<br>
-A **complete bipartite graph** with partitions of size `|V1| = m` and `|V2| = n`, is denoted **K<sub>m,n</sub>**.<br>
+A **complete bipartite graph** is a **bipartite graph** in which **every** vertex of the first set $V1$ is connected to **every** vertex of the second set $V2$.<br>
+A **complete bipartite graph** with partitions of size $|V1| = m$ and $|V2| = n$, is denoted $`K_{m,n}`$.<br>
 
 A **planar graph** is a graph whose vertices and edges can be drawn in a plane such that no two of the edges intersect.<br>
 
@@ -113,44 +142,9 @@ A **planar graph** is a graph that can be **embedded in the plane**, in other wo
 
 If graph **cannot** be embedded in the plane it is called **non planar**.<br>
 
-Minimal non **planar graphs** are **K<sub>5</sub>** and **K<sub>3,3</sub>**. Any other graph that contains **K<sub>5</sub>** or/and **K<sub>3,3</sub>** is **non planar** too.<br>
+Minimal non **planar graphs** are $`K_5`$ and $`K_{3,3}`$. Any other graph that contains $`K_5`$ or/and $`K_{3,3}`$ is **non planar** too.<br>
 
 A **plane graph** is a graph that **has already embedded in the plane**.
-
-<br>
-
-## Subgraph
-A **subgraph** of a graph `G = (V, E)` is a graph `G’ = (V’, E’)` whose **vertex set** `V’ ⊂ V` and **edge set** `E’ ⊂ E`. In other words, **each** node in a **subgraph** is also a **node** in the **supergraph**. Further, **every** edge in the **subgraph** is an edge in the **supergraph**.<br>
-
-If `G'` is a **subgraph** of `G`, then `G` is said to be a **supergraph** of `G'`.<br>
-
-An **induced subgraph** `G’` of a graph `G = (V, E)` is a graph `G’ = (S, E’)` whose vertex set `S ⊂ V` and `E’` contains **all** edges of `G` that **have endpoints** in `S`. In other words, if **two vertices** `{u,v}: u,v ∈ S` are **adjacent** in `G` they **must be adjacent** in `G’`.<br>
-
-So, an **induced subgraph** can be constructed by **deleting vertices with its incident edges**, but **no more edges**.<br>
-
-Consider graph `G`:
-
-<br>
-
-![graph](/img/graph.png)
-
-<br>
-
-To construct **induced subgraph** `G’` from `G` with `S = {D, E, G, J, K}` **delete vertices** `B`, `A`, `C`, `F`, `I`, `L`, `H` and **its incident edges**.
-
-**Induced subgraph** `G’` from `G` with `S = {D, E, G, J, K}`:
-
-<br>
-
-![induced-subgraph](/img/induced-subgraph.jpeg)
-
-<br>
-
-Consider following **subgraphs** of graph `G` with `V’ = {D, E, G, J, K}` (they are *all* **not** *induced subgraphs*, they are **all ordinary subgraphs**.):
-
-<br>
-
-![graph](/img/subgraphs.jpeg)
 
 <br>
 
@@ -159,21 +153,15 @@ A **walk** is a **sequence of adjacent edges**.<br>
 A **trail** is a **walk** in which all **edges** are **distinct**.<br>
 A **path** (aka **simple trail**) is a **trail** in which all **vertices** are **distinct**.<br>
 
-**Length** of *walk*/*trail*/*path* is a **number of edges** in it.<br>
+**Length** of *walk* (or *trail* or *path*) is a **number of edges** in it.<br>
 
 <br>
 
 ## Circuit and cycle
-A **closed** *walk*/*trail*/*path* is a *walk*/*trail*/*path* in which the **first** and **last** vertices are **equal** (**v<sub>0</sub> = v<sub>n</sub>**).<br>
+A **closed** *walk* (or *trail* or *path*) is a *walk* (or *trail* or *path*) in which the **first** and **last** vertices are **equal** ($v_0 = v_n$).<br>
 A **closed walk** is a **closed walk**.<br>
 A **circuit** is a **closed trail**.<br>
 A **cycle** is a **closed path**.<br>
-
-<br>
-
-## Distance, diameter
-The **distance** between **two vertices** in a graph is the **length of a shortest path between them**.<br>
-The **diameter** of a **connected graph** is the **largest distance in this graph**.<br>
 
 <br>
 
@@ -194,60 +182,73 @@ The **diameter** of a **connected graph** is the **largest distance in this grap
 
 <br>
 
+## Distance, diameter
+The **distance** between **two vertices** in a graph is the **length of a shortest path between them**.<br>
+The **diameter** of a **connected graph** is the **largest distance in this graph**.<br>
+
+<br>
+
+# Subgraphs
+A **subgraph** of a graph $G = (V, E)$ is a graph $G’ = (V’, E’)$ whose **vertex set** $V’ ⊂ V$ and **edge set** $E’ ⊂ E$. In other words, **each** node in a **subgraph** is also a **node** in the **supergraph**. Further, **every** edge in the **subgraph** is an edge in the **supergraph**.<br>
+
+If $G'$ is a **subgraph** of $G$, then $G$ is said to be a **supergraph** of $G'$.<br>
+
+An **induced subgraph** $G’$ of a graph $G = (V, E)$ is a graph $G’ = (S, E’)$ whose vertex set $S ⊂ V$ and $E’$ contains **all** edges of $G$ that **have endpoints** in $S$. In other words, if **two vertices** ${u,v}: u,v ∈ S$ are **adjacent** in $G$ they **must be adjacent** in $G’$.<br>
+
+So, an **induced subgraph** can be constructed by **deleting vertices with its incident edges**, but **no more edges**.<br>
+
+Consider graph $G$:
+
+<br>
+
+![graph](/img/graph.png)
+
+<br>
+
+To construct **induced subgraph** $G’$ from $G$ with $S = {D, E, G, J, K}$ **delete vertices** $B$, $A$, $C$, $F$, $I$, $L$, $H$ and **its incident edges**.
+
+**Induced subgraph** $G’$ from $G$ with $S = {D, E, G, J, K}$:
+
+<br>
+
+![induced-subgraph](/img/induced-subgraph.jpeg)
+
+<br>
+
+Consider following **subgraphs** of graph $G$ with $V’ = {D, E, G, J, K}$ (they are *all* **not** *induced subgraphs*, they are **all ordinary subgraphs**.):
+
+<br>
+
+![graph](/img/subgraphs.jpeg)
+
+<br>
+
 # Trees
 A **tree** is **connected acyclic undirected graph**.<br>
 There is **exactly one path between any two vertices in tree**.<br>
 
-**Spanning tree** of an **undirected graph** `G` is a **subgraph** that is a **tree** which **includes all** of the **vertices** of `G`.<br>
+**Spanning tree** of an **undirected graph** $G$ is a **subgraph** that is a **tree** which **includes all** of the **vertices** of $G$.<br>
 
 **Forest** – set of **separated trees**.<br>
 
 <br>
 
-# Directed graphs
-A **directed graph** (**digraph**) is a graph `G = (V, E)` in which *edges* have **orientations** and called **directed edges** (aka **arrows**).<br>
-
-**Directed edge** is an **ordered pair** `(v,u)` of **vertices** in `V`: `E ⊂ {(v,u): v,u ∈ V}`.<br>
-
-The **outdegree of vertex** is the **number** of **outgoing edges**, denoted `𝛿 +(v)`.<br>
-The **indegree of vertex** is the **number** of **incoming edges**, denoted `𝛿 -(v)`.<br>
-
-The **sink vertex** is a vertex with `𝛿 +(v) = 0`.<br>
-The **source vertex** is a vertex with `𝛿 -(v) = 0`.<br>
-
-<br>
-
-## Incidence 
-The *edge* `e = (v,u)` in *digraph* is **incident on** the *vertex* `u` **from** the *vertex* `v`. The *edge* `e = (u,v)` in *digraph* is **incident on** the *vertex* `v` **from** the *vertex* `u`.<br>
-
-Two *edges* `e1 = (v,u1)` and `e2 = (v,u2)` in *digraph* are **incident** as they **share** the **common vertex** `v`.<br>
-
-The *vertex* `v` in *digraph* is **incident** on the *edge* `(v,u)`. The *vertex* `u` in *digraph* is **incident** on the *edge* `(v,u)`.<br>
-
-<br>
-
-## Adjacency
-The *vertex* `v` in *digraph* is **adjacent** to `u`, if there is an **edge** `(v,u)`, i.e edge **leaving** `v` and **coming** to `u`.<br>
-The *vertex* `u` in *digraph* is **adjacent** to `v`, if there is an **edge** `(u,v)`, i.e. edge **leaving** `u` and **coming** to `v`.<br>
-
-<br>
-
 # Connectivity
-*Vertices* `u` and `v` are called **connected**, if graph **contains** a **path** from `u` to `v`.<br>
-*Vertices* `u` and `v` are called **disconnected**, if graph **doesn’t contains** a **path** from `u` to `v`.<br>
+*Vertices* $u$ and $v$ are called **connected**, if graph **contains** a **path** from $u$ to $v$.<br>
+*Vertices* $u$ and $v$ are called **disconnected**, if graph **doesn’t contains** a **path** from $u$ to $v$.<br>
 
 <br>
 
 ## Undirected graphs
-A **connected graph** is graph in which **every pair** of vertices is **connected**. This means that there is a **path between every pair of vertices**.<br>
-A **disconnected** graph is graph in which **at least one pair** of **disconnected** vertices.<br>
+A **connected graph** is *graph* in which **every pair** of vertices is **connected**. This means that there is a **path between every pair of vertices**.<br>
+A **disconnected graph** is *graph* in which **at least one pair** of **disconnected** vertices.<br>
 
 <br>
 
 ## Directed graphs
 A **directed graph** is **weakly connected** if **replacing** all of its **directed edges** with **undirected edges** produces a **connected undirected graph**.<br>
 
-A **directed graph** is **semi-connected** if it contains a **directed path** from `u` to `v` **OR** a **directed path** from `v` to `u` **for every pair** of vertices `u, v ∈ V`.<br>
+A **directed graph** is **semi-connected** if it contains a **directed path** from $u$ to $v$ **OR** a **directed path** from $v$ to $u$ **for every pair** of vertices $u, v ∈ V$.<br>
 
 A **directed graph** is **strongly connected** if there is a **path** in **each direction** between **each pair** of vertices of the graph. In other words, **directed graph** is **strongly connected** if **every vertex is reachable from every other vertex**.<br>
 
@@ -261,14 +262,16 @@ A **directed graph** is **strongly connected** if there is a **path** in **each 
 
 # Connected components
 ### Undirected graphs
-**Connected component** (or just **component**) of an **undirected graph** `G` is a **maximal** (by **inclusion**) **connected subgraph** of graph `G`.<br>
+**Connected component** (or just **component**) of an **undirected graph** $G$ is a **maximal** (by **inclusion**) **connected subgraph** of graph $G$.<br>
 
 A **connected graph** has exactly **1 connected component**, consisting of the **whole graph**.<br>
+
+An *edge* in an *undirected graph* is called a **bridge** (or **cut-edge**) iff deleting that edge **disconnects** the **connected component** to which that edge belongs.<br>
 
 <br>
 
 ### Directed graphs
-**Strongly connected component** (aka **SCC**) of a **directed** graph `G` is a **directed subgraph** `D*` that is **strongly connected** and **maximal**: **no** additional edges or vertices from `G` can be included in the subgraph `D*` without breaking its property of being **strongly connecte**d.<br>
+**Strongly connected component** (aka **SCC**) of a **directed** graph $G$ is a **directed subgraph** $D*$ that is **strongly connected** and **maximal**: **no** additional edges or vertices from $G$ can be included in the subgraph $D*$ without breaking its property of being **strongly connecte**d.<br>
 
 <br>
 
@@ -281,7 +284,7 @@ A **connected graph** has exactly **1 connected component**, consisting of the *
 
 <br>
 
-**Weakly connected component** (aka **WCC**) of a **directed** graph `G` is a **undirected subgraph** `U*` that is **connected** and **maximal**: **no** additional edges or vertices from `G` can be included in the subgraph `U*` without breaking its property of being **connected**.<br>
+**Weakly connected component** (aka **WCC**) of a **directed** graph $G$ is a **undirected subgraph** $U*$ that is **connected** and **maximal**: **no** additional edges or vertices from $G$ can be included in the subgraph $U*$ without breaking its property of being **connected**.<br>
 
 **Example**:
 ![weak-components](/img/weak-components.png)
@@ -309,9 +312,16 @@ Given directed graph $G = (V, E)$,
 The **condensation graph** of a given *directed graph* $G = (V, E)$ is a graph $CG$ containing **every strongly connected component** of graph $G$ as **one vertex**.<br>
 In other words, **each vertex** of the **condensation graph** $CG$ corresponds to the **strongly connected component** of **original** graph $G$.<br>
 
-Let $G$ contain two **strongly connected components**: SCC1 and SCC2. If $G$ contains edge $(v, u)$, such that $v \in SCC1$ and $u \in SCC2$, then $CG$ contains edge $(SCC1, SCC2)$.<br>
+Let $G$ contain two **strongly connected components**: $SCC1$ and $SCC2$. If $G$ contains edge $(v, u)$, such that $v \in SCC1$ and $u \in SCC2$, then $CG$ contains edge $(SCC1, SCC2)$.<br>
 
-The **most important property** of the *condensation graph* is that it is **DAG**.<br>
+<br>
+
+The **most important property** of the *condensation graph*:
+- *condensation graph* is **DAG**;
+- any $SCC$ that is **source** in *condensation* of $G$ *becomes* **sink** in *condensation* of $`G^T`$;
+- any $SCC$ that is **sink** in *condensation* of $G$ *becomes* **source** in *condensation* of $`G^T`$;
+
+<br>
 
 Given graph:<br>
 ![condensation-1](/img/condensation-1.png)
@@ -325,23 +335,33 @@ Its **condensation**:
 <br>
 
 # Graph labeling
-**Graph labelling** is the assignment of **labels**, traditionally represented by integers, to **edges and**/**or vertices** of a graph. The *edges* or *vertices* are given **labels** that are **meaningful** in the **associated domain**.<br>
+**Graph labelling** is the assignment of **labels** to **edges and/or vertices** of a graph. The *edges* or *vertices* are given **labels** that are **meaningful** in the **associated domain**.<br>
+
+When the **labels** are **numbers**, the **labels** are called **weights**.<br>
 
 <br>
 
 Kinds of **labeled graphs**: 
-- **vertex-labeled** graph;
-- **edge-labeled** graph;
-- **edge-labeled** and **vertex-labeled** graph;
+- **vertex-labeled graph** is a graph where **each vertex** has a corresponding **label**;
+- **edge-labeled graph** is a graph where **each edge** has a corresponding **label**;
+- **edge-labeled and vertex-labeled graph**;
 
 <br>
 
-When used **without** qualification, the term **labeled graph** generally refers to a **vertex-labeled graph** with all labels **distinct**.<br>
-
-A **weighted graph** is a **graph** or **digraph** in which the **number** (aka **weight**) is assigned to **each edge**. Such **weights** might **represent different properties** of real world: *distance*, *weight*, *flow* etc.<br>
+Kinds of **weighted graphs**: 
+- **edge-weighted graph**;
+- **vertex-weighted graph**;
+- **edge-weighted and vertex-weighted graph**;
 
 <br>
 
+> **Note**:<br>
+> The term **labeled graph** generally refers to a **vertex-labeled graph**.<br>
+> The term **weighted graph** generally refers to a **edge-weighted graph**.<br>
+
+<br>
+
+## Graph coloring
 **Graph coloring** is a **special case of graph labeling**, i.e. it is an assignment of **labels** (aka **colors**) to elements of a graph in such a way as to **satisfy** the **constraints** (**restrictions**).<br>
 
 Kinds of **graph coloring**:
@@ -437,153 +457,3 @@ A_{ij}=
 $$
 
 <br>
-
-<br>
-
-# Algorithms
-## Spanning trees
-### Prim's algorithm
-The **Prim's algorithm** is a **greedy algorithm** that finds a **minimum spanning tree** for a **edge-weighted** graph.
-
-<br>
-
-### Kruskal's algorithm
-**Kruskal's algorithm** is a **greedy algorithm** that finds a **minimum spanning forest** of an undirected **edge-weighted** graph. If the graph is **connected**, it finds a **minimum spanning tree**.
-Worst-case performance **O(|E|log|V|)**.
-
-<br>
-
-## Shortest paths
-### Dijkstra's algorithm
-**Dijkstra's algorithm** (/ˈdaɪkstrəz/) finds the **shortest path** from a given **source node** to **every other node** in a **edge-weighted** *graph*.<br>
-It can also be used to find the shortest path to a specific destination node, by terminating the algorithm once the shortest path to the destination node is know.<br>
-With using a **Fibonacci heap priority queue** the **worst-case performance**: **O(|E| + |V|log|V|)**.<br>
-
-*Dijkstra's algorithm* is just **BSF** that uses a **priority queue** instead **regular queue**. It **greedily** selects the **nearest vertex** that has **not** visited yet. So, Dijkstra's algorithm is a **greedy algorithm** because at each step, it selects the vertex with the smallest distance from the source vertex and adds it to the set of vertices that have been visited. This choice is made without considering the overall path or the global optimal solution.
-
-The *Dijkstra's algorithm* is **greedy** because it makes **locally optimal choices at each step**.<br>
-
-For example, if the nodes of the graph represent **cities**, and the costs of edges represent the average **distances** between pairs of cities connected by a direct road, then *Dijkstra's algorithm* can be used to find the **shortest route** between one city and all other cities.<br>
-
-<br>
-
-#### Algorithm
-1. Mark **all** nodes as **unvisited**.
-2. Assign to **every** node an **initial distance**: **zero** for the **starting node** and $`+\infty`$ for **all other nodes**.
-3. Add **all** nodes to **priority queue**.
-4. Remove from the **queue** next **unvisited** with the **smallest distance** node. It is **current node**.
-5. Calculate `new_distance` for **every** child node of current node: `new_distance` = `min(distance_of_current_node + weight_of_edge_to_child, distance_of_child_node)` and assign it to child.
-6. **Repeat** steps `4` and `5` while queue is **not** empty.
-
-<br>
-
-### Bellman–Ford algorithm
-The **Bellman–Ford algorithm** finds the **shortest path** from a given **source** vertex to **all** other vertices in a **edge-weighted** *digraph*.<br>
-**Worst-case performance O(|V||E|)**.<br>
-
-It is **slower** than *Dijkstra's algorithm*, but it can handle graphs in which some of the edge **weights** are **negative** numbers.<br>
-
-The *Bellman-Ford algorithm* is **dynamic** because it uses a **dynamic programming approach** to compute the shortest paths by **solving subproblems** and iteratively updating the distances.<br>
-
-<br>
-
-### Floyd–Warshall algorithm
-The **Floyd–Warshall algorithm** (aka the **WFI algorithm**) finds **shortest paths** between **all** *pairs of vertices* in a **edge-weighted** *digraph* with **positive** or **negative** edge weights (but with **no negative cycles**).<br>
-**Worst-case** and **best-case performance**: **O(|V|<sup>3</sup>)**.<br>
-**Worst-case space** complexity: **O(|V|<sup>2</sup>)**.<br>
-
-The *Floyd–Warshall algorithm* is an example of **dynamic programming**.<br>
-
-Consider a **weighted graph** $`{\displaystyle G=\{V, E\}}`$ with vertices $`{\displaystyle V}`$ numbered $`{\displaystyle 1}`$ through through $`{\displaystyle n}`$.<br>
-
-Let $`\omega_{\upsilon\nu}`$ denote **weight** of **edge** $`{\varepsilon_{\upsilon\nu}=\upsilon\nu}`$, then:
-```math
-\boldsymbol{\omega_{\upsilon\nu}}=
-\begin
-{cases}
-\varepsilon_{\upsilon\nu}, & \text{if} & \varepsilon_{\upsilon\nu}∈E \\
-+\infty, & \text{if} & \varepsilon_{\upsilon\nu}∉E
-\end
-{cases}
-```
-
-In other words $`{\omega_{\upsilon\nu}=+\infty}`$ **if** $`\nu_{i}`$ and $`\nu_{j}`$ are **not adjacent** (or **not directly connected**).
-
-<br>
-
-Let $`d^{(k)}_{ij}`$ denotes the **shortest path** from $`\nu_{i}`$ to $`\nu_{j}`$ that can contain **intermediate** vertices **only** from the set $`{\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}`$.<br>
-
-Then:
-- $`{d^{(0)}_{ij}}`$ is just a **weight** ($`\omega_{ij}`$) of **edge** ($`\varepsilon_{ij}`$) - the **base case**;
-- $`{d^{(1)}_{ij}}`$ is a **shortests distance** of **path** that pass through **vertex** $`\nu_{1}`$;
-- $`{d^{(2)}_{ij}}`$ is a **shortests distance** of **path** that pass through **vertices** $`{\{\nu_{1},\nu_{2}\}}`$;
-- ...
-- $`{d^{(k-1)}_{ij}}`$ is a **shortests distance** of **path** that pass through **vertices** $`{\{\nu_{1},\nu_{2}, ..., \nu_{k-1}\}}`$;
-- $`{d^{(k)}_{ij}}`$ is a **shortests distance** of **path** that pass through **vertices** $`{\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}`$;
-
-<br>
-
-Let $`p_{1k}=(\nu_{1}, ...,  \nu_{k})`$ is a path from $`\nu_{1}`$ to $`\nu_{k}`$.<br>
-Let $`p_{ij}=(\nu_{i}, ...,  \nu_{j})`$ is a **part** of $`p_{1k}`$ and $`1 ≤ i ≤ j ≤ k`$.<br>
-
-**Theorem**. If $`p_{1k}`$ is the **shortest path** from $`\nu_{1}`$ to $`\nu_{k}`$ then $`p_{ij}`$ is the **shortest path** from $`\nu_{i}`$ to $`\nu_{j}`$ too.<br>
-**Proof**. If there is path that is shorter than $`p_{ij}`$ it means we can also reduce length of $`p_{1k}`$, but it leads to a **contradiction** with the statement that $`p_{1k}`$ is the **shortest path**.<br>
-
-**Consider** *shortest path* $`d^{(k)}_{ij}`$. Add a vertex $`\nu_{k}`$ to the set of allowed intermediate vertices then resulting set is $`{\{\nu_{1},\nu_{2}, ..., \nu_{k}\}}`$.<br>
-
-There are **2 cases**:
-- $`case_1`$: Vertex $`\nu_{k}`$ **doesn't** change **shortest path** $`d^{(k)}_{ij}`$ and it **doesn't** belong to $`d^{(k)}_{ij}`$, so $`d^{(k)}_{ij} = d^{(k-1)}_{ij}`$;
-- $`case_2`$: Vertex $`\nu_{k}`$ **changes shortest path** $`d^{(k)}_{ij}`$ and $`d^{(k)}_{ij}`$ includes $`\nu_{k}`$. what is new distance of new shortest path? $`\nu_{k}`$ splits new path into 2 subpaths: $`d_{ik}`$ and $`d_{kj}`$, and they are both **shortest paths**, so $`d^{(k)}_{ij} = d^{(k)}_{ik} + d^{(k)}_{kj}`$ and both $`d_{ik}`$ and $`d_{kj}`$ contain $`k`$ as **intermediate** vertex. It means, we can exclude $`k`$ from the **set of intemediate verteces** and then $`d^{(k)}_{ij} = d^{(k-1)}_{ik} + d^{(k-1)}_{kj}`$;
-
-
-So, **shortest path** $`d^{(k)}_{ij}`$ must be **less than or equal to** $`d^{(k-1)}_{ij}`$.<br>
-
-**Finally**: $`d^{(k)}_{ij} = min(case_1, case_2) = min(d^{(k-1)}_{ij}, d^{(k-1)}_{ik} + d^{(k-1)}_{kj})`$.<br>
-
-<br>
-
-#### Algorithm
-The algorithm works by first computing $`d^{(k)}_{ij}`$ for all $`(i,j)`$ pairs for $`k=0`$, then $`k=1`$, then $`k=2`$ and so on up to $`k=n`$.<br>
-
-If there is **no** path from $`\nu_{i}`$ to $`\nu_{j}`$ for some $k$ then $`{d^{(k)}_{ij}}=+\infty`$.<br>
-
-Consider graph:<br>
-![floyd-warshall](/img/floyd-warshall.png)
-
-**Steps**:
-- $k=0$:
-  - $`{d^{(0)}_{AC}}=1`$
-  - $`{d^{(0)}_{BC}}=2`$
-  - ...
-  - $`{d^{(0)}_{AB}}=+\infty`$
-  - $`{d^{(0)}_{AD}}=+\infty`$
-- $k=1$:
-  - $`{d^{(1)}_{AC}}=1`$
-  - $`{d^{(1)}_{BC}}=2`$
-  - ...
-  - $`{d^{(1)}_{AB}}={d^{(0)}_{AC}} + {d^{(0)}_{BC}}=1+2=3`$
-  - $`{d^{(1)}_{AD}}={d^{(0)}_{AC}} + {d^{(0)}_{DC}}=1+3=4`$
-- ...
-
-<br>
-
-#### Pseudocode
-```rust
-let dist be a |V| × |V| array of minimum distances initialized to ∞ (infinity)
-for each edge (u, v) do
-    dist[u][v] ← w(u, v)  // The weight of the edge (u, v)
-for each vertex v do
-    dist[v][v] ← 0
-for k from 1 to |V|
-    for i from 1 to |V|
-        for j from 1 to |V|
-            if dist[i][j] > dist[i][k] + dist[k][j] 
-                dist[i][j] ← dist[i][k] + dist[k][j]
-            end if
-```
-
-<br>
-
-## Flows
-### Ford–Fulkerson algorithm
-The **Ford–Fulkerson algorithm** is a **greedy algorithm** that computes the maximum flow in a flow network.<br>
