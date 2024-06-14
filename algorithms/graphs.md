@@ -7,9 +7,9 @@
   - [Types of graphs](#types-of-graphs)
   - [Walk, trail, path](#walk-trail-path)
   - [Circuit and cycle](#circuit-and-cycle)
-  - [Distance, diameter](#distance-diameter)
   - [Eulerian graph](#eulerian-graph)
   - [Hamiltonian graph](#hamiltonian-graph)
+  - [Distance, diameter](#distance-diameter)
 - [Subgraphs](#subgraphs)
 - [Trees](#trees)
 - [Connectivity](#connectivity)
@@ -165,12 +165,6 @@ A **cycle** is a **closed path**.<br>
 
 <br>
 
-## Distance, diameter
-The **distance** between **two vertices** in a graph is the **length of a shortest path between them**.<br>
-The **diameter** of a **connected graph** is the **largest distance in this graph**.<br>
-
-<br>
-
 ## Eulerian graph
 **Eulerian trail** is a **trail** that visits **every** graph’s **edge**.<br>
 **Eulerian circuit** is a **closed Eulerian trail**.<br>
@@ -185,6 +179,12 @@ The **diameter** of a **connected graph** is the **largest distance in this grap
 **Hamiltonian path** is a **path** that visits **every** graph’s **vertex**.<br>
 **Hamiltonian cycle** is a **closed Hamiltonian path**.<br>
 **Hamiltonian graph** is a graph that contains a **Hamiltonian cycle**.<br>
+
+<br>
+
+## Distance, diameter
+The **distance** between **two vertices** in a graph is the **length of a shortest path between them**.<br>
+The **diameter** of a **connected graph** is the **largest distance in this graph**.<br>
 
 <br>
 
@@ -240,8 +240,8 @@ There is **exactly one path between any two vertices in tree**.<br>
 <br>
 
 ## Undirected graphs
-A **connected graph** is graph in which **every pair** of vertices is **connected**. This means that there is a **path between every pair of vertices**.<br>
-A **disconnected** graph is graph in which **at least one pair** of **disconnected** vertices.<br>
+A **connected graph** is *graph* in which **every pair** of vertices is **connected**. This means that there is a **path between every pair of vertices**.<br>
+A **disconnected graph** is *graph* in which **at least one pair** of **disconnected** vertices.<br>
 
 <br>
 
@@ -265,6 +265,8 @@ A **directed graph** is **strongly connected** if there is a **path** in **each 
 **Connected component** (or just **component**) of an **undirected graph** $G$ is a **maximal** (by **inclusion**) **connected subgraph** of graph $G$.<br>
 
 A **connected graph** has exactly **1 connected component**, consisting of the **whole graph**.<br>
+
+An *edge* in an *undirected graph* is called a **bridge** (or **cut-edge**) iff deleting that edge **disconnects** the **connected component** to which that edge belongs.<br>
 
 <br>
 
