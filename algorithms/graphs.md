@@ -157,7 +157,7 @@ The **diameter** of a **connected graph** is the **largest distance in this grap
 A **walk** (or **directed walk** in *directed graph*) is a **sequence of adjacent edges**.<br>
 A **length** of *walk* is a **number of edges** in it. So, the *walk* of length $k$ contains $k$ **edges** and $k+1$ **vertices**.<br>
 
-there are *2 types of walks*:
+There are *2 types of walks*:
 - **open walk** is a *walk* in which the **first** and **last** vertices **aren't equal** ($v_0 \neq v_k$).<br>
 - **closed walk** is a *walk* in which the **first** and **last** vertices are **equal** ($v_0 = v_k$).<br>
 
@@ -179,11 +179,11 @@ A *directed graph* **without** *directed cycles* is called a **directed acyclic 
 
 <br>
 
-The number $`W_k`$ of **all walks** of length $k$ in complete graph $`K_n`$ is a **k-permutation of n vertices with repetitions**, because **at every step** in *walk* we have $n$ **choices**: $`W_k = \underbrace{n  \times n  \times n \  ...}_\text{k times} = n^k`$.<br>
+The number $`N_k`$ of **all paths** of length $k<=n$ in complete graph $`K_n`$ is a **$k$-permutation of $n$ vertices without repetitions**, because **at every $i$ step** in *path* we have $n-i$ **choices**: $`N_k = \underbrace{n  \times n-1  \times n-2 \  ... \ n-k +1}_\text{k times} = P(n,k) = n!/(n-k)!`$.<br>
 
 <br>
 
-The number $`N_k`$ of **all paths** of length $k$ in complete graph $`K_n`$ is a **(k-1)-permutation of (n-1) vertices with repetitions multiplied by n**, because **at first step** we have all possible $n$ **choices**, but **at every subsequent step** in *path* we have only $n-1$ **choices** and for $k-1$ remaining **vertices** in *path*: $`N_k = n \times \underbrace{n-1  \times n-1  \times n-1 \  ...}_\text{k-1 times} = n \times {(n-1)}^{k-1}`$.<br>
+Note that in the **walk** the same vertex $`v_j`$ **cannot** appear next to each other, for example $`v_jv_j`$ is **not** valid, but $`v_jv_mv_j`$ is **valid**. So, the number $`W_k`$ of **all walks** of length $k>0$ in complete graph $`K_n`$ is a **$(k-1)$-permutation of $(n-1)$ vertices with repetitions multiplied by $n$**, because **at first step** we have all possible $n$ **choices**, but **at every subsequent step** in *walk* we have only $n-1$ **choices** and for $k-1$ remaining **vertices** in *walk*: $`W_k = n \times \underbrace{n-1  \times n-1  \times n-1 \  ...}_\text{k-1 times} = n \times {(n-1)}^{k-1}`$.<br>
 
 <br>
 
