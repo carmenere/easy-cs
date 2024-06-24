@@ -5,11 +5,10 @@
     - [Definitions for undirected graphs](#definitions-for-undirected-graphs)
     - [Definitions for directed graphs](#definitions-for-directed-graphs)
   - [Types of graphs](#types-of-graphs)
-  - [Walk, trail, path](#walk-trail-path)
-  - [Circuit and cycle](#circuit-and-cycle)
+  - [Distance, diameter](#distance-diameter)
+  - [Walk, trail, path, circuit, cycle](#walk-trail-path-circuit-cycle)
   - [Eulerian graph](#eulerian-graph)
   - [Hamiltonian graph](#hamiltonian-graph)
-  - [Distance, diameter](#distance-diameter)
 - [Subgraphs](#subgraphs)
 - [Trees](#trees)
 - [Connectivity](#connectivity)
@@ -57,7 +56,7 @@ A *pair of vertices* can be **ordered** or **unordered**:
 
 Edges may **have orientation** (aka **direction**) or **not**:
 - **unordered** *pairs of vertices* $\{u,v\}$ represent *edges* **without orientation**;
-- **ordered** *pairs of vertices* $(u,v)$ represent *edges* **with orientation** (aka **directed edges**, **arrows**);
+- **ordered** *pairs of vertices* $(u,v)$ represent *edges* **with orientation** (aka **directed edges**, **arcs**);
 
 <br>
 
@@ -76,7 +75,7 @@ A *vertex* is **incident on** *edge* if the *vertex* is one of the **endpoints**
 
 <br>
 
-The **number of edges** *incident* **to** $v$ is the **degree** (aka **valency**) of $v$, denoted $𝛿(v)$. In other words, the **degree of vertex** is the **number of edges** **incident** on it.<br>
+The **number of edges** *incident* **to** $v$ is the **degree** (aka **valency**) of $v$, denoted $𝛿(v)$. In other words, the **degree of vertex** is the **number of edges incident** on it.<br>
 
 An **isolated vertex** is a vertex with $𝛿(v) = 0$.<br>
 A **leaf vertex** (aka **pendant vertex**) is a vertex with $𝛿(v) = 1$.<br>
@@ -148,30 +147,52 @@ A **plane graph** is a graph that **has already embedded in the plane**.
 
 <br>
 
-## Walk, trail, path
-A **walk** is a **sequence of adjacent edges**.<br>
-A **trail** is a **walk** in which all **edges** are **distinct**.<br>
-A **path** (aka **simple trail**) is a **trail** in which all **vertices** are **distinct**.<br>
-
-**Length** of *walk* (or *trail* or *path*) is a **number of edges** in it.<br>
+## Distance, diameter
+The **distance** between **two vertices** in a graph is the **length of a shortest path between them**.<br>
+The **diameter** of a **connected graph** is the **largest distance in this graph**.<br>
 
 <br>
 
-## Circuit and cycle
-A **closed** *walk* (or *trail* or *path*) is a *walk* (or *trail* or *path*) in which the **first** and **last** vertices are **equal** ($v_0 = v_n$).<br>
-A **closed walk** is a **closed walk**.<br>
-A **circuit** is a **closed trail**.<br>
-A **cycle** is a **closed path**.<br>
+## Walk, trail, path, circuit, cycle
+A **walk** (or **directed walk** in *directed graph*) is a **sequence of adjacent edges**.<br>
+A **length** of *walk* is a **number of edges** in it. So, the *walk* of length $k$ contains $k$ **edges** and $k+1$ **vertices**.<br>
+
+there are *2 types of walks*:
+- **open walk** is a *walk* in which the **first** and **last** vertices **aren't equal** ($v_0 \neq v_k$).<br>
+- **closed walk** is a *walk* in which the **first** and **last** vertices are **equal** ($v_0 = v_k$).<br>
+
+<br>
+
+A **trail** (or **directed trail** in *directed graph*) is an **open walk** in which all **edges** are **distinct**.<br>
+A **path** (aka **simple trail**) (or **directed path** in *directed graph*) is a **trail** in which all **vertices** are **distinct**.<br>
+
+<br>
+
+A **circuit** (or **directed circuit** in *directed graph*) is a **closed trail**.<br>
+A **cycle** (aka **simple cycle**) (or **directed cycle** in *directed graph*) is a **closed path**. So, in **simple cycle** only the **starting** and **ending** vertices are *repeated* and **no other** vertices are *repeated*.<br>
+
+<br>
+
+A *graph* **without** *cycles* is called an **acyclic graph**.<br>
+A *connected graph* **without** *cycles* is called a **tree**.<br>
+A *directed graph* **without** *directed cycles* is called a **directed acyclic graph** (**DAG**).<br>
+
+<br>
+
+The number $`W_k`$ of **all walks** of length $k$ in complete graph $`K_n`$ is a **k-permutation of n vertices with repetitions**, because **at every step** in *walk* we have $n$ **choices**: $`W_k = \underbrace{n  \times n  \times n \  ...}_\text{k times} = n^k`$.<br>
+
+<br>
+
+The number $`N_k`$ of **all paths** of length $k$ in complete graph $`K_n`$ is a **(k-1)-permutation of (n-1) vertices with repetitions multiplied by n**, because **at first step** we have all possible $n$ **choices**, but **at every subsequent step** in *path* we have only $n-1$ **choices** and for $k-1$ remaining **vertices** in *path*: $`N_k = n \times \underbrace{n-1  \times n-1  \times n-1 \  ...}_\text{k-1 times} = n \times {(n-1)}^{k-1}`$.<br>
 
 <br>
 
 ## Eulerian graph
 **Eulerian trail** is a **trail** that visits **every** graph’s **edge**.<br>
 **Eulerian circuit** is a **closed Eulerian trail**.<br>
+**Eulerian graph** is a graph that contains a **Eulerian circuit**.<br>
 
 **Euler's Theorem:** a **connected** graph has an **Eulerian circuit** iif **every vertex** has **even degree**.<br>
-
-**Eulerian graph** is a graph that contains a **Eulerian circuit**.<br>
 
 <br>
 
@@ -179,12 +200,6 @@ A **cycle** is a **closed path**.<br>
 **Hamiltonian path** is a **path** that visits **every** graph’s **vertex**.<br>
 **Hamiltonian cycle** is a **closed Hamiltonian path**.<br>
 **Hamiltonian graph** is a graph that contains a **Hamiltonian cycle**.<br>
-
-<br>
-
-## Distance, diameter
-The **distance** between **two vertices** in a graph is the **length of a shortest path between them**.<br>
-The **diameter** of a **connected graph** is the **largest distance in this graph**.<br>
 
 <br>
 
@@ -225,7 +240,8 @@ Consider following **subgraphs** of graph $G$ with $V’ = {D, E, G, J, K}$ (the
 
 # Trees
 A **tree** is **connected acyclic undirected graph**.<br>
-There is **exactly one path between any two vertices in tree**.<br>
+
+There is **one and only one path** between **every pair** of vertices in a **tree**.<br>
 
 **Spanning tree** of an **undirected graph** $G$ is a **subgraph** that is a **tree** which **includes all** of the **vertices** of $G$.<br>
 
