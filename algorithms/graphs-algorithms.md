@@ -25,6 +25,11 @@
     - [DFS based: color nodes](#dfs-based-color-nodes)
       - [Pseudocode](#pseudocode-2)
     - [DFS based: use stack](#dfs-based-use-stack)
+- [Finding all cycles in undirected graph](#finding-all-cycles-in-undirected-graph)
+  - [Circuit rank and cycle basis](#circuit-rank-and-cycle-basis)
+  - [Fundamental cycle](#fundamental-cycle)
+  - [Finding a fundamental cycle set](#finding-a-fundamental-cycle-set)
+
 
 <br>
 
@@ -403,3 +408,57 @@ When vertex is **visited** we add it to **stack**. At the end, **reverse** the *
 - **Push** `node 1` into the **stack** and return;
 
 ![tsort-dfs-stack-12](/img/tsort-dfs-stack-12.png)
+
+<br>
+
+# Finding all cycles in undirected graph
+## Circuit rank and cycle basis
+**Circuit rank** (aka **cyclomatic number**, **cycle rank**) of an *undirected graph* is the **minimum** number of edges that must be **removed** from the graph to **break** all its cycles, making it into a tree or forest.<br>
+The **circuit rank** $\gamma(G)$ for given graph $G$ is computed by the formula $\gamma(G) = E - V + C$, where:
+- $E$ is the number of **edges**;
+- $V$ is the number of **vertices**;
+- $C$ is the number of **connected components**;
+
+<br>
+
+## Fundamental cycle
+There is **one and only one path** between **every pair** of vertices in a **tree**.<br>
+
+Let $T$ is a **spanning tree** of a *connected undiected graph* $G$. If we add some edge $`e=(v_k,v_m)`$ of $G$ that **not** in $T$, we create a **cycle** $`C_e`$ consisting of **one edge** $`e=(v_k,v_m)`$ from set $G-T$ together with the **unique path** in $T$ between vertices $`v_k`$ and $`v_m`$.<br>
+
+The *cycle* $`C_e`$ obtained in this way is called **fundamental cycle**.<br>
+The *set of all cycles* obtained in this way is called **fundamental cycle set** *associated with* $T$.<br>
+
+Note that **any** graph can have **many different** *spanning trees* depending on the chosen root node and the way the tree was built. Consequently, **each** *spanning tree* in graph **constructs its own** *fundamental cycle set*. However, the **number of fundamental cycles** is **always the same** and equal to the **circuit rank** $\gamma(G)$.<br>
+
+**All** *fundamental cycles* form a **cycle basis**, i.e. a **basis** for the **cycle space** of the graph.<br>
+The **cycle space** of a graph is the collection of its *Eulerian subgraph*s because **every** *simple cycle* in a graph is an *Eulerian subgraph*. <br>
+
+<br>
+
+## Finding a fundamental cycle set
+The central idea is to generate a **spanning tree** $T$ from the *undirected graph* $G$.<br>
+After the *spanning tree* is built, we have to **iterate through all edges** in $G-T$ (edges **aren't** in the *spanning tree*) and form **fundamental cycle**: **one cycle per each edge** in the set $G-T$.<br>
+Then, to find **all possible cycles** of the graph, we must **combine all possible k-tuples** of *fundamental cycles* starting with **2-tuples** (aka pairs) and ending with the $\gamma(G)$**-tuples**.<br>
+The **combination** of 2 *cycles* is like `XOR`: the result will contain **symmetric difference** of edges of 2 *cycles* and **all edges** that **belong to both** *cycles* will be **excluded**.
+
+Assume the *three fundamental cycles* (`A-B-E-F-C-A`; `B-D-E-B`; `D-E-F-D`) illustrated with **red** dotted lines:<br>
+![combine-fundamental-cycles](/img/combine-fundamental-cycles.png)
+
+**Combining** the two cycles `B-D-E-B` and `D-E-F-D` using `XOR` will **erase** the edge `D-E` and **yields** the circle `B-D-F-E-B` (**blue** lines).
+
+But there is still one problem with `XOR` operator: **combining two disjoint cycles** (without common edges) with an `XOR` operation will **again lead two disjoint cycles**. So we must **keep track** of **all pairs of cycles** in **every k-tuple** to **ensure** that **one joint cycle** is generated. Also it means that the *all possible cycles of the graph* **less than or equal to** *total number of combinations of fundamental cycles* because **not** all combinations can be **valid**.
+<br>
+
+The *total number of combinations of fundamental cycles* $C$ is the sum of **all k-combination of n without repetitions** ${n \choose k}$ where: $2 <= k <= \gamma(G)$.<br>
+
+<br>
+
+We know that:
+$`{\displaystyle {n \choose 0}+{n \choose 1}+\ldots +{n \choose n}=\sum _{k=0}^{n}{\binom {n}{k}}=2^{n}} \text \  , \  {\displaystyle n\in \mathbb {N}}`$.<br>
+
+<br>
+
+So, the *total number of combinations of fundamental cycles*: $`C = \sum _{k=2}^{n=\gamma(G)}{\binom {n}{k}}=2^{n} - {n \choose 1} - {n \choose 0} = 2^n - n - 1`$.<br>
+
+It has **exponential** *time complexity* and as soon as $n=\gamma(G)$ becomes large enough it becomes **impossible** to iterate through all combinations.<br>
