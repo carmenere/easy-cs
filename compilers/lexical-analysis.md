@@ -1,0 +1,19 @@
+# Token. Lexeme. Pattern
+A **pattern** is a **rule** (for example, a *regular expression*) that is used to check if a **sequence of characters** is valid or not.<br>
+**Lexeme** is a **sequence of characters** in the text that is **matched** by the **pattern** for a *token*. A **lexeme** is an **instance** of a *token*.<br>
+A **token** is the smallest unit of meaningful data. A **token** represents a **sequence of characters** that **cannot** be decomposed further. A *token* can have an *optional* **token value**.<br>
+
+<br>
+
+|**Token**|**Lexeme**|**Pattern**|
+|:----|:-----|:------|
+|**Keyword**|`while`|Characters `w` `h` `i` `l` `e`|
+|**Integer**|`7`|Sequence of digits with at least one digit `[0-9]+`|
+|**String**|`"Hi"`|Characters enclosed by `"` and `"` except `"`|
+|**Punctuation**|`,`|`;` `,` `.` `!` etc.|
+|**Identifier**||[A-Za-z0-9]+ A sequence of characters and numbers **initiated** by a character.|
+|**Comparison**|||
+
+<br>
+
+**Lexical analyzer** reads the input text, determines **lexemes** and divide them into valid **tokens**.<br>
