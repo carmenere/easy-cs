@@ -14,8 +14,7 @@ A **token** is the smallest unit of meaningful data. A **token** represents a **
 |**Integer**|`7`|Sequence of digits with at least one digit `[0-9]+`|
 |**String**|`"Hi"`|Characters enclosed by `"` and `"` except `"`|
 |**Punctuation**|`,`|`;` `,` `.` `!` etc.|
-|**Identifier**||[A-Za-z0-9]+ A sequence of characters and numbers **initiated** by a character.|
-|**Comparison**|||
+|**Identifier**|`foo1`|[A-Za-z0-9]+ A sequence of characters and numbers **initiated** by a character.|
 
 <br>
 
