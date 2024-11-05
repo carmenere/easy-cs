@@ -121,16 +121,16 @@ Suppose that a **universal set** $`U`$ has been fixed, and that $`A`$ and $`B`$ 
 |Operation|Symbol|Description|
 |:--------|:-----|:----------|
 |**Complement**|$`∁`$ or $`'`$|The **complement** of $`A`$ is the set of all elements of $`U`$ that do **not** belong to $`A`$.|
-|**Union**|$`∪`$|$`A ∪ B = { x \| x∈A \space or \space x∈B }`$ <br> **Cardinality of union**: $`\|A ∪ B\| = \|A\| + \|B\|`$.|
-|**Intersection**|$`∩`$|$`A ∩ B = { x \| x∈A \space and \space x∈B}`$|
-|**Set difference**|$`A \setminus B = { x \| x∈A \space and \space x∉B }`$|
-|**Symmetric difference**$|$`∆`$|$`A ∆ B = { x \space \| \space (x∈A \space and \space x∉B) \space or \space (x∈B \space and \space x∉A) }`$ <br> $`A ∆ B = (A ∪ B) \ (A ∩ B)`$|
-|**Cartesian product**|$`\times`$|$`A \times B = { ⟨a,b⟩ \| a∈A \space and \space b∈B }`$|
+|**Union**|$`∪`$|$`A ∪ B = \{ x \| x∈A \space or \space x∈B \}`$ <br> **Cardinality of union**: $`\|A ∪ B\| = \|A\| + \|B\|`$.|
+|**Intersection**|$`∩`$|$`A ∩ B = \{ x \| x∈A \space and \space x∈B\}`$|
+|**Set difference**|$`\setminus`$|$`A \setminus B = \{ x \| x∈A \space and \space x∉B \}`$|
+|**Symmetric difference**$|$`∆`$|$`A ∆ B = \{ x \space \| \space (x∈A \space and \space x∉B) \space or \space (x∈B \space and \space x∉A) \}`$ <br> $`A ∆ B = (A ∪ B) \ (A ∩ B)`$|
+|**Cartesian product**|$`\times`$|$`A \times B = \{ ⟨a,b⟩ \| a∈A \space and \space b∈B \}`$|
 
 <br>
 
 ## Cartesian product
-**Cartesian product** of two sets $`A`$ and $`B`$, denoted $`A \times B`$, is the set of all **ordered pairs** $`(a, b)`$ (**2-tuples**) where $`a`$ is in $`A`$ and $`b`$ is in $`B`$.<br>
+**Cartesian product** of two sets $`A`$ and $`B`$, denoted $`A \times B`$, is the set of all **ordered pairs** $`(a, b)`$ (**2-tuples**) where $`a`$ is in $`A`$ and $`b`$ is in $`B`$.<br>
 An **ordered pair** $`⟨a,b⟩`$ has the property that $`⟨a,b⟩ = ⟨c,d⟩`$ **if and only if** $`a = c`$ and $`b = d`$.<br>
 
 The **cardinality** of the **cartesian product** is equal to the product of the cardinalities of all the input sets: $`|A \times B| = |A| · |B|`$.<br>
