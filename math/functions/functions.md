@@ -2,7 +2,8 @@
 **Informally**, when we write $`f: X \longrightarrow Y`$ or say $`f`$ is a **function** **from** $`X`$ **to** $`Y`$ we mean that $`f`$ is a **definite rule** which associates to **each** element $`x`$ in $`X`$ an **exactly one** element $`f(x)`$ in $`Y`$. In other words **function** $`f`$ **maps** $`x ∈ X`$ **to** $`y=f(x) ∈ Y`$.<br>
 
 **Formal set-theoretic definition of function**:<br>
-a function $`f`$ **from** a set $`X`$ **to** a set $`Y`$ is a **subset** $`f ⊆ X×Y`$ with the property that for each $`∀x∈X, ∃!y∈Y: ⟨x,y⟩ ∈ f`$, here $`∃!y∈Y:`$ means $`$... exists exactly one y∈Y such that ... $`$.<br>
+a function $`f`$ **from** a set $`X`$ **to** a set $`Y`$ is a **subset** $`f ⊆ X \times Y`$ with the property that for each $`∀x ∈X, ∃!y∈Y: ⟨x,y⟩ ∈ f`$.<br>
+The notation $`∃!y∈Y:`$ means "**exists exactly one** $`y∈Y`$ **such that ...**" .<br>
 
 **Defenition of function** in terms of **input** and **output**: when we give **function** $`f`$ an **input** $`x∈X`$, it gives an **output** $`f(x)`$. The $`x`$ in $`f(x)`$ is called the **argument** of $`f`$, and $`f(x)`$ is called the **value of function**.<br>
 
