@@ -14,10 +14,10 @@ A **low** *p-value* means that the *sample results* would be **unlikely** if the
 A **high** *p-value* means that the *sample results* would be **likely** if the $`H_{0}`$ were **true** and leads to the **retention** of the $`H_{0}`$.<br>
 
 If *p-value* is **very small**, that means
-- We are so "lucky" to get this **very rare** *sample results*.
-<br>
-OR
-- Our assumption ($`H_{0}`$ is *true*) is **incorrect** and we must **reject** $`H_{0}`$.
+- we are so "lucky" to get this **very rare** *sample results*;
+
+**OR** 
+- our assumption ($`H_{0}`$ is *true*) is **incorrect** and we must **reject** $`H_{0}`$;
 
 <br>
 
