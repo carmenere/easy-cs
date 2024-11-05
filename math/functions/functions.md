@@ -46,8 +46,8 @@ Consider some function $`f: X \longrightarrow Y`$:
 - The set $`Y`$ is called the **codomain** of $`f`$, it is the **set of values** that could **possibly come out** of a function.
 - The $`im \space f`$ of $`f`$, written $`im \space f`$, it is the **set of values** that **actually comes out** of a function, more formally: $`im \space f = {f(x): x ∈ X \space and \space f(x) ∈ Y}`$.
 
-So, the *image* $`im \space f`$ is a **subset** of the *codomain* $`Y`$: $`im \space f ⊆ Y`$.<br>
-*Image* $`im \space f`$ has **pre-images**. But **complement** of *image* $`Y \ im \space f`$ **hasn't pre-images**.<br>
+So, the **image** $`im \space f`$ is a **subset** of the *codomain* $`Y`$: $`im \space f ⊆ Y`$.<br>
+The **image** $`im \space f`$ has **pre-images**. But **complement** of **image** $`Y \ im \space f`$ **hasn't pre-images**.<br>
 
 Why both? Well, sometimes we don't know the exact $`im \space f`$, but we know the set it **lies in**. So we define the **codomain** and continue on.<br>
 
