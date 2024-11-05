@@ -30,7 +30,7 @@ So, for $`i≠j`$ the sets $`A'_{i}`$ and $`A'_{j}`$ are **disjoint** even if th
 
 **Indexed family**, is informally a collection of objects, each associated with an **index** from some **index set**.<br>
 
-Let $`I`$ and $`X`$ be sets and $`𝑓`$ a function such that $`𝑓: I -> X`$ where $`𝑖`$ is an element of $`I`$ and the **image** $`𝑓(𝑖)`$ is the element of $`X`$ indexed by $`𝑖 ∈ I`$.<br>
+Let $`I`$ and $`X`$ be sets and $`𝑓`$ a function such that $`𝑓: I \longrightarrow X`$ where $`𝑖`$ is an element of $`I`$ and the **image** $`𝑓(𝑖)`$ is the element of $`X`$ indexed by $`𝑖 ∈ I`$.<br>
 Then $`I`$ is called the **index set** of the family, and $`X`$ is called the **indexed set**.<br>
 
 Let $`(A_{𝑖}: 𝑖 ∈ I)`$ is an **indexed family of sets** indexed by $`I`$. The **disjoint union** of this **family** is the set: $`⨆A_{𝑖} = ⋃\{(x,𝑖): x ∈ A_{𝑖}\}`$.<br>
