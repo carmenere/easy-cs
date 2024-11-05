@@ -18,22 +18,22 @@
 <br>
 
 # Linear combinations
-If $`{\displaystyle \mathbf {v} _{1},\mathbf {v} _{2},\dots ,\mathbf {v} _{k}}`$ are **vectors** and $`a_1`$ ,..., $`a_n`$ are **scalars**, then the **linear combination** of those **vectors** is $`{\displaystyle a_{1}\mathbf {v} _{1}+a_{2}\mathbf {v} _{2}+a_{3}\mathbf {v} _{3}+\cdots +a_{n}\mathbf {v} _{n}}`$.<br>
+If $`{\displaystyle \mathbf {v}_{1},\mathbf {v}_{2},\dots ,\mathbf {v}_{k}}`$ are **vectors** and $`a_1`$ ,..., $`a_n`$ are **scalars**, then the **linear combination** of those **vectors** is $`{\displaystyle a_{1}\mathbf {v}_{1}+a_{2}\mathbf {v}_{2}+a_{3}\mathbf {v}_{3}+\cdots +a_{n}\mathbf {v}_{n}}`$.<br>
 
 <br>
 
 ## Linearly dependent vectors
-A sequence of vectors $`{\displaystyle \mathbf {v} _{1},\mathbf {v} _{2},\dots ,\mathbf {v} _{k}}`$ is said to be **linearly dependent**, if there exist scalars $`{\displaystyle a_{1},a_{2},\dots ,a_{k}}`$, not all zero, such that $`{\displaystyle a_{1}\mathbf {v} _{1}+a_{2}\mathbf {v} _{2}+\cdots +a_{k}\mathbf {v} _{k}=\mathbf {0} }`$, where $`{\displaystyle \mathbf {0}}`$ denotes the **zero vector**.<br>
+A sequence of vectors $`{\displaystyle \mathbf {v}_{1},\mathbf {v}_{2},\dots ,\mathbf {v}_{k}}`$ is said to be **linearly dependent**, if there exist scalars $`{\displaystyle a_{1},a_{2},\dots ,a_{k}}`$, not all zero, such that $`{\displaystyle a_{1}\mathbf {v}_{1}+a_{2}\mathbf {v}_{2}+\cdots +a_{k}\mathbf {v}_{k}=\mathbf {0} }`$, where $`{\displaystyle \mathbf {0}}`$ denotes the **zero vector**.<br>
 
 This implies that at least one of the scalars is nonzero, say $`{\displaystyle a_{1}\neq 0}`$, and the above equation is able to be written as 
-$`{\displaystyle \mathbf {v} _{1}={\frac {-a_{2}}{a_{1}}}\mathbf {v} _{2}+\cdots +{\frac {-a_{k}}{a_{1}}}\mathbf {v} _{k}}`$.<br>
+$`{\displaystyle \mathbf {v}_{1}={\frac {-a_{2}}{a_{1}}}\mathbf {v}_{2}+\cdots +{\frac {-a_{k}}{a_{1}}}\mathbf {v}_{k}}`$.<br>
 
 In other words, **any vector** in the sequence of vectors **can be represented** as a **linear combination** of the **remaining vectors** in the sequence.<br>
 
 <br>
 
 ## Linearly independent vectors
-A sequence of vectors $`{\displaystyle \mathbf {v} _{1},\mathbf {v} _{2},\dots ,\mathbf {v} _{n}}`$ is said to be **linearly independent** if it is **not** *linearly dependent*, that is, if the equation $`{\displaystyle a_{1}\mathbf {v} _{1}+a_{2}\mathbf {v} _{2}+\cdots +a_{n}\mathbf {v} _{n}=\mathbf {0}}`$
+A sequence of vectors $`{\displaystyle \mathbf {v}_{1},\mathbf {v}_{2},\dots ,\mathbf {v}_{n}}`$ is said to be **linearly independent** if it is **not** *linearly dependent*, that is, if the equation $`{\displaystyle a_{1}\mathbf {v}_{1}+a_{2}\mathbf {v}_{2}+\cdots +a_{n}\mathbf {v}_{n}=\mathbf {0}}`$
 can only be satisfied by $`{\displaystyle a_{i}=0}$ for ${\displaystyle i=1,\dots ,n}`$.<br>
 
 In other words, **no vector** in the sequence of vectors **can be represented** as a **linear combination** of the **remaining vectors** in the sequence.<br>
