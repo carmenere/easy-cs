@@ -40,12 +40,12 @@ Let $`A`$ and $`B`$ be sets:<br>
 
 ## Subset
 - $`A ⊆ B`$ means $`A`$ is a **subset** of $`B`$ or $`A`$ is **contained in** $`B`$, in other words **every** element of $`A`$ is **also** an element of $`B`$;
-  - **formal defenition**: $`A ⊆ B, if ∀ a∈A ⇒ b∈B`$;
+  - **formal defenition**: $`{\displaystyle A ⊆ B, {\text if } \space ∀ a∈A ⇒ b∈B}`$;
   - also $`B`$ is called a **superset** of set $`A`$ and denoted $`B ⊇ A`$;
-- If $`A ⊆ B and A ⊆ B`$ => $`A = B`$;
+- If $`A ⊆ B \space and \space A ⊆ B`$ => $`A = B`$;
 - $`A ⊈ B`$ means $`A`$ is **not** a **subset** of $`B`$.
 - $`A ⊊ B`$ means $`A`$ is a **proper subset** of $`B`$, in other words $`A`$ is a **subset** of $`B`$ **but** $`A ≠ B`$;
-  - **formal defenition**: $`A ⊊ B, if A ⊆ B and A ≠ B`$;
+  - **formal defenition**: $`A ⊊ B, {\text if } A ⊆ B \space and \space A ≠ B`$;
   - $`B`$ is called a **proper superset** of set $`A`$ and denoted $`B ⊋ A`$;
 
 <br>
@@ -125,12 +125,12 @@ Suppose that a **universal set** $`U`$ has been fixed, and that $`A`$ and $`B`$ 
 |**Intersection**|$`∩`$|$`A ∩ B = { x \| x∈A \space and \space x∈B}`$|
 |**Set difference**|$`A \setminus B = { x \| x∈A \space and \space x∉B }`$|
 |**Symmetric difference**$|$`∆`$|$`A ∆ B = { x \space \| \space (x∈A \space and \space x∉B) \space or \space (x∈B \space and \space x∉A) }`$ <br> $`A ∆ B = (A ∪ B) \ (A ∩ B)`$|
-|**Cartesian product**|$`\times`$|$`A × B = { ⟨a,b⟩ \| a∈A \space and \space b∈B }`$|
+|**Cartesian product**|$`\times`$|$`A \times B = { ⟨a,b⟩ \| a∈A \space and \space b∈B }`$|
 
 <br>
 
 ## Cartesian product
-**Cartesian product** of two sets $`A`$ and $`B`$, denoted $`A × B`$, is the set of all **ordered pairs** $`(a, b)`$ (**2-tuples**) where $`a`$ is in $`A`$ and $`b`$ is in $`B`$.<br>
+**Cartesian product** of two sets $`A`$ and $`B`$, denoted $`A \times B`$, is the set of all **ordered pairs** $`(a, b)`$ (**2-tuples**) where $`a`$ is in $`A`$ and $`b`$ is in $`B`$.<br>
 An **ordered pair** $`⟨a,b⟩`$ has the property that $`⟨a,b⟩ = ⟨c,d⟩`$ **if and only if** $`a = c`$ and $`b = d`$.<br>
 
-The **cardinality** of the **cartesian product** is equal to the product of the cardinalities of all the input sets: $`|A × B| = |A| · |B|`$.<br>
+The **cardinality** of the **cartesian product** is equal to the product of the cardinalities of all the input sets: $`|A \times B| = |A| · |B|`$.<br>
