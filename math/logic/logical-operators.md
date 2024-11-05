@@ -1,3 +1,11 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [XOR](#xor)
+  - [The truth table of XOR](#the-truth-table-of-xor)
+  - [Two important properties of XOR](#two-important-properties-of-xor)
+
+<br>
+
 # XOR
 **XOR** (aka **Exclusive or**) is a logical operator which is `true` if and only if the **inputs differ**.
 

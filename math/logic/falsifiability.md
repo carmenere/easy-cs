@@ -1,3 +1,9 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Falsifiability](#falsifiability)
+
+<br>
+
 # Falsifiability
 Karl Popper believed that **scientific knowledge is provisional** – the best we can do at the moment.<br>
 The **falsification principle** (aka just **falsifiability** or **Popper's criterion**) was proposed by **Karl Popper**.<br>

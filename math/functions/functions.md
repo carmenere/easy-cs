@@ -1,3 +1,18 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Function](#function)
+  - [Domain. Image. Codomain](#domain-image-codomain)
+    - [Example](#example)
+- [Composition](#composition)
+- [Identity function](#identity-function)
+- [Left inverse. Right inverse. Invertible](#left-inverse-right-inverse-invertible)
+- [Surjection](#surjection)
+- [Injection](#injection)
+- [Bijection](#bijection)
+- [Surjection/Injection/Bijection on finite sets](#surjectioninjectionbijection-on-finite-sets)
+
+<br>
+
 # Function
 **Informally**, when we write $`f: X \longrightarrow Y`$ or say $`f`$ is a **function** **from** $`X`$ **to** $`Y`$ we mean that $`f`$ is a **definite rule** which associates to **each** element $`x`$ in $`X`$ an **exactly one** element $`f(x)`$ in $`Y`$. In other words **function** $`f`$ **maps** $`x ∈ X`$ **to** $`y=f(x) ∈ Y`$.<br>
 

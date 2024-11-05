@@ -1,3 +1,19 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Logical reasoning](#logical-reasoning)
+  - [Claim vs. Statement vs. Proposition](#claim-vs-statement-vs-proposition)
+  - [Logical reasoning](#logical-reasoning-1)
+  - [Validity and soundness](#validity-and-soundness)
+  - [Inductive reasoning vs. Deductive reasoning](#inductive-reasoning-vs-deductive-reasoning)
+  - [Rules of inference](#rules-of-inference)
+    - [Standard form (or vertical notation)](#standard-form-or-vertical-notation)
+    - [Sequent notation (⊢)](#sequent-notation-)
+  - [Modus ponens /ˈmoʊdəs ˈpoʊnɛnz/](#modus-ponens-ˈmoʊdəs-ˈpoʊnɛnz)
+  - [Modus tollens /ˈmoʊdəs ˈtɒlɛnz/](#modus-tollens-ˈmoʊdəs-ˈtɒlɛnz)
+  - [The law of contraposition](#the-law-of-contraposition)
+
+<br>
+
 # Logical reasoning
 ## Claim vs. Statement vs. Proposition
 - A **statement** is a **sentence** which can be `true` or `false`.

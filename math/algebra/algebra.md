@@ -1,3 +1,23 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Abstract algebra](#abstract-algebra)
+  - [Common axioms](#common-axioms)
+  - [Identity element](#identity-element)
+  - [Inverse element](#inverse-element)
+- [Algebraic structures with one binary operation](#algebraic-structures-with-one-binary-operation)
+  - [Magma](#magma)
+  - [Semigroup](#semigroup)
+  - [Monoid](#monoid)
+  - [Group](#group)
+  - [Abelian group](#abelian-group)
+- [Algebraic structures with two binary operations](#algebraic-structures-with-two-binary-operations)
+  - [Semiring](#semiring)
+  - [Ring](#ring)
+  - [Commutative ring](#commutative-ring)
+  - [Field](#field)
+
+<br>
+
 # Abstract algebra
 **Abstract algebra** studies **algebraic structures**.<br>
 
