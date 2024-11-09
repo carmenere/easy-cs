@@ -79,8 +79,6 @@ So, for $`i≠j`$ the sets $`A'_{i}`$ and $`A'_{j}`$ are **disjoint** even if th
 
 <br>
 
-$`\{A_{i}\}_{i\in I}`$
-
 Let $`\{A_{i}\}_{i\in I}`$ is an **indexed family of sets** indexed by $`I`$. The **disjoint union** of this **family** is the **set**: $`⨆A_{𝑖} = ⋃\{(x,𝑖): x ∈ A_{𝑖}\}`$.<br>
 
 The elements of the **disjoint union** are **ordered pairs** $`(x,𝑖)`$. Here $`𝑖`$ serves as an auxiliary **index** that indicates from which $`A_{𝑖}`$ the element $`x`$ came from.<br>
