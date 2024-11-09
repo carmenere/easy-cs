@@ -1,5 +1,5 @@
 # Family
-A **family** (aka **indexed family**) is a **collection** of objects from dome set $`X`$, each **associated** with an **index** from some **index set** $`I`$.<br>
+A **family** (aka **indexed family**) is a **collection** of objects from some set $`X`$, each **associated** with an **index** from some **index set** $`I`$.<br>
 
 Let $`I`$ and $`X`$ be **sets** and $`f`$ a **function** such that $`f: I \longrightarrow X`$ where $`i`$ is an **element** of $`I`$ and the **image** $`f(i)`$ of $`i`$ is **denoted** by $`x_{i}`$.<br>
 
