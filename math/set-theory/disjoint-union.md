@@ -85,4 +85,4 @@ Let $`\{A_{i}\}_{i\in I}`$ is an **indexed family of sets** indexed by $`I`$. Th
 
 The elements of the **disjoint union** are **ordered pairs** $`(x,𝑖)`$. Here $`𝑖`$ serves as an auxiliary **index** that indicates from which $`A_{𝑖}`$ the element $`x`$ came from.<br>
 
-In the extreme case where each of the $`A_{𝑖}`$ is equal to some fixed set $`A`$ for each $`𝑖 ∈ I`$, the **disjoint union** is the **cartesian product** of $`A`$ and $`I`$: $`⨆A_{𝑖} = A \times I`$.<br>
+In the extreme case where **each** of the $`A_{𝑖}`$ is **equal** to some **fixed set** $`A`$ for **each** $`𝑖 ∈ I`$, the **disjoint union** is the **cartesian product** of $`A`$ and $`I`$: $`⨆A_{𝑖} = A \times I`$.<br>
