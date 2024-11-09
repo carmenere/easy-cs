@@ -1,7 +1,7 @@
 # Family
 A **family** (aka **indexed family**) is informally a **collection** of objects, each **associated** with an **index** from some **index set**.<br>
 
-Let $`I`$ and $`X`$ be **sets** and $`f`$ a **function** such that $`f: I \longrightarrow X`$ where $`i`$ is an **element** of $`I`$ and the **image** $`f(i)`$ of $`i`$ is **denoted** by $`x_{i`$.<br>
+Let $`I`$ and $`X`$ be **sets** and $`f`$ a **function** such that $`f: I \longrightarrow X`$ where $`i`$ is an **element** of $`I`$ and the **image** $`f(i)`$ of $`i`$ is **denoted** by $`x_{i}`$.<br>
 
 For example, $`f(3)`$ is **denoted** by $`x_{3}`$.<br>
 
