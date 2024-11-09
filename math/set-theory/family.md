@@ -1,14 +1,11 @@
 # Family
-A **family** (aka **indexed family**) is a **collection** of objects from some set $`X`$, each **associated** with an **index** from some **index set** $`I`$.<br>
+A **family** (aka **indexed family**) is a **collection** of **elements** from some **set** $`X`$, each **associated** with an **index** from some **index set** $`I`$.<br>
 
-Let $`I`$ and $`X`$ be **sets** and $`f`$ a **function** such that $`f: I \longrightarrow X`$ where $`i`$ is an **element** of $`I`$ and the **image** $`f(i)`$ of $`i`$ is **denoted** by $`x_{i}`$.<br>
-
-For example, $`f(3)`$ is **denoted** by $`x_{3}`$.<br>
+Let $`I`$ and $`X`$ be **sets** and $`f`$ a **function** such that $`f: I \longrightarrow X`$ where $`i \in I`$ and the **image** $`f(i) \in X`$ of $`i`$ is **denoted** by $`x_{i}`$. For example, $`f(3)`$ is **denoted** by $`x_{3}`$.<br>
 
 The **symbol** $`x_{i}`$ is used to indicate that $`x_{i}`$ is the **element** of $`X`$ **indexed** by $`i\in I`$.<br>
 
-The **function** $`f`$ thus establishes a **family** of elements in 
-$`X`$ **indexed** by $`I`$ which is **denoted** by $`\left(x_{i}\right)_{i\in I}`$
+The **function** $`f`$ thus establishes a **family** of elements in $`X`$ **indexed** by $`I`$ which is **denoted** by $`\{x_{i}\}_{i\in I}`$.<br>
 
 <br>
 
@@ -40,6 +37,4 @@ A **class** is a **collection of sets** (or sometimes other **mathematical objec
 
 A **class** that is **not** a **set** is called a **proper class**.<br>
 
-**Zermelo–Fraenkel set theory** is an axiomatic system that was proposed in order to formulate a theory of sets **free of paradoxes** such as *Russell's paradox*.<br>
-
-The **axiom of regularity** together with the **axiom of pairing** implies that **no set** is an **element** of **itself**.<br>
+**Zermelo–Fraenkel set theory** is an axiomatic system that was proposed in order to formulate a theory of sets **free of paradoxes** such as *Russell's paradox*. The **axiom of regularity** together with the **axiom of pairing** implies that **no set** is an **element** of **itself**.<br>
