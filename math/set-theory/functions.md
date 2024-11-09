@@ -1,10 +1,11 @@
 # Table of contents
 - [Table of contents](#table-of-contents)
-- [Function](#function)
+- [Function (aka mapping)](#function-aka-mapping)
+  - [Self-map (aka transformation)](#self-map-aka-transformation)
+    - [Identity map](#identity-map)
   - [Domain. Image. Codomain](#domain-image-codomain)
     - [Example](#example)
 - [Composition](#composition)
-- [Identity function](#identity-function)
 - [Left inverse. Right inverse. Invertible](#left-inverse-right-inverse-invertible)
 - [Surjection](#surjection)
 - [Injection](#injection)
@@ -13,23 +14,26 @@
 
 <br>
 
-# Function
-**Informally**, when we write $`f: X \longrightarrow Y`$ or say $`f`$ is a **function** **from** $`X`$ **to** $`Y`$ we mean that $`f`$ is a **definite rule** which associates to **each** element $`x`$ in $`X`$ an **exactly one** element $`f(x)`$ in $`Y`$. In other words **function** $`f`$ **maps** $`x ∈ X`$ **to** $`y=f(x) ∈ Y`$.<br>
+# Function (aka mapping)
+The terms **function** and **mapping** are **synonymous**.<br>
 
-**Formal set-theoretic definition of function**: a function $`f`$ **from** a set $`X`$ **to** a set $`Y`$ is a **subset** $`f ⊆ X \times Y`$ with the property that for each $`∀x ∈X, ∃!y∈Y: ⟨x,y⟩ ∈ f`$.<br>
+**Defenitions**:
+1. **Informal definition**: when we write $`f: X \longrightarrow Y`$ or say $`f`$ is a **function from** $`X`$ **to** $`Y`$ we mean that $`f`$ is a **definite rule** which associates to **each** element $`x`$ in $`X`$ an **exactly one** element $`f(x)`$ in $`Y`$.
+2. **Formal set-theoretic definition of function**: a **function** $`f`$ **from** a set $`X`$ **to** a set $`Y`$ is a **subset** $`f ⊆ X \times Y`$ with the property that for each $`∀x ∈X, ∃!y∈Y: ⟨x,y⟩ ∈ f`$. The *notation* $`∃!y∈Y:`$ means "**exists exactly one** $`y∈Y`$ **such that ...**".
+3. **Defenition of function** in terms of **input** and **output**: when we give **function** $`f`$ an **input** $`x∈X`$, it gives an **output** $`f(x)`$. The $`x`$ in $`f(x)`$ is called the **argument** of $`f`$, and $`f(x)`$ is called the **value of function**.
 
-The notation $`∃!y∈Y:`$ means "**exists exactly one** $`y∈Y`$ **such that ...**" .<br>
+<br>
 
-**Defenition of function** in terms of **input** and **output**: when we give **function** $`f`$ an **input** $`x∈X`$, it gives an **output** $`f(x)`$. The $`x`$ in $`f(x)`$ is called the **argument** of $`f`$, and $`f(x)`$ is called the **value of function**.<br>
+So, **function** $`f`$ **maps** $`x ∈ X`$ **to** $`y=f(x) ∈ Y`$.<br>
 
 <br>
 
 **Synonyms**:
 |Input|Relationship|Output|
 |:----|:-----------|:-----|
-|Pre-image|*Maps to*|Image|
-|Argument|*Maps to*|Value of function|
-|Independent variable|*Maps to*|Dependent variable|
+|**Pre-image**|*Maps to*|**Image**|
+|**Argument**|*Maps to*|**Value of function**|
+|**Independent variable**|*Maps to*|**Dependent variable**|
 
 <br>
 
@@ -37,6 +41,23 @@ Notations:<br>
 1. $`f: X \longrightarrow Y`$, $`f`$ is the **function**, $`X`$ its **domain**, $`Y`$ its **codomain**.
 2. $`y = f(x)`$, $`y∈Y`$, $`x∈X`$.
 3. $`x ↦ y`$ **instead** of $`y=f(x)`$, this allows the definition of a function **without naming** it.
+
+<br>
+
+## Self-map (aka transformation)
+A **map** (aka **function**) is a **mapping** of a **set** $`X`$ to **any** set, i.e. $`f: X \longrightarrow Y`$.<br>
+A **self-map** (aka **transformation**, **transform**) is a **mapping** of a **set** $`X`$ to **itself**, i.e. $`f: X \longrightarrow X`$.<br>
+
+<br>
+
+### Identity map
+
+One important **self-map** is the **identity map** (aka **identity function**, **identity relation**, **identity transformation**).<br>
+
+An **identity function** is a **self-map** such that $`f(x) = x`$ for **all** elements $`x`$ in $`X`$.
+In other words, the output value $`f(x)`$ in the *codomain* $`X`$ is always the same as the **input** element $`x`$ in the *domain* $`X`$.
+
+The **identity function** $`f`$ on set $`X`$ is often denoted by $`\text{id}_{X}`$.<br>
 
 <br>
 
@@ -63,11 +84,6 @@ Let $`f: X \longrightarrow Y`$ and $`g: Y \longrightarrow Z`$ be functions.<br>
 The **composition** of $`g`$ and $`f`$, written $`g∘f`$ is the function $`g∘f: X→Z`$ such that $`(g∘f)(x) = g(f(x))`$. Thus $`g∘f`$ means apply $`f`$ to $`x`$, then apply $`g`$ to $`f(x)`$.<br>
 
 Notice that composition only makes sense when the **codomain** of $`f`$ is the same as the **domain** of $`g`$.
-
-<br>
-
-# Identity function
-One important function from a set $`X`$ to **itself** is the **identity function**, written $`idₓ`$.<br>
 
 <br>
 
