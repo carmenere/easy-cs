@@ -36,6 +36,6 @@ It is identical to **rotational symmetry** of order **2**.<br>
 
 A **1-fold** symmetry is **no symmetry** (all objects look alike after a rotation of 360°).<br>
 
-An example of **n-fold** symmetry:<br>
+An example of **3-fold** symmetry:<br>
 
 ![rotational_symmetry](/img/rotational_symmetry.png)
