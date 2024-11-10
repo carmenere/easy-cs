@@ -6,14 +6,11 @@ By definition, a **rotation** about the **origin** is a transformation that **pr
 
 Composing two rotations results in another rotation, every rotation has a unique inverse rotation.
 
-All $`SO(n)`$ are **Lie groups**.<br>
+**All** $`SO(n)`$ are **Lie groups**.<br>
 
 <br>
 
 По определению, **вращение** **вокруг начала координат** — линейное преобразование, которое **сохраняет** **длину векторов**, а также сохраняет **ориентацию**.<br>
-
 **Все** группы вращений $`\mathrm {SO} (n)`$, в том числе являются **группами Ли**.<br>
-
 Группы вращений $`\mathrm {SO} (n)`$ при $`{\displaystyle n>2}`$ **некоммутативны**.<br>
-
 **Группа вращений** (**группа поворотов**) в механике и геометрии — набор всех вращений вокруг начала координат в трёхмерном евклидовом пространстве $`\mathbb {R}^{3}`$.<br>
