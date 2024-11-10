@@ -183,12 +183,12 @@ The **product** of a **rotation** and a **reflection** in the $`D_{n}`$ is a **r
 
 Например, все преобразования треугольника $`D_{3}`$ можно задать различными перестановками трёх его вершин в $`S_{3}`$:<br>
 
-**повороты**:
+- **повороты**:<br>
 $`E={\begin{pmatrix}1&2&3\\1&2&3\end{pmatrix}};\space\space
 R_{120^{\circ}}={\begin{pmatrix}1&2&3\\2&3&1\end{pmatrix}};\space\space
 R_{240^{\circ}}={\begin{pmatrix}1&2&3\\3&1&2\end{pmatrix}};`$
 
-**отржаения**:
+- **отржаения**:<br>
 $`R_{1}={\begin{pmatrix}1&2&3\\1&3&2\end{pmatrix}};\space\space
 R_{2}={\begin{pmatrix}1&2&3\\3&2&1\end{pmatrix}};\space\space
 R_{3}={\begin{pmatrix}1&2&3\\2&1&3\end{pmatrix}}`$
