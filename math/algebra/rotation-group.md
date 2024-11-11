@@ -1,3 +1,10 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [The rotation group](#the-rotation-group)
+
+<br>
+
+# The rotation group
 The **3D rotation group**, often denoted $`SO(3)`$, is the group of all **rotations** about the **origin** of **3-dimensional Euclidean space** $`\mathbb {R}^{3}`$.<br>
 
 The **origin** (**начало координат**) of a **Euclidean space** is a special point, usually denoted by the letter O, used as a fixed point of reference for the geometry of the surrounding space.<br>
