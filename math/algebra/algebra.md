@@ -29,7 +29,7 @@ An **algebraic structure** $`A`$ consists of
 
 <br>
 
-For example, an **algebraic structure** $`A`$ with **2** operations can be denoted as $`(A, \cdot, +)`$
+For example, an **algebraic structure** $`A`$ with **2** operations can be denoted as $`(A; \cdot; +)`$
 
 <br>
 
@@ -57,7 +57,7 @@ The **identity elements** for **addition** and **multiplication** are denoted $`
 <br>
 
 ## Inverse element
-Let $`(S, \cdot)`$ be a set $`S`$ with a binary operation $`\cdot`$ and **indentity** $`e`$.<br>
+Let $`(S; \cdot )`$ be a set $`S`$ with a binary operation $`\cdot`$ and **indentity** $`e`$.<br>
 An element $`l`$ of $`S`$ is called a **left inverse** of $`y`$ if $`l \cdot y = e`$.<br>
 An element $`r`$ of $`S`$ is called a **right inverse** of $`y`$ if $`y \cdot r = e`$.<br>
 
