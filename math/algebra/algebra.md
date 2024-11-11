@@ -9,6 +9,7 @@
   - [Semigroup](#semigroup)
   - [Monoid](#monoid)
   - [Group](#group)
+  - [Subgroup](#subgroup)
   - [Abelian group](#abelian-group)
 - [Algebraic structures with two binary operations](#algebraic-structures-with-two-binary-operations)
   - [Semiring](#semiring)
@@ -28,7 +29,7 @@ An **algebraic structure** $`A`$ consists of
 
 <br>
 
-For example, an **algebraic structure** $`A`$ with **2** operations can be denoted as $`(A, \cdot, +)`$
+For example, an **algebraic structure** $`A`$ with **2** operations can be denoted as $`(A; \cdot; +)`$
 
 <br>
 
@@ -56,7 +57,7 @@ The **identity elements** for **addition** and **multiplication** are denoted $`
 <br>
 
 ## Inverse element
-Let $`(S, \cdot)`$ be a set $`S`$ with a binary operation $`\cdot`$ and **indentity** $`e`$.<br>
+Let $`(S; \cdot )`$ be a set $`S`$ with a binary operation $`\cdot`$ and **indentity** $`e`$.<br>
 An element $`l`$ of $`S`$ is called a **left inverse** of $`y`$ if $`l \cdot y = e`$.<br>
 An element $`r`$ of $`S`$ is called a **right inverse** of $`y`$ if $`y \cdot r = e`$.<br>
 
@@ -92,6 +93,13 @@ There are **2** main notations for operations for **groups**:
 <br>
 
 It is a **common convention** that for an **abelian** group either **additive** or **multiplicative** notation may be used, but for a **nonabelian** group **only** **multiplicative** notation is used.
+
+<br>
+
+## Subgroup
+Formally, given a group $`G`$ under a binary operation $`\cdot`$, a **subset** $`H`$ of $`G`$ is called a **subgroup** of $`G`$ **if** $`H`$ also forms a **group** under the operation $`\cdot`$.<br>
+
+A **proper subgroup** of a group $`G`$ is a **subgroup** $`H`$ which is a **proper subset** of $`G`$ (that is, $`H ≠ G`$). This is often represented as $`H < G`$, read as "$`H`$ is a proper subgroup of $`G`$".<br>
 
 <br>
 
