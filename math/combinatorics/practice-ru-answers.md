@@ -45,20 +45,22 @@
       - [Solution 2](#solution-2-3)
       - [Solution 3](#solution-3)
   - [Exercise 2](#exercise-2-4)
-  - [Exercise 3](#exercise-3-3)
       - [Solution 1](#solution-1-4)
       - [Solution 2](#solution-2-4)
-- [Разбиения](#разбиения)
-  - [Exercise 1](#exercise-1-5)
-      - [Solution](#solution-12)
-  - [Exercise 5](#exercise-5-1)
+  - [Exercise 3](#exercise-3-3)
       - [Solution 1](#solution-1-5)
       - [Solution 2](#solution-2-5)
-  - [Example 1](#example-1)
-  - [Example 2](#example-2)
-  - [Example 3](#example-3)
-  - [Example 4](#example-4)
-  - [Example 5](#example-5)
+    - [Exercise 4](#exercise-4-3)
+      - [Solution 1](#solution-1-6)
+      - [Solution 2](#solution-2-6)
+- [Подсчет ненужных вариантов](#подсчет-ненужных-вариантов)
+  - [Exercise 1](#exercise-1-5)
+      - [Solution](#solution-12)
+  - [Exercise 2](#exercise-2-5)
+      - [Solution](#solution-13)
+- [Разбиения](#разбиения)
+  - [Exercise 1](#exercise-1-6)
+      - [Solution](#solution-14)
 
 <br>
 
@@ -382,8 +384,22 @@ $`{\frac {n\cdot (n-1)}{2}}`$ ребер.<br>
 <br>
 
 ## Exercise 2
-У Ивана **5** друзей. Он хочет позвать в гости только **3** из них.<br>
-**Сколько** существует способов сделать это?<br>
+#### Solution 1
+МЫ можем подсчитать количество **уникальных** комбинаций из **3х** друзей, а затем разделить на **3!**, т,к, порядок в каждой комбинации **не** имеет значения и все комбинации из **3** друзей можно трактовать как одну.<br>
+
+Посчитаем количество уникальных комбинаций так:
+- на **первом** шаге у нас **5** вариантов для выбора;
+- на **втором** шаге у нас уже **4** варианта для выбора;
+- на **втором** шаге у нас уже **3** варианта для выбора;
+
+Т.о. получаем: $`{\frac {5 \cdot 4 \cdot 3}{3!}} = {\frac {60}{6}} = \textbf{10}`$.<br>
+
+<br>
+
+#### Solution 2
+Найдем число сочетаний $`C_{5}^{3}`$.<br>
+
+Т.о. получаем: $`C_{5}^{3} = {\frac {5!}{3!2!}} = {\frac {5\cdot 4 \cdot 3!}{3!2!}} = {\frac {20}{2}} = \textbf{10}`$
 
 <br>
 
@@ -410,10 +426,79 @@ $`{\frac {n\cdot (n-1)}{2}}`$ ребер.<br>
 
 <br>
 
+### Exercise 4
+#### Solution 1
+Выставим всех детей в ряд. На тех, кого мы **выбираем**, наденем майку с цифрой **1**, а на **остальных** - майку с цифрой **0**.<br>
+В итоге мы получим последовательность, состоящую из **20** символов, из которых **7** - это единицы (**1**), например: **1**0**1****1****1**000**1**000**1**00000**1**0.<br>
+
+Согласно формуле **перестановок с повторениями**, мы получим: $`P_{7,13}^{20} = {\frac {20!}{7!13!}}`$.<br>
+
+<br>
+
+#### Solution 2
+Воспользуемся правилом произведения:
+- у нас есть 20 способов выбрать первого;
+- у нас есть 19 способов выбрать первого;
+- ...
+- у нас есть 14 способов выбрать седьмого;
+
+**Итого** у нас есть $`N = 20 \cdot 19 \cdot 18 \cdot 17 \cdot 16 \cdot 15 \cdot 14`$ способов выборать **7** человек **упорядоченным** образом.<br>
+
+Если взять одну такую комбинацию, и **поменять** в ней **2-х** человек **местами**, то мы получим **новую** комбинацию, при этом сам набор **не** изменится, т.е. в комбинации останутся всё **те же люди**. Т.е. мы подсчитали количество **разных упорядоченных наборов** из **7** человек, в таком наборе **порядок имеет значение**, например, `Петя, Вася` не равно `Вася, Петя`.<br>
+
+Сколько раз каждый такой уникальный наборов из **7** человек продублировался?<br>
+Для **каждого уникального набора** из **7** человек существует **7!** вариантов переставить в нем людей местами и получить таким образом **7!** **разных упорядоченных наборов**.<br>
+
+Это значит, что каждую группу из **7** человек мы посчитали **7!** раз. Значит полученное значение нужно разделить на **7!**: $`{\frac {20 \cdot 19 \cdot 18 \cdot 17 \cdot 16 \cdot 15 \cdot 14}{7!}}`$.<br>
+
+Если мы умножим всё выражение на **13!** и разделим на **13!** то верхнее выражение можно свернуть в **20!**:<br>
+$`{\frac {20 \cdot 19 \cdot 18 \cdot 17 \cdot 16 \cdot 15 \cdot 14 \cdot 13!}{7!13!}} = {\frac {20!}{7!13!}}`$.<br>
+
+Это и есть **число сочетаний** из **20** по **7**: $`C_{20}^{7} = {\frac {20!}{7!(20-7)!}}`$.<br>
+
+<br>
+
+# Подсчет ненужных вариантов
+## Exercise 1
+#### Solution
+Всего существует $`6^{4}`$ различных **последовательностей** длины **4**, которые можно составить из **алфавита** из **6** цифр.
+Из них нам нужно **исключить** все те последовательности, которые **не** содержат цифру **6**. Т.к. по услови задачи цифра **6** должна встретиться **хотя бы 1** раз.<br>
+
+<br>
+
+Всего существует $`5^{4}`$ различных последовательностей длины **4**, которые можно составить из алфавита из **5** цифр.<br>
+
+<br>
+
+Т.о. количество последовательностей, в которых **хотя бы 1** раз встретися цифра **6** равна: $`6^{4} - 5^{4}`$.<br>
+
+<br>
+
+## Exercise 2
+#### Solution
+Для начала, посчитаем все числа, у которых все цфиры разные:
+- на **первой** позиции у нас есть **9 вариантов** выбора, т.к. числа не записываются с **0**;
+- на **второй** позиции мы можем выбирать только из **9 вариантов** (мы вернули цифру 0 в доступные варианты, но убрали цифру, которую выбрали);
+- на **третьей** позиции мы можем выбирать только из **8 вариантов**;
+- на **четвертой** позиции мы можем выбирать только из **7 вариантов**;
+- и т.д.
+
+Итого: $`9 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 9 \cdot 9!`$.<br>
+
+<br>
+
+При этом, **общее количество десятизначных чисел**: $`9 \cdot 10^{9}`$, т.к. на каждом шаге, начиная со второго у нас **10** вариантов для выбора - **любая цифра**.<br>
+
+<br>
+
+Т.о. получаем: $`9 \cdot 10^{9} - 9 \cdot 9!`$.<br>
+
+<br>
+
 # Разбиения
 ## Exercise 1
 #### Solution
-Если за **монетку** принять **выбор**, а за **вариант** выбора - **карман**, в который эту монетку нужно положить, то получается, что у нас есть **5** выборов и для каждого такого выбора есть **3** **варианта** (3 кармана).<br>
+Если за **монетку** принять **выбор**, а за **вариант** выбора - **карман**, в который эту монетку нужно положить, то получается, что у нас есть **5** выборов и для каждого такого выбора есть **3 варианта** (3 кармана).<br>
 
 Т.е. фактически задача сводит к поиску всех комбинаций с повторениями вида:
 - 11233
@@ -421,124 +506,3 @@ $`{\frac {n\cdot (n-1)}{2}}`$ ребер.<br>
 - ...
 
 Т.о. получаем: $`3 \cdot 3 \cdot 3 \cdot 3 \cdot 3 = \textbf{3}^{\textbf{5}}`$ способов.<br>
-
-<br>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Exercise 5
-У Ивана 5 друзей. Он хочет позвать в гости только 3 из них. Сколько существует способов сделать это?<br>
-
-#### Solution 1
-МЫ можем подсчитать количество **уникальных** комбинаций из **3х** друзей, а затем разделить на **3!**, т,к, порядок в каждой комбинации **не** имеет значения и все комбинации из **3** друзей можно трактовать как одну.<br>
-
-Посчитаем количество уникальных комбинаций так:
-- на **первом** шаге у нас **5** вариантов для выбора;
-- на **втором** шаге у нас уже **4** варианта для выбора;
-- на **втором** шаге у нас уже **3** варианта для выбора;
-
-Т.о. получаем: $`{\frac {5 \cdot 4 \cdot 3}{3!}} = {\frac {60}{6}} = \textbf{10}`$.<br>
-
-#### Solution 2
-Найдем число сочетаний $`C_{5}^{3}`$.<br>
-
-Т.о. получаем: $`C_{5}^{3} = {\frac {5!}{3!2!}} = {\frac {5\cdot 4 \cdot 3!}{3!2!}} = {\frac {20}{2}} = \textbf{10}`$
-
-<br>
-
-
-
-
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-## Example 1
-A restaurant offers 2 salads and 4 entrees.
-1. How many different items can you choose if you get to choose 1 item?
-2. How many different meals if you can choose 1 salad and 1 entree?
-
-Solution<br>
-To choose 1 item you can choose 1 salad **OR** 1 entree. There is no overlap. This means **AP**.<br>
-So, $2+4=6$ items.<br>
-
-You are choosing 1 salad **AND** 1 entree. You choose the second event **after** the first event occurs. This means **MP**.<br>
-So, $2×4=8$ meals.<br>
-
-<br>
-
-## Example 2
-A lock will open with the correct choice of 3 numbers from 0 to 99 inclusive.<br>
-1. How many different sets of 3 numbers are there if the numbers **can** repeat?
-2. How many different sets of 3 numbers are there if the numbers **cannot** repeat?
-
-Solution<br>
-All three numbers are needed. You need the first number **AND** the second number AND the third number. This is **MP**. There are 100 choices for each number.<br>
-so, $100·100·100=1,000,000$.<br>
-
-**Without** repeating means that after the first number is chosen, there is one less number available to choose. After the first two numbers are chosen, there are two less numbers to choose from.<br>
-So, $100·99·98=970,200$.<br>
-
-<br>
-
-## Example 3
-Find the **number of all solutions** of following inequality $`x^2 + y^2 <= 5`$.<br>
-We can divide it into 6 disjoint cases: $`x^2 + y^2 = i`$, where $0 <= i <= 5$.<br>
-Let $Si$ is set of all solutions for case $i$. Let denote **solution** as an **ordered** pair $(x,y)$.<br>
-Then,<br>
-- $i=0$: $|S0| = 1$, $`S_0 = \{(0,0)\}`$;
-- $i=1$: $|S1| = 4$, $`S_1 = \{(1,0), (-1,0), (0,1), (0,-1)\}`$;
-- $i=2$: $|S2| = 4$;
-- $i=3$: $|S3| = 0$, $`S_3 = \{\} = ∅`$;
-- $i=4$: $|S4| = 4$;
-- $i=5$: $|S5| = 8$;
-
-<br>
-
-So, the **number of all solutions** = $`|S_0| + |S_1| + |S_2| + |S_3| + |S_4| + |S_5| = 1 + 4 + 4 + 0 + 4 + 8 = 21`$.
-
-<br>
-
-## Example 4
-Consider sequence of cities: $A \rightarrow B \rightarrow C \rightarrow D$ and consider that there are **2 ways** from $A$ to $B$, **3 ways** from $B$ to $C$ and **4 ways** from $C$ to $D$.<br>
-Let denote $S \rightarrow D$ set of all ways between **adjacent cities** $S$ and $D$.<br>
-Obvious that all such sets in path $A \rightarrow B \rightarrow C \rightarrow D$ ($A \rightarrow B$, $B \rightarrow C$, $C \rightarrow D$) are **pairwise disjoint**.<br>
-So, there are $2 * 3 * 4 = 24$ ways to choose **one** way $(a,b,c,d) \  \text{where} \  a∈A, b∈B, c∈C, d∈D$ from $A$ to $D$ or **equaly** the **total number** of ways from $A$ to $D$ is $2 * 3 * 4 = 24$.<br>
-
-<br>
-
-## Example 5
-Let $`X = \{1,2, ..., 100\}`$ and let $`S = \{(a,b,c): a,b,c ∈ X, a \lt b \ \text{and} \  a \lt c\}`$. **Find** $|S|$.<br>
-
-We can divide it into **99 disjoint cases**: $a=1, a=2, ..., a=99$.<br>
-For every such case there are $(100 - a)$ choices for $b$ and $c$.
-So, we use **AP** to sum results of **all** cases and **MP** to count variants for **concrete** case:
-- the number of **ordered** triples $(a,b,c)$ for concrete value of $a$ is $(100-a) \times (100-a)$;
-- the number of **ordered** triples $(a,b,c)$ for **all** values of $a$ is the sum of $`(100-i)^2$ for $i$ in $[1,99]`$;
-
-So, $`|S| = 99^2 + 98^2 + ... + 1^2`$.

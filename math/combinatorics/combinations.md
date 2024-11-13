@@ -2,6 +2,7 @@
 - [Table of contents](#table-of-contents)
 - [Combinations](#combinations)
   - [Combinations without repetitions](#combinations-without-repetitions)
+  - [Properties](#properties)
     - [Binomial coefficients](#binomial-coefficients)
   - [Combinations with repetitions](#combinations-with-repetitions)
     - [Proof](#proof)
@@ -38,17 +39,22 @@ Since the *order doesn't matter* in combinations, it is obvious that $`C^{n}_{k}
 
 <br>
 
-### Binomial coefficients
-The $`{\displaystyle C^{n}_{k}}`$ is also called **binomial coefficient**.<br>
+## Properties
+**Properties** of **$k$-combination of $n$**:
+- $`C^{0}_{0} = 1`$
+- $`C^{n}_{0} = 1`$
+- $`C^{n}_{n} = 1`$
+- $`C^{n}_{1} = {\frac {n!}{1!(n-1)!}} = {\frac {n\cdot (n-1)!}{1!(n-1)!}} = n`$
+- $`C_{k}^{n} = C_{n-k}^{n}`$
+- $`C^{n}_{k}=C^{n-1}_{k-1}+C^{n-1}_{k}`$ for all integers $`n,k`$ such that $`1 \leq k \lt n`$
+- $`\sum_{i=0}^{i=n} C^{n}_{k} = C^{n}_{0} + C^{n}_{1} + C^{n}_{2} + ... + C^{n}_{i} + ... + C^{n}_{n-1} + C^{n}_{n} = 2^n`$
+
+So, the number of **$k$-combination of $n$** for **all** $k∈[0;n]$ is the number of **all subsets** of a set $A$ of $n$ elements, i.e. it is **powerset**.<br>
 
 <br>
 
-**Properties** of *binomial coefficients*:
-- $`{\displaystyle C^{n}_{0} = C^{n}_{n}=1}`$
-- $`{\displaystyle C^{n}_{k}=C^{n-1}_{k-1}+C^{n-1}_{k}}`$ for all integers $`{\displaystyle n,k}`$ such that $`{\displaystyle 1 \leq k \lt n}`$
-- $`{\displaystyle \sum_{i=0}^{i=n} C^{n}_{k} = C^{n}_{0} + C^{n}_{1} + C^{n}_{2} + ... + C^{n}_{i} + ... + C^{n}_{n-1} + C^{n}_{n} = 2^n}`$
-
-So, the number of **$k$-combination of $n$** for **all** $k∈[0;n]$ is the number of **all subsets** of a set $A$ of $n$ elements, i.e. it is **powerset**.<br>
+### Binomial coefficients
+The $`{\displaystyle C^{n}_{k}}`$ is also called **binomial coefficient**.<br>
 
 <br>
 
