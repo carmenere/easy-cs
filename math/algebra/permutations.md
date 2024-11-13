@@ -716,4 +716,6 @@ $`\phi_{1}^{i} = \varepsilon`$, $`\phi_{2}^{i} = \varepsilon`$, $`\phi_{3}^{i} =
 <br>
 
 # Связь перестановок с числами Стирлинга первого рода
+**Числа Стирлинга первого рода** $`s(n, k)`$ — количество **перестановок** порядка **n** с **k** **циклами**.<br>
+
 **Stirling numbers of the first kind** $`s(n, k)`$ define the **number of permutations** of set $`\{1,2,\dots,n\}`$ with **exactly** $`k`$ **cycles**.<br>

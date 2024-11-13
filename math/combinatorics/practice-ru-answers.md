@@ -24,21 +24,23 @@
       - [Solution](#solution-4)
     - [Exercise 4](#exercise-4-1)
       - [Solution](#solution-5)
+    - [Exercise 5](#exercise-5-1)
+      - [Solution](#solution-6)
 - [Правила суммы и произведения в связке](#правила-суммы-и-произведения-в-связке)
   - [Количество вариантов выбора НЕ меняется](#количество-вариантов-выбора-не-меняется-1)
     - [Exercise 1](#exercise-1-2)
-      - [Solution](#solution-6)
-    - [Exercise 2](#exercise-2-2)
       - [Solution](#solution-7)
+    - [Exercise 2](#exercise-2-2)
+      - [Solution](#solution-8)
   - [Количество вариантов выбора меняется](#количество-вариантов-выбора-меняется-1)
     - [Exercise 1](#exercise-1-3)
-      - [Solution](#solution-8)
-    - [Exercise 2](#exercise-2-3)
       - [Solution](#solution-9)
-    - [Exercise 3](#exercise-3-2)
+    - [Exercise 2](#exercise-2-3)
       - [Solution](#solution-10)
-    - [Exercise 4](#exercise-4-2)
+    - [Exercise 3](#exercise-3-2)
       - [Solution](#solution-11)
+    - [Exercise 4](#exercise-4-2)
+      - [Solution](#solution-12)
 - [Сочетания](#сочетания)
   - [Exercise 1](#exercise-1-4)
       - [Solution 1](#solution-1-3)
@@ -55,12 +57,12 @@
       - [Solution 2](#solution-2-6)
 - [Подсчет ненужных вариантов](#подсчет-ненужных-вариантов)
   - [Exercise 1](#exercise-1-5)
-      - [Solution](#solution-12)
-  - [Exercise 2](#exercise-2-5)
       - [Solution](#solution-13)
+  - [Exercise 2](#exercise-2-5)
+      - [Solution](#solution-14)
 - [Разбиения](#разбиения)
   - [Exercise 1](#exercise-1-6)
-      - [Solution](#solution-14)
+      - [Solution](#solution-15)
 
 <br>
 
@@ -207,6 +209,15 @@
 И **каждую следующую** букву мы можем выбрать **32** способами.<br>
 
 Т.о. получаем: $`33 \cdot 32^{5}`$.<br>
+
+<br>
+
+### Exercise 5
+#### Solution
+Возьмем любого парня, существует **3** способа выбрать ему **девушку** в прау.<br>
+Но после каждого такого выбора, для следующего парня уже существует толко **2** способа выбрать **девушку** и т.д.<br>
+Легко видеть, что $`n \cdot n-1 \cdot \dotsc \cdot 1 = n!`$.<br>
+Т.о. получаем: $`3! = 6`$ способов.<br>
 
 <br>
 
