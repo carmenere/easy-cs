@@ -215,5 +215,5 @@ $`\frac{C^{n}_{n_{1}} \cdot C^{n-n_{1}}_{n_{2}} \cdot \dotsc \cdot C^{n-n_{1}-n_
 
 <br>
 
-**Визуализация**:
+**Визуализация**:<br>
 ![](/img/partitions_catalan.png)
