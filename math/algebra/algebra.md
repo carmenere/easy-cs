@@ -193,7 +193,7 @@ A **totally ordered set** is a **distributive lattice**.<br>
 <br>
 
 ## Boolean lattice
-A **Boolean lattice** (aka **Boolean algebra**) is is a *distributive lattice* $`(L, \lor ,\land )`$ in which exists **inverse element** ($`a^{-1}`$) for **each** element for **each** operation in $`L`$:
+A **Boolean lattice** (aka **Boolean algebra**) is is a *distributive lattice* $`(L, \lor ,\land )`$ in which exists **inverse element** ($`a^{-1}`$ or $`\neg a`$) for **each** element for **each** operation in $`L`$:
 - $`a \land a^{-1} = 1 \space \space \forall a \in L`$;
 - $`a \lor a^{-1} = 0 \space \space \forall a \in L`$;
 
@@ -236,13 +236,13 @@ Any set of sets closed under the set-theoretic operations forms a **Boolean alge
 
 # Zero divisor
 An element $`a`$ of a **ring** $`R`$ is called a **left zero divisor** if there exists a **nonzero** $`x \in R`$ such that $`a \cdot x = 0`$.<br>
-an element $`a`$ of a **ring** $`R`$ is called a **right zero divisor** if there exists a **nonzero** $`y \in R`$ such that $`y \cdot a = 0`$.<br>
+An element $`a`$ of a **ring** $`R`$ is called a **right zero divisor** if there exists a **nonzero** $`y \in R`$ such that $`y \cdot a = 0`$.<br>
 
 An element $`a`$ that is **both** a **left** and a **right** zero divisor is called a **zero divisor**.<br>
 If the **ring** is **commutative**, then the **left** and **right** zero divisors are the **same**.<br>
 
 A **zero divisor** that is **nonzero** is called a **nonzero zero divisor** or a **nontrivial zero divisor**.<br>
 
-An element of a **ring** that is **not** a left zero divisor (respectively, not a right zero divisor) is called **left regular** or **left cancellable**.<br>
-An element of a **ring** that is **not** a right zero divisor (respectively, not a right zero divisor) is called **right regular** or **right cancellable**.<br>
+An element of a **ring** that is **not** a *left zero divisor* is called **left regular** or **left cancellable**.<br>
+An element of a **ring** that is **not** a *right zero divisor* is called **right regular** or **right cancellable**.<br>
 An element of a **ring** that is **left** and **right** cancellable, and is hence **not** a zero divisor, is called **regular** or **cancellable**, or a **non-zero-divisor**.<br>
