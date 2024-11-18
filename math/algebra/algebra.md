@@ -122,7 +122,7 @@ A **bounded semilattice** $`(S, \cdot)`$ is a **commutative**, **idempotent mono
 
 <br>
 
-**Idempotency** means:
+The **binary operation** $`\cdot`$ is **idempotent** if:
 - ($`x \cdot x = x \space \space \forall x \in S`$)
 
 <br>
@@ -131,7 +131,7 @@ There are **2** types of *semilattice*:
 - a **join-semilattice** (or **upper semilattice**) $`(S, \lor)`$ is a **partially ordered set** $`S`$ with a binary operation $`\lor`$, called **join**, (aka **union**);
   - a **join-semilattice** $`(S, \lor)`$ is **bounded** if S includes an **identity element** $`0`$ (the lattice's **bottom**, **least element**) for the **join** operation such that $`a \lor 0 = a \space \space \forall a \in S`$;
 - a **meet-semilattice** (or **lower semilattice**) $`(S, \land)`$ is a **partially ordered set** $`S`$ with a binary operation $`\land`$, called **meet**, (aka **intersection**);
-- a **meet-semilattice** $`(S, \land)`$ is **bounded** if S includes an **identity element** $`1`$ (aka **lattice's top** , **greatest element**) for the **meet** operation such that $`a \land 1 = a \space \space \forall a \in S`$;
+  - a **meet-semilattice** $`(S, \land)`$ is **bounded** if S includes an **identity element** $`1`$ (aka **lattice's top** , **greatest element**) for the **meet** operation such that $`a \land 1 = a \space \space \forall a \in S`$;
 
 <br>
 
@@ -173,10 +173,11 @@ A **field** is an algebraic structure with **two** operations: **addition** $`+`
 
 ## Lattice
 A **lattice** is **both** a **join-semilattice** and a **meet-semilattice**.<br>
-If $`(S, \lor)`$ and $`(S, \land)`$ are both **semilattices** over set $`S`$ and their binary operations are connected through **absorption laws**:
-- $`a \lor (a \land b)=a \space \space \forall a \in S`$;
-- $`a \land (a \lor b)=a \space \space \forall a \in S`$;
-then  algebraic structure $`(L, \lor ,\land )`$ over set $`S`$ is called **lattice**.<br>
+If $`(S, \lor)`$ and $`(S, \land)`$ are both **semilattices** over set $`S`$ and their binary operations are **connected** through **absorption laws**:
+- $`a \lor (a \land b) = a \space \space \forall a \in S`$;
+- $`a \land (a \lor b) = a \space \space \forall a \in S`$;
+
+then an algebraic structure $`(L, \lor ,\land )`$ over set $`S`$ is called **lattice**.<br>
 
 <br>
 
@@ -192,14 +193,24 @@ A **totally ordered set** is a **distributive lattice**.<br>
 <br>
 
 ## Boolean lattice
-A **Boolean lattice** is is a *distributive lattice* $`(L, \lor ,\land )`$ in which exists **inverse element** ($`a^{-1}`$) for **each** element for **each** operation in $`L`$:
-- $`a \land a^{-1} = 0 \space \space \forall a \in L`$;
-- $`a \lor a^{-1} = 1 \space \space \forall a \in L`$;
+A **Boolean lattice** (aka **Boolean algebra**) is is a *distributive lattice* $`(L, \lor ,\land )`$ in which exists **inverse element** ($`a^{-1}`$) for **each** element for **each** operation in $`L`$:
+- $`a \land a^{-1} = 1 \space \space \forall a \in L`$;
+- $`a \lor a^{-1} = 0 \space \space \forall a \in L`$;
 
 <br>
 
-In the **Boolean lattice** the **not** operation is an **involution**:
-- $`(a^{-1})^{-1} = a \space \space \forall a \in L`$
+The **inverse element** ($`a^{-1}`$) is the same as the **not operation** ($`\neg a`$).<br>
+
+<br>
+
+In the **Boolean lattice** the **not operation** ($`\neg`$) is an **involution**:
+- $`\neg(\neg a) = a \space \space \forall a \in L`$
+
+<br>
+
+**De Morgan's laws** are also satisfied in the **Boolean lattice**:
+- $`\neg (a \lor b) = (\neg a) \land (\neg b)`$;
+- $`\neg (a \land b) = (\neg a) \lor (\neg b)`$;
 
 <br>
 
