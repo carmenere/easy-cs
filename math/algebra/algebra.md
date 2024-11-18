@@ -11,11 +11,19 @@
   - [Group](#group)
   - [Subgroup](#subgroup)
   - [Abelian group](#abelian-group)
+  - [Semilattice](#semilattice)
 - [Algebraic structures with two binary operations](#algebraic-structures-with-two-binary-operations)
   - [Semiring](#semiring)
   - [Ring](#ring)
   - [Commutative ring](#commutative-ring)
   - [Field](#field)
+  - [Lattice](#lattice)
+  - [Distributive lattice](#distributive-lattice)
+  - [Boolean lattice](#boolean-lattice)
+  - [Ring of sets](#ring-of-sets)
+  - [Field of sets](#field-of-sets)
+- [The algebra of sets](#the-algebra-of-sets)
+- [Zero divisor](#zero-divisor)
 
 <br>
 
@@ -108,6 +116,25 @@ A **proper subgroup** of a group $`G`$ is a **subgroup** $`H`$ which is a **prop
 
 <br>
 
+## Semilattice
+A **semilattice** $`(S, \cdot)`$ is a **commutative**, **idempotent semigroup**.<br>
+A **bounded semilattice** $`(S, \cdot)`$ is a **commutative**, **idempotent monoid**.<br>
+
+<br>
+
+**Idempotency** means:
+- ($`x \cdot x = x \space \space \forall x \in S`$)
+
+<br>
+
+There are **2** types of *semilattice*:
+- a **join-semilattice** (or **upper semilattice**) $`(S, \lor)`$ is a **partially ordered set** $`S`$ with a binary operation $`\lor`$, called **join**, (aka **union**);
+  - a **join-semilattice** $`(S, \lor)`$ is **bounded** if S includes an **identity element** $`0`$ (the lattice's **bottom**, **least element**) for the **join** operation such that $`a \lor 0 = a \space \space \forall a \in S`$;
+- a **meet-semilattice** (or **lower semilattice**) $`(S, \land)`$ is a **partially ordered set** $`S`$ with a binary operation $`\land`$, called **meet**, (aka **intersection**);
+- a **meet-semilattice** $`(S, \land)`$ is **bounded** if S includes an **identity element** $`1`$ (aka **lattice's top** , **greatest element**) for the **meet** operation such that $`a \land 1 = a \space \space \forall a \in S`$;
+
+<br>
+
 # Algebraic structures with two binary operations
 ## Semiring
 A **semiring** is an algebraic structure with **two** operations: **addition** $`+`$ and **multiplication** $`\cdot`$.<br>
@@ -141,3 +168,70 @@ A **field** is an algebraic structure with **two** operations: **addition** $`+`
 - *field* is an **abelian group** under $`+`$;
 - *field* is a **abelian group** under $`\cdot`$;
 - $`\cdot`$ is **distributive** with respect to $`+`$;
+
+<br>
+
+## Lattice
+A **lattice** is **both** a **join-semilattice** and a **meet-semilattice**.<br>
+If $`(S, \lor)`$ and $`(S, \land)`$ are both **semilattices** over set $`S`$ and their binary operations are connected through **absorption laws**:
+- $`a \lor (a \land b)=a \space \space \forall a \in S`$;
+- $`a \land (a \lor b)=a \space \space \forall a \in S`$;
+then  algebraic structure $`(L, \lor ,\land )`$ over set $`S`$ is called **lattice**.<br>
+
+<br>
+
+## Distributive lattice
+A **distributive lattice** is a *lattice* $`(L, \lor ,\land )`$ in which **both operations** are **distribute** over each other:
+- $`a \lor (b \land c) = (a \lor b) \land (a \lor c) \space \space \forall a,b,c \in L`$;
+- $`a \land (b \lor c) = (a \land b) \lor (a \land c) \space \space \forall a,b,c \in L`$;
+
+<br>
+
+A **totally ordered set** is a **distributive lattice**.<br>
+
+<br>
+
+## Boolean lattice
+A **Boolean lattice** is is a *distributive lattice* $`(L, \lor ,\land )`$ in which exists **inverse element** ($`a^{-1}`$) for **each** element for **each** operation in $`L`$:
+- $`a \land a^{-1} = 0 \space \space \forall a \in L`$;
+- $`a \lor a^{-1} = 1 \space \space \forall a \in L`$;
+
+<br>
+
+In the **Boolean lattice** the **not** operation is an **involution**:
+- $`(a^{-1})^{-1} = a \space \space \forall a \in L`$
+
+<br>
+
+## Ring of sets
+A **ring of sets** is a **distributive lattice** in which the set's **intersection** and **union** operations correspond to the lattice's **meet** and **join** operations, respectively.<br>
+
+<br>
+
+## Field of sets
+A **field of sets** is a **Boolean lattice** in which the set's **intersection** and **union** operations correspond to the lattice's **meet** and **join** operations, respectively.<br>
+
+<br>
+
+# The algebra of sets
+Any set of sets closed under the set-theoretic operations forms a **Boolean algebra** with
+- the **join** operator being **union**;
+- the **meet** operator being **intersection**;
+- the **complement** operator being **set complement** (aka **not**);
+- the **bottom** being ⁠$`\varnothing`$⁠;
+- the **top** being the **universe set** under consideration;
+
+<br>
+
+# Zero divisor
+An element $`a`$ of a **ring** $`R`$ is called a **left zero divisor** if there exists a **nonzero** $`x \in R`$ such that $`a \cdot x = 0`$.<br>
+an element $`a`$ of a **ring** $`R`$ is called a **right zero divisor** if there exists a **nonzero** $`y \in R`$ such that $`y \cdot a = 0`$.<br>
+
+An element $`a`$ that is **both** a **left** and a **right** zero divisor is called a **zero divisor**.<br>
+If the **ring** is **commutative**, then the **left** and **right** zero divisors are the **same**.<br>
+
+A **zero divisor** that is **nonzero** is called a **nonzero zero divisor** or a **nontrivial zero divisor**.<br>
+
+An element of a **ring** that is **not** a left zero divisor (respectively, not a right zero divisor) is called **left regular** or **left cancellable**.<br>
+An element of a **ring** that is **not** a right zero divisor (respectively, not a right zero divisor) is called **right regular** or **right cancellable**.<br>
+An element of a **ring** that is **left** and **right** cancellable, and is hence **not** a zero divisor, is called **regular** or **cancellable**, or a **non-zero-divisor**.<br>
