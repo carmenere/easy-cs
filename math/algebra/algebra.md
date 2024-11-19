@@ -12,6 +12,7 @@
   - [Subgroup](#subgroup)
   - [Abelian group](#abelian-group)
   - [Semilattice](#semilattice)
+  - [Bounded semilattice](#bounded-semilattice)
 - [Algebraic structures with two binary operations](#algebraic-structures-with-two-binary-operations)
   - [Semiring](#semiring)
   - [Ring](#ring)
@@ -117,21 +118,73 @@ A **proper subgroup** of a group $`G`$ is a **subgroup** $`H`$ which is a **prop
 <br>
 
 ## Semilattice
-A **semilattice** $`(S, \cdot)`$ is a **commutative**, **idempotent semigroup**.<br>
-A **bounded semilattice** $`(S, \cdot)`$ is a **commutative**, **idempotent monoid**.<br>
+The **binary operation** $`\cdot`$ is **idempotent** if: $`x \cdot x = x \space \space \forall x \in S`$.<br>
 
 <br>
 
-The **binary operation** $`\cdot`$ is **idempotent** if:
-- ($`x \cdot x = x \space \space \forall x \in S`$)
+A **semilattice** $`(S, \cdot)`$ is a **commutative**, **idempotent semigroup**.<br>
+
+<br>
+
+To understand **semilattice** first you need to understand **partial order**.<br>
+
+What is a **partial order**?<br>
+Consider some set $`S`$, and $`x,y \in S`$.<br>
+A **normal order** means $`x`$ **comes before** $`y`$ for **all** elements **x** and **y** of $`S`$.<br>
+A **partial order** means "**x and y** are **incomparable**" for **some** elements **x** and **y** from $`S`$.<br>
+
+A **poset** is a set $`S`$ **partially ordered** by the **binary relation** $`\le`$.<br>
 
 <br>
 
 There are **2** types of *semilattice*:
-- a **join-semilattice** (or **upper semilattice**) $`(S, \lor)`$ is a **partially ordered set** $`S`$ with a binary operation $`\lor`$, called **join**, (aka **union**);
-  - a **join-semilattice** $`(S, \lor)`$ is **bounded** if S includes an **identity element** $`0`$ (the lattice's **bottom**, **least element**) for the **join** operation such that $`a \lor 0 = a \space \space \forall a \in S`$;
-- a **meet-semilattice** (or **lower semilattice**) $`(S, \land)`$ is a **partially ordered set** $`S`$ with a binary operation $`\land`$, called **meet**, (aka **intersection**);
-  - a **meet-semilattice** $`(S, \land)`$ is **bounded** if S includes an **identity element** $`1`$ (aka **lattice's top** , **greatest element**) for the **meet** operation such that $`a \land 1 = a \space \space \forall a \in S`$;
+- a **meet-semilattice** (or **lower semilattice**);
+- a **join-semilattice** (or **upper semilattice**);
+
+<br>
+
+A **poset** $`S`$ is a **meet-semilattice** if for **all** elements **x** and **y** of $`S`$, the **greatest lower bound** (**GLB**, **infimum**) of the set $`\{x, y\}`$ **exists**.<br>
+
+The **greatest lower bound** of the set $`\{x, y\}`$ is called the **meet** (aka **intersection**, **product**) of **x** and **y**, denoted $`GLB(x,y) = x \land y`$. When **meet** two elements, the result is the **largest** (**greatest**) item that is still **lower** than both elements.<br>
+
+<br>
+
+A **poset** $`S`$ is a **join-semilattice** if for **all** elements **x** and **y** of $`S`$, the **least upper bound** (**LUB**, **supremum**) of the set $`\{x, y\}`$ **exists**.<br>
+
+The **least upper bound** of the set $`\{x, y\}`$ is called the **join** (aka **union**, **sum**) of **x** and **y**, denoted $`LUB(x,y) = x \lor y`$. When **join** two elements, the result is the **smallest** (**least**) item that is still **greater** than both elements.<br>
+
+<br>
+
+In other words,
+- in *meet-semilattice* **every pair of elements** has a unique **greatest lower bound**;
+- in *join-semilattice* **every pair of elements** has a unique **least upper bound**;
+
+<br>
+
+Consider **set** $`S`$ with $`a,b,c \in S`$, both **join** and **meet** operations $`\lor`$ create a **order relation** for **all** elements $`a,b \in S`$:
+- $`a \le b \text{ if } a \lor b = b`$;
+- $`a \le b \text{ if } a \land b = a`$;
+
+<br>
+
+The canonical example of a **semilattice** is a **set of subsets** with the **union** operation. It is **commutative**, **associative** and **idempotent** (a set unioned with itself is the same set).<br>
+
+The **union** $`\cup`$ operation actually creates a **partial order** $`\le`$ on the elements of the **lattice**:
+- if you **union** elements **x** and **y** and get **y** out **unchanged**, than **x** is **smaller** than **y**;
+  - $`\{a\} \cup \{a,b\} = \{a,b\}`$, so $`\{a\}`$ is **smaller** then $`\{a,b\}`$;
+- if you **union** elements **x** and **y** and get **x** out **unchanged**, then **x** is **larger** than **y**:
+  - $`\{a,b\} \cup \{a\} = \{a,b\}`$, so $`\{a,b\}`$ is **larger** then $`\{a\}`$;
+- if you **union** elements **x** and **y** and get a **new** element **z** out, then **x** and **y** are **incomparable**, in other words, if two sets have **mismatched** elements than they are **incomparable** (or if two sets give **empty** **intersection**):
+  - $`\{a,b\} \cup \{c\} = \{a,b,c\}`$, so $`\{a,b\}`$ and $`\{c\}`$ are **incomparable**;
+
+<br>
+
+## Bounded semilattice
+A **bounded semilattice** $`(S, \cdot)`$ is a **commutative**, **idempotent monoid**.<br>
+
+There are **2** types of *bounded semilattice*:
+- a **join-semilattice** $`(S, \lor)`$ is **bounded** if S includes an **identity element** $`0`$ (the lattice's **bottom**, **least element**) for the **join** operation such that $`a \lor 0 = a \space \space \forall a \in S`$;
+- a **meet-semilattice** $`(S, \land)`$ is **bounded** if S includes an **identity element** $`1`$ (aka **lattice's top** , **greatest element**) for the **meet** operation such that $`a \land 1 = a \space \space \forall a \in S`$;
 
 <br>
 
@@ -172,7 +225,11 @@ A **field** is an algebraic structure with **two** operations: **addition** $`+`
 <br>
 
 ## Lattice
-A **lattice** is **both** a **join-semilattice** and a **meet-semilattice**.<br>
+A **lattice** is a **poset**, in which **every pair of elements** has both a **least upper bound** and a **greatest lower bound**. In other words, it is a structure with **two** binary operations: **join** and **meet**.<br>
+
+<br>
+
+*Formal defenition*, a **lattice** is **both** a **join-semilattice** and a **meet-semilattice**.<br>
 If $`(S, \lor)`$ and $`(S, \land)`$ are both **semilattices** over set $`S`$ and their binary operations are **connected** through **absorption laws**:
 - $`a \lor (a \land b) = a \space \space \forall a \in S`$;
 - $`a \land (a \lor b) = a \space \space \forall a \in S`$;
