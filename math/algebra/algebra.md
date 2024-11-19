@@ -118,13 +118,11 @@ A **proper subgroup** of a group $`G`$ is a **subgroup** $`H`$ which is a **prop
 <br>
 
 ## Semilattice
-The **binary operation** $`\cdot`$ is **idempotent** if:
-- ($`x \cdot x = x \space \space \forall x \in S`$)
+The **binary operation** $`\cdot`$ is **idempotent** if: $`x \cdot x = x \space \space \forall x \in S`$.<br>
 
 <br>
 
 A **semilattice** $`(S, \cdot)`$ is a **commutative**, **idempotent semigroup**.<br>
-
 
 <br>
 
@@ -145,13 +143,13 @@ There are **2** types of *semilattice*:
 
 <br>
 
-A **poset** $`S`$ is a **meet-semilattice** if for **all** elements **x** and **y** of $`S`$, the **greatest lower bound** (**GLB**) (aka **infimum**, **infimum**) of the set $`\{x, y\}`$ exists.<br>
+A **poset** $`S`$ is a **meet-semilattice** if for **all** elements **x** and **y** of $`S`$, the **greatest lower bound** (**GLB**, **infimum**) of the set $`\{x, y\}`$ **exists**.<br>
 
 The **greatest lower bound** of the set $`\{x, y\}`$ is called the **meet** (aka **intersection**, **product**) of **x** and **y**, denoted $`GLB(x,y) = x \land y`$. When **meet** two elements, the result is the **largest** (**greatest**) item that is still **lower** than both elements.<br>
 
 <br>
 
-A **poset** $`S`$ is a **join-semilattice** if for **all** elements **x** and **y** of $`S`$, the **least upper bound** (**LUB**, **supremum**) of the set $`\{x, y\}`$ exists.<br>
+A **poset** $`S`$ is a **join-semilattice** if for **all** elements **x** and **y** of $`S`$, the **least upper bound** (**LUB**, **supremum**) of the set $`\{x, y\}`$ **exists**.<br>
 
 The **least upper bound** of the set $`\{x, y\}`$ is called the **join** (aka **union**, **sum**) of **x** and **y**, denoted $`LUB(x,y) = x \lor y`$. When **join** two elements, the result is the **smallest** (**least**) item that is still **greater** than both elements.<br>
 
