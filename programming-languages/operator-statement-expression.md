@@ -1,11 +1,10 @@
 # Operator
-**Operator** is a **symbolic designation** of some action performed on **operands**.<br>
-**Operand** is an operator's argument.<br>
+**Operator** is a **symbolic designation** of some action. **Arguments** of *operator* are called **operands**.<br>
 
 <br>
 
 ## Operator properties
-1. **Associativity**:
+1. **Associativity** /əˌsəʊsɪəˈtɪvɪtɪ/:
    - **left**-associative (meaning the operations are grouped from the left): `x << y << z == (x << y) << z`;
    - **right**-associative (meaning the operations are grouped from the right), example: `x ** y ** z == x ** (y ** z)`;
 2. **Precedence**.
@@ -18,8 +17,8 @@
 <br>
 
 ### Associativity
-**Associativity** determines the **order** in which operators of **the same priority** are applied to operands in the absence of explicit indications of the order, i.e. in the **absence of brackets**.<br>
-Many programming language manuals provide a **table of operator** *precedence* and *associativity*.<br>
+**Associativity** determines the **order** in which operators of **the same priority** are applied to their operands in the **absence** of explicit indications of the order, i.e. in the **absence of brackets**.<br>
+Many programming language manuals provide a *table of operator precedence and associativity*.<br>
 
 <br>
 
