@@ -8,4 +8,14 @@ They differ in what interface they provide to a client:
 
 <br>
 
-So, the purpose of a **facade** is **simplicity** and the purpose of an **adapter** is **interoperability**.
+So, the purpose of a **facade** is **simplicity** and the purpose of an **adapter** is **interoperability**.<br>
+
+<br>
+
+# shims
+**shim** is a library that
+- transparently **intercepts** API calls;
+- **changes** the arguments passed;
+- **handles** the operation itself or **redirects** the operation elsewhere;
+
+**Shims** can be used to support an **old** API in a *newer environment*, or a **new** API in an *older environment*.<br>

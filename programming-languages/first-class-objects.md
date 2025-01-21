@@ -8,19 +8,14 @@
 <br>
 
 # Second-class items
-Second-class items are items that are **not** *first-class items*.
+Second-class items are items that are **not** *first-class items*.<br>
 
 <br>
 
 # First-class functions
-**First-class functions** are **functions** that are **first-class** items. 
+**First-class functions** are **functions** that are **first-class** items.<br>
 
-**First-class function** means the language supports:
-- passing functions as arguments to other functions;
-- returning functions as the values from other functions;
-- assigning functions to variables.
-
-For instance, functions in `C` are **second-class** functions.
+For instance, functions in `C` are **second-class** functions.<br>
 
 <br>
 
@@ -29,4 +24,4 @@ For instance, functions in `C` are **second-class** functions.
 - takes **one** or **more** functions as arguments;
 - returns a function as its **result**.
 
-All other functions are **first-order functions**.
+All other functions are **first-order functions**.<br>

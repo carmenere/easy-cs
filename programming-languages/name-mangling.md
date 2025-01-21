@@ -7,5 +7,5 @@ You must use qualified names from one namespace to access variables and function
 <br>
 
 # Name mangling
-`C++` supports **function overloading**, i.e., there can be more than one function with **the same name** but, **different parameters**. This technique of adding additional information to function names is called **name mangling**.<br>
-**Name mangling** is a mechanism used by compilers to encode non-unique names into **unique names** so that **linkers** can separate them.<br>
+**Name mangling** is a mechanism used by compilers to encode **non**-unique names into **unique names** so that **linkers** can separate them.<br>
+For example, `C++` supports **function overloading**, i.e., there can be more than one function with **the same name** but, **different parameters**. This technique of adding additional information to function names is called **name mangling**.<br>

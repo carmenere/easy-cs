@@ -1,24 +1,33 @@
 # Aspects of type system
 1. **Type checking**: `static` typing/`dynamic` typing.
 2. **Type conversions**: `strong` typing/`weak` typing.
-3. **Declarations**: `explicit` typing/`implicit` typing.
+3. **Type declarations**: `explicit` typing/`implicit` typing.
 
 <br>
 
 # Static typing vs. Dynamic typing
 **Type checking** is the process of verifying and enforcing the constraints of types.<br>
-**Type checking** may occur **at compile time** (aka **static check**) or **at runtime** (aka **dynamic check**):
-- a language is **statically typed** if the type of a variable is known **at compile time**, type of variable **cannot** be changed later.
-- a language is **dynamically typed** if the type of a variable is not known **at compile time**, but known **at runtime**, type of variable **can** be changed later.
+
+In a **statically typed** language:
+- **type checking** occurs *at compile time* (aka **static check**);
+- type of a variable is **known** *at compile time*;
+- type of variable **cannot** be changed later;
+
+<br>
+
+In a **dynamically typed** language:
+- **type checking** occurs *at runtime time* (aka **dynamic check**);
+- type of a variable is **known** *at runtime time*;
+- type of variable **can** be changed later;
 
 <br>
 
 # Strong typing vs. Weak typing
 **Type conversion** (type **casting**) can be **implicit** or **explicit**.<br>
-In most languages, the word **coercion** is used to denote an **implicit** *type conversion*.<br>
+**Implicit** *type conversion* is also known as **coercion** /kəʊˈɜːʃən/.<br>
 
-**Strong typing** means **coercions** are forbidden in language.<br>
-**Weak typing** means **coercions** are allowed in language.<br>
+**Strong typing** means **coercions** are **forbidden** in language.<br>
+**Weak typing** means **coercions** are **allowed** in language.<br>
 
 <br>
 

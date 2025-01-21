@@ -1,20 +1,17 @@
 # Recursion
-**Recursion** is situation when function calls itself directly or indirectly.<br>
-**Recursive function** is any function that **calls** an **instance of itself**.<br>
-The **recursive function** internally utilizes a stack. If the recursion is **too deep**, it will eventually run **out of the stack** space.<br>
+**Recursion** is situation when function **calls itself**.<br>
+**Recursive function** is any function that **calls itself**.<br>
 
-The key point here is that the evaluation of the function is delayed until the stopping condition insdie it is met. It creates a chain of deferred operations.<br>
+**Recursion** spawns a **chain of function calls** on the stack **until** the **stopping condition** (aka **base condition**) is met. Evaluation of the **chain of function calls** is delayed until the stopping condition is met. If the recursion is **too deep** it will cause to **stackoverflow**.<br>
 
-**Base condition** is needed to stop the recursion otherwise infinite loop will occur.<br>
-**Base condition** is a terminating scenario that does not use recursion to produce an answer.
+**Base condition** is a condition upon which the function **stops** calling itself and **returns**.<br>
 
 <br>
 
 # Tail recursion
-**Tail call** is a subroutine call that is performed as the **final action** of a *procedure*, i.e., **tail call** is a specific situation within code in which a function returns an expected value **by calling another function** instead of simply passing a variable holding the return value.<br>
-The name itself denotes that the function *called* to calculate the value to be returned is **at the end** (**tail**) of the function *calling* it.<br>
-
-**Tail recursion** is situation when function calls itself and such **recursive call** is the **final action** in a function.
+**Tail recursion** is situation when function calls itself and such **call** is the **final action** in a function.<br>
+**Tail call** is a situation when function returns result **by calling another function** instead of simply passing a variable holding the return value.<br>
+**Tail call** means that such **call** is a **final action** in function.<br>
 
 <br>
 
@@ -73,8 +70,7 @@ sum ([1,2,3], 0)
 <br>
 
 # Tail call elimination
-**Tail call** can be implemented without adding a new stack frame to the call stack.<br>
 **Tail call elimination** (aka **tail call optimization**) is replacing recursion by **loop** (internally by compiler).<br>
 
-However, not all functions can be tail-optimized. Only function with **linear iterative process** can be tail-optimized.<br>
+However, **not** all functions can be tail-optimized. Only function with **linear iterative process** can be tail-optimized.<br>
 If we have to process the recursive call’s return value in any way, then tail-call optimization is **impossible**.<br>
