@@ -26,6 +26,8 @@ There are **3 kinds** of **variance**:
 If `S` is **subtype** (**more specific**) of `T` then `T` is **supertype** (**more general**) of type `S`.<br>
 The fact that `S` is a **subtype** of `T` (or `T` is a **supertype** of type `S`) is denoted as `S <: T` or `S => T`.<br>
 
+**Subtyping** is the idea that one type (called **subtype**) can be used in place of another type.<br>
+
 Questions:
 - can we **safely** assign variable of **more specific** type `S` to a variable of **more general** type `T`?
 - can we **safely** assign variable of **more general** type `T` to a variable of **more specific** type `S`?
