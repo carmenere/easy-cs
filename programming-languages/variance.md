@@ -1,3 +1,22 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Variance](#variance)
+  - [Variance in math](#variance-in-math)
+  - [Variance in programming languages](#variance-in-programming-languages)
+- [Bypassing type control system](#bypassing-type-control-system)
+- [Variance of collections](#variance-of-collections)
+    - [Collection is covariant](#collection-is-covariant)
+    - [Collection is contravariant](#collection-is-contravariant)
+    - [Collection is invariant](#collection-is-invariant)
+- [Variance of generics](#variance-of-generics)
+- [Variance of function type](#variance-of-function-type)
+  - [Visual explanation](#visual-explanation)
+  - [Example](#example)
+    - [Explanation contravariant in the parameter type](#explanation-contravariant-in-the-parameter-type)
+    - [Explanation covariant in the return type](#explanation-covariant-in-the-return-type)
+
+<br>
+
 # Variance
 ## Variance in math
 Consider following operations:
@@ -178,7 +197,12 @@ If `P2 <: P1` and `R1 <: R2`, then we can replace `P2 -> R2` with `P1 -> R1`, i.
 
 <br>
 
-### Example
+## Visual explanation
+![Variance](/img/contra_variance.png)
+
+<br>
+
+## Example
 `Cat -> Animal` can be replaced with:
 - `Animal -> Cat`
 - `Cat -> Cat`
@@ -186,20 +210,14 @@ If `P2 <: P1` and `R1 <: R2`, then we can replace `P2 -> R2` with `P1 -> R1`, i.
 
 <br>
 
-## Explanation contravariant in the parameter type
+### Explanation contravariant in the parameter type
 Function `Cat -> Animal` has 1 parameter of type `Cat`. So, the argument that passed to this function is of type `Cat`.<br>
 It is possible, to **upcast** variable of type `Cat` to variable of type `Animal`, because inheritance is **covariant**.<br>
 So, we can replace function with parameter of type `Cat` on another function with parameter of type `Animal` and then **upcast** argument of type `Cat` to `Animal`.<br>
 
 <br>
 
-## Explanation covariant in the return type
+### Explanation covariant in the return type
 Function `Cat -> Animal` returns type `Animal`. So, the variable to which the value of this function is assigned is of type `Animal`.<br>
 It is possible, to **upcast** returning value of type `Cat` to variable of type `Animal`, because inheritance is **covariant**.<br>
 So, we can change function with return type `Animal` on another function with return type `Cat` and then **upcast** returned value of type `Cat` to `Animal`.<br>
-
-<br>
-
-
-
-
