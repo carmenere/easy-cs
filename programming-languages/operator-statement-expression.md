@@ -43,7 +43,7 @@ In most languages, **functions** may be seen as a special form of **prefix opera
 <br>
 
 # Statement
-**Statement** is a **syntactic unit** of an imperative programming language that expresses some action.<br>
+**Statements** **don't** evaluate to a value. **Statements** perform actions **without** producing a value.<br>
 
 Statement can be:
 - **simple statement** *doesn't* contain another statement;
