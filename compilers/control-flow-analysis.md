@@ -41,16 +41,17 @@ Let $`p \in N`$, $`q \in N`$.<br>
 <br>
 
 **Definitions**:
-- node $`p`$ **dominates** node $`q`$, written $`p \le q`$ , if **every path** _from_ the **entry node** _to_ $`q`$ **goes through** $`p`$
+- node $`p`$ **dominates** node $`q`$, written $`p \le q`$, if **every path** _from_ the **entry node** _to_ $`q`$ **goes through** $`p`$
   - node $`p`$ is a **dominator** of node $`q`$;
   - node $`q`$ is **dominated by** node $`p`$;
-- **dominator set** of a node $`q`$, $`DOM(q)`$, is formed by **all nodes** that dominate $`q`$;
+- **dominator set** of a node $`q`$, written $`DOM(q)`$, is formed by **all nodes** that dominate $`q`$;
   - if node $`p`$ **dominates** node $`q`$ then $`p \in DOM(q)`$;
 - node $`p`$ **strictly dominates** node $`q`$, written $`p < q`$ **if** $`p \le q`$ and $`p \ne q`$;
 - node $`p`$ **immediately** (or **directly**) **dominates** node $`q`$, written $`p <_{d} q`$ or $`p = IDOM(q)`$ **if** $`p < q`$ and there is **no** $`t \in N`$ such that $`p < t < q`$;
   - in other words, the **immediate dominator** $`IDOM(q)`$ of some node $`q`$ is the dominator **closest** to the object $`q`$;
   - each node has a **unique** immediate dominator;
 - **each node dominates itself** by definition, thus $`q \in DOM(q)`$;
+- **dominance frontier** of node $`p`$, written $`DF(p)`$, is the set of all nodes $`w`$ such that $`p`$ **dominates** a **predecessor** of $`w`$, but $`p`$ **doesn't** dominate $`w`$;
 
 The **entry block** _dominates_ **all** blocks.<br>
 
@@ -59,3 +60,6 @@ The **entry block** _dominates_ **all** blocks.<br>
 # Dominator tree
 The **dominator tree** depicts the **dominator relationships**. It is a tree, since each block has a **unique** immediate dominator.<br>
 The **dominator tree** is rooted at the entry block.<br>
+**Dominance frontiers** are used to **finding all places** where to put **phi node**: if node $`p`$ defines a variable $`a`$, then every node in $`DF(p)`$ needs a **phi** function for $`a`$.<br>
+
+The **Lengauer-Tarjan algorithm** builds the dominator tree for directed graph.<br>

@@ -7,6 +7,7 @@
   * [Backtracking algorithm](#backtracking-algorithm)
   * [Algorithm that solves data-flow equations](#algorithm-that-solves-data-flow-equations)
 * [Static Single Assignment](#static-single-assignment)
+  * [Relation to dominator trees](#relation-to-dominator-trees)
 <!-- TOC -->
 
 <br>
@@ -18,17 +19,34 @@
 <br>
 
 # UD and DU chains
-A **definition-use chain** (or **DU chain**), which consists of a definition D of a variable and all the uses U reachable from that definition without any other intervening definitions.
+A **use-def chain** (or **UD chain**) for each **use** of variable stores the set of **all defs** reachable **backward** from that **use without** any other **intervening defs**.
+A **def-use chain** (or **DU chain**) for each **def** of variable stores the set of **all uses** reachable **forward** from that **def without** any other **intervening defs**.
 
+<br>
 
-A **use-definition chain** (or **UD chain**) is a data structure that consists of a use U, of a variable, and all the definitions D of that variable that can reach that use without any other intervening definitions.
-A **definition-use chain** (or **DU chain**), which consists of a definition D of a variable and all the uses U reachable from that definition without any other intervening definitions.
-Both UD and DU chains are created by using a form of static code analysis known as data flow analysis.
+![du-chains](/img/du-chains.png)
 
-**Statements** are labeled using the following conventions: $`s(i)`$ where i is an integer in $`[1, n]`$ and $`n`$ is the number of statements in the **basic block**.<br>
+<br>
 
-A definition at statement $`s(i)`$ with $`i < j`$ is **alive** at $`j`$, if it has a **use** at a statement $`s(k)`$ with $`k ≥ j`$.<br>
-A definition at statement $`s(i)`$ **kills** all previous definitions for the same variables ($`s(k)`$ with $`k < i`$.<br>
+**DU chains**:
+
+| Var | Def | Uses  |
+|:----|:----|:------|
+| x   | 1   | 2,4,5 |
+| x   | 3   | 4,5   |
+| y   | 5   | 6     |
+
+<br>
+
+**UD chains**:
+
+| Var | Use | Defs |
+|:----|:----|:-----|
+| x   | 2   | 1    |
+| x   | 4   | 1,3  |
+| x   | 5   | 1,3  |
+| y   | 6   | 5    |
+
 
 <br>
 
@@ -40,15 +58,14 @@ _CFG_ in which every **basic block** (**node**) is a **separate statement** is u
 <br>
 
 **Definitions**:
-- nodes in such _CFG_ can have **in-edges** and/or **out-edges**:
-  - **in-edges** come **from predecessor** nodes;
-  - **out-edges** lead **to successor** nodes;
-- $`pred[n]`$ is the **set** of **all** **predecessors** of node $`n`$;
-- $`succ[n]`$ is the **set** of **all** **successors** of node $`n`$;
+- _CFG_ node has **in-edges** coming **from predecessor** nodes;
+- _CFG_ node has **out-edges** leading **to successor** nodes;
+- $`pred[n]`$ is the **set** of **all predecessors** for node $`n`$;
+- $`succ[n]`$ is the **set** of **all successors** for node $`n`$;
 - a _variable_ is **live-in** at node $`n`$ if it's live on any **in-edges** of node $`n`$;
 - a _variable_ is **live-out** at node $`n`$ if it's live on any **out-edges** of node $`n`$;
-- $`in[n]`$ is the **set** of **all** **live-in** _variables_ of a node $`n`$;
-- $`out[n]`$ is the **set** of **all** **live-out** _variables_ of a node $`n`$;
+- $`in[n]`$ is the **set** of **all live-in** _variables_ of a node $`n`$;
+- $`out[n]`$ is the **set** of **all live-out** _variables_ of a node $`n`$;
 
 <br>
 
@@ -81,6 +98,12 @@ Every **r-value** occurrence of variable $`v`$ is called **use** (or **reading**
 **Formal definition of liveness**: a variable $`v`$ is **live on** CFG **edge** $`e`$ if:
 - exists a directed path from that **edge** $`e`$ to a **node** where the variable $`v`$ is **used** (node in $`use[v]`$)
 - and that path does **not** go through any **def** of $`v`$ (node in  $`def[v]`$);
+
+<br>
+
+**Statements** are labeled using the following conventions: $`s(i)`$ where $`i`$ is an integer in $`[1, n]`$ and $`n`$ is the number of statements in the **basic block**.<br>
+A _definition_ at statement $`s(i)`$ with $`i < j`$ is **alive** at $`j`$, if it has a **use** at a statement $`s(k)`$ with $`k ≥ j`$.<br>
+A _definition_ at statement $`s(i)`$ **kills** all previous definitions for the same variables ($`s(k)`$ with $`k < i`$.<br>
 
 <br>
 
@@ -131,7 +154,7 @@ _Data-flow equations_ are used to build a **system of equations** for all nodes 
 Algorithm **sets up data-flow equations for each node** and forms **system of equations** and then **solves it**.<br>
 
 The most common way of **solving** the _data-flow equations_ is by using an **iterative algorithm**:
-- **solving** the _data-flow equations_ **starts** with **initializing** **all** **in-states** and **out-states** to the **empty set**, in other words, **all variables are considered dead**;
+- **solving** the _data-flow equations_ **starts** with **initializing all in-states** and **out-states** to the **empty set**, in other words, **all variables are considered dead**;
 - then, the **out-states** are then **computed** by applying the **transfer functions** on the **in-states**:
   - $`out_{b}=trans_{b}(in_{b})`$
 - then, the **in-states** are **updated** by applying the **join operations**:
@@ -143,23 +166,28 @@ The **last two steps** are **repeated locally for each node until** algorithm re
 <br>
 
 **Algorithm**:
-- **for** all **node** $`n \in CFG`$ do
-  - $`in[n] = \emptyset`$
-  - $`out[n] = \emptyset`$
-- **end for**
-- **repeat**
-  - **for** all **node** $`n \in CFG`$ in reverse topological order do
-      - $`out_{OLD}[n] = out[n]`$
-      - $`in_{OLD}[n] = in[n]`$
-      - $`out[n] = \bigcup_{\forall s \in succ[n]} in[s]`$
-      - $`in[n] = use[n] \cup (out[n] - def[n])`$
-  - **end for**
-- **until** **no changes in** $`out[n]`$ and $`out[n]`$ 
-  - (more formally $`\forall n \in CFG \enspace out_{OLD}[n] = out[n] \enspace and \enspace in_{OLD}[n] = in[n]`$)
+```latex
+// Init all in[n] and out[n] by empty set
+for n in CFG {
+  in[n] = {}
+  out[n] = {}
+}
+
+repeat {
+  for n in CFG<in reverse topological order> {
+    // Save old values of in[n] and out[n]
+    in'[n] = in[n]
+    out'[n] = out[n]
+    // Compute new values for in[n] and out[n] using data-flow equations
+    out[n] = Union{for all s in succ[n]} in[s]
+    in[n] = use[n] union (out[n] - def[n])
+  }
+} until in'[n] = in[n] and out'[n] = out[n] for each n in CFG
+```
 
 <br>
 
-Algorithm finds a fixpoint of the $`in[n]`$ and $`out[n]`$ equations. When the algorithm terminates, all equations are satisfied.<br><br>
+Algorithm finds a **fixpoint** of the $`in[n]`$ and $`out[n]`$ equations. When the algorithm terminates, all equations are satisfied.<br>
 
 <br>
 
@@ -226,3 +254,8 @@ do
   i_2 = i_1 + 1
 while (i_2 < 50)
 ```
+
+<br>
+
+## Relation to dominator trees
+One property of SSA is that defs dominates uses. So, dominator trees are used to build SSA.<br>
