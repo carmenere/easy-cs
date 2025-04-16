@@ -155,19 +155,12 @@ Consider some node $`n`$ in _CFG_, then **data-flow equations**:
 
 <br>
 
-_Data-flow equations_ are used to build a **system of equations** for all nodes of CFG.<br>
-
-Algorithm **sets up data-flow equations for each node** and forms **system of equations** and then **solves it**.<br>
-
-The most common way of **solving** the _data-flow equations_ is by using an **iterative algorithm**:
-- **solving** the _data-flow equations_ **starts** with **initializing all in-states** and **out-states** to the **empty set**, in other words, **all variables are considered dead**;
-- then, the **out-states** are then **computed** by applying the **transfer functions** on the **in-states**:
-  - $`out_{b}=trans_{b}(in_{b})`$
-- then, the **in-states** are **updated** by applying the **join operations**:
-  - $`in_{b}=join_{p\in pred_{b}}(out_{p})`$
-
-The **last two steps** are **repeated locally for each node until** algorithm reaches the so-called **fixpoint**: the situation when the **in-states do not change** (and the out-states in consequence).
-
+These _data-flow equations_ are used to build a **system of equations** for all nodes of CFG.<br>
+The most common way of **solving** such **system of equations** is by using an **iterative algorithm**.<br>
+This algorithm **initially sets** $`in[n]`$ and $`out[n]`$ with empty set for each node of CFG, in other words, **all variables are considered dead**.<br>
+Algorithm **repeatedly recalculates** $`in[n]`$ and $`out[n]`$ for each node of CFG.<br>
+Algorithm **stops** when it reaches the so-called **fixpoint**: the situation when $`in[n]`$ and $`out[n]`$ **do not change** for each node of CFG.<br>
+So, when the algorithm terminates, all data-flow equations are satisfied.<br>
 
 <br>
 
@@ -190,10 +183,6 @@ repeat {
   }
 } until in'[n] = in[n] and out'[n] = out[n] for each n in CFG
 ```
-
-<br>
-
-Algorithm finds a **fixpoint** of the $`in[n]`$ and $`out[n]`$ equations. When the algorithm terminates, all equations are satisfied.<br>
 
 <br>
 
@@ -264,4 +253,6 @@ while (i_2 < 50)
 <br>
 
 ## Relation to dominator trees
-One property of SSA is that defs dominates uses. So, dominator trees are used to build SSA.<br>
+One property of SSA is that _defs_ **dominates** _uses_. So, **dominator trees** are used to **build SSA**.<br>
+Also, **dominance frontiers** are used to **finding all places** where to put **phi node** in SSA: if node $`p`$ defines a variable $`a`$, then every node in $`DF(p)`$ needs a **phi** function for $`a`$.<br>
+

@@ -62,6 +62,4 @@ The **entry block** _dominates_ **all** blocks.<br>
 # Dominator tree
 The **dominator tree** depicts the **dominator relationships**. It is a tree, since each block has a **unique** immediate dominator.<br>
 The **dominator tree** is rooted at the entry block.<br>
-**Dominance frontiers** are used to **finding all places** where to put **phi node**: if node $`p`$ defines a variable $`a`$, then every node in $`DF(p)`$ needs a **phi** function for $`a`$.<br>
-
-The **Lengauer-Tarjan algorithm** builds the dominator tree for directed graph.<br>
+The **Lengauer-Tarjan algorithm** builds the **dominator tree** for directed graph.<br>
