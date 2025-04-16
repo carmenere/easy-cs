@@ -2,9 +2,9 @@
 <!-- TOC -->
 * [Table of contents](#table-of-contents)
 * [Data-flow analysis](#data-flow-analysis)
-* [UD and DU chains](#ud-and-du-chains)
-* [Liveliness Analysis](#liveliness-analysis)
+* [Liveliness analysis](#liveliness-analysis)
   * [Uses and Defs](#uses-and-defs)
+* [UD and DU chains](#ud-and-du-chains)
 * [Computing liveness](#computing-liveness)
   * [Backtracking algorithm](#backtracking-algorithm)
   * [Algorithm that solves data-flow equations](#algorithm-that-solves-data-flow-equations)
@@ -20,9 +20,80 @@
 
 <br>
 
-# UD and DU chains
-A **use-def chain** (or **UD chain**) for each **use** of variable stores the set of **all defs** reachable **backward** from that **use without** any other **intervening defs**.
-A **def-use chain** (or **DU chain**) for each **def** of variable stores the set of **all uses** reachable **forward** from that **def without** any other **intervening defs**.
+# Liveliness analysis
+A _variable_ is **live** _at particular point_ in the program if it holds a **value** that will be used in the **future**, otherwise _variable_ is **dead**.<br>
+
+_CFG_ in which every **basic block** (**node**) is a **single statement** is usually used for **liveness analysis**.<br>
+
+<br>
+
+**Definitions**:
+- _CFG_ node has **in-edges** coming **from predecessor** nodes;
+- _CFG_ node has **out-edges** leading **to successor** nodes;
+- $`pred[n]`$ is the **set** of **all predecessors** for node $`n`$;
+- $`succ[n]`$ is the **set** of **all successors** for node $`n`$;
+- a _variable_ is **live-in** at node $`n`$ if it's live on any **in-edges** of node $`n`$;
+- a _variable_ is **live-out** at node $`n`$ if it's live on any **out-edges** of node $`n`$;
+- $`in[n]`$ is the **set** of **all live-in** _variables_ of a node $`n`$;
+- $`out[n]`$ is the **set** of **all live-out** _variables_ of a node $`n`$;
+
+<br>
+
+**Example**:<br>
+![liveness_1](/img/liveness-1.png)
+
+In the example above:
+- statements $`3`$ and $`4`$ **use** $`b`$, so $`b`$ is **live on edges** $`2 \rightarrow 3`$ and $`3 \rightarrow 4`$;
+- statement $`2`$ **assigns** $`b`$ new value, so $`b`$ is **dead on edges** $`1 \rightarrow 2`$ and $`5 \rightarrow 2`$, because any value of $`b`$ on these edges is **not** needed;
+- $`succ[5] = {2,6}`$;
+- $`pred[5] = {4}`$;
+- $`pred[2] = {1,5}`$;
+
+<br>
+
+**Formal definition of liveness**: a variable $`v`$ is **live on** CFG **edge** $`e`$ if:
+- exists a directed path from that **edge** $`e`$ to a **node** where the variable $`v`$ is **used** (node in $`use[v]`$)
+- and that path does **not** go through any **def** of $`v`$ (node in  $`def[v]`$);
+
+<br>
+
+> **Note**:<br>
+> We have **liveness on edges**: **before** and **after** each node.<br>
+
+<br>
+
+## Uses and Defs
+Every **l-value** occurrence of variable $`v`$ is called **def** (or **definition**, **modification**, **writing**).<br>
+Every **r-value** occurrence of variable $`v`$ is called **use** (or **reading**).<br>
+
+<br>
+
+**Definitions**:
+- $`def[v]`$ is the **set of all nodes** in _CFG_ that **define** variable $`v`$;
+- $`use[v]`$ is the **set of all nodes** in _CFG_ that **use** variable $`v`$;
+- $`def[n]`$ is the **set of variables** that are **modified** (**written**) at node $`n`$ (aka **kill set**);
+- $`use[n]`$ is the **set of variables** that are **used** (**read**) at node $`n`$ (aka **gen set**);
+
+<br>
+
+**Example**:
+![statement](/img/statement.png)
+
+For above node $`n`$:
+- $`use[n] = {c, b}`$
+- $`def[n] = {c}`$
+
+<br>
+
+**Statements** are labeled using the following conventions: $`s(i)`$ where $`i`$ is an integer in $`[1, n]`$ and $`n`$ is the number of statements in the **basic block**.<br>
+A _definition_ at statement $`s(i)`$ with $`i < j`$ is **alive** at $`j`$, if it has a **use** at a statement $`s(k)`$ with $`k ≥ j`$.<br>
+A _definition_ at statement $`s(i)`$ **kills** all previous definitions for the same variables ($`s(k)`$ with $`k < i`$.<br>
+
+<br>
+
+## UD and DU chains
+A **use-def chain** (or **UD chain**) for each **use** of variable stores the set of **all defs** that reachable **backward** from that **use without** any other **intervening defs**.<br>
+A **def-use chain** (or **DU chain**) for each **def** of variable stores the set of **all uses** that reachable **forward** from that **def without** any other **intervening defs**.<br>
 
 <br>
 
@@ -52,76 +123,9 @@ A **def-use chain** (or **DU chain**) for each **def** of variable stores the se
 
 <br>
 
-# Liveliness Analysis
-A _variable_ is **live** _at particular point_ in the program if it holds a **value** that will be used in the **future**, otherwise _variable_ is **dead**.<br>
-
-_CFG_ in which every **basic block** (**node**) is a **separate statement** is usually used for **liveness analysis**.<br>
-
-<br>
-
-**Definitions**:
-- _CFG_ node has **in-edges** coming **from predecessor** nodes;
-- _CFG_ node has **out-edges** leading **to successor** nodes;
-- $`pred[n]`$ is the **set** of **all predecessors** for node $`n`$;
-- $`succ[n]`$ is the **set** of **all successors** for node $`n`$;
-- a _variable_ is **live-in** at node $`n`$ if it's live on any **in-edges** of node $`n`$;
-- a _variable_ is **live-out** at node $`n`$ if it's live on any **out-edges** of node $`n`$;
-- $`in[n]`$ is the **set** of **all live-in** _variables_ of a node $`n`$;
-- $`out[n]`$ is the **set** of **all live-out** _variables_ of a node $`n`$;
-
-<br>
-
-**Example**:<br>
-![liveness_1](/img/liveness-1.png)
-
-In the example above:
-- statements $`3`$ and $`4`$ **use** $`b`$, so $`b`$ is **live on edges** $`2 \rightarrow 3`$ and $`3 \rightarrow 4`$;
-- statement $`2`$ **assigns** $`b`$ new value, so $`b`$ is **dead on edges** $`1 \rightarrow 2`$ and $`5 \rightarrow 2`$, because any value of $`b`$ on these edges is **not** needed;
-- $`succ[5] = {2,6}`$;
-- $`pred[5] = {4}`$;
-- $`pred[2] = {1,5}`$;
-
-<br>
-
-## Uses and Defs
-Every **l-value** occurrence of variable $`v`$ is called **def** (or **definition**, **modification**, **writing**).<br>
-Every **r-value** occurrence of variable $`v`$ is called **use** (or **reading**).<br>
-
-<br>
-
-**Definitions**:
-- $`def[v]`$ is the **set of all nodes** in _CFG_ that **define** variable $`v`$;
-- $`use[v]`$ is the **set of all nodes** in _CFG_ that **use** variable $`v`$;
-- $`def[n]`$ is the **set of variables** that are **modified** (**written**) at node $`n`$ (aka **kill set**);
-- $`use[n]`$ is the **set of variables** that are **used** (**read**) at node $`n`$ (aka **gen set**);
-
-<br>
-
-**Formal definition of liveness**: a variable $`v`$ is **live on** CFG **edge** $`e`$ if:
-- exists a directed path from that **edge** $`e`$ to a **node** where the variable $`v`$ is **used** (node in $`use[v]`$)
-- and that path does **not** go through any **def** of $`v`$ (node in  $`def[v]`$);
-
-<br>
-
-**Statements** are labeled using the following conventions: $`s(i)`$ where $`i`$ is an integer in $`[1, n]`$ and $`n`$ is the number of statements in the **basic block**.<br>
-A _definition_ at statement $`s(i)`$ with $`i < j`$ is **alive** at $`j`$, if it has a **use** at a statement $`s(k)`$ with $`k ≥ j`$.<br>
-A _definition_ at statement $`s(i)`$ **kills** all previous definitions for the same variables ($`s(k)`$ with $`k < i`$.<br>
-
-<br>
-
-**Example**:
-![statement](/img/statement.png)
-
-For above node $`n`$:
-- $`use[n] = {c, b}`$
-- $`def[n] = {c}`$
-
-<br>
-
 # Computing liveness
 **Computing liveness** means **compute the nodes where a variable is live**.<br>
 
-We have **liveness on edges**: **before** and **after** each node.<br>
 **Liveness** _flows_ **backward** in the _CFG_: behaviour of next nodes determines liveness at a previous node.<br>
 In other words, to **compute liveness** at a given point, we need to look into the future.<br>
 
