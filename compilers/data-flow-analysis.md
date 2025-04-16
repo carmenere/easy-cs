@@ -4,7 +4,7 @@
 * [Data-flow analysis](#data-flow-analysis)
 * [Liveliness analysis](#liveliness-analysis)
   * [Uses and Defs](#uses-and-defs)
-* [UD and DU chains](#ud-and-du-chains)
+  * [UD and DU chains](#ud-and-du-chains)
 * [Computing liveness](#computing-liveness)
   * [Backtracking algorithm](#backtracking-algorithm)
   * [Algorithm that solves data-flow equations](#algorithm-that-solves-data-flow-equations)
