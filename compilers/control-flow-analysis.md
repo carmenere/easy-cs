@@ -1,4 +1,6 @@
+# Table of contents
 <!-- TOC -->
+* [Table of contents](#table-of-contents)
 * [Control flow analysis](#control-flow-analysis)
 * [Dominators](#dominators)
 * [Dominator tree](#dominator-tree)

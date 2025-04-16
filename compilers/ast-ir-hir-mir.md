@@ -1,4 +1,6 @@
+# Table of contents
 <!-- TOC -->
+* [Table of contents](#table-of-contents)
 * [The Chomsky hierarchy](#the-chomsky-hierarchy)
   * [Lexical analyzer. Syntax analyzer (Parser). Semantic analyzer](#lexical-analyzer-syntax-analyzer-parser-semantic-analyzer)
   * [Token. Lexeme. Pattern](#token-lexeme-pattern)

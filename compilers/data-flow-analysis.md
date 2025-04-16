@@ -1,4 +1,6 @@
+# Table of contents
 <!-- TOC -->
+* [Table of contents](#table-of-contents)
 * [Data-flow analysis](#data-flow-analysis)
 * [UD and DU chains](#ud-and-du-chains)
 * [Liveliness Analysis](#liveliness-analysis)
