@@ -81,8 +81,8 @@ An **affix** is a **morpheme** /ˈmɔː.fiːm/ that is **attached** to a **word 
 
 **Types of affixes**:
 - **prefixation** is an adding **affix** at the **beginning** of a word, such *affix* is called **prefix**;
-- **infixation** is an adding **affix** in the **middle** of a word, such *affix* is called **infix**;;
-- **postfixation** is an adding **affix** at the **end** of a word, such *affix* is called **suffix**;;
+- **infixation** is an adding **affix** in the **middle** of a word, such *affix* is called **infix**;
+- **postfixation** is an adding **affix** at the **end** of a word, such *affix* is called **suffix**;
 
 <br>
 
