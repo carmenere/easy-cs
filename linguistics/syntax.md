@@ -6,7 +6,7 @@
 - [Syntactic structure of sentence](#syntactic-structure-of-sentence)
 - [Morphology](#morphology)
 - [Constituents](#constituents)
-- [Afixes](#afixes)
+- [Affixes](#affixes)
 - [Word formation](#word-formation)
 <!-- TOC -->
 
@@ -67,7 +67,7 @@ Many constituents are phrases. A phrase is a sequence of one or more words built
 
 <br>
 
-# Afixes
+# Affixes
 A **morpheme** is a smallest meaningful unit of language that **can't be subdivided**.<br>
 **Morphemes** can be both **whole words** and **partial words**, so morphemes are categorized as **bound** or **free**:
 - **free morpheme** is a morpheme that can be used as complete word and also can be attached to another words;
@@ -79,15 +79,16 @@ An **affix** is a **morpheme** /ˈmɔː.fiːm/ that is **attached** to a **word 
 
 <br>
 
-- **prefixation** is an adding **affix** at the **beginning**;
-- **infixation** is an adding **affix** in the **middle**;
-- **postfixation** is an adding **affix** at the **end**;
+**Types of affixes**:
+- **prefixation** is an adding **affix** at the **beginning** of a word, such *affix* is called **prefix**;
+- **infixation** is an adding **affix** in the **middle** of a word, such *affix* is called **infix**;;
+- **postfixation** is an adding **affix** at the **end** of a word, such *affix* is called **suffix**;;
 
 <br>
 
 There are **2 categories** of affixes:
-- **derivational affixes** - they cause to a **semantic change** of the word the are atteched to, e.g. `anti-`, `un-`, `pre-`, etc;
-- **inflectional affixes** - they cause to a **syntactic change** of the word they are attached to:
+- **derivational affixes** - they cause to a **semantic change** of the word (*meaning of the word*) they are attached to, e.g. `anti-`, `un-`, `pre-`, etc;
+- **inflectional affixes** - they cause to a **syntactic change** of the word (*grammatical properties of word*) they are attached to:
   - *singular* -> *plural* by adding `-s`, e.g. dog -> dog**s**;
   - *present* -> *continuous* by adding `-ing`;
 
