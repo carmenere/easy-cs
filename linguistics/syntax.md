@@ -120,8 +120,7 @@ There are 2 types of compounds:
 <br>
 
 # Word stem
-**Stem** or **word stem** is a **part of word** that is **responsible** for **lexical meaning** of that word. Typically a **stem** remains **unmodified during inflection**.<br>
-In other words:
+**Stem** or **word stem** is a **part of word** that is **responsible** for **lexical meaning** of that word. Typically a **stem** remains **unmodified during inflection**. In other words:
 - a **stem** is a **base** from which all its **inflected variants** are **formed**;
 - a **stem** is a part of word that is **common** to **all** of its **inflected variants**;
 
