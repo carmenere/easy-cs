@@ -8,6 +8,10 @@
 - [Constituents](#constituents)
 - [Affixes](#affixes)
 - [Word formation](#word-formation)
+  - [Ways of derivation](#ways-of-derivation)
+- [Word stem](#word-stem)
+- [Derivational paradigm](#derivational-paradigm)
+- [Syntactic categories](#syntactic-categories)
 <!-- TOC -->
 
 <br>
@@ -86,7 +90,7 @@ An **affix** is a **morpheme** /ˈmɔː.fiːm/ that is **attached** to a **word 
 
 <br>
 
-There are **2 categories** of affixes:
+There are **2 categories** of *affixes*:
 - **derivational affixes** - they cause to a **semantic change** of the word (*meaning of the word*) they are attached to, e.g. `anti-`, `un-`, `pre-`, etc;
 - **inflectional affixes** - they cause to a **syntactic change** of the word (*grammatical properties of word*) they are attached to:
   - *singular* -> *plural* by adding `-s`, e.g. dog -> dog**s**;
@@ -95,3 +99,48 @@ There are **2 categories** of affixes:
 <br>
 
 # Word formation
+There are **2 common methods of word formation**:
+- **inflection** is a modifying a word for the purpose of **fitting** it into the **grammatical properties**;
+- **derivation** is a modifying a word for the purpose of **changing it semantic** and/or **category**;
+
+<br>
+
+## Ways of derivation
+1. **Affixation** is an adding **derivational affixes**;
+2. **Conversion** is a type of derivation, when a word is morphologically ambiguous between different categories.
+   - Examples:
+     - **cut** as *verb* -> **cut** as *noun*;
+3. **Composition** is a type of derivation that creates **compound lexemes**. **Compound** is a **lexeme** that consists of **more** than one root, in other words, **compounds** are words that contain **multiple roots**.
+
+There are 2 types of compounds:
+- **open compounds** - when **stems** are **joined** with **spaces**: **high school**, **school bus**, etc.;
+- **closed compounds** - when stems are joined without spaces: **footpath**;
+- **hyphenated compounds** - when stems are joined by hyphens: **must-have**;
+
+<br>
+
+# Word stem
+**Stem** or **word stem** is a **part of word** that is **responsible** for **lexical meaning** of that word. Typically a **stem** remains **unmodified during inflection**.<br>
+In other words:
+- a **stem** is a **base** from which all its **inflected variants** are **formed**;
+- a **stem** is a part of word that is **common** to **all** of its **inflected variants**;
+
+<br>
+
+Consider example: **destabilized**:
+- the `stabil` is the **root**;
+- the `destabilize` is the **stem**, so the `-ed`/`-d` is **not** part of the *stem*;
+
+<br>
+
+In some cases **stem** and **root** can **coincide**, e.g. **run**.
+Also **stem** can be a **closed compound**, e.g. **bottleneck**.
+
+<br>
+
+# Derivational paradigm
+A **derivational paradigm** is a **set of all words** that have the **same root** but **different meaning**.<br>
+
+<br>
+
+# Syntactic categories
