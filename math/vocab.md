@@ -35,6 +35,9 @@
 - **divisible** /dɪˈvɪz.ə.bəl/ делимый без остатка
 - **remainder** /rɪˈmeɪndər/ остаток
 - **multiple** /ˈmʌl.tɪ.pəl/ кратный
+- **evenly** /ˈiː.vən.li/ 
+- **even** /ˈiː.vən/ четный
+- **odd** /ɒd/ нечетный
 
 <br>
 

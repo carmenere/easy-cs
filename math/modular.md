@@ -39,16 +39,17 @@
     - **dividend** is the number to be divided;
     - **divisor** is the number by which it is divided;
     - **quotient** is the **result** of *division*;
-- **division with remainder** is the process of dividing one *integer* $a$ (the **dividend**) **by** *another* $b$ (the **divisor**) in a way that produces an *integer* **quotient** $q$ and an *integer* **remainder** $r$ that is **strictly smaller** than the absolute value of the **divisor** ($|b|$ denotes the **absolute value** of $b$):
-  - given two integers $a$ and $b$ with $b \ne 0$, there exist **unique integers** $q$ and $r$ such that
-    - $a = b \cdot q + r$ **and** $0 \le r \lt |b|$;
-  - an integer $a$ **evenly divisible** by another integer $b$ if **remainder** $r$ is **zero**;
-
 
 <br>
 
 # Modulo operation
-Given two integers $a$ and $b$ with $b \ne 0$, there exist **unique integers** $q$ and $r$ such that $a = b \cdot q + r$ **and** $0 \le r \lt |b|$.<br>
+The **division with remainder** is the process of dividing one *integer* $a$ (the **dividend**) **by** *another* $b$ (the **divisor**) in a way that produces an *integer* **quotient** $q$ and an *integer* **remainder** $r$ that is **strictly smaller** than the absolute value of the **divisor** ($|b|$ denotes the **absolute value** of $b$):
+  - given two integers $a$ and $b$ with $b \ne 0$, there exist **unique integers** $q$ and $r$ such that
+    - $a = b \cdot q + r$ **and** $0 \le r \lt |b|$;
+  - an integer $a$ **evenly divisible** by another integer $b$ if **remainder** $r$ is **zero**;
+
+<br>
+
 The **modulo operation** (denoted as $a \space mod \space b$ or $a \space \% \space b$) returns the **remainder** $r$ of a **division** $a$ **by** $b$: $r = a \space mod \space b$. The **divisor** $b$ is called the **modulus** in the **modulo operation** $a \space mod \space b$.<br>
 
 <br>
