@@ -163,5 +163,5 @@ The **L**east **C**ommon **M**ultiple (**LCM**) of two integers $a$ and $b$, usu
 
 **Example**: $\text{lcm}(4,6)=12$.<br>
 
-The **LCM** can be computed from the **GCD**:
-- $\text{lcm}(a,b) = {\dfrac {|ab|}{\gcd(a,b)}}$.<br>
+The **LCM** can be computed from the **GCD**:<br>
+$\text{lcm}(a,b) = {\dfrac {|ab|}{\gcd(a,b)}}$.<br>
