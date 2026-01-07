@@ -1,3 +1,14 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Arithmetic operations](#arithmetic-operations)
+- [Modulo operation](#modulo-operation)
+- [Divisor of. Prime and coprime integers](#divisor-of-prime-and-coprime-integers)
+- [Modular arithmetic](#modular-arithmetic)
+- [Residue systems](#residue-systems)
+- [GCD. LCM](#gcd-lcm)
+
+<br>
+
 # Arithmetic operations
 - the **plus sign** (`+`) denotes the operation of **addition**:
   - $summand + summand = sum/total$
@@ -63,7 +74,7 @@ The remainders start at $0$ and increases by **one** each time, until the number
 
 <br>
 
-Given **modulus** $m$, if we increase some integer number $a$ by a **multiple of** $m$ we will get the new integer that gives the **same remainder**: $a \space \text {mod} \space m = (a + k\cdot m) \space \text {mod} \space m = r, \space \forall k \in \mathbb{N}$.<br>
+**Example**. Given **modulus** $m$, if we increase some integer number $a$ by a **multiple of** $m$ we will get the new integer that gives the **same remainder**: $a \space \text {mod} \space m = (a + k\cdot m) \space \text {mod} \space m = r, \space \forall k \in \mathbb{N}$.<br>
 
 For example:
 - $3 \mod 10 = 3$
@@ -73,9 +84,11 @@ For example:
 
 <br>
 
-The **modulo operation** can be visualized by using circles. If the number is **positive** we step **clockwise**, if it's **negative** we step **counter-clockwise**.<br>
+The **modulo operation** can be visualized by using circles. If the number is **positive** *modulo operation* we step **clockwise**, if it's **negative** *modulo operation* we step **counter-clockwise**.<br>
 
-Negative **modulo operation**:<br>
+<br>
+
+**Negative** *modulo operation*:<br>
 $-a \mod m = m - (a \mod m)$
 
 <br>
@@ -159,9 +172,13 @@ When one of $a$ and $b$ is **zero**, the **GCD** is the absolute value of the **
 
 **Example**: $\gcd(54,24)=6$.<br>
 
+<br>
+
 The **L**east **C**ommon **M**ultiple (**LCM**) of two integers $a$ and $b$, usually denoted by $\text{lcm}(a,b)$, is the **smallest** positive integer that is **divisible by** both $a$ and $b$.
 
 **Example**: $\text{lcm}(4,6)=12$.<br>
+
+<br>
 
 The **LCM** can be computed from the **GCD**:<br>
 $\text{lcm}(a,b) = {\dfrac {|ab|}{\gcd(a,b)}}$.<br>

@@ -1,3 +1,11 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Fractions](#fractions)
+- [Stern-Brocot tree](#stern-brocot-tree)
+- [Farey sequence](#farey-sequence)
+
+<br>
+
 # Fractions
 The **fraction** consists of **two integers** distinguished by **line** (aka **fraction bar**): **numerator** and a *non-zero* **denominator**.<br>
 A **numerator** is the number **above** the line in a fraction and a **denominator** is the number **below** the line in a fraction.<br>
