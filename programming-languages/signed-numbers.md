@@ -211,16 +211,16 @@ In *two's complement arithmetic* the **sign** of number is determined by **MSB**
 
 **Properties** of *two's complement*:
 - the **most negative value**, $100...00$ **has no positive counterpart**:
-  - flipping bit in $100...00$ gives $011...11$;
+  - flipping bits in $100...00$ gives $011...11$;
   - adding $1$ to $011...11$ gives $100...00$ again;
-- in *two's complement arithmetic* **addition** or **subtraction** of two numbers with **different** signs **can never produce overflow**;
-- **addition** or **subtraction** can cause to overflow only if 2 numbers have the **same sign**, both positive or both negative;
-  - to detect overflow in *two's complement arithmetic* it is enough to compare sign of operands and the sign of result: result has the **opposite sign** it means overflow occured;
+- in *two's complement arithmetic* *addition* or *subtraction* of two numbers with **different** signs **never** produces overflow;
+- *addition* or *subtraction* **produces overflow** only if 2 numbers have the **same sign**, both positive or both negative;
+  - to **detect overflow** in *two's complement arithmetic* it is enough to **compare** sign of operands and the sign of result: result has the **opposite sign** it means **overflow occured**;
 
 <br>
 
 **Two's complement wraparound arithmetic** means that `MAX+1` wraps around to `MIN` and vice versa `MIN-1` wraps around to `MAX`:
-- `INT_MIN` ia a `MIN` for **signed** integer **min**;
+- `INT_MIN` is a `MIN` for **signed** integer **min**;
 - `INT_MAX` is a `MAX` for **signed** integer **max**;
 
 <br>
@@ -251,8 +251,8 @@ For **unsigned** integers *two's complement* is **not** used.<br>
 
 **Wraparpund arithmetic** for **unsigned** integers:
 - *addition*:
-  - `UINT_MAX + 1` wraps around to `0`;
-  - `UINT_MAX + 2` wraps around to `1`;
+  - `UINT_MAX + 1` wraps around to `UINT_MIN`;
+  - `UINT_MAX + 2` wraps around to `UINT_MIN+1`;
 - *sabtraction*:
   - `UINT_MIN - 1` wraps around to `UINT_MAX`;
   - `UINT_MIN - 2` wraps around to `UINT_MAX-1`;
