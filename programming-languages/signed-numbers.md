@@ -199,7 +199,7 @@ Saturation, unsigned integers:
 **Two's complement** encoding for signed integers with $n$ bits gives to ranges of numbers:
 - **negative**: $[−2^{𝑛−1}, \space −1]$
 - **positive**: $[0, \space 2^{𝑛−1}−1]$
-- **negative** + **positive**:$[−2^{𝑛−1}, \space 2^{𝑛−1}−1]$
+- **negative** + **positive**: $[−2^{𝑛−1}, \space 2^{𝑛−1}−1]$
 
 <br>
 
