@@ -1,4 +1,16 @@
 # Vocab
+- **precision** /prɪˈsɪʒ.ən/
+- **arithmetic** /əˈrɪθ.mə.tɪk/
+- **to be susceptible to** /səˈsep.tə.bəl/ быть подверженным, подвержен
+- **wraparound** /ˈræp.ə.raʊnd/
+- to **wrap around** /ˈræp.ə.raʊnd/
+- **saturating** /ˈsætʃəreɪtɪŋ/
+- to **saturate** /ˈsætʃ.ər.eɪt/ насыщать
+- **saturation** /sætʃəˈreɪʃ(ə)n/
+- **clamp** /klæmp/ тиски, зажимать
+
+<br>
+
 - **addition** /əˈdɪʃ(ə)n/
 - **subtraction** /səbˈtrækʃn/
 - **multiplication** /ˌmʌl.tɪ.plɪˈkeɪ.ʃən/
@@ -19,6 +31,7 @@
 - **summand** /ˈsʌmand/ слагаемое
 - **addend** /ˈadend/ слагаемое
 - **total** /ˈtəʊt(ə)l/ сумма
+- **sum**
 
 <br>
 

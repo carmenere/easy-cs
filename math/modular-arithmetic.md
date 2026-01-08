@@ -4,7 +4,8 @@
 - [Modulo operation](#modulo-operation)
 - [Divisor of. Prime and coprime integers](#divisor-of-prime-and-coprime-integers)
 - [Modular arithmetic](#modular-arithmetic)
-- [Residue systems](#residue-systems)
+  - [Congruence](#congruence)
+  - [Residue systems](#residue-systems)
 - [GCD. LCM](#gcd-lcm)
 
 <br>
@@ -132,6 +133,9 @@ Two numbers $a$ and $b$ are **coprime** if their **GCD** is **equal** to **1**: 
 <br>
 
 # Modular arithmetic
+**Modular arithmetic** is a system of arithmetic operations for integers, where numbers **wrap around** (or repeated) when reaching a certain value, called the **modulus**.<br>
+
+## Congruence
 Two integers $a$ and $b$ are said to be **congruent modulo** $m$, if $m$ is a **divisor** of their **difference** $a-b$:
 $a − b = k \cdot m \space \forall k \in \mathbb{N}$.<br>
 
@@ -152,7 +156,7 @@ In other words, expression $a \equiv b \pmod{m}$ means both $a$ and $b$ yield th
 
 <br>
 
-# Residue systems
+## Residue systems
 The **congruence relation** is an **equivalence relation**. <br>
 The **equivalence class modulo** $m$ of an integer $a$ is the **set of integers** $\{a + k \cdot m: \forall k \in \mathbb{Z}\}$.<br>
 The **equivalence class modulo** $m$ of an integer $a$ is also called **congruence class** or **residue class** of $a$ modulo $m$.<br>
