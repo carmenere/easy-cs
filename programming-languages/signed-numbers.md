@@ -99,7 +99,7 @@ Consider **decimal numbers**: `0`, `1`, `8`, `127`, then in **two's complement**
 
 # Overflow arithmetic
 **Fixed-precision arithmetic** is arithmetic on numbers that are represented in a **fixed number of digits**.<br>
-**Arbitrary-precision arithmetic** can also be used to **avoid overflow**, but it is slower than **fixed-precision arithmetic**.<br>
+**Arbitrary-precision arithmetic** is used to **avoid overflow**, but it is slower than **fixed-precision arithmetic**.<br>
 
 **Fixed-precision arithmetic** is susceptible to **overflow**. There are 2 ways to handle **overflow**:
 - **wraparound** means if an **overflow occurs** (the resulting value $R$ exeeds $n$ bits), the resulting number $R$ is **wrapped around** to $R \space \text {mod} \space 2^{n}$;
