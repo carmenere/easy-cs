@@ -98,7 +98,7 @@ Consider **decimal numbers**: `0`, `1`, `8`, `127`, then in **two's complement**
 <br>
 
 # Overflow arithmetic
-**Fixed-precision arithmetic** is arithmetic on numbers that are represented in a **fixed number of digits**.<br>
+**Fixed-precision arithmetic** is arithmetic on numbers that have **fixed number of digits**.<br>
 **Arbitrary-precision arithmetic** is used to **avoid overflow**, but it is slower than **fixed-precision arithmetic**.<br>
 
 **Fixed-precision arithmetic** is susceptible to **overflow**. There are 2 ways to handle **overflow**:
@@ -196,7 +196,7 @@ Saturation, unsigned integers:
 <br>
 
 ## Signed integers
-**Two's complement** encoding with $n$ bits gives to ranges of numbers:
+**Two's complement** encoding for signed integers with $n$ bits gives to ranges of numbers:
 - **negative**: $[−2^{𝑛−1}, \space −1]$
 - **positive**: $[0, \space 2^{𝑛−1}−1]$
 - **negative** + **positive**:$[−2^{𝑛−1}, \space 2^{𝑛−1}−1]$
@@ -211,8 +211,8 @@ In *two's complement arithmetic* the **sign** of number is determined by **MSB**
 
 **Properties** of *two's complement*:
 - the **most negative value**, $100...00$ **has no positive counterpart**:
-  - flip $100...00$ -> $011...11$;
-  - adding 1 results $100...00$ again;
+  - flipping bit in $100...00$ gives $011...11$;
+  - adding $1$ to $011...11$ gives $100...00$ again;
 - in *two's complement arithmetic* **addition** or **subtraction** of two numbers with **different** signs **can never produce overflow**;
 - **addition** or **subtraction** can cause to overflow only if 2 numbers have the **same sign**, both positive or both negative;
   - to detect overflow in *two's complement arithmetic* it is enough to compare sign of operands and the sign of result: result has the **opposite sign** it means overflow occured;
