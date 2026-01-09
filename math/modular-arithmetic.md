@@ -5,7 +5,8 @@
 - [Divisor of. Prime and coprime integers](#divisor-of-prime-and-coprime-integers)
 - [Modular arithmetic](#modular-arithmetic)
   - [Congruence](#congruence)
-  - [Residue systems](#residue-systems)
+- [Residue class](#residue-class)
+- [Complete residue system](#complete-residue-system)
 - [GCD. LCM](#gcd-lcm)
 
 <br>
@@ -15,31 +16,31 @@
   - $summand + summand = sum/total$
   - $addend + addend = sum/total$
   - where:
-    - **minuend** is the number from which another number is subtracted;
-    - **subtrahend** is the number being subtracted;
+    - **minuend** is a number from which another number is subtracted;
+    - **subtrahend** is a number being subtracted;
     - **difference** is the **result** of *subtraction*;
 - the **minus sign** (`-`) denotes **subtraction**, its result is a **difference**:
   - $minuend - subtrahend = difference$
   - where:
-    - **minuend** is the number from which another number is subtracted;
-    - **subtrahend** is the number being subtracted;
-    - **difference** is the **result** of *subtraction*;
+    - **minuend** is a number from which another number is subtracted;
+    - **subtrahend** is a number to be subtracted from another number;
+    - **difference** is a **result** of *subtraction*;
 - the **multiplication sign** (cross symbol $\times$, asterisk $\ast$ or mid-line dot operator $\cdot$) denotes the operation of **multiplication** and is read as **times**:
   - $multiplicand \cdot multiplier = product$
   - $factor \cdot factor = product$
   - where:
-    - **multiplicand** is the number to be multiplied;
-    - **multiplier** is the number by which it is multiplied;
+    - **multiplicand** is a number to be multiplied by another number in a calculation;
+    - **multiplier** is a number by which another number is multiplied in a calculation;
       - both **multiplicand** and **multiplier** can be referred to as **factors**;
-    - **product** is the **result** of *multiplication*;
+    - **product** is a **result** of *multiplication*;
     - when **one factor** is an **integer**, then *product* is called **multiple**, in other words a **multiple** of a number (integer or not) is the **product** of that number and an **integer**:
       - if $x = k \cdot y$ and $k$ in **integer** then $x$ is a **multiple** of $y$;
 - the **division sign** (/) denotes the operation of **division**:
   - $dividend / divisor = quotient$
   - where:
-    - **dividend** is the number to be divided;
-    - **divisor** is the number by which it is divided;
-    - **quotient** is the **result** of *division*;
+    - **dividend** is a number that is divided by another number in a calculation;
+    - **divisor** is a number by which another number is divided in a calculation;
+    - **quotient** is a **result** of *division*;
 
 <br>
 
@@ -156,12 +157,19 @@ In other words, expression $a \equiv b \pmod{m}$ means both $a$ and $b$ yield th
 
 <br>
 
-## Residue systems
+# Residue class
 The **congruence relation** is an **equivalence relation**. <br>
-The **equivalence class modulo** $m$ of an integer $a$ is the **set of integers** $\{a + k \cdot m: \forall k \in \mathbb{Z}\}$.<br>
-The **equivalence class modulo** $m$ of an integer $a$ is also called **congruence class** or **residue class** of $a$ modulo $m$.<br>
-There are exactly $m-1$ **classes** for **modulo** $m$.<br>
-Each **residue class modulo** $m$ may be represented by any one of its members, although we usually represent each residue class by the **smallest** **nonnegative** integer which belongs to that class.<br>
+A **residue class** (aka **congruence class**) is a set of integers (denoted as $[a]$) that all leave the same remainder when divided by a specific number $m$ (the **modulus**), forming an **equivalence class** in modular arithmetic: $[a] = \{x \space | \space x \equiv a \pmod{m}\}$. In other words a **residue class** of $a$ modulo $m$ is the **set of integers** $\{a + k \cdot m \space | \space \forall k \in \mathbb{Z}\}$.<br>
+
+<br>
+
+Each **residue class modulo** $m$ may be represented by any one of its members, although we usually represent each residue class by the **smallest nonnegative** integer $a$ which belongs to that class.<br>
+
+There are exactly $m-1$ **residue classes modulo** $m$.<br>
+
+<br>
+
+# Complete residue system
 A **complete residue system modulo** $m$ is a **set** that contains **precisely one element from each** *residue class modulo* $m$.<br>
 It is obvious that **no two** elements of a **complete residue system modulo** $m$ are **congruent** modulo $m$. They are all **incongruent** each other.<br>
 
