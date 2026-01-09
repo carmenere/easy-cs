@@ -8,6 +8,7 @@
 - to **saturate** /ˈsætʃ.ər.eɪt/ насыщать
 - **saturation** /sætʃəˈreɪʃ(ə)n/
 - **clamp** /klæmp/ тиски, зажимать
+- to **clamp** /klæmp/ зажимать
 
 <br>
 
@@ -15,6 +16,9 @@
 - **subtraction** /səbˈtrækʃn/
 - **multiplication** /ˌmʌl.tɪ.plɪˈkeɪ.ʃən/
 - **division** /dɪˈvɪʒ.ən/
+- **minus** /ˈmaɪ.nəs/
+- **operator** /ˈɒp.ər.eɪ.tər/
+- **operand** /ˈɒp.ər.ənd/
 
 <br>
 
@@ -25,18 +29,18 @@
 
 <br>
 
-- **minuend** /ˈmɪnjʊend/ уменьшаемое
+- **minuend** /ˈmɪnjʊˌɛnd/ уменьшаемое
 - **subtrahend** /ˈsʌbtrəˌhend/ вычитаемое
 - **difference** /ˈdɪf(ə)r(ə)ns/ разность
-- **summand** /ˈsʌmand/ слагаемое
-- **addend** /ˈadend/ слагаемое
+- **summand** /sʌmænd/ слагаемое
+- **addend** /ˈædɛnd/ /əˈdɛnd/ слагаемое
 - **total** /ˈtəʊt(ə)l/ сумма
 - **sum**
 
 <br>
 
-- **multiplicand** /mʌltɪplɪˈkand/ множимое
-- **multiplier** /ˈmʌltɪplaɪə/ множитель, коэффициент
+- **multiplicand** /mʌltɪplɪˈkænd/ множимое
+- **multiplier** /ˈmʌltiplaɪər/ множитель, коэффициент
 - **factor** /ˈfæktə/ сомножитель, любой множитель
 - **product** /ˈprɒdʌkt/ произведение
 
@@ -58,7 +62,9 @@
 - **modulo** /ˈmɒdʒələʊ/
 - **circular** /ˈsɜːkjələr/
 - **circular** **arc** /ˈsɜːkjələr/
-- **residue** /ˈrezɪdjuː/
+- **residue** /ˈrezɪdjuː/ вычет
+- **residue class** класс вычетов
+- **equivalence** /ɪˈkwɪv.əl.əns/
 
 <br>
 
@@ -69,6 +75,7 @@
 
 - **rational number** /ˈræʃənəl/
 - **fraction** /ˈfrækʃən/ дробь
+- **ratio** /ˈreɪ.ʃi.əʊ/
 - **reducible** /rɪˈdʒuː.sə.bəl/ able to be made simpler
 - **irreducible** /ˌɪr.ɪˈdʒuː.sə.bəl/ impossible to make smaller or simpler
 - **numerator** /ˈnjuː.mə.reɪ.tər/ the number **above** the line in a fraction (**числитиель**)
