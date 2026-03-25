@@ -207,13 +207,13 @@ To **ensure** that *read quorum* and *write quorum* **overlap** the inequality *
 This means, that in a *sequentially consistent system* **result** of operations is **NOT** *deterministic*.<br>
 
 Indeed, in the above example, `r(x)` of `P2` can return `0` or `9`, depending on interleaving of operations *at global level*:<br>
-<br>
+
 ![seq_cons_1](/img/seq_cons_1.png)
 ![seq_cons_2](/img/seq_cons_2.png)
 
 <br>
 
-**Not valid** interleaving of operations at global level:
+**Not valid** interleaving of operations at global level:<br>
 ![not_seq_cons](/img/not_seq_cons.png)
 
 <br>
