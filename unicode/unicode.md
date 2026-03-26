@@ -11,7 +11,9 @@ But **Unicode Standard** **does not** specify which font to use.<br>
 
 **Unicode codespace** is a **range of integers** from **0x0** to **0x10FFFF16** or from **0** to **1_114_111**. So, **Unicode** is ultimately capable of encoding more than **1** million characters. As of **Unicode 17.0**, there are **159_629**  **visible** (graphic) characters.<br>
 
-The first **128** code points of **Unicode** mirror the **ASCII** standard.<br>
+The **ISO/IEC 8859-1** standard (aka **Latin-1**) extends **ASCII** up to **256** *code points*. The first **128** *code points* of **Latin-1** mirror the **ASCII** *code points*.<br>
+The first **128** *code points* of **Unicode** mirror the **ASCII** *code points*.<br>
+The first **256** *code points* of **Unicode** mirror the **Latin-1** *code points*.<br>
 
 <br>
 
