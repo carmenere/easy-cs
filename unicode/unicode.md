@@ -40,10 +40,14 @@ The **Unicode Standard** defines **3 Unicode character encoding schemes**:
 ## UTF-8
 **UTF-8** uses **variable length encoding** and it can use `1`, `2`, `3` or `4` bytes for codes.<br>
 
-- `0xxxxxxx` - This is **1 byte** code.
-- `110xxxxx` `10xxxxxx` - This is **2 bytes** code.
-- `1110xxxx` `10xxxxxx` `10xxxxxx` - This is **3 bytes** code.
-- `11110xxx` `10xxxxxx` `10xxxxxx` `10xxxxxx` - This is **4 bytes** code.
+- `0xxxxxxx` - **1 byte** code, *range* `0x00` to `0x7f`
+- `110xxxxx` `10xxxxxx` - **2 bytes** code, *range* `0x0080` to `0x07ff`
+- `1110xxxx` `10xxxxxx` `10xxxxxx` - **3 bytes** code, *range* `0x0800` to `0xffff`
+- `11110xxx` `10xxxxxx` `10xxxxxx` `10xxxxxx` - **4 bytes** code, *range* `0x010000` to `0x10ffff`
+
+<br>
+
+Code points from `0xd800` through `0xdfff` or beyond `0x10ffff`: are reserved for noncharacter.<br>
 
 <br>
 
