@@ -37,6 +37,15 @@ The **Unicode Standard** defines **3 Unicode character encoding schemes**:
 
 <br>
 
+# Unicode escape formats
+**Unicode escape** formats:
+- **Fixed-length** formats represent the Unicode *code points* **with** *fixed padding*;
+  - **4-digit hex** `\uXXXX`, it represents a **16-bit** *code points* and can **only** represent characters **up to** `\uFFFF`;
+  - **8-digit hex** `\UXXXXXXXX`;
+- **Braced hex** format `\u{X...X}` is **variable length**, i.e. represents the Unicode *code points* **without** *fixed padding*;
+
+<br>
+
 ## UTF-8
 **UTF-8** uses **variable length encoding** and it can use `1`, `2`, `3` or `4` bytes for codes.<br>
 
