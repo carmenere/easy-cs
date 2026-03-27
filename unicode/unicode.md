@@ -9,7 +9,18 @@ But **Unicode Standard** **does not** specify which font to use.<br>
 
 <br>
 
-The first **128** code points of **Unicode** mirror the **ASCII** standard.<br>
+**Unicode codespace** is a **range of integers** from **0x0** to **0x10FFFF16** or from **0** to **1_114_111**. So, **Unicode** is ultimately capable of encoding more than **1** million characters. As of **Unicode 17.0**, there are **159_629**  **visible** (graphic) characters.<br>
+
+The **ISO/IEC 8859-1** standard (aka **Latin-1**) extends **ASCII** up to **256** *code points*. The first **128** *code points* of **Latin-1** mirror the **ASCII** *code points*.<br>
+The first **128** *code points* of **Unicode** mirror the **ASCII** *code points*.<br>
+The first **256** *code points* of **Unicode** mirror the **Latin-1** *code points*.<br>
+
+<br>
+
+**Links**:
+- [Unicode **17.0**](https://www.unicode.org/versions/Unicode17.0.0/)
+  - [Core Specification (Core Spec)](https://www.unicode.org/versions/Unicode17.0.0/core-spec/)
+    - [Chapter 3](https://www.unicode.org/versions/Unicode17.0.0/core-spec/chapter-3/)
 
 <br>
 
@@ -26,13 +37,26 @@ The **Unicode Standard** defines **3 Unicode character encoding schemes**:
 
 <br>
 
+# Unicode escape formats
+**Unicode escape** formats:
+- **Fixed-length** formats represent the Unicode *code points* **with** *fixed padding*;
+  - **4-digit hex** `\uXXXX`, it represents a **16-bit** *code points* and can **only** represent characters **up to** `\uFFFF`;
+  - **8-digit hex** `\UXXXXXXXX`;
+- **Braced hex** format `\u{X...X}` is **variable length**, i.e. represents the Unicode *code points* **without** *fixed padding*;
+
+<br>
+
 ## UTF-8
 **UTF-8** uses **variable length encoding** and it can use `1`, `2`, `3` or `4` bytes for codes.<br>
 
-- `0xxxxxxx` - This is **1 byte** code.
-- `110xxxxx` `10xxxxxx` - This is **2 bytes** code.
-- `1110xxxx` `10xxxxxx` `10xxxxxx` - This is **3 bytes** code.
-- `11110xxx` `10xxxxxx` `10xxxxxx` `10xxxxxx` - This is **4 bytes** code.
+- `0xxxxxxx` - **1 byte** code, *range* `0x00` to `0x7f`
+- `110xxxxx` `10xxxxxx` - **2 bytes** code, *range* `0x0080` to `0x07ff`
+- `1110xxxx` `10xxxxxx` `10xxxxxx` - **3 bytes** code, *range* `0x0800` to `0xffff`
+- `11110xxx` `10xxxxxx` `10xxxxxx` `10xxxxxx` - **4 bytes** code, *range* `0x010000` to `0x10ffff`
+
+<br>
+
+Code points from `0xd800` through `0xdfff` or beyond `0x10ffff`: are reserved for noncharacter.<br>
 
 <br>
 
