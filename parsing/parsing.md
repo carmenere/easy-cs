@@ -39,7 +39,7 @@ So, $`\Sigma^{*} = \{\varepsilon, a, b, aa, bb, ab, ba, aaa, ... \}`$.<br>
 The language $`\Sigma^{+}`$ means language without empty word: $`\Sigma^{+} = \Sigma^{*} - \varepsilon`$.<br>
 
 The language $`\Sigma^{*}`$ has **interesting property** that **all languages using alphabet** $`\Sigma`$ **are subset of** $`\Sigma^{*}`$.<br>
-In other words, the language $`\Sigma^{+}`$ contains any possible sentence over $`\Sigma^{*}`$.<br>
+In other words, the language $`\Sigma^{*}`$ contains **any possible sentence** over $`\Sigma`$.<br>
 
 More formal:
 - **any** *language* is a **some** *subset of* $`\Sigma^{*}`$;
