@@ -32,7 +32,7 @@ Sentences in a language are composed of **finite set** of symbols called **alpha
 There is **no limit** on *size of sentence*. So, a languange can be possibly of **infinite** *set of sentences* that can be made by combining letters from the **finite** *alphabet* $`\Sigma`$.<br>
 
 Consider alphabet $`\Sigma = \{a, b\}`$. The language $`\Sigma^{*}`$ is an **infinite set** of all possible sentences that can be made from $`\Sigma`$.<br>
-The ***** means that language contains **empty word** denoted by $`\varepsilon`$ which consists of zero symbols.<br>
+The **\*** means that language contains **empty word** denoted by $`\varepsilon`$ which consists of zero symbols.<br>
 
 So, $`\Sigma^{*} = \{\varepsilon, a, b, aa, bb, ab, ba, aaa, ... \}`$.<br>
 
