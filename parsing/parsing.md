@@ -43,7 +43,7 @@ In other words, the language $`\Sigma^{+}`$ contains any possible sentence over 
 
 More formal:
 - **any** *language* is a **some** *subset of* $`\Sigma^{*}`$;
-- **any** *subset of *$`\Sigma^{*}`$ is a **language**;
+- **any** *subset of* $`\Sigma^{*}`$ is a **language**;
 - so, the **set of all languages** over $`\Sigma`$ is a **powerset** $`2^{\Sigma^{*}}`$;
 
 <br>
@@ -119,17 +119,21 @@ We see that **number of languages is uncountable**: we have listed all possible 
 **Tokens** are called **terminals** or **terminal symbols**.<br>
 The intermediate symbols are called **non-terminals** or **grammar variables** or **syntactic categories** in linguistic context.<br>
 
-A grammar is a tuple: $`G = (V, T, S, P)`$, where
+A **grammar** is a tuple: $`G = (V, T, S, P)`$, where
 - $`V`$ is a **finite set** of **non-terminals** or **variables**;
 - $`T`$ is a **finite set** of **terminals**;
 - $`S \in V`$ is a **start variable** (must be non-terminal);
 - $`P`$ is a **finite set of productions** (aka **production rules** or just **rules**);
 
-Properties:
+<br>
+
+**Properties**:
 - sets $`V`$ and $`T`$ are **not empty**;
 - sets $`V`$ and $`T`$ are **disjoint**: $`V \cap T = \emptyset`$;
 
-The production rules have form:
+<br>
+
+The **production rules** have form:
 - $`x \rightarrow y`$, where $`x \in (V  \cup T)^{+}`$ and $`y \in (V  \cup T)^{*}`$
   - $`x`$ is a **left-hand** side of rule and it must consist of sequences of **one** or **more** *terminals* or *non-terminals*;
     - or more formal: $`x \in (V  \cup T)^{+}`$
