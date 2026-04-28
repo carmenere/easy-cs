@@ -39,22 +39,39 @@ Let $`A`$ and $`B`$ be sets:<br>
 <br>
 
 ## Subset
-- $`A ⊆ B`$ means $`A`$ is a **subset** of $`B`$ or $`A`$ is **contained in** $`B`$, in other words **every** element of $`A`$ is **also** an element of $`B`$;
-  - **formal defenition**: $`{\displaystyle A ⊆ B, {\text if } \space ∀ a∈A ⇒ b∈B}`$;
-  - also $`B`$ is called a **superset** of set $`A`$ and denoted $`B ⊇ A`$;
-- If $`A ⊆ B \space and \space A ⊆ B`$ => $`A = B`$;
-- $`A ⊈ B`$ means $`A`$ is **not** a **subset** of $`B`$.
-- $`A ⊊ B`$ means $`A`$ is a **proper subset** of $`B`$, in other words $`A`$ is a **subset** of $`B`$ **but** $`A ≠ B`$;
-  - **formal defenition**: $`A ⊊ B, {\text if } A ⊆ B \space and \space A ≠ B`$;
+- **Subset** ($`\subseteq`$, but some authors use $`\subset`$):
+  - it **allows** 2 sets **to be equal**: $`A = B`$;
+  - $`A \subseteq B`$ means $`A`$ is a **subset** of $`B`$ or $`A`$ is **contained in** $`B`$, in other words **every** element of $`A`$ is **also** an element of $`B`$;
+  - **formal defenition**: $`{\displaystyle A \subseteq B, {\text if } \space ∀ a∈A ⇒ b∈B}`$;
+  - If $`A \subseteq B \space and \space A \subseteq B \rightarrow A = B`$;
+- **Proper subset** ($`\subsetneq`$, but some authors use $`\subset`$):
+  - it **doesn't allow** 2 sets **to be equal**: $`A \ne B`$;
+  - $`A \subsetneq B`$ means $`A`$ is a **proper subset** of $`B`$, in other words $`A`$ is a **subset** of $`B`$ **but** $`A ≠ B`$;
+  - **formal defenition**: $`A \subsetneq B, {\text if } A \subseteq B \space and \space A ≠ B`$;
   - $`B`$ is called a **proper superset** of set $`A`$ and denoted $`B ⊋ A`$;
+- **Superset** ($`\supseteq`$, but some authors use $`\supset`$):
+  - if $`A \subseteq B`$ then $`B`$ is called a **superset** of $`A`$ and denoted $`B \supseteq A`$;
+- **Proper superset** ($`\supsetneq`$, but some authors use $`\supset`$):
+  - if $`A \subset B`$ then $`B`$ is called a **proper superset** of $`A`$ and denoted $`B \supset A`$;
+- **Not a subset** ($`\not\subset`$, $`\nsubseteq`$):
+  - $`A \nsubseteq B`$ means $`A`$ is **not** a **subset** of $`B`$;
+- **Not a superset** ($`\not\supset`$, $`\nsupseteq`$):
+  - $`A \not\nsupseteq B`$ means $`B`$ is **not** a **superset** of $`B`$;
 
 <br>
 
-Some authors use the symbols $`⊂`$ and $`⊃`$ to indicate **subset** and **superset** respectively; that is, with the same meaning as and instead of the symbols $`⊆`$ and $`⊇`$.<br>
-Some authors use the symbols $`⊂`$ and $`⊃`$ to indicate **proper subset** and **proper superset** respectively; that is, with the same meaning as and instead of the symbols $`⊊`$ and $`⊋`$.<br>
+The symbols $`\subset`$ and $`\supset`$ are **ambiguous**, because:
+- some authors use the symbols $`\subset`$ and $`\supset`$ **with the same meaning** as the symbols $`\subseteq`$ and $`\supseteq`$;
+- some authors use the symbols $`\subset`$ and $`\supset`$ **with the same meaning** as the symbols $`\subsetneq`$ and $`\supsetneq`$;
+
+<br>
+
+So, for clarity **prefer** symbols $`\subseteq`$ and $`\subsetneq`$.<br>
+
+<br>
 
 Example, consider set $`A = {1,3,5}`$, then 
-- set $`B = {1,5}`$ is a **proper subset** of $`A`$: $`B ⊊ A`$, also $`B`$ is a **subset** of $`A`$: $`B ⊆ A`$;
+- set $`B = {1,5}`$ is a **proper subset** of $`A`$: $`B \subsetneq A`$, also $`B`$ is a **subset** of $`A`$: $`B ⊆ A`$;
 - set $`C = {1,3,5}`$ is a **subset** of $`A`$: $`C ⊆ A`$, but it is **not** a **proper subset** of $`A`$ since $`C = A`$;
 - set $`D = {1,4}`$ is not even a subset of $`A`$, since 4 is **not** an **element** of $`A`$.
 
