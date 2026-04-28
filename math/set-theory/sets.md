@@ -56,7 +56,7 @@ Let $`A`$ and $`B`$ be sets:<br>
 - **Not a subset** ($`\not\subset`$, $`\nsubseteq`$):
   - $`A \nsubseteq B`$ means $`A`$ is **not** a **subset** of $`B`$;
 - **Not a superset** ($`\not\supset`$, $`\nsupseteq`$):
-  - $`A \not\nsupseteq B`$ means $`B`$ is **not** a **superset** of $`B`$;
+  - $`A \nsupseteq B`$ means $`B`$ is **not** a **superset** of $`B`$;
 
 <br>
 
