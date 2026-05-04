@@ -104,11 +104,12 @@ Let $`M`$ be a Turing machine and let $`w`$ be a **string**, then:
 <br>
 
 ## Recursive languages
-Some TMs **always halt**, i.e. they **never** *go into an infinite loop*. A **decider** is a TM that **halts on every input**.<br>
+Some TMs **always halt**, i.e. they **never** *go into an infinite loop*.<br>
+A **decider** is a *Turing machine* such that any time you give it a **string** (**word**) $`w`$ from $`\Sigma^{*}`$ as input, it will **always halt**, either **accepting** or **rejecting** the string.<br>
 
-Let $`M`$ be a Turing machine, then $`M`$ is called a **decider** for some language $`L`$ if:
+Let $`M`$ be a Turing machine, then $`M`$ is called a **decider** for some language $`L`$ over $`\Sigma`$ if:
 - for any $`w \in L`$ it **accepts** $`w`$;
-- for any $`w \not\in L`$ it **rejects** $`w`$;
+- for any $`w \not\in L`$ (but $`w \in \Sigma^{*}`$) it **rejects** $`w`$;
 
 <br>
 
@@ -119,13 +120,16 @@ A language $`L`$ is called **recursive** (aka **R**, **decidable**) if there **e
 <br>
 
 ## Recursively enumerable languages
-Let $`M`$ be a Turing machine, then $`M`$ is called a **recognizer** (aka **semi-decider**) for some language $`L`$ if:
+A **recognizer** (aka **semi-decider**) is a *Turing machine* such that
+any time you give it a **string** (**word**) $`w`$ from $`\Sigma^{*}`$ as input, it will **halts only on strings from** $`L`$ ($`w \in L`$), but if string **is not from** $`L`$ ($`w \not\in L`$) it can either **reject** or **loop**.<br>
+
+Let $`M`$ be a Turing machine, then $`M`$ is called a **recognizer** (aka **semi-decider**) for some language $`L`$ over $`\Sigma`$ if:
 - for any $`w \in L`$ it **accepts** $`w`$;
-- for any $`w \not\in L`$ it **doesn't accept** $`w`$: **rejects** $`w`$, or **loops** on $`w`$;
+- for any $`w \not\in L`$ (but $`w \in \Sigma^{*}`$) it **doesn't accept** $`w`$: **rejects** $`w`$, or **loops** on $`w`$;
 
 The class  is the **set of all recognizable language**s. $`L`$ ∈ RE ↔ L is recognizable 
 
-A language $`L`$ is called **recursively enumerable** (aka **RE**, **Turing-recognizable**, **recognisable**, **semi-decidable**) if there **exists** a **recognizer** for such language $`L`$, in other words, if there **exists** a TM $`M`$ that **accepts** $`L`$.<br>
+A language $`L`$ is called **recursively enumerable** (aka **RE**, **Turing-recognizable**, **recognisable**, **semi-decidable**) if there **exists** a **recognizer** for such language $`L`$.<br>
 
 <br>
 
