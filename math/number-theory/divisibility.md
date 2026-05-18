@@ -80,12 +80,12 @@ To prove that $`gcd(a,b) = gcd(b,r)`$, we establish that the *set of all common 
   - so, $`d`$ **must divide** their **sum**;
     - thus, $`d \mid (bq + r)`$, meaning $`d \mid a`$;
   - therefore, $`d`$ **divides both** $`a`$ and $`b`$;
-- **conclusion**
-- because the set of **all** *common divisors of* $`(a, b)`$ is completely identical to the set of *common divisors of* $`(b, r)`$, their **greatest common divisors** must be the **same number**: $`gcd(a,b) = gcd(b,r)`$
+- **conclusion**:
+  - because the set of **all** *common divisors of* $`(a, b)`$ is completely identical to the set of *common divisors of* $`(b, r)`$, their **greatest common divisors** must be the **same number**: $`gcd(a,b) = gcd(b,r)`$
 
 <br>
 
-The **Euclidean algorithm** is based on the property $`gcd(a,b) = gcd(b,r)`$.<br>
+The **Euclidean algorithm** is based on the **proved property** $`gcd(a,b) = gcd(b,r)`$.<br>
 
 <br>
 
