@@ -1,3 +1,13 @@
+# Table of contents
+- [Table of contents](#table-of-contents)
+- [Euclidean division](#euclidean-division)
+- [Greatest common divisor](#greatest-common-divisor)
+- [The lowest common multiple](#the-lowest-common-multiple)
+- [Prime and coprime numbers](#prime-and-coprime-numbers)
+- [Congruence](#congruence)
+
+<br>
+
 # Euclidean division
 The **computation** of the *quotient* and the *remainder* **from** the *dividend* and the *divisor* is called **Euclidean division** or **division with remainder**.<br>
 
@@ -114,7 +124,9 @@ It is obvious that $`a'`$ and $`b'`$ are **coprime** and their $`gcd(a',b')=1`$.
 
 So, $`a \cdot b = a' \cdot d \cdot b' \cdot d = a' \cdot b' \cdot d \cdot d`$ and this $`a' \cdot b' \cdot d`$ is an $`lcm(a,b)`$.<br>
 
-So, $`lcm(a,b) \cdot gcd(a,b) = a \cdot b`$, or $`lcm(a,b) = \dfrac{a \cdot b}{gcd(a,b)}`$.<br>
+So,
+- $`lcm(a,b) \cdot gcd(a,b) = a \cdot b`$;
+- $`lcm(a,b) = \dfrac{a \cdot b}{gcd(a,b)}`$;
 
 
 <br>
