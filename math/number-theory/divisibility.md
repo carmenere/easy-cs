@@ -12,10 +12,10 @@ The **computation** of the *quotient* and the *remainder* **from** the *dividend
 
 **Division theorem** (aka **Euclid's division lemma** or **division algorithm**): given **two integers** $`a`$ and $`b \ne 0`$, there **exist unique integers** $`q`$ and $`r`$ such that $`a = b \cdot q + r`$, where $0 \le r \lt |b|$, in other words, the **remainder is non-negative**.<br>
 To compute $`q`$ the **floored division** used, in oter words, $`q`$ is always rounded **towards negative infinity**:
-- $`+3.2 \rArr +3`$
-- $`+3.8 \rArr +3`$
-- $`-3.2 \rArr -4`$ 
-- $`-3.8 \rArr -4`$ 
+- $`+3.2 \rightarrow +3`$
+- $`+3.8 \rightarrow +3`$
+- $`-3.2 \rightarrow -4`$ 
+- $`-3.8 \rightarrow -4`$ 
 
 <br>
 
@@ -65,7 +65,7 @@ So, $`gcd(a,b)`$ **divides** $`a-b`$.<br>
 
 **Theorem**. Consider $`a`$, $`b`$, $`q`$ and $`r`$ such that: $`a = b \cdot q + r`$, where $0 \le r \lt |b|$, then $`gcd(a,b) = gcd(b,r)`$.<br>
 
-**Intuition**: consider $a = b \cdot q + r$, where $0 \le r \lt |b|$. If both $`a`$ and $`b`$ have c**ommon divisors** and $`d`$ is the **largest**, then $`d`$ **divides** $`a`$ and $`d`$ **divides** $`b`$ and $`d`$ **divides** $`r`$:<br>
+**Intuition**: consider $a = b \cdot q + r$, where $0 \le r \lt |b|$. If both $`a`$ and $`b`$ have **common divisors** and $`d`$ is the **largest**, then $`d`$ **evenly divides** $`a`$ and $`d`$ **evenly divides** $`b`$ and $`d`$ **evenly divides** $`r`$:<br>
 ![gcd](/img/gcd.png)
 
 <br>
