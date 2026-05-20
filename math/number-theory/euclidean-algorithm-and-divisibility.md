@@ -5,6 +5,7 @@
 - [The lowest common multiple](#the-lowest-common-multiple)
 - [Prime and coprime numbers](#prime-and-coprime-numbers)
 - [Congruence](#congruence)
+- [Tasks](#tasks)
 
 <br>
 
@@ -55,7 +56,7 @@ The **greatest common divisor** (or **gcd**) of $`a`$ and $`b`$, written $`gcd(a
 **Properties**:
 - $`gcd(a,b) = gcd(b,r)`$
 - $`gcd(a,b) = gcd(a-b,b)`$
-- $`gcd(a,0) = gcd(0,a) = a`$
+- $`gcd(a,0) = gcd(0,a) = |a|`$, in other words, when one of $a$ and $b$ is **zero**, the **GCD** is the **absolute value** of the **nonzero integer**;
 - $`gcd(a,b) = gcd(b,a)`$;
 - if $`a \gt 0`$ and $`b \vert a`$ then $`gcd(a,b) = b`$;
 - if $`a \equiv c \pmod{b}`$, then $`gcd(a,b) = gcd(c,b)`$;
@@ -194,3 +195,19 @@ Proof that $`a - c \equiv b - d \pmod{m}`$:
 
 <br>
 
+# Tasks
+- **Proof that** $`6\vert(7^{n} - 1)`$:
+  - $`7 \equiv 1 \pmod{6}`$
+  - $`\implies 7^{n} \equiv 1^{n} \pmod{6}`$
+  - $`\implies 7^{n} \equiv 1 \pmod{6}`$
+  - $`\implies 6\vert(7^{n} - 1)`$
+
+<br>
+
+- **Proof that** $`15\vert(2^{4n} - 1)`$:
+  - $`2^{4n} = (2^{4})^{n} = 16^{n}`$
+  - $`16 \equiv 1 \pmod{15}`$
+  - $`\implies 16^{n} \equiv 1^{n} \pmod{15}`$
+  - $`\implies 16^{n} \equiv 1 \pmod{15}`$
+  - $`\implies 15\vert(16^{n} - 1)`$
+  - $`\implies 15\vert(2^{4n} - 1)`$
