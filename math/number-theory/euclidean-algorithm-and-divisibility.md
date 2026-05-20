@@ -5,6 +5,7 @@
 - [The lowest common multiple](#the-lowest-common-multiple)
 - [Prime and coprime numbers](#prime-and-coprime-numbers)
 - [Congruence](#congruence)
+- [Tasks](#tasks)
 
 <br>
 
@@ -194,3 +195,19 @@ Proof that $`a - c \equiv b - d \pmod{m}`$:
 
 <br>
 
+# Tasks
+- **Proof that** $`6\vert(7^{n} - 1)`$:
+  - $`7 \equiv 1 \pmod{6}`$
+  - $`\implies 7^{n} \equiv 1^{n} \pmod{6}`$
+  - $`\implies 7^{n} \equiv 1 \pmod{6}`$
+  - $`\implies 6\vert(7^{n} - 1)`$
+
+<br>
+
+- **Proof that** $`15\vert(2^{4n} - 1)`$:
+  - $`2^{4n} = (2^{4})^{n} = 16^{n}`$
+  - $`16 \equiv 1 \pmod{15}`$
+  - $`\implies 16^{n} \equiv 1^{n} \pmod{15}`$
+  - $`\implies 16^{n} \equiv 1 \pmod{15}`$
+  - $`\implies 15\vert(16^{n} - 1)`$
+  - $`\implies 15\vert(2^{4n} - 1)`$
