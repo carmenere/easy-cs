@@ -8,6 +8,7 @@
 - [Residue class](#residue-class)
 - [Complete residue system](#complete-residue-system)
 - [GCD. LCM](#gcd-lcm)
+- [Modular division](#modular-division)
 
 <br>
 
@@ -195,3 +196,18 @@ The **L**east **C**ommon **M**ultiple (**LCM**) of two integers $a$ and $b$, usu
 
 The **LCM** can be computed from the **GCD**:<br>
 $\text{lcm}(a,b) = {\dfrac {|ab|}{\gcd(a,b)}}$.<br>
+
+<br>
+
+# Modular division
+We say $`x`$ is the **multiplicative inverse** **of** $`a`$ **modulo** $`N`$ **if** $`ax \equiv 1 \pmod{N}`$.<br>
+There can be **at most one** such $`x`$ **modulo** $`N`$, and we denote it by $`a^{-1}`$.<br>
+However, this *inverse* **does not always exist**!<br>
+For instance, **2** **is not invertible modulo** **6**: that is, $`2x \not\equiv 1 \pmod{6}`$ for every possible choice of $`x`$.<br>
+
+<br>
+
+**Modular division theorem**. For any $`a \bmod N`$, $`a`$ has a multiplicative inverse modulo $`N`$ **if and only if** it is **relatively prime** to $`N`$, i.e. $`gcd(a,N) = 1`$. If $`gcd(a,N) > 1`$, then $`ax \not\equiv 1 \pmod{N}`$ for every possible choice of $`x`$.<br>
+
+<br>
+
